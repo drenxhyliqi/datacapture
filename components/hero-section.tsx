@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
 import droneIcon from '@/assets/drone-svgrepo-com(1) 2.png'
 
@@ -83,7 +84,7 @@ export default function HeroSection() {
                             </span>
 
                             <span className="block">
-                            Monitoring
+                                Monitoring
                             </span>
                         </h1>
 
@@ -108,10 +109,10 @@ export default function HeroSection() {
                         </p>
 
                         {/* CTA Button - Single button with left-pointing arrow and fading line */}
-                        <div className="flex justify-center lg:justify-start mb-12 lg:mb-16">
-                            <div className="relative inline-flex items-center">
+                        <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full mx-auto w-fit px-3 py-3 md:px-8 md:py-4 lg: mb-12 lg:mb-16">
+                            <div className="relative inline-flex gap-10 ">
                                 {/* Fading line extending to the left */}
-                                <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-20 w-16 h-px bg-gradient-to-r from-transparent via-white/20 to-white/40"></div>
+                                <Image src={arrowLeft} alt="Arrow left" width={170} height={50  } className=" object-contain" />
                                 
                                 <Link
                                     href="#"
