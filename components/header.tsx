@@ -49,7 +49,12 @@ export const HeroHeader = () => {
 
                     {/* Center Navigation Menu - Desktop Only */}
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
-                        <div className="relative rounded-full border border-white/30 px-8 py-3 backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.15),inset_0_0_20px_rgba(255,255,255,0.05)]" style={{ backgroundColor: 'rgba(16, 18, 16, 0.6)' }}>
+                        <div className="relative rounded-full border border-white/30 px-8 py-3" style={{
+                           background: `
+                            linear-gradient(173deg, rgba(0, 0, 0, 0.97) 0%, rgba(57, 76, 107, 0.5) 100%, rgb(19, 23, 51) 95%),
+                            linear-gradient(180deg, #1E1E1E 30%,rgba(5, 27, 59, 0) 120%)
+                         `,
+                         backgroundBlendMode: 'overlay',}}>
                             <ul className="flex items-center gap-10">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
@@ -76,7 +81,7 @@ export const HeroHeader = () => {
                         <div className="relative">
                             <button
                                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                                className="flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors"
+                                className="flex items-center gap-1.5 rounded-full border border-white/20 bg-gradient-to-b from-black/60 to-gray-900/60 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors"
                                 style={{ backgroundColor: 'rgba(16, 18, 16, 0.6)' }}
                                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(16, 18, 16, 0.8)'}
                                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(16, 18, 16, 0.6)'}
@@ -116,7 +121,7 @@ export const HeroHeader = () => {
                         {/* Get Started Button */}
                         <Link
                             href="#"
-                            className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-black/80"
+                            className="flex items-center gap-2 rounded-full border border-white/20 bg-gradient-to-b from-black/60 to-gray-900/60 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-black/80"
                         >
                             <Sparkles className="h-4 w-4" />
                             <span>Get Started!</span>
