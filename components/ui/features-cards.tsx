@@ -3,18 +3,17 @@
 import Image from 'next/image'
 import { GradientCard } from './GradientCard'
 import { Feature } from './features-data'
+import { SolutionFeature } from './solutions-features-data'
 
-export function FeatureCard({ feature }: { feature: Feature }) {
+export function FeatureCard({ feature }: { feature: Feature | SolutionFeature }) {
     return (
         <GradientCard>
             {/* Icon */}
             <div className="mb-6 flex p-6 justify-center">
-                <div className="w-40 h-40 flex items-center justify-center">
+                <div className="w-30 h-30 flex items-center justify-center">
                     <Image
                         src={feature.icon}
                         alt={feature.title}
-                        width={96}
-                        height={96}
                         className="object-contain w-full h-full"
                     />
                 </div>
