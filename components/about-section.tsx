@@ -4,7 +4,7 @@ import droneImage from '@/assets/drone.png'
 
 export default function AboutSection() {
     return (
-        <section className="relative w-full py-20 lg:py-32 px-6 lg:px-8">
+        <section className="relative w-full py-20 lg:py-32 px-6 lg:px-8 mt-3">
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
                     {/* Left Section - Text Content */}
