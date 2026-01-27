@@ -5,8 +5,8 @@ import { ChevronDown, Sparkles, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Home Page', href: '#', active: true },
-    { name: 'Solutions', href: '#' },
+    { name: 'Home Page', href: '/', active: true },
+    { name: 'Solutions', href: '/solutions' },
     { name: 'Services', href: '#' },
     { name: 'Company', href: '#' },
     { name: 'Contact Us', href: '#' },
