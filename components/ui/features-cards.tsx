@@ -8,8 +8,8 @@ export function FeatureCard({ feature }: { feature: Feature }) {
     return (
         <GradientCard>
             {/* Icon */}
-            <div className="mb-6 flex justify-center">
-                <div className="w-24 h-24 flex items-center justify-center">
+            <div className="mb-6 flex p-6 justify-center">
+                <div className="w-40 h-40 flex items-center justify-center">
                     <Image
                         src={feature.icon}
                         alt={feature.title}
@@ -21,7 +21,7 @@ export function FeatureCard({ feature }: { feature: Feature }) {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col flex-1 text-center">
+            <div className="flex flex-col flex-1 p-6 text-center">
                 <h3 className="text-xl font-bold mb-4 text-white">
                     {feature.title}
                 </h3>
