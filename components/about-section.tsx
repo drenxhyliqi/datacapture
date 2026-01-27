@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import droneImage from '@/assets/drone.png'
+import { GradientLine } from '@/components/ui/GradientLine'
 
 export default function AboutSection() {
     return (
@@ -10,22 +11,7 @@ export default function AboutSection() {
                     {/* Left Section - Text Content */}
                     <div className="relative z-10 pl-8 md:pl-12">
                         {/* Gradient Effect - Positioned on the right side of text, from white at top to transparent at bottom */}
-                        <div 
-                            className="absolute -left-0 top-0 bottom-0 pointer-events-none w-1 md:w-1.5 lg:w-[7px]"
-                            style={{
-                                background: `
-                                    linear-gradient(180deg,
-                                        rgba(255, 255, 255, 0.25) 0%,
-                                        rgba(220, 200, 255, 0.3) 15%,
-                                        rgba(180, 150, 220, 0.2) 30%,
-                                        rgba(120, 80, 180, 0.15) 50%,
-                                        rgba(80, 40, 120, 0.1) 70%,
-                                        rgba(40, 20, 60, 0.05) 85%,
-                                        transparent 100%
-                                    )
-                                `
-                            }}
-                        />
+                        <GradientLine position="left" />
                         
                         {/* Decorative dot - Positioned on top of gradient */}
                         <div className="absolute -left-0 top-0 flex items-center justify-center pointer-events-none z-20">

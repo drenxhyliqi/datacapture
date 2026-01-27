@@ -6,12 +6,14 @@ import AboutSection from "@/components/about-section";
 import SystemFeatures from "@/components/system-features";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
+import OperationalUseSection from "@/components/OperationalUseSection";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#101210]">
       <HeroHeader />
       <HeroSection />
+
 
       {/* ABOUT + FEATURES WRAPPER */}
       <section className="relative overflow-hidden">
@@ -38,6 +40,8 @@ export default function Home() {
           <SystemFeatures />
         </div>
       </section>
+
+      <OperationalUseSection />
 
       <style jsx global>{`
         @keyframes slideVertical {

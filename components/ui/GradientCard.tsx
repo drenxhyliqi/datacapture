@@ -19,7 +19,6 @@ export function GradientCard({
                 relative group h-full flex flex-col
                 rounded-2xl
                 border-t-1 border-white/70
-                p-6 lg:p-8
                 backdrop-blur-sm
                 transition-all
                 hover:border-b-1 hover:border-t-0 hover:border-white/70
