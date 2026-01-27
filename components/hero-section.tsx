@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
-import droneIcon from '@/assets/drone-svgrepo-com(1) 2.png'
+import droneIcon from '@/assets/selections1.svg'
 
 const HEADING = {
   line1: 'Command &',
