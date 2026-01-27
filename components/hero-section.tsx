@@ -5,146 +5,253 @@ import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
 import droneIcon from '@/assets/drone-svgrepo-com(1) 2.png'
 
+const HEADING = {
+  line1: 'Command &',
+  line2Prefix: 'Control for ',
+  line2Emphasis: 'Drone',
+  line3: 'Detection and',
+  line4: 'Monitoring',
+}
+
+const SUBTEXT_LINES = [
+  'A centralized system for real-time drone detection,',
+  'visualization, and post-event analysis within defined',
+  'operational areas.',
+]
+
 export default function HeroSection() {
-    return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20 lg:px-8 lg:pt-40">
-            <div className="w-full max-w-7xl mx-auto">
-                <div className="relative flex justify-center">
-                    {/* Desktop: Left-side decorative elements */}
-                    <div className="hidden lg:block absolute left-10 top-10">
-                        <div className="flex flex-col items-end gap-8">
-                            {/* Drone Icon - Double border: outer grey, inner gradient */}
-                            <div className="w-16 h-16 rounded-full p-[3.4px] flex items-center justify-center"
-                            style={{
-                                backgroundColor: '#313331'
-                            }}
-                            >
-                                {/* Inner border with gradient from black to grey */}
-                                <div 
-                                    className="w-[85%] h-[85%] rounded-full flex items-center justify-center"
-                                    style={{
-                                        background: 'linear-gradient(to top,rgb(35, 35, 35), #000000)'
-                                    }}
-                                >
-                                    <div className="w-full h-full rounded-full flex items-center justify-center">
-                                        <Image
-                                            src={droneIcon}
-                                            alt="Drone icon"
-                                            width={24}
-                                            height={24}
-                                            className="w-6 h-6 object-contain"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Main Content - Centered */}
-                    <div className="relative w-full max-w-3xl mx-auto text-center lg:text-left">
-                        {/* ADAPTIVE SECURITY - Vertical text on the left */}
-                        <div className="hidden lg:block absolute left-0 top-73 -translate-x-full -translate-y-1/2 pr-6">
-                            <div className="flex flex-col h-full justify-center">
-                                <div className="text-white text-xs font-light uppercase opacity-80 whitespace-nowrap" style={{ 
-                                    writingMode: 'horizontal-tb',
-                                    textOrientation: 'upright',
-                                    letterSpacing: '2.5em',
-                                    lineHeight: '2.5em'
-                                }}>
-                                    ADAPTIVE<br />SECURITY
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Category Tag */}
-                        <div className="inline-flex items-center mb-6 lg:mb-8">
-                            <span className="px-4 py-1.5 rounded-full border  text-white text-xs font-medium uppercase tracking-wider"
-                             style={{
-                                background: 'linear-gradient(to top,rgb(35, 35, 35), #000000)',
-                                borderColor: '#313331'
-                             }}
-                            >
-                                AIR DEFENCE
-                            </span>
-                        </div>
-
-                        {/* Main Heading with Mobile Drone Icon */}
-                        <div className="relative mb-6 lg:mb-8">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-[500] text-white leading-tight max-w-4xl mx-auto lg:mx-0 pr-16 lg:pr-0">
-                            <span className="block">
-                            Command &
-                            </span>
-
-                            <span className="block">
-                            Control for <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">Drone</span>
-                            </span>
-
-                            <span className="block">
-                            Detection and
-                            </span>
-
-                            <span className="block">
-                                Monitoring
-                            </span>
-                        </h1>
-
-                        {/* Mobile Drone Icon */}
-                        <div className="lg:hidden absolute top-2 right-0">
-                            <div className="w-12 h-12 rounded-full border border-gray-500 bg-gray-900/60 flex items-center justify-center p-2">
-                            <Image
-                                src={droneIcon}
-                                alt="Drone icon"
-                                width={24}
-                                height={24}
-                                className="w-6 h-6 object-contain"
-                            />
-                            </div>
-                        </div>
-                        </div>
-                        {/* Descriptive Paragraph */}
-                        <p className="text-base md:text-lg text-[#A9A9A9] mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0">
-                        <span className='block'>A centralized system for real-time drone detection,</span>
-                        <span className='block'>visualization, and post-event analysis within defined</span>
-                        <span className='block'>operational areas.</span>
-                        </p>
-
-                        {/* CTA Button - Single button with left-pointing arrow and fading line */}
-                        <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full mx-auto w-fit px-3 py-3 md:px-8 md:py-4 lg: mb-12 lg:mb-16">
-                            <div className="relative inline-flex gap-10 ">
-                                {/* Fading line extending to the left */}
-                                <Image src={arrowLeft} alt="Arrow left" width={170} height={50  } className=" object-contain" />
-                                
-                                <Link
-                                    href="#"
-                                    className="group relative inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full border border-gray-500 bg-black/60 text-white font-semibold text-sm md:text-base uppercase tracking-wide hover:bg-black/80 transition-all"
-                                >
-                                    {/* Left-pointing arrow icon */}
-                                    <ArrowLeft className="w-5 h-5 text-white flex-shrink-0" />
-                                    
-                                    <span className="relative z-10">Get Protected Today</span>
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Statistics */}
-                        <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-6 justify-center lg:justify-start">
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-2xl md:text-3xl font-bold text-white">1,600+</span>
-                                <span className="text-sm md:text-base text-gray-400 uppercase tracking-wide">USER ACTIVE</span>
-                            </div>
-                            
-                            {/* Plus sign */}
-                            <div className="hidden md:block text-white text-xl">+</div>
-                            
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-2xl md:text-3xl font-bold text-white">300+</span>
-                                <span className="text-sm md:text-base text-gray-400 uppercase tracking-wide">TECHNOLOGIES</span>
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <>
+      {/* DESKTOP HERO (lg+) */}
+      <section className="hidden lg:block bg-[#101210] ">
+        <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-start px-12 pt-24 ">
+          {/* Drone badge on the left */}
+          <div className="absolute left-0 top-28">
+            <div className="flex flex-col items-start gap-6">
+              <div
+                className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center -ml-1"
+                style={{ backgroundColor: '#313331' }}
+              >
+                <div
+                  className="h-[100%] w-[100%] rounded-full flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                  }}
+                >
+                  <div className="flex h-full w-full items-center justify-center rounded-full">
+                    <Image
+                      src={droneIcon}
+                      alt="Drone icon"
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 object-contain"
+                    />
+                  </div>
                 </div>
+              </div>
+
+              {/* ADAPTIVE / SECURITY text */}
+              <div className="mt-48 space-y-6 text-[11px] font-light uppercase text-white/80 tracking-[2em]">
+                <div className="whitespace-nowrap">ADAPTIVE</div>
+                <div className="whitespace-nowrap">SECURITY</div>
+              </div>
             </div>
-        </section>
-        
-    )
+          </div>
+
+          {/* Main content block – centered as a whole, left‑biased inside */}
+          <div className="relative ml-[9rem] w-full">
+            {/* AIR DEFENCE pill + Headline + Desktop CTA */}
+            <div className="relative mb-8 mt-4 flex justify-start">
+              <div className="pl-[2em]">
+                <div className="mb-4">
+                  <span
+                    className="inline-flex items-center rounded-full border px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
+                    style={{
+                      background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                      borderColor: '#313331',
+                    }}
+                  >
+                    AIR DEFENCE
+                  </span>
+                </div>
+                <div className="relative inline-block">
+                  <h1 className="text-[6.4rem] font-[400] leading-[1] text-white text-start">
+                    <span className="block">{HEADING.line1}</span>
+                    <span className="block">
+                      {HEADING.line2Prefix}
+                      <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+                        {HEADING.line2Emphasis}
+                      </span>
+                    </span>
+                    <span className="block">{HEADING.line3}</span>
+                    <span className="block">{HEADING.line4}</span>
+                  </h1>
+
+                  {/* Desktop-only CTA positioned next to "Monitoring" – old single-button design */}
+                  <div className="absolute -right-35 bottom-[-1em] hidden lg:block">
+                    <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1 mb-3">
+                      <div className="relative inline-flex items-center w-full gap-2">
+                        {/* Fading line + arrow to the left */}
+                        <Image
+                          src={arrowLeft}
+                          alt="Arrow left"
+                          width={150}
+                          height={40}
+                          className="object-contain"
+                        />
+
+                        {/* Main CTA button - positioned at the very end */}
+                        <Link
+                          href="#"
+                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm uppercase tracking-wide transition-all ml-auto -mr-[0.625rem]"
+                          style={{
+                            background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                            paddingTop: '1rem',
+                            paddingBottom: '1rem',
+                          }}
+                        >
+                          <span className="relative z-10">Get Protected Today</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Body text */}
+            <p className="mb-4 pl-[2.5em] max-w-[34rem] text-[15px] leading-relaxed text-[#A9A9A9]">
+              {SUBTEXT_LINES.map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
+
+            {/* Stats – desktop, right-aligned like reference */}
+            <div className="flex items-center justify-end gap-8 pr-12 text-[1em] tracking-[0.35em] uppercase text-white/50 mb-10 ">
+              <span>
+                <span className="font-semibold text-white mr-1">1.600+</span>
+                USER ACTIVE
+              </span>
+              <span className="text-white/40">+</span>
+              <span>
+                <span className="font-semibold text-white mr-1">300+</span>
+                TECHNOLOGIES
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MOBILE HERO ( < lg ) */}
+      <section className="block bg-[#101210] lg:hidden">
+        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 pt-24 pb-16">
+          {/* AIR DEFENCE pill */}
+          <div className="mb-6 flex justify-center">
+            <span
+              className="inline-flex items-center rounded-full border px-4 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
+              style={{
+                background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                borderColor: '#313331',
+              }}
+            >
+              AIR DEFENCE
+            </span>
+          </div>
+
+          {/* Mobile heading + drone badge on the right */}
+          <div className="relative mb-6">
+            <h1 className="text-[3.4rem] leading-[1.05] font-semibold text-white">
+              <span className="block">{HEADING.line1}</span>
+              <span className="block">
+                {HEADING.line2Prefix}
+                <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+                  {HEADING.line2Emphasis}
+                </span>
+              </span>
+              <span className="block">Detection</span>
+              <span className="block">and</span>
+              <span className="block">Monitoring</span>
+            </h1>
+
+            {/* Mobile drone badge - same size as desktop, positioned just below "for" text */}
+            <div className="absolute right-0 top-[5.5rem]">
+              <div
+                className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center"
+                style={{ backgroundColor: '#313331' }}
+              >
+                <div
+                  className="h-[80%] w-[80%] rounded-full flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                  }}
+                >
+                  <div className="flex h-full w-full items-center justify-center rounded-full">
+                    <Image
+                      src={droneIcon}
+                      alt="Drone icon"
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA button - mobile, below heading, same design as desktop but smaller */}
+          <div className="mb-8 w-full">
+            <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-3 py-1">
+              <div className="relative inline-flex items-center w-full gap-2">
+                {/* Fading line + arrow to the left */}
+                <Image
+                  src={arrowLeft}
+                  alt="Arrow left"
+                  width={100}
+                  height={30}
+                  className="object-contain"
+                />
+
+                {/* Main CTA button - positioned at the very end */}
+                <Link
+                  href="#"
+                  className="group relative inline-flex items-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs uppercase tracking-wide transition-all ml-auto -mr-[0.625rem]"
+                  style={{
+                    background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                    paddingTop: '1rem',
+                    paddingBottom: '1rem',
+                  }}
+                >
+                  <span className="relative z-10">Get Protected Today</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Body text */}
+          <p className="mb-8 text-[15px] leading-relaxed text-[#A9A9A9]">
+            {SUBTEXT_LINES.map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
+          </p>
+
+          {/* Stats – mobile, stacked but same visual style */}
+          <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60">
+            <span>
+              <span className="font-semibold text-white mr-1">1.600+</span>
+              USER ACTIVE
+            </span>
+            <span>
+              <span className="font-semibold text-white mr-1">300+</span>
+              TECHNOLOGIES
+            </span>
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }
