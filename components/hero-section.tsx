@@ -147,7 +147,7 @@ export default function HeroSection() {
 
       {/* MOBILE HERO ( < lg ) */}
       <section className="block bg-[#101210] lg:hidden">
-        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 pt-24 pb-16">
+        <div className="relative mx-auto flex max-w-7xl flex-col px-6 pt-24 pb-10 md:pb-6">
           {/* AIR DEFENCE pill */}
           <div className="mb-6 flex justify-center">
             <span

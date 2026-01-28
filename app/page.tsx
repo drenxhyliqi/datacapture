@@ -8,6 +8,7 @@ import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
 import OperationalUseSection from "@/components/OperationalUseSection";
 import DiscussSection from "@/components/discussSection";
+import TestimonialSection from "@/components/testimonial-section";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -55,9 +56,8 @@ export default function Home() {
           <OperationalUseSection />
         </div>
       </section>
-
-      <OperationalUseSection />
       <DiscussSection />
+      <TestimonialSection />
       <Footer />
 
       <style jsx global>{`
