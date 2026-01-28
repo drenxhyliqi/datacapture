@@ -167,3 +167,31 @@
 .animate-float-slow-reverse {
   animation: float-slow-reverse 25s ease-in-out infinite;
 }
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(50px);
+  }
+  15% {
+    transform: translateY(-130px);
+  }
+  35% {
+    transform: translateY(-130px);
+  }
+  50% {
+    transform: translateY(-130px);
+  }
+  65% {
+    transform: translateY(50px);
+  }
+  85% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+.animate-move-up-down {
+  animation: moveUpDown 4s ease-in-out infinite;
+}

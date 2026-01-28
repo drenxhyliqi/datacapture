@@ -20,12 +20,11 @@ export default function Footer() {
 
       {/* Animated blur on left side - hidden on mobile */}
       <div 
-        className="hidden md:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
+        className="hidden md:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none animate-move-up-down"
         style={{
           background: 'radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
           filter: 'blur(30px)',
           clipPath: 'ellipse(300px 250px at 90% 90%)',
-          animation: 'moveUpDown 4s infinite',
         }}
       />
 
@@ -153,31 +152,6 @@ export default function Footer() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes moveUpDown {
-          0% {
-            transform: translateY(50px);
-          }
-          15% {
-            transform: translateY(-120px);
-          }
-          35% {
-            transform: translateY(-120px);
-          }
-          50% {
-            transform: translateY(-120px);
-          }
-          65% {
-            transform: translateY(50px);
-          }
-          85% {
-            transform: translateY(50px);
-          }
-          100% {
-            transform: translateY(50px);
-          }
-        }
-      `}</style>
     </footer>
   )
 }
