@@ -7,9 +7,9 @@ import { cn } from '@/lib/utils'
 const menuItems = [
     { name: 'Home Page', href: '/', active: true },
     { name: 'Solutions', href: '/solutions' },
-    { name: 'Services', href: '#' },
-    { name: 'Company', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Services', href: '/services' },
+    { name: 'Company', href: '/company' },
+    { name: 'Contact Us', href: '/contact-us' },
 ]
 
 const languages = [

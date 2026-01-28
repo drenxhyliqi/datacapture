@@ -1,46 +1,44 @@
 'use client'
 
 import { HeroHeader } from "@/components/header"
-import SolutionsFeatures from "@/components/solutions-features"
 import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
 import solutionsHero from "@/assets/herosolutuion.png"
-import ContentSection from "@/components/content-section"
+import ServicesSection from "@/components/ServicesSection"
 
-export default function SolutionsPage() {
-  return (
-    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
-      
-      {/* HERO */}
-      <div className="relative ">
-        {/* HEADER */}
-        <div className="relative z-30">
-          <HeroHeader />
-        </div>
-
-        {/* HERO IMAGE */}
-        <div className="pointer-events-none absolute  inset-0 flex z-10 justify-center object-contain">
-          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[150vh] md:h-[120vh] lg:w-[155vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
-            <Image
-              src={solutionsHero}
-              priority
-              alt="Solutions Hero"
-              className="object-contain"
-            />
+export default function ServicesPage() {
+    return (
+      <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+        
+        {/* HERO */}
+        <div className="relative ">
+          {/* HEADER */}
+          <div className="relative z-30">
+            <HeroHeader />
           </div>
-        </div>
+  
+          {/* HERO IMAGE */}
+          <div className="pointer-events-none absolute  inset-0 flex z-10 justify-center object-contain">
+            <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[150vh] md:h-[120vh] lg:w-[155vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
+              <Image
+                src={solutionsHero}
+                priority
+                alt="Services Hero"
+                className="object-contain"
+              />
+            </div>
+          </div>
 
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-32 pb-24 text-center">
           <p className="text-white/70 tracking-widest text-sm md:text-base">
-            DATA CAPTURE SYSTEMS
+            SERVICES
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
-            Tailored Airspace Monitoring and <br className="hidden md:block" />
-            Control
+            Operational services within the DCS platform
           </h1>
           <p className="mt-6 text-white/60 max-w-2xl mx-auto">
-            DCS supports drone detection, monitoring, and operational configuration within defined airspace environments
+            DCS supports a range of operational and configuration services through its integrated command-and-control system.
           </p>
         </div>
       </div>
@@ -51,7 +49,7 @@ export default function SolutionsPage() {
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
-              fill
+              priority
               className="object-contain"
             />
           </div>
@@ -77,8 +75,7 @@ export default function SolutionsPage() {
         </div>
 
         <div className="relative z-10">
-          <SolutionsFeatures />
-          <ContentSection />
+          <ServicesSection />
         </div>
       </section>
 
