@@ -4,16 +4,31 @@ import { HeroHeader } from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import SystemFeatures from "@/components/system-features";
+import SolutionsFeatures from "@/components/solutions-features";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
 import OperationalUseSection from "@/components/OperationalUseSection";
 import solutionsHero from "@/assets/solutionsHero.png";
 import solutionsHero1 from "@/assets/solutionsHero1.png";
+import ContentSection from "@/components/content-section";
 
 export default function SolutionsPage() {
   return (
     <div className="relative min-h-screen bg-[#101210]">
-        <HeroHeader />
+      <HeroHeader />
+
+        {/* STATIC RIGHT SHADOW */}
+      <div className="absolute top-0 right-0 pointer-events-none z-0">
+        <div className="relative w-[700px] h-[700px] translate-x-1/2 translate-y-250">
+          <Image
+            src={ellipseShadow}
+            alt="Shadow effect"
+            fill
+            className="opacity-90"
+            style={{ filter: "blur(90px)" }}
+          />
+        </div>
+      </div>
 
         <div className="relative w-full min-h-screen overflow-hidden">
 
@@ -85,12 +100,11 @@ export default function SolutionsPage() {
 
         {/* Content */}
         <div className="relative z-10">
-          <AboutSection />
-          <SystemFeatures />
+          <SolutionsFeatures />
+          <ContentSection />
         </div>
       </section>
 
-      <OperationalUseSection />
 
       <style jsx global>{`
         @keyframes slideVertical {

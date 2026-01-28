@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { GradientCard } from "@/components/ui/GradientCard";
-import droneSection from "@/assets/droneSection.png";
 import { GradientLine } from "@/components/ui/GradientLine";
+import droneSection from "@/assets/droneSection.png";
 
 type UseItem = {
   title: string;
@@ -31,11 +31,11 @@ const items: UseItem[] = [
 ];
 
 export default function OperationalUseSection() {
-
   return (
-    <section className="container relative mx-auto justify-center w-full ">
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section className="w-full">
+      {/* CONTAINER */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14 sm:py-20">
+        {/* HEADER */}
         <div className="text-center">
           <p className="text-xs font-medium tracking-[0.28em] text-white/70">
             SOLUTIONS
@@ -52,32 +52,64 @@ export default function OperationalUseSection() {
           </p>
         </div>
 
-        {/* Content */}
-        <div className="grid items-start gap-8 lg:mt-14 lg:grid-cols-2 lg:gap-10">
+        {/* CONTENT */}
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2 items-stretch">
+          {/* IMAGE */}
           <GradientCard>
-              <Image
-                src={droneSection}
-                alt="Operational use"
-                width={800}
-                height={600}
-                className="w-full h-auto object-cover"
-              />
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-[16/11]">
+                <Image
+                  src={droneSection}
+                  alt="Operational use"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </GradientCard>
 
-          {/* Right list */}
-          <div className="space-y-4 sm:space-y-5">
-            {items.map((it, idx) => {
-              const isActive = true;
+          {/* LIST */}
+          <div className="h-full flex flex-col justify-between ">
+            {items.map((it) => (
+              <div
+                key={it.title}
+                className="
+                  relative group flex-1 rounded-sm
+                  p-5 sm:p-6
+                  flex flex-col justify-between
+                  transition-all duration-300 ease-out
+                "
+              >
+                {/* GRADIENT GLOW */}
+                <span
+                  className="
+                    pointer-events-none absolute inset-0 
+                    opacity-0 transition-opacity duration-300
+                    group-hover:opacity-100
+                  "
+                  style={{
+                    background:
+                      "radial-gradient(120% 120% at left center, rgba(255,255,255,0.08), transparent 60%)",
+                  }}
+                />
 
-              return (
-                <div
-                  key={it.title}
-                  className="relative rounded-md  p-5 sm:p-6"
-                >
-                  {isActive && (
-                    <GradientLine position="left" width="w-1" className="top-2" />
-                  )}
+                {/* GRADIENT LINE */}
+                <GradientLine
+                  position="left"
+                  width="w-1"
+                  className="
+                    top-0	
+                    opacity-0 scale-y-75
+                    transition-all duration-300 ease-out
+                    group-hover:opacity-100
+                    group-hover:scale-y-100
+                  "
+                />
 
+                {/* CONTENT */}
+                <div className="relative z-10">
                   <h3 className="text-base font-semibold text-white">
                     {it.title}
                   </h3>
@@ -85,16 +117,22 @@ export default function OperationalUseSection() {
                   <p className="mt-2 text-sm leading-6 text-white/60">
                     {it.description}
                   </p>
-
-                  <a
-                    href={it.href ?? "#"}
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white"
-                  >
-                    Learn more <span aria-hidden>→</span>
-                  </a>
                 </div>
-              );
-            })}
+
+                {/* LINK */}
+                <a
+                  href={it.href ?? "#"}
+                  className="
+                    relative z-10 mt-4 inline-flex items-center gap-2
+                    text-sm font-medium text-white/70
+                    transition-colors duration-200
+                    hover:text-white
+                  "
+                >
+                  Learn more <span aria-hidden>→</span>
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
