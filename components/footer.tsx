@@ -18,9 +18,9 @@ export default function Footer() {
         />
       </div>
 
-      {/* Animated blur on left side */}
+      {/* Animated blur on left side - hidden on mobile */}
       <div 
-        className="absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
+        className="hidden md:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
           filter: 'blur(30px)',
