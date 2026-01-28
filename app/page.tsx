@@ -16,6 +16,18 @@ export default function Home() {
       <HeroHeader />
       <HeroSection />
 
+      {/* STATIC RIGHT SHADOW */}
+      <div className="absolute top-0 right-0 pointer-events-none z-0">
+        <div className="relative w-[700px] h-[700px] translate-x-1/2 translate-y-250">
+          <Image
+            src={ellipseShadow}
+            alt="Shadow effect"
+            fill
+            className="opacity-90"
+            style={{ filter: "blur(90px)" }}
+          />
+        </div>
+      </div>
 
       {/* ABOUT + FEATURES WRAPPER */}
       <section className="relative overflow-hidden">
@@ -31,7 +43,7 @@ export default function Home() {
               alt="Shadow effect"
               fill
               className="opacity-90"
-              style={{ filter: 'blur(10px)' }}
+              style={{ filter: 'blur(110px)' }}
             />
           </div>
         </div>
@@ -40,6 +52,7 @@ export default function Home() {
         <div className="relative z-10">
           <AboutSection />
           <SystemFeatures />
+          <OperationalUseSection />
         </div>
       </section>
 
@@ -57,6 +70,18 @@ export default function Home() {
           }
           100% {
             transform: translateY(0%);
+          }
+        }
+
+        @keyframes slideHorizontal {
+          0% {
+            transform: translateX(0%);
+          }
+          50% {
+            transform: translateX(30%);
+          }
+          100% {
+            transform: translateX(0%);
           }
         }
       `}</style>
