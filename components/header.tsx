@@ -1,14 +1,15 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
+import { usePathname } from 'next/navigation'
 import { ChevronDown, Sparkles, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Home Page', href: '/', active: true },
+    { name: 'Home Page', href: '/' },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Services', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Company', href: '/company-section' },
     { name: 'Contact Us', href: '#' },
 ]
 
@@ -18,6 +19,7 @@ const languages = [
 ]
 
 export const HeroHeader = () => {
+    const pathname = usePathname()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
     const [isLanguageOpen, setIsLanguageOpen] = React.useState(false)
     const [selectedLanguage, setSelectedLanguage] = React.useState(languages[0])
@@ -56,21 +58,28 @@ export const HeroHeader = () => {
                          `,
                          backgroundBlendMode: 'overlay',}}>
                             <ul className="flex items-center gap-10">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className={cn(
-                                                "text-sm font-medium transition-colors duration-150 whitespace-nowrap",
-                                                item.active
-                                                    ? "text-white"
-                                                    : "text-gray-300 hover:text-white"
-                                            )}
-                                        >
-                                            {item.name === 'Home Page' ? 'Home' : item.name}
-                                        </Link>
-                                    </li>
-                                ))}
+                                {menuItems.map((item, index) => {
+                                    const isActive =
+                                        item.href === '/'
+                                            ? pathname === '/'
+                                            : pathname !== '/' && pathname.startsWith(item.href)
+
+                                    return (
+                                        <li key={index}>
+                                            <Link
+                                                href={item.href}
+                                                className={cn(
+                                                    "text-sm font-medium transition-colors duration-150 whitespace-nowrap",
+                                                    isActive
+                                                        ? "text-white"
+                                                        : "text-gray-300 hover:text-white"
+                                                )}
+                                            >
+                                                {item.name === 'Home Page' ? 'Home' : item.name}
+                                            </Link>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     </div>
@@ -176,20 +185,27 @@ export const HeroHeader = () => {
                         {/* Navigation Links */}
                         <nav className="flex-1 px-6 py-8">
                             <ul className="space-y-6">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                            className={cn(
-                                                "block text-2xl font-bold text-white transition-colors",
-                                                item.active && "text-white"
-                                            )}
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                ))}
+                                {menuItems.map((item, index) => {
+                                    const isActive =
+                                        item.href === '/'
+                                            ? pathname === '/'
+                                            : pathname.startsWith(item.href)
+
+                                    return (
+                                        <li key={index}>
+                                            <Link
+                                                href={item.href}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                className={cn(
+                                                    "block text-2xl font-bold text-white transition-colors",
+                                                    isActive && "text-white"
+                                                )}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </nav>
 

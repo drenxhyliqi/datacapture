@@ -2,25 +2,55 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import footerBackground from '@/assets/Footer (1).png'
+import footerBackgroundMobile from '@/assets/footerBackgroundMobile.png'
+import footerBackgroundTablet from '@/assets/Footer (5).png'
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black overflow-hidden min-h-[400px]">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 w-full h-full">
+    <footer className="relative w-full bg-[#101210] overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
+      {/* Background Image - mobile (< md) */}
+      <div className="absolute inset-0 z-0 w-full h-full md:hidden">
         <Image
-          src={footerBackground}
+          src={footerBackgroundMobile}
           alt="Footer background"
           fill
-          className="object-fit"
           priority
+          sizes="100vw"
           unoptimized
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center bottom' }}
+        />
+      </div>
+      
+      {/* Background Image - tablet (md to < lg) */}
+      <div className="absolute inset-0 z-0 w-full h-full hidden md:block lg:hidden">
+        <Image
+          src={footerBackgroundTablet}
+          alt="Footer background tablet"
+          fill
+          priority
+          sizes="100vw"
+          unoptimized
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
-      {/* Animated blur on left side - hidden on mobile */}
+      {/* Background Image - desktop (lg+) */}
+      <div className="absolute inset-0 z-0 w-full h-full hidden lg:block">
+        <Image
+          src={footerBackground}
+          alt="Footer background desktop"
+          fill
+          priority
+          sizes="100vw"
+          unoptimized
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* Animated blur on left side - show only on large screens */}
       <div 
-        className="hidden md:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none animate-move-up-down"
+        className="hidden lg:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none animate-move-up-down"
         style={{
           background: 'radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
           filter: 'blur(30px)',
@@ -46,7 +76,7 @@ export default function Footer() {
             </div>
 
             {/* Description */}
-            <p className="text-gray-400 text-sm lg:text-base mb-8 max-w-md leading-relaxed">
+            <p className="text-gray-400 text-sm lg:text-base mb-8 max-w-[70%] lg:max-w-md leading-relaxed">
               A command-and-control platform for drone detection, monitoring, and data recording.
             </p>
 

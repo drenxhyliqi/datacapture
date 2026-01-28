@@ -195,3 +195,16 @@
 .animate-move-up-down {
   animation: moveUpDown 4s ease-in-out infinite;
 }
+
+@keyframes press-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.press-marquee {
+  animation: press-marquee 22s linear infinite;
+}
