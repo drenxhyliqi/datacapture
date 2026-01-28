@@ -5,6 +5,7 @@ import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
 import solutionsHero from "@/assets/herosolutuion.png"
 import ServicesSection from "@/components/ServicesSection"
+import Footer from "@/components/footer"
 
 export default function ServicesPage() {
     return (
@@ -44,7 +45,7 @@ export default function ServicesPage() {
       </div>
 
        {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
-       <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+       <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
           <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
             <Image
               src={ellipseShadow}
@@ -59,7 +60,7 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden">
        
         {/* LEFT MOVING SHADOW */}
-        <div className="absolute left-0 inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
           <div
             className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
             style={{ animation: "slideVertical 5s linear infinite" }}
@@ -79,10 +80,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <Footer />
+
       <style jsx global>{`
         @keyframes slideVertical {
           0% { transform: translateY(-30%); }
           50% { transform: translateY(60%); }
+          100% { transform: translateY(-30%); }
         }
       `}</style>
     </div>

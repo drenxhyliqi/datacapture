@@ -6,6 +6,7 @@ import Image from 'next/image'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
 import { Mail, Phone } from 'lucide-react'
 import solutionsHero from "@/assets/herosolutuion.png"
+import Footer from '@/components/footer'
 
 export default function ContactUsPage() {
     const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ export default function ContactUsPage() {
     }
 
     return (
-        <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+        <div className="relative w-full min-h-screen bg-[#101210] overflow-x-clip">
             {/* HERO */}
             <div className="relative">
                 {/* HEADER */}
@@ -70,7 +71,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* STATIC RIGHT SHADOW */}
-            <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+            <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-hidden">
                 <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
                     <Image
                         src={ellipseShadow}
@@ -84,7 +85,7 @@ export default function ContactUsPage() {
             {/* CONTENT */}
             <section className="relative overflow-hidden">
                 {/* LEFT MOVING SHADOW */}
-                <div className="absolute left-0 inset-0 pointer-events-none z-0 overflow-hidden">
+                <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
                     <div
                         className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
                         style={{ animation: 'slideVertical 5s linear infinite' }}
@@ -285,6 +286,8 @@ export default function ContactUsPage() {
                 </div>
             </section>
 
+            <Footer />
+
             <style jsx global>{`
                 @keyframes slideVertical {
                     0% {
@@ -296,6 +299,10 @@ export default function ContactUsPage() {
                     100% {
                         transform: translateY(-30%);
                     }
+                }
+                body, html {
+                    margin: 0;
+                    padding: 0;
                 }
             `}</style>
         </div>

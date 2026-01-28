@@ -168,32 +168,22 @@
   animation: float-slow-reverse 25s ease-in-out infinite;
 }
 
-@keyframes moveUpDown {
+@keyframes solutionsBlurMove {
   0% {
-    transform: translateY(50px);
-  }
-  15% {
-    transform: translateY(-130px);
-  }
-  35% {
-    transform: translateY(-130px);
+    transform: translate3d(0, 50px, 0);
   }
   50% {
-    transform: translateY(-130px);
-  }
-  65% {
-    transform: translateY(50px);
-  }
-  85% {
-    transform: translateY(50px);
+    transform: translate3d(0, -130px, 0);
   }
   100% {
-    transform: translateY(50px);
+    transform: translate3d(0, 50px, 0);
   }
 }
 
 .animate-move-up-down {
-  animation: moveUpDown 4s ease-in-out infinite;
+  animation: solutionsBlurMove 4s ease-in-out infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 @keyframes press-marquee {

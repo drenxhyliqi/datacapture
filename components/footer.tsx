@@ -7,7 +7,33 @@ import footerBackgroundTablet from '@/assets/Footer (5).png'
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#101210] overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
+    <>
+      <style jsx global>{`
+        @keyframes footerBlurMove {
+          0% {
+            transform: translateY(50px);
+          }
+          15% {
+            transform: translateY(-130px);
+          }
+          35% {
+            transform: translateY(-130px);
+          }
+          50% {
+            transform: translateY(-130px);
+          }
+          65% {
+            transform: translateY(50px);
+          }
+          85% {
+            transform: translateY(50px);
+          }
+          100% {
+            transform: translateY(50px);
+          }
+        }
+      `}</style>
+      <footer className="relative w-full bg-[#101210] overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
       {/* Background Image - mobile (< md) */}
       <div className="absolute inset-0 z-0 w-full h-full md:hidden">
         <Image
@@ -50,11 +76,12 @@ export default function Footer() {
 
       {/* Animated blur on left side - show only on large screens */}
       <div 
-        className="hidden lg:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none animate-move-up-down"
+        className="hidden lg:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
           filter: 'blur(30px)',
           clipPath: 'ellipse(300px 250px at 90% 90%)',
+          animation: 'footerBlurMove 4s ease-in-out infinite',
         }}
       />
 
@@ -183,5 +210,6 @@ export default function Footer() {
       </div>
 
     </footer>
+    </>
   )
 }

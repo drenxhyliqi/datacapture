@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { HeroHeader } from '@/components/header'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
 import solutionsHero from '@/assets/herosolutuion.png'
+import Footer from '@/components/footer'
 
 export default function NotFound() {
     return (
@@ -71,7 +72,7 @@ export default function NotFound() {
             </div>
 
             {/* STATIC RIGHT SHADOW */}
-            <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+            <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
                 <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[80vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
                     <Image
                         src={ellipseShadow}
@@ -84,7 +85,7 @@ export default function NotFound() {
 
             {/* LEFT MOVING SHADOW */}
             <section className="relative overflow-hidden">
-                <div className="absolute left-0  pointer-events-none z-0 overflow-hidden">
+                <div className="absolute -left-[5px]  pointer-events-none z-0 md:z-[15] overflow-hidden">
                     <div
                         className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
                         style={{ animation: 'slideVertical 5s linear infinite' }}
@@ -99,6 +100,16 @@ export default function NotFound() {
                     </div>
                 </div>
             </section>
+
+            <Footer />
+
+            <style jsx global>{`
+                @keyframes slideVertical {
+                    0% { transform: translateY(-30%); }
+                    50% { transform: translateY(60%); }
+                    100% { transform: translateY(-30%); }
+                }
+            `}</style>
         </div>
     )
 }

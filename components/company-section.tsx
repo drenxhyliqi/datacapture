@@ -5,6 +5,7 @@ import { HeroHeader } from '@/components/header'
 import Footer from '@/components/footer'
 import DiscussSection from '@/components/discussSection'
 import metricsBackground from '@/assets/Metrics.png'
+import ellipseShadow from '@/assets/Ellipse 8.svg'
 import zapIcon from '@/assets/zap.png'
 import icon2 from '@/assets/Icon (2).png'
 import icon3 from '@/assets/Icon (3).png'
@@ -111,6 +112,22 @@ export default function CompanySection() {
           {SUBTEXT}
         </p>
       </section>
+
+      {/* LEFT MOVING SHADOW */}
+      <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
+        <div
+          className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
+          style={{ animation: 'slideVertical 5s linear infinite' }}
+        >
+          <Image
+            src={ellipseShadow}
+            alt="Shadow effect"
+            fill
+            className="object-contain"
+            style={{ filter: 'blur(10px)' }}
+          />
+        </div>
+      </div>
 
       {/* Metrics strip */}
       <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24">
@@ -271,6 +288,14 @@ export default function CompanySection() {
 
       {/* Page footer */}
       <Footer />
+
+      <style jsx global>{`
+        @keyframes slideVertical {
+          0% { transform: translateY(-30%); }
+          50% { transform: translateY(60%); }
+          100% { transform: translateY(-30%); }
+        }
+      `}</style>
     </div>
   )
 }
