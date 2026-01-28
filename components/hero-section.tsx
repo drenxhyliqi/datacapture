@@ -5,6 +5,7 @@ import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
 import droneIcon from '@/assets/selections1.svg'
 
+
 const HEADING = {
   line1: 'Command &',
   line2Prefix: 'Control for ',
@@ -23,7 +24,7 @@ export default function HeroSection() {
   return (
     <>
       {/* DESKTOP HERO (lg+) */}
-      <section className="hidden lg:block bg-[#101210] ">
+      <section className="hidden lg:block bg-[#101210]">
         <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-start px-12 pt-24 ">
           {/* Drone badge on the left */}
           <div className="absolute left-0 top-28">
@@ -65,13 +66,13 @@ export default function HeroSection() {
               <div className="pl-[2em]">
                 <div className="mb-4">
                   <span
-                    className="inline-flex items-center rounded-full border px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
+                    className="inline-flex items-center rounded-full border px-5 py-1.5 text-[11px] uppercase font-medium tracking-[0.2em] text-white"
                     style={{
                       background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
                       borderColor: '#313331',
                     }}
                   >
-                    AIR DEFENCE
+                    Air Defence
                   </span>
                 </div>
                 <div className="relative inline-block">
@@ -103,7 +104,7 @@ export default function HeroSection() {
                         {/* Main CTA button - positioned at the very end */}
                         <Link
                           href="#"
-                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm uppercase tracking-wide transition-all ml-auto -mr-[0.625rem]"
+                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all ml-auto -mr-[0.625rem]"
                           style={{
                             background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
                             paddingTop: '1rem',
