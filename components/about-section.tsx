@@ -19,7 +19,7 @@ export default function AboutSection() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6 uppercase tracking-wide">
+                        <h2 className="text-1xl md:text-1xl lg:text-1xl font-semibold text-white mb-6 uppercase tracking-wide">
                             ABOUT DCS
                         </h2>
 

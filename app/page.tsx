@@ -7,6 +7,8 @@ import SystemFeatures from "@/components/system-features";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
 import OperationalUseSection from "@/components/OperationalUseSection";
+import DiscussSection from "@/components/discussSection";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -42,6 +44,8 @@ export default function Home() {
       </section>
 
       <OperationalUseSection />
+      <DiscussSection />
+      <Footer />
 
       <style jsx global>{`
         @keyframes slideVertical {
