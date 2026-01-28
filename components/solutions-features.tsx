@@ -4,7 +4,7 @@ import { solutionsFeatures } from "./ui/solutions-features-data";
 export default function SolutionsFeatures() {
     return (
         <section
-            className="relative w-full py-10 lg:py-32 px-6 lg:px-8 mb-30"
+            className="relative w-full py-10 lg:py-32 px-6 lg:px-8"
         >
             <div className="w-full max-w-7xl mx-auto">
                 {/* Header */}
@@ -13,7 +13,7 @@ export default function SolutionsFeatures() {
                         {/* Title - Left */}
                         <div className="lg:w-1/2">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                                Tailor made air security.
+                                Tailor made air security
                             </h2>
                         </div>
                         {/* Description - Right */}

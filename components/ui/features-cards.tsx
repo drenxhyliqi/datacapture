@@ -10,7 +10,7 @@ export function FeatureCard({ feature }: { feature: Feature | SolutionFeature })
         <GradientCard>
             {/* Icon */}
             <div className="mb-6 flex p-6 justify-center">
-                <div className="w-30 h-30 flex items-center justify-center">
+                <div className="w-[120px] h-[120px] flex items-center justify-center">
                     <Image
                         src={feature.icon}
                         alt={feature.title}

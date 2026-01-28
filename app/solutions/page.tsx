@@ -1,124 +1,93 @@
 'use client'
 
-import { HeroHeader } from "@/components/header";
-import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-section";
-import SystemFeatures from "@/components/system-features";
-import SolutionsFeatures from "@/components/solutions-features";
-import Image from "next/image";
-import ellipseShadow from "@/assets/Ellipse 8.svg";
-import OperationalUseSection from "@/components/OperationalUseSection";
-import solutionsHero from "@/assets/solutionsHero.png";
-import solutionsHero1 from "@/assets/solutionsHero1.png";
-import ContentSection from "@/components/content-section";
+import { HeroHeader } from "@/components/header"
+import SolutionsFeatures from "@/components/solutions-features"
+import Image from "next/image"
+import ellipseShadow from "@/assets/Ellipse 8.svg"
+import solutionsHero from "@/assets/herosolutuion.png"
+import ContentSection from "@/components/content-section"
 
 export default function SolutionsPage() {
   return (
-    <div className="relative min-h-screen bg-[#101210]">
-      <HeroHeader />
+    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+      
+      {/* HERO */}
+      <div className="relative ">
+        {/* HEADER */}
+        <div className="relative bg-blue-500 z-30">
+          <HeroHeader />
+        </div>
 
-        {/* STATIC RIGHT SHADOW */}
-      <div className="absolute top-0 right-0 pointer-events-none z-0">
-        <div className="relative w-[700px] h-[700px] translate-x-1/2 translate-y-250">
-          <Image
-            src={ellipseShadow}
-            alt="Shadow effect"
-            fill
-            className="opacity-90"
-            style={{ filter: "blur(90px)" }}
-          />
+        {/* HERO IMAGE */}
+        <div className="pointer-events-none absolute  inset-0 flex z-10 justify-center object-contain">
+          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[300px] md:h-[300px] lg:w-[155vh] lg:h-[60vh] transform rotate-60 lg:rotate-0 lg:py-0">
+            <Image
+              src={solutionsHero}
+              priority
+              alt="Solutions Hero"
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        {/* HERO TEXT */}
+        <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-32 pb-24 text-center">
+          <p className="text-white/70 tracking-widest text-sm md:text-base">
+            DATA CAPTURE SYSTEMS
+          </p>
+          <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
+            Tailored Airspace Monitoring and <br className="hidden md:block" />
+            Control
+          </h1>
+          <p className="mt-6 text-white/60 max-w-2xl mx-auto">
+            DCS supports drone detection, monitoring, and operational configuration within defined airspace environments
+          </p>
         </div>
       </div>
 
-        <div className="relative w-full min-h-screen overflow-hidden">
-
-        {/* HERO HEADER – ALWAYS ON TOP */}
-        <div className="relative z-30">
-        <HeroHeader />
-        </div>
-
-        {/* IMAGES – UNDER HERO HEADER */}
-        <div className="absolute -top-10 left-0 w-full h-screen z-10 flex items-start justify-center pointer-events-none">
-
-        <div className="relative w-[50vw] h-[90vh]">
+       {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
+       <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+          <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
             <Image
-            src={solutionsHero1}
-            alt="Solutions Hero 1"
-            fill
-            className="object-cover"
-            priority
+              src={ellipseShadow}
+              alt="Shadow effect"
+              fill
+              className="object-contain"
             />
+          </div>
         </div>
 
-        <div className="relative w-[50vw] h-[90vh]">
-            <Image
-            src={solutionsHero}
-            alt="Solutions Hero 2"
-            fill
-            className="object-cover"
-            />
-        </div>
-
-        </div>
-
-        {/* TEXT – CENTER, ABOVE IMAGES */}
-        <div className="relative z-20 mt-30 flex items-center justify-center text-center px-6">
-        <div className="max-w-4xl items-center justify-center">
-            <p className="text-white/70 tracking-widest text-sm md:text-base">
-            DATA CAPTURE SYSTEMS
-            </p>
-            <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
-            Tailored Airspace Monitoring and <br className="hidden md:block" />
-            Control
-            </h1>
-            <p className="mt-6 text-white/60 max-w-2xl mx-auto">
-            DCS supports drone detection, monitoring, and operational configuration within defined airspace environments
-            </p>
-        </div>
-        </div>
-
-    </div>
-
-      {/* ABOUT + FEATURES WRAPPER */}
+      {/* FEATURES (starts immediately after hero, no extra gap) */}
       <section className="relative overflow-hidden">
-        
-        {/* Shadow – nis NGA AboutSection */}
-        <div className="absolute left-0 inset-0 pointer-events-none z-0">
+       
+        {/* LEFT MOVING SHADOW */}
+        <div className="absolute left-0 inset-0 pointer-events-none z-0 overflow-hidden">
           <div
-            className="relative w-[700px] h-full -translate-x-1/2"
-            style={{ animation: 'slideVertical 6s linear infinite' }}
+            className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
+            style={{ animation: "slideVertical 5s linear infinite" }}
           >
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
               fill
-              className="opacity-90"
-              style={{ filter: 'blur(10px)' }}
+              className="object-contain"
+              style={{ filter: "blur(10px)" }}
             />
           </div>
         </div>
 
-        {/* Content */}
         <div className="relative z-10">
           <SolutionsFeatures />
           <ContentSection />
         </div>
       </section>
 
-
       <style jsx global>{`
         @keyframes slideVertical {
-          0% {
-            transform: translateY(0%);
-          }
-          50% {
-            transform: translateY(30%);
-          }
-          100% {
-            transform: translateY(0%);
-          }
+          0% { transform: translateY(-30%); }
+          50% { transform: translateY(60%); }
         }
       `}</style>
     </div>
-  );
+  )
 }

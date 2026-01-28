@@ -64,7 +64,7 @@ export const HeroHeader = () => {
                                                 "text-sm font-medium transition-colors duration-150 whitespace-nowrap",
                                                 item.active
                                                     ? "text-white"
-                                                    : "text-gray-300 hover:text-white"
+                                                    : "text-gray-500 hover:text-white"
                                             )}
                                         >
                                             {item.name === 'Home Page' ? 'Home' : item.name}
