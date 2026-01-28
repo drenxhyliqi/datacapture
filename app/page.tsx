@@ -13,13 +13,13 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#101210] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       <HeroHeader />
       <HeroSection />
 
       {/* STATIC RIGHT SHADOW */}
-      <div className="absolute top-0 right-0 pointer-events-none z-0">
-        <div className="relative w-[700px] h-[700px] translate-x-1/2 translate-y-250">
+      <div className="absolute top-0 right-0 pointer-events-none z-10 overflow-visible">
+        <div className="relative w-[700px] h-[300vh] translate-x-1/2 translate-y-250">
           <Image
             src={ellipseShadow}
             alt="Shadow effect"
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="absolute left-0 inset-0 pointer-events-none z-0">
           <div
             className="relative w-[700px] h-full -translate-x-1/2"
-            style={{ animation: 'slideVertical 6s linear infinite' }}
+            style={{ animation: 'slideVertical 5s linear infinite' }}
           >
             <Image
               src={ellipseShadow}
@@ -63,27 +63,14 @@ export default function Home() {
       <style jsx global>{`
         @keyframes slideVertical {
           0% {
-            transform: translateY(0%);
+            transform: translateY(-30%);
           }
           50% {
-            transform: translateY(30%);
+            transform: translateY(60%);
           }
-          100% {
-            transform: translateY(0%);
-          }
+          
         }
 
-        @keyframes slideHorizontal {
-          0% {
-            transform: translateX(0%);
-          }
-          50% {
-            transform: translateX(30%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
       `}</style>
     </div>
   );

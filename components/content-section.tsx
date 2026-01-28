@@ -1,14 +1,16 @@
 'use client'
 
 import Image from "next/image";
-import solutions4 from "@/assets/selections4.svg";
-import solutions5 from "@/assets/selections5.svg";
+import solutions4 from "@/assets/selections4.png";
+import solutions5 from "@/assets/selections5.png";
 
 export default function ContentSection() {
   return (
-    <section className="relative w-full">
-      <div className="py-5">
-        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 justify-between">
+    <section className="relative w-full mb-2 px-6 justify-center items-center">
+      
+        {/* ===== SECTION 4 ===== */}
+      <div className="py-5 justify-center items-center">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 justify-between items-center mb-5">
           
           {/* TEXT */}
           <div>
@@ -44,14 +46,15 @@ export default function ContentSection() {
 
       {/* ===== SECTION 5 ===== */}
       <div className="py-5">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 justify-between">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 justify-between items-center">
 
             {/* SVG — LEFT */}
-            <div className="relative flex justify-center">
+            <div className="relative block justify-center ">
             <Image
                 src={solutions5}
                 alt="System updates and maintenance"
-                className="w-full max-w-sm h-auto"
+                className="w-full h-auto max-w-sm "
+                priority
             />
             </div>
 
