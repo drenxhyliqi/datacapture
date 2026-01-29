@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import droneImage from '@/assets/drone.png'
 import { GradientLine } from '@/components/ui/GradientLine'
+import { GradientCard } from './ui/GradientCard'
 
 export default function AboutSection() {
     return (
@@ -43,18 +44,20 @@ export default function AboutSection() {
                     </div>
 
                     {/* Right Section - Image with Slider Effect */}
-                    <div className="relative w-full">
-                        {/* Drone Image */}
-                        <div className="relative rounded-2xl overflow-hidden border border-white/20 z-10">
-                            <Image
-                                src={droneImage}
-                                alt="Drone in operation"
-                                width={800}
-                                height={600}
-                                className="w-full h-auto object-cover"
-                            />
+                    <GradientCard>
+                        <div className="relative w-full">
+                            {/* Drone Image */}
+                            <div className="relative rounded-2xl overflow-hidden z-10">
+                                <Image
+                                    src={droneImage}
+                                    alt="Drone in operation"
+                                    width={800}
+                                    height={600}
+                                    className="w-full h-auto object-cover"
+                                />
+                            </div>
                         </div>
-                    </div>
+                    </GradientCard>
                 </div>
             </div>
         </section>

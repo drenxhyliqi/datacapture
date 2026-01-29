@@ -7,7 +7,7 @@ import heroBackground from "@/assets/heroBackground.png";
 export default function DiscussSection() {
   return (
     <section className="relative w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Dark card with rounded corners */}
         <div className="relative rounded-[20px] overflow-hidden border border-white/10 min-h-[400px] w-full">
           {/* Background image within the card - blurred and desaturated */}
