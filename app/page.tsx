@@ -78,8 +78,8 @@ export default function Home() {
           <AboutSection />
           <SystemFeatures />
           <OperationalUseSection />
-          <DiscussSection />
           <TestimonialSection />
+          <DiscussSection />
         </div>
       </section>
       <Footer />
