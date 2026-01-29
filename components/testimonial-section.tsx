@@ -55,15 +55,15 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden">
       {/* Background image via CSS so it always renders */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${testimonialBackground.src})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
-          opacity: 0.35,
+          opacity: 0.8,
         }}
         aria-hidden="true"
       />

@@ -48,7 +48,7 @@ export default function SolutionsPage() {
 
        {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
        <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
-          <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
+          <div className="absolute right-5 top-100 w-[60vw] max-w-[700px] h-[200vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
@@ -87,9 +87,8 @@ export default function SolutionsPage() {
 
       <style jsx global>{`
         @keyframes slideVertical {
-          0% { transform: translateY(-30%); }
+          0% { transform: translateY(0%); }
           50% { transform: translateY(60%); }
-          100% { transform: translateY(-30%); }
         }
       `}</style>
     </div>

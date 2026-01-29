@@ -56,15 +56,14 @@ export default function OperationalUseSection() {
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2 items-stretch">
           {/* IMAGE */}
           <GradientCard>
-            <div className="relative w-full h-full rounded-2xl overflow-hidden">
-              <div className="relative w-full aspect-[16/11]">
+            <div className="relative w-full">
+              <div className="relative rounded-2xl overflow-hidden z-10">
                 <Image
                   src={droneSection}
                   alt="Operational use"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>

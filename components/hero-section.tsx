@@ -23,10 +23,88 @@ const SUBTEXT_LINES = [
 export default function HeroSection() {
   return (
     <>
+    <style jsx global>{`
+  @keyframes shadowRightFast {
+    0%   { offset-distance: 0%; }
+    8%   { offset-distance: 100%; }  /* fast move */
+    45%  { offset-distance: 100%; }  /* hold */
+    55%  { offset-distance: 0%; }    /* fast back */
+    100% { offset-distance: 0%; }    /* hold */
+  }
+
+  @keyframes shadowLeftFast {
+    0%   { offset-distance: 100%; }  /* start opposite end */
+    8%   { offset-distance: 0%; }
+    45%  { offset-distance: 0%; }
+    55%  { offset-distance: 100%; }
+    100% { offset-distance: 100%; }
+  }
+
+  /* Content shows when LEFT shadow is "up" (match the same timing) */
+  @keyframes heroContentToggle {
+    0%   { opacity: 1; visibility: visible; transform: translateY(0); }
+    8%   { opacity: 0; visibility: hidden; transform: translateY(6px); }
+    45%  { opacity: 0; visibility: hidden; transform: translateY(6px); }
+    55%  { opacity: 1; visibility: visible; transform: translateY(0); }
+    100% { opacity: 1; visibility: visible; transform: translateY(0); }
+  }
+
+  /* Motion paths */
+  .shadow-path-right {
+    offset-path: path("M 1400 440 Q 1400 100 1200 0 ");
+    offset-rotate: 0deg;
+  }
+  .shadow-path-left {
+    offset-path: path("M 500 250 Q 220 300 700 600");
+    offset-rotate: 0deg;
+  }
+
+  .hero-shadow {
+    will-change: offset-distance, opacity, transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-shadow { animation: none !important; }
+    .hero-content { animation: none !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+  }
+`}</style>
+
       {/* DESKTOP HERO (lg+) */}
-      <section className="hidden lg:block bg-[#101210]">
-        <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-start px-12 pt-24 ">
-          {/* Drone badge on the left */}
+      <section className="hidden lg:block relative overflow-visible">
+        {/* RIGHT shadow (uses RIGHT path + RIGHT animation) */}
+        <div
+          className="hero-shadow shadow-path-right pointer-events-none absolute top-0 left-0 z-[5] w-[200px] h-[150px]"
+          style={{
+            background:
+              "radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255,255,255,0.27) 0%, rgba(255,255,255,0.18) 40%, transparent 70%)",
+            filter: "blur(50px)",
+            clipPath: "ellipse(300px 250px at 90% 90%)",
+            animation: "shadowRightFast 3s cubic-bezier(0.2,0.8,0.2,1) infinite reverse",
+            animationFillMode: "both",
+          }}
+        />
+
+        {/* LEFT shadow (uses LEFT path + LEFT animation) */}
+        <div
+          className="hero-shadow shadow-path-left pointer-events-none absolute top-0 left-0 z-[5] w-[200px] h-[150px]"
+          style={{
+            background:
+              "radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255,255,255,0.27) 0%, rgba(255,255,255,0.18) 40%, transparent 70%)",
+            filter: "blur(30px)",
+            clipPath: "ellipse(300px 250px at 10% 90%)",
+            animation: "shadowLeftFast 3s cubic-bezier(0.2,0.8,0.2,1) infinite",
+            animationFillMode: "both",
+          }}
+        />
+
+        {/* HERO CONTENT toggles with animation */}
+        <div
+          className="hero-content relative mx-auto flex min-h-[80vh] max-w-7xl items-start px-12 pt-24"
+          style={{
+            animation: "heroContentToggle 3s ease-in-out infinite",
+            animationFillMode: "both",
+          }}
+        >
           <div className="absolute left-0 top-28">
             <div className="flex flex-col items-start gap-6">
               <div
@@ -60,9 +138,9 @@ export default function HeroSection() {
           </div>
 
           {/* Main content block – centered as a whole, left‑biased inside */}
-          <div className="relative ml-[9rem] w-full">
+          <div className="relative ml-[12rem] w-full">
             {/* AIR DEFENCE pill + Headline + Desktop CTA */}
-            <div className="relative mb-8 mt-4 flex justify-start">
+            <div className="relative mb-8 mt-4 flex">
               <div className="pl-[2em]">
                 <div className="mb-4">
                   <span
@@ -75,8 +153,8 @@ export default function HeroSection() {
                     Air Defence
                   </span>
                 </div>
-                <div className="relative inline-block">
-                  <h1 className="text-[6.4rem] font-[400] leading-[1] text-white text-start">
+                <div className="relative inline-block mx-auto items-center justify-center">
+                  <h1 className="text-[4.5rem] font-[400] leading-[1] text-white text-start">
                     <span className="block">{HEADING.line1}</span>
                     <span className="block">
                       {HEADING.line2Prefix}
@@ -146,8 +224,28 @@ export default function HeroSection() {
       </section>
 
       {/* MOBILE HERO ( < lg ) */}
-      <section className="block bg-[#101210] lg:hidden">
-        <div className="relative mx-auto flex max-w-7xl flex-col px-6 pt-24 pb-10 md:pb-6">
+      <section className="block lg:hidden relative">
+        {/* Animated blur effect - right side mobile */}
+        <div 
+          className="absolute right-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 150px 120px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
+            filter: 'blur(30px)',
+            clipPath: 'ellipse(200px 180px at 90% 90%)',
+            animation: 'heroBlurMove 4s ease-in-out infinite',
+          }}
+        />
+        {/* Animated blur effect - left side mobile */}
+        <div 
+          className="absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 150px 120px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
+            filter: 'blur(30px)',
+            clipPath: 'ellipse(200px 180px at 10% 90%)',
+            animation: 'heroBlurMove 4s ease-in-out infinite reverse',
+          }}
+        />
+        <div className="hero-content relative mx-auto flex max-w-7xl flex-col px-6 pt-24 md:pb-6" style={{ animation: 'fadeOutContent 0.5s ease-out 4s forwards' }}>
           {/* AIR DEFENCE pill */}
           <div className="mb-6 flex justify-center">
             <span
@@ -163,7 +261,7 @@ export default function HeroSection() {
 
           {/* Mobile heading + drone badge on the right */}
           <div className="relative mb-6">
-            <h1 className="text-[3.4rem] leading-[1.05] font-semibold text-white">
+            <h1 className="text-[2.5rem] leading-[1.05] font-semibold text-white">
               <span className="block">{HEADING.line1}</span>
               <span className="block">
                 {HEADING.line2Prefix}
