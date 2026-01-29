@@ -6,33 +6,72 @@ import AboutSection from "@/components/about-section";
 import SystemFeatures from "@/components/system-features";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
-import homepageBanner from "@/assets/homepageBanner.png";
+import heroBanner3 from "@/assets/heroBanner3.png";
+import bannerMobile1 from "@/assets/bannerMobile (1).png";
 import OperationalUseSection from "@/components/OperationalUseSection";
 import DiscussSection from "@/components/discussSection";
 import TestimonialSection from "@/components/testimonial-section";
 import Footer from "@/components/footer";
+import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
 
 export default function Home() {
+  const isLg = useMediaQuery(LG_QUERY)
+
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       
-      {/* HERO */}
-      <div className="relative">
-        {/* HEADER */}
-        <div className="relative z-30">
-          <HeroHeader />
+      {/* HERO – z-[50] so navbar (inside hero) stays above sections below */}
+      <div className="relative z-[50] min-h-[110vh] isolate" style={{ position: 'relative' }}>
+        {/* HERO BACKGROUND IMAGE – static on all devices, scrolls with the page */}
+        <div
+          className="absolute inset-0 z-0 w-full min-h-0"
+          style={{ height: '100%', minHeight: '100vh' }}
+        >
+          <Image
+            src={bannerMobile1}
+            alt="Homepage Hero"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center w-full h-full lg:hidden"
+            unoptimized
+          />
+          <Image
+            src={heroBanner3}
+            alt="Homepage Hero"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center w-full h-full hidden lg:block"
+            unoptimized
+          />
         </div>
 
-        {/* HERO IMAGE */}
-        <div className="pointer-events-none absolute inset-0 flex z-10 justify-center object-contain">
-          <div className="relative w-100 h-50 top-[30vh] md:w-[150vh] md:h-[120vh] lg:w-[250vh] lg:h-[100vh] lg:mr-40 transform -rotate-30 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0 -lg:top-40	overflow-visible">
-            <Image
-              src={homepageBanner}
-              fill
-              alt="Homepage Hero"
-              className="object-contain"
+        {/* Static blur shadows (top right + bottom left) – only on lg+, hidden on medium and smaller */}
+        {isLg && (
+          <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
+            {/* Bottom left: white-to-green (#119200) gradient blur */}
+            <div
+              className="absolute left-45 bottom-50 w-[280px] h-[240px] -translate-x-1/2 translate-y-1/2"
+              style={{
+                background: 'radial-gradient(ellipse 140px 140px at 30% 70%, rgba(255, 255, 255, 0.4) 0%, rgba(17, 146, 0, 0.35) 45%, rgba(17, 146, 0, 0.15) 70%, transparent 85%)',
+                filter: 'blur(100px)',
+              }}
+            />
+            {/* Top right: single white-to-#004B92 gradient blur */}
+            <div
+              className="absolute right-40 top-20 w-[280px] h-[240px] translate-x-1/3 -translate-y-1/2"
+              style={{
+                background: 'radial-gradient(ellipse 140px 140px at 70% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 75, 146, 0.35) 45%, rgba(0, 75, 146, 0.15) 70%, transparent 85%)',
+                filter: 'blur(80px)',
+              }}
             />
           </div>
+        )}
+
+        {/* HEADER – high z-index so navbar stays above other sections */}
+        <div className="relative z-[100]">
+          <HeroHeader />
         </div>
 
         {/* HERO TEXT */}
@@ -41,24 +80,26 @@ export default function Home() {
         </div>
       </div>
 
-      {/* STATIC RIGHT SHADOW */}
-      <div className="absolute top-0 right-0 pointer-events-none z-0 md:z-[15] overflow-visible">
-        <div className="relative w-[700px] h-[300vh] translate-x-1/2 translate-y-250">
-          <Image
-            src={ellipseShadow}
-            alt="Shadow effect"
-            fill
-            className="opacity-90"
-            style={{ filter: "blur(90px)" }}
-          />
+      {/* STATIC RIGHT SHADOW – only in DOM on lg+; low z so navbar stays on top */}
+      {isLg && (
+        <div className="absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
+          <div className="relative w-[700px] h-[300vh] translate-x-1/2 translate-y-250">
+            <Image
+              src={ellipseShadow}
+              alt="Shadow effect"
+              fill
+              className="opacity-90"
+              style={{ filter: "blur(90px)" }}
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* ABOUT + FEATURES WRAPPER */}
       <section className="relative overflow-hidden">
         
         {/* LEFT MOVING SHADOW */}
-        <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
+        <div className="absolute -left-[5px] inset-0 pointer-events-none z-[1] md:z-[15] overflow-hidden">
           <div
             className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
             style={{ animation: 'slideVertical 5s linear infinite' }}
@@ -74,7 +115,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-20">
+        <div className="relative z-0">
           <AboutSection />
           <SystemFeatures />
           <OperationalUseSection />

@@ -31,7 +31,7 @@ export const HeroHeader = () => {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-50 w-full">
+            <header className="fixed top-0 left-0 right-0 z-[100] w-full">
                 <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
                     {/* Logo - Left Side */}
                     <Link
@@ -104,10 +104,10 @@ export const HeroHeader = () => {
                             {isLanguageOpen && (
                                 <>
                                     <div 
-                                        className="fixed inset-0 z-40" 
+                                        className="fixed inset-0 z-[99]" 
                                         onClick={() => setIsLanguageOpen(false)}
                                     />
-                                    <div className="absolute right-0 top-full mt-2 z-50 min-w-[120px] rounded-lg border border-white/20 backdrop-blur-md shadow-lg overflow-hidden" style={{ backgroundColor: 'rgba(16, 18, 16, 0.9)' }}>
+                                    <div className="absolute right-0 top-full mt-2 z-[100] min-w-[120px] rounded-lg border border-white/20 backdrop-blur-md shadow-lg overflow-hidden" style={{ backgroundColor: 'rgba(16, 18, 16, 0.9)' }}>
                                         {languages.map((lang) => (
                                             <button
                                                 key={lang.code}
@@ -154,7 +154,7 @@ export const HeroHeader = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 lg:hidden" style={{ backgroundColor: '#101210' }}>
+                <div className="fixed inset-0 z-[99] lg:hidden" style={{ backgroundColor: '#101210' }}>
                     <div className="flex h-full flex-col">
                         {/* Mobile Menu Header */}
                         <div className="flex items-center justify-between px-6 py-4">

@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
 import droneIcon from '@/assets/selections1.svg'
+import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
 
 
 const HEADING = {
@@ -21,46 +22,46 @@ const SUBTEXT_LINES = [
 ]
 
 export default function HeroSection() {
+  const isLg = useMediaQuery(LG_QUERY)
+
   return (
     <>
     <style jsx global>{`
-  @keyframes shadowRightFast {
-    0%   { offset-distance: 0%; }
-    8%   { offset-distance: 100%; }  /* fast move */
-    45%  { offset-distance: 100%; }  /* hold */
-    55%  { offset-distance: 0%; }    /* fast back */
-    100% { offset-distance: 0%; }    /* hold */
+  /* Move up/down → hold 0.5s → move back (same speed) → hold 0.5s → repeat (2s cycle). */
+  @keyframes heroShadowUp {
+    0%    { transform: translateY(50px); }
+    20%   { transform: translateY(-130px); }   /* move up (20% = same duration as down) */
+    45%   { transform: translateY(-130px); }   /* hold 0.5s */
+    65%   { transform: translateY(50px); }     /* move down (20% = same speed as up) */
+    90%   { transform: translateY(50px); }     /* hold 0.5s */
+    100%  { transform: translateY(50px); }
+  }
+  @keyframes heroShadowDown {
+    0%    { transform: translateY(-50px); }
+    20%   { transform: translateY(130px); }    /* move down (20%) */
+    45%   { transform: translateY(130px); }    /* hold 0.5s */
+    65%   { transform: translateY(-50px); }     /* move up (20% = same speed as down) */
+    90%   { transform: translateY(-50px); }    /* hold 0.5s */
+    100%  { transform: translateY(-50px); }
   }
 
-  @keyframes shadowLeftFast {
-    0%   { offset-distance: 100%; }  /* start opposite end */
-    8%   { offset-distance: 0%; }
-    45%  { offset-distance: 0%; }
-    55%  { offset-distance: 100%; }
-    100% { offset-distance: 100%; }
-  }
-
-  /* Content shows when LEFT shadow is "up" (match the same timing) */
+  /* Content always visible */
   @keyframes heroContentToggle {
-    0%   { opacity: 1; visibility: visible; transform: translateY(0); }
-    8%   { opacity: 0; visibility: hidden; transform: translateY(6px); }
-    45%  { opacity: 0; visibility: hidden; transform: translateY(6px); }
-    55%  { opacity: 1; visibility: visible; transform: translateY(0); }
-    100% { opacity: 1; visibility: visible; transform: translateY(0); }
+    0%, 100% { opacity: 1; visibility: visible; transform: translateY(0); }
   }
 
-  /* Motion paths */
-  .shadow-path-right {
-    offset-path: path("M 1400 440 Q 1400 100 1200 0 ");
-    offset-rotate: 0deg;
-  }
-  .shadow-path-left {
-    offset-path: path("M 500 250 Q 220 300 700 600");
-    offset-rotate: 0deg;
+  /* Content hidden once per 2s cycle – hidden ~1.3s; longer fade-in/fade-out (~0.2s each). */
+  @keyframes heroContentVisibility {
+    0%     { opacity: 1; visibility: visible; }
+    12%    { opacity: 1; visibility: visible; }
+    22%    { opacity: 0; visibility: hidden; }   /* fade out over 10% ≈ 0.2s */
+    60%    { opacity: 0; visibility: hidden; }
+    98%    { opacity: 1; visibility: visible; }  /* fade in over 10% ≈ 0.2s */
+    100%   { opacity: 1; visibility: visible; }
   }
 
   .hero-shadow {
-    will-change: offset-distance, opacity, transform;
+    will-change: transform;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -69,39 +70,47 @@ export default function HeroSection() {
   }
 `}</style>
 
-      {/* DESKTOP HERO (lg+) */}
-      <section className="hidden lg:block relative overflow-visible">
-        {/* RIGHT shadow (uses RIGHT path + RIGHT animation) */}
-        <div
-          className="hero-shadow shadow-path-right pointer-events-none absolute top-0 left-0 z-[5] w-[200px] h-[150px]"
-          style={{
-            background:
-              "radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255,255,255,0.27) 0%, rgba(255,255,255,0.18) 40%, transparent 70%)",
-            filter: "blur(50px)",
-            clipPath: "ellipse(300px 250px at 90% 90%)",
-            animation: "shadowRightFast 3s cubic-bezier(0.2,0.8,0.2,1) infinite reverse",
-            animationFillMode: "both",
-          }}
-        />
+      {/* DESKTOP HERO (lg+) – section hidden on md and below via Tailwind */}
+      <section className="hidden lg:block relative overflow-visible min-h-[110vh]">
+        {/* Desktop blur shadows: only in DOM on lg+ (conditional render so not present on md and below) */}
+        {isLg && (
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+            {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
+            <div
+              key="hero-shadow-left"
+              className="hero-shadow absolute left-55 top-[60%] pointer-events-none w-[280px] h-[220px]"
+              role="presentation"
+              style={{
+                background:
+                  "radial-gradient(ellipse 180px 180px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 80%)",
+                filter: "blur(60px)",
+                clipPath: "ellipse(320px 320px at 20% 50%)",
+                animation: "heroShadowUp 2s ease-in-out infinite",
+                animationFillMode: "both",
+              }}
+            />
+            {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
+            <div
+              key="hero-shadow-right"
+              className="hero-shadow absolute right-30 top-[20%] pointer-events-none w-[280px] h-[220px]"
+              role="presentation"
+              style={{
+                background:
+                  "radial-gradient(ellipse 180px 180px at 25% 2%, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 55%, transparent 80%)",
+                filter: "blur(60px)",
+                clipPath: "ellipse(320px 320px at 20% 50%)",
+                animation: "heroShadowDown 2s ease-in-out infinite",
+                animationFillMode: "both",
+              }}
+            />
+          </div>
+        )}
 
-        {/* LEFT shadow (uses LEFT path + LEFT animation) */}
+        {/* HERO CONTENT – disappear/appear in sync with blur shadow movement (2s cycle). */}
         <div
-          className="hero-shadow shadow-path-left pointer-events-none absolute top-0 left-0 z-[5] w-[200px] h-[150px]"
+          className="hero-content relative z-10 mx-auto flex min-h-[110vh] max-w-7xl items-start px-12 pt-24"
           style={{
-            background:
-              "radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255,255,255,0.27) 0%, rgba(255,255,255,0.18) 40%, transparent 70%)",
-            filter: "blur(30px)",
-            clipPath: "ellipse(300px 250px at 10% 90%)",
-            animation: "shadowLeftFast 3s cubic-bezier(0.2,0.8,0.2,1) infinite",
-            animationFillMode: "both",
-          }}
-        />
-
-        {/* HERO CONTENT toggles with animation */}
-        <div
-          className="hero-content relative mx-auto flex min-h-[80vh] max-w-7xl items-start px-12 pt-24"
-          style={{
-            animation: "heroContentToggle 3s ease-in-out infinite",
+            animation: "heroContentVisibility 2s ease-in-out infinite",
             animationFillMode: "both",
           }}
         >
@@ -167,7 +176,7 @@ export default function HeroSection() {
                   </h1>
 
                   {/* Desktop-only CTA positioned next to "Monitoring" – old single-button design */}
-                  <div className="absolute -right-35 bottom-[-1em] hidden lg:block">
+                  <div className="absolute -right-48 bottom-[-1.5em] hidden lg:block">
                     <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1 mb-3">
                       <div className="relative inline-flex items-center w-full gap-2">
                         {/* Fading line + arrow to the left */}
@@ -182,7 +191,7 @@ export default function HeroSection() {
                         {/* Main CTA button - positioned at the very end */}
                         <Link
                           href="#"
-                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all ml-auto -mr-[0.625rem]"
+                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all ml-auto -mr-[0.625rem] translate-x-1"
                           style={{
                             background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
                             paddingTop: '1rem',
@@ -223,21 +232,11 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* MOBILE HERO ( < lg ) */}
+      {/* MOBILE HERO ( < lg ) – no right-side blur on small screens */}
       <section className="block lg:hidden relative">
-        {/* Animated blur effect - right side mobile */}
+        {/* Left-side mobile blur only; right-side blur removed so it's hidden on md and below */}
         <div 
-          className="absolute right-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 150px 120px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
-            filter: 'blur(30px)',
-            clipPath: 'ellipse(200px 180px at 90% 90%)',
-            animation: 'heroBlurMove 4s ease-in-out infinite',
-          }}
-        />
-        {/* Animated blur effect - left side mobile */}
-        <div 
-          className="absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
+          className="hidden absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
           style={{
             background: 'radial-gradient(ellipse 150px 120px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
             filter: 'blur(30px)',
@@ -245,7 +244,7 @@ export default function HeroSection() {
             animation: 'heroBlurMove 4s ease-in-out infinite reverse',
           }}
         />
-        <div className="hero-content relative mx-auto flex max-w-7xl flex-col px-6 pt-24 md:pb-6" style={{ animation: 'fadeOutContent 0.5s ease-out 4s forwards' }}>
+        <div className="hero-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6" style={{ animation: 'fadeOutContent 0.5s ease-out 4s forwards' }}>
           {/* AIR DEFENCE pill */}
           <div className="mb-6 flex justify-center">
             <span
@@ -316,7 +315,7 @@ export default function HeroSection() {
                 {/* Main CTA button - positioned at the very end */}
                 <Link
                   href="#"
-                  className="group relative inline-flex items-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs uppercase tracking-wide transition-all ml-auto -mr-[0.625rem]"
+                  className="group relative inline-flex items-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs uppercase tracking-wide transition-all ml-auto -mr-[0.625rem] translate-x-1"
                   style={{
                     background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
                     paddingTop: '1rem',

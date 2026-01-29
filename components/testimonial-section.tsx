@@ -55,7 +55,7 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="relative w-full py-16 sm:py-20 lg:py-24 mb-28 sm:pb-28 lg:pb-32 overflow-hidden">
       {/* Background image via CSS so it always renders */}
       <div
         className="pointer-events-none absolute inset-0 z-0"

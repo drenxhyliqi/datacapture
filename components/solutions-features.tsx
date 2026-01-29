@@ -15,7 +15,7 @@ export default function SolutionsFeatures() {
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                                 Tailor made air security
                             </h2>
-                        </div>
+                        </div>  
                         {/* Description - Right */}
                         <div className="lg:w-1/2">
                             <p className="text-base md:text-lg text-white/80">
