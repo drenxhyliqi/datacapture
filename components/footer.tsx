@@ -109,7 +109,7 @@ export default function Footer() {
 
             {/* Contact Us Button */}
             <Link
-              href="#"
+              href="/contact-us"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white text-white font-medium text-sm w-fit hover:bg-white/10 transition-all"
             >
               Contact Us
