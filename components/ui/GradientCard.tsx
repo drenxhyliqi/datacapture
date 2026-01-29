@@ -11,17 +11,17 @@ type GradientCardProps = {
 export function GradientCard({
     children,
     offset = 12,
-    duration = 150,
+    duration = 1,
 }: GradientCardProps) {
     return (
         <div
             className="
                 relative group h-full flex flex-col
                 rounded-2xl
-                border-t-1 border-white/70
+                border-t-1 
                 backdrop-blur-sm
                 transition-all
-                hover:border-b-1 hover:border-t-0 hover:border-white/70
+                hover:border-t-0 hover:border-b-1 
             "
             style={{ 
                 backgroundColor: '#1F1F1F',

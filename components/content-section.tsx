@@ -1,12 +1,12 @@
 'use client'
 
 import Image from "next/image";
-import solutions4 from "@/assets/selections4.png";
+import solutions4 from "@/assets/selections4.svg";
 import solutions5 from "@/assets/selections5.png";
 
 export default function ContentSection() {
   return (
-    <section className="relative w-full mb-2 px-6 justify-center items-center">
+    <section className="relative w-full mb-2 px-6 justify-center items-center z-10">
       
         {/* ===== SECTION 4 ===== */}
       <div className="py-5 justify-center items-center">
@@ -37,7 +37,7 @@ export default function ContentSection() {
             <Image
               src={solutions4}
               alt="Centralized drone monitoring"
-              className="w-full max-w-md h-auto"
+              className="w-full h-auto max-w-sm "
               priority
             />
           </div>
