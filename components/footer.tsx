@@ -8,31 +8,6 @@ import footerBackgroundTablet from '@/assets/Footer (5).png'
 export default function Footer() {
   return (
     <>
-      <style jsx global>{`
-        @keyframes footerBlurMove {
-          0% {
-            transform: translateY(50px);
-          }
-          15% {
-            transform: translateY(-130px);
-          }
-          35% {
-            transform: translateY(-130px);
-          }
-          50% {
-            transform: translateY(-130px);
-          }
-          65% {
-            transform: translateY(50px);
-          }
-          85% {
-            transform: translateY(50px);
-          }
-          100% {
-            transform: translateY(50px);
-          }
-        }
-      `}</style>
       <footer className="relative w-full bg-[#101210] overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
       {/* Background Image - mobile (< md) */}
       <div className="absolute inset-0 z-0 w-full h-full md:hidden">
@@ -40,7 +15,6 @@ export default function Footer() {
           src={footerBackgroundMobile}
           alt="Footer background"
           fill
-          priority
           sizes="100vw"
           unoptimized
           className="w-full h-full object-cover"
@@ -54,7 +28,6 @@ export default function Footer() {
           src={footerBackgroundTablet}
           alt="Footer background tablet"
           fill
-          priority
           sizes="100vw"
           unoptimized
           className="w-full h-full object-cover object-center"
@@ -67,7 +40,6 @@ export default function Footer() {
           src={footerBackground}
           alt="Footer background desktop"
           fill
-          priority
           sizes="100vw"
           unoptimized
           className="w-full h-full object-cover object-center"
@@ -76,12 +48,11 @@ export default function Footer() {
 
       {/* Animated blur on left side - show only on large screens */}
       <div 
-        className="hidden lg:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
+        className="animate-footer-blur hidden lg:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
           filter: 'blur(30px)',
           clipPath: 'ellipse(300px 250px at 90% 90%)',
-          animation: 'footerBlurMove 4s ease-in-out infinite',
         }}
       />
 
@@ -120,7 +91,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
             {/* Column 1: About */}
             <div>
-              <h3 className="text-white font-semibold text-base mb-4">About</h3>
+              <h3 className="text-white font-[400] text-base mb-4">About</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
@@ -174,7 +145,7 @@ export default function Footer() {
 
             {/* Column 3: Legal */}
             <div>
-              <h3 className="text-white font-semibold text-base mb-4">Legal</h3>
+              <h3 className="text-white font-[400] text-base mb-4">Legal</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">

@@ -12,7 +12,7 @@ export default function SolutionsFeatures() {
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
                         {/* Title - Left */}
                         <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white">
                                 Tailor made air security
                             </h2>
                         </div>  

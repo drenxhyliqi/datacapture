@@ -10,7 +10,7 @@ export default function SystemFeatures() {
             <div className="w-full max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12 lg:mb-16">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-4">
                         System Features
                     </h2>
                     <p className="text-base md:text-lg text-white/80 max-w-3xl mx-auto">

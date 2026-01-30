@@ -31,7 +31,6 @@ export default function Home() {
             src={bannerMobile1}
             alt="Homepage Hero"
             fill
-            priority
             sizes="100vw"
             className="object-cover object-center w-full h-full lg:hidden"
             unoptimized
@@ -40,7 +39,6 @@ export default function Home() {
             src={heroBanner3}
             alt="Homepage Hero"
             fill
-            priority
             sizes="100vw"
             className="object-cover object-center w-full h-full hidden lg:block"
             unoptimized
@@ -88,6 +86,7 @@ export default function Home() {
               src={ellipseShadow}
               alt="Shadow effect"
               fill
+              sizes="(max-width: 700px) 100vw, 700px"
               className="opacity-90"
               style={{ filter: "blur(90px)" }}
             />
@@ -97,41 +96,54 @@ export default function Home() {
 
       {/* ABOUT + FEATURES WRAPPER */}
       <section className="relative overflow-hidden">
-        
-        {/* LEFT MOVING SHADOW */}
-        <div className="absolute -left-[5px] inset-0 pointer-events-none z-[1] md:z-[15] overflow-hidden">
-          <div
-            className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
-            style={{ animation: 'slideVertical 5s linear infinite' }}
-          >
-            <Image
-              src={ellipseShadow}
-              alt="Shadow effect"
-              fill
-              className="object-contain"
-              style={{ filter: 'blur(90px)' }}
-            />
-          </div>
-        </div>
-
         {/* Content */}
         <div className="relative z-0">
-          <AboutSection />
-          <SystemFeatures />
+          {/* Blur only from About DCS down to System Features */}
+          <div className="relative overflow-hidden">
+            {/* LEFT MOVING SHADOW – spans About + System Features only */}
+            <div className="absolute -left-[5px] inset-0 pointer-events-none z-[1] md:z-[15] overflow-hidden">
+              <div
+                className="animate-system-blur absolute left-0 -top-32 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
+              >
+                <Image
+                  src={ellipseShadow}
+                  alt="Shadow effect"
+                  fill
+                  sizes="(max-width: 700px) 100vw, 700px"
+                  className="object-contain"
+                  style={{ filter: 'blur(90px)' }}
+                />
+              </div>
+            </div>
+            <AboutSection />
+            <SystemFeatures />
+          </div>
           <OperationalUseSection />
-          <DiscussSection />
-          <TestimonialSection />
+          {/* Testimonial + Discuss with static left blur between them */}
+          <div className="relative overflow-hidden">
+            <div
+              className="pointer-events-none absolute -left-16 inset-0 z-[1] overflow-hidden"
+              aria-hidden="true"
+            >
+              <div
+                className="absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
+                style={{ filter: 'blur(90px)' }}
+              >
+                <Image
+                  src={ellipseShadow}
+                  alt=""
+                  fill
+                  sizes="(max-width: 520px) 100vw, 520px"
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            <TestimonialSection />
+            <DiscussSection />
+          </div>
         </div>
       </section>
       <Footer />
-
-      <style jsx global>{`
-        @keyframes slideVertical {
-          0% { transform: translateY(0%); }
-          50% { transform: translateY(60%); }
-          100% { transform: translateY(0%); }
-        }
-      `}</style>
     </div>
   );
 }

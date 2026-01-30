@@ -5,6 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import testimonialBackground from '@/assets/testimonialBackground.png'
 import testimonialPerson from '@/assets/testimonialPerson.png'
+import { GradientCard } from './ui/GradientCard'
 
 type Testimonial = {
   quote: string
@@ -75,7 +76,7 @@ export default function TestimonialSection() {
             <p className="text-xs font-medium tracking-[0.28em] text-white/60">
               TESTIMONIAL
             </p>
-            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-[400] leading-tight sm:text-4xl lg:text-5xl">
               Operational Feedback
             </h2>
           </div>
@@ -106,46 +107,45 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        {/* Right column: testimonial card */}
+        {/* Right column: testimonial card – exact same hover as system feature cards (GradientCard) */}
         <div className="flex-1">
-          <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#121212]/95 px-6 py-8 shadow-lg sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-            {/* Quote */}
-            <p className="text-lg font-medium leading-relaxed text-white sm:text-xl lg:text-2xl">
-              {active.quote}
-            </p>
+          <GradientCard>
+            <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+              <p className="text-lg font-medium leading-relaxed text-white sm:text-xl lg:text-2xl">
+                {active.quote}
+              </p>
 
-            {/* Person */}
-            <div className="mt-8 flex items-center gap-4">
-              {/* Avatar placeholder – replace with Image if you add an asset */}
-              <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white/10">
-                {active.avatar ? (
-                  <Image
-                    src={active.avatar}
-                    alt={active.name}
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 object-cover"
-                  />
-                ) : (
-                  <span className="text-sm font-semibold text-white/80">
-                    {active.name
-                      .split(' ')
-                      .map((n) => n[0])
-                      .join('')}
-                  </span>
-                )}
-              </div>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white/10">
+                  {active.avatar ? (
+                    <Image
+                      src={active.avatar}
+                      alt={active.name}
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 object-cover"
+                    />
+                  ) : (
+                    <span className="text-sm font-semibold text-white/80">
+                      {active.name
+                        .split(' ')
+                        .map((n) => n[0])
+                        .join('')}
+                    </span>
+                  )}
+                </div>
 
-              <div>
-                <p className="text-sm font-semibold text-white sm:text-base">
-                  {active.name}
-                </p>
-                <p className="text-xs text-white/60 sm:text-sm">
-                  {active.role ? `${active.role} · ${active.company}` : active.company}
-                </p>
+                <div>
+                  <p className="text-sm font-semibold text-white sm:text-base">
+                    {active.name}
+                  </p>
+                  <p className="text-xs text-white/60 sm:text-sm">
+                    {active.role ? `${active.role} · ${active.company}` : active.company}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </GradientCard>
         </div>
       </div>
     </section>

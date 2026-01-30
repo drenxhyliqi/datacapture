@@ -35,7 +35,7 @@ export default function ServicesPage() {
           <p className="text-white/70 tracking-widest text-sm md:text-base">
             SERVICES
           </p>
-          <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
+          <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
             Operational services within the DCS platform
           </h1>
           <p className="mt-6 text-white/60 max-w-2xl mx-auto">
@@ -60,10 +60,9 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden">
        
         {/* LEFT MOVING SHADOW */}
-        <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
+        <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
           <div
-            className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
-            style={{ animation: "slideVertical 5s linear infinite" }}
+            className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
           >
             <Image
               src={ellipseShadow}
@@ -81,14 +80,6 @@ export default function ServicesPage() {
       </section>
 
       <Footer />
-
-      <style jsx global>{`
-        @keyframes slideVertical {
-          0% { transform: translateY(-30%); }
-          50% { transform: translateY(60%); }
-          100% { transform: translateY(-30%); }
-        }
-      `}</style>
     </div>
   )
 }

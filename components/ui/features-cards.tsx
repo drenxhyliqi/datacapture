@@ -21,7 +21,7 @@ export function FeatureCard({ feature }: { feature: Feature | SolutionFeature })
 
             {/* Content */}
             <div className="flex flex-col flex-1 p-6 text-center">
-                <h3 className="text-xl font-bold mb-4 text-white">
+                <h3 className="text-xl font-[400] mb-4 text-white">
                     {feature.title}
                 </h3>
 

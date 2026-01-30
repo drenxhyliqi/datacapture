@@ -82,7 +82,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
                     <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white">
                         {IconComponent}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">{service.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-[400] text-white">{service.title}</h3>
                 </div>
 
                 <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">
@@ -100,6 +100,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
                             src={service.image}
                             alt={service.title}
                             fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-cover rounded-lg"
                         />
                     </div>

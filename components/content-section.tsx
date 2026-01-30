@@ -18,7 +18,7 @@ export default function ContentSection() {
               DCS SYSTEM
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-semibold text-white leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-[400] text-white leading-tight">
               Centralized Control<br />
               of Drone Monitoring<br />
               Operations
@@ -64,7 +64,7 @@ export default function ContentSection() {
                 Support
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-semibold text-white leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-[400] text-white leading-tight">
                 System Updates and<br />
                 Maintenance
             </h2>

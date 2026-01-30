@@ -114,15 +114,15 @@ export default function CompanySection() {
       </section>
 
       {/* LEFT MOVING SHADOW */}
-      <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
+      <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
         <div
-          className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
-          style={{ animation: 'slideVertical 5s linear infinite' }}
+          className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
         >
           <Image
             src={ellipseShadow}
             alt="Shadow effect"
             fill
+            sizes="(max-width: 520px) 100vw, 520px"
             className="object-contain"
             style={{ filter: 'blur(10px)' }}
           />
@@ -139,6 +139,7 @@ export default function CompanySection() {
                 src={metricsBackground}
                 alt="Mountain landscape background"
                 fill
+                sizes="100vw"
                 priority
                 className="object-cover object-[65%_center] md:object-center"
               />
@@ -155,7 +156,7 @@ export default function CompanySection() {
                     key={metric.title}
                     className="flex h-full min-h-[220px] max-w-[320px] w-full mx-auto flex-col justify-center gap-3 rounded-2xl bg-white/12 px-6 pt-10 pb-8 text-center text-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl border border-white/25"
                   >
-                    <h3 className="mb-3 text-lg font-semibold sm:text-xl max-w-[14rem] mx-auto">
+                    <h3 className="mb-3 text-lg font-[400] sm:text-xl max-w-[14rem] mx-auto">
                       {metric.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-white/80 sm:text-base max-w-[16rem] mx-auto">
@@ -224,7 +225,7 @@ export default function CompanySection() {
                     </div>
                   </div>
                 </div>
-                <h3 className="mb-3 text-base font-semibold text-center sm:text-lg">
+                <h3 className="mb-3 text-base font-[400] text-center sm:text-lg">
                   {value.title}
                 </h3>
                 <p className="text-xs leading-relaxed text-white/75 text-center sm:text-sm">
@@ -288,14 +289,6 @@ export default function CompanySection() {
 
       {/* Page footer */}
       <Footer />
-
-      <style jsx global>{`
-        @keyframes slideVertical {
-          0% { transform: translateY(-30%); }
-          50% { transform: translateY(60%); }
-          100% { transform: translateY(-30%); }
-        }
-      `}</style>
     </div>
   )
 }

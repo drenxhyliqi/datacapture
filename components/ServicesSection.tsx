@@ -9,7 +9,7 @@ export default function ServicesSection() {
             <div className="w-full max-w-7xl mx-auto">
                 {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                         Designed for operational missions
                     </h2>
                     <div className="max-w-3xl mx-auto space-y-4 text-base md:text-lg text-white/80">

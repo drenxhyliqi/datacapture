@@ -46,6 +46,76 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+/* Custom blur animations – in @theme so Tailwind keeps them (inline-style refs get purged) */
+@theme {
+  --animate-footer-blur: footerBlurMove 4s ease-in-out infinite;
+  @keyframes footerBlurMove {
+    0% { transform: translateY(50px); }
+    15% { transform: translateY(-130px); }
+    35% { transform: translateY(-130px); }
+    50% { transform: translateY(-130px); }
+    65% { transform: translateY(50px); }
+    85% { transform: translateY(50px); }
+    100% { transform: translateY(50px); }
+  }
+  /* System feature / left moving shadow – same motion, bigger travel (up → hold → down → hold, 2s) */
+  --animate-system-blur: systemBlurMove 2s ease-in-out infinite;
+  @keyframes systemBlurMove {
+    0%   { transform: translateY(120px); }
+    20%  { transform: translateY(-180px); }
+    45%  { transform: translateY(-180px); }
+    65%  { transform: translateY(120px); }
+    90%  { transform: translateY(120px); }
+    100% { transform: translateY(120px); }
+  }
+  /* Hero desktop – shadow and content visibility (in theme so they are not purged) */
+  --animate-hero-shadow-up: heroShadowUp 2s ease-in-out infinite;
+  --animate-hero-shadow-down: heroShadowDown 2s ease-in-out infinite;
+  --animate-hero-content-visibility: heroContentVisibility 2s ease-in-out infinite;
+  @keyframes heroShadowUp {
+    0%    { transform: translateY(50px); }
+    20%   { transform: translateY(-130px); }
+    45%   { transform: translateY(-130px); }
+    65%   { transform: translateY(50px); }
+    90%   { transform: translateY(50px); }
+    100%  { transform: translateY(50px); }
+  }
+  @keyframes heroShadowDown {
+    0%    { transform: translateY(-50px); }
+    20%   { transform: translateY(130px); }
+    45%   { transform: translateY(130px); }
+    65%   { transform: translateY(-50px); }
+    90%   { transform: translateY(-50px); }
+    100%  { transform: translateY(-50px); }
+  }
+  @keyframes heroContentVisibility {
+    0%     { opacity: 1; visibility: visible; }
+    2%     { opacity: 0; visibility: visible; }
+    4%     { opacity: 0; visibility: hidden; }
+    20%    { opacity: 0; visibility: hidden; }
+    22%    { opacity: 0; visibility: visible; }
+    30%    { opacity: 1; visibility: visible; }
+    40%    { opacity: 1; visibility: visible; }
+    45%    { opacity: 0; visibility: visible; }
+    47%    { opacity: 0; visibility: hidden; }
+    65%    { opacity: 0; visibility: hidden; }
+    66%    { opacity: 0; visibility: visible; }
+    74%    { opacity: 1; visibility: visible; }
+    100%   { opacity: 1; visibility: visible; }
+  }
+  /* Hero mobile */
+  --animate-hero-blur-mobile: heroBlurMove 4s ease-in-out infinite reverse;
+  --animate-fade-out-content: fadeOutContent 0.5s ease-out 4s forwards;
+  @keyframes heroBlurMove {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(-30px); opacity: 0.7; }
+  }
+  @keyframes fadeOutContent {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -120,7 +190,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: #101210;
   }
 }
 
@@ -197,4 +268,27 @@
 
 .press-marquee {
   animation: press-marquee 22s linear infinite;
+}
+
+/* Hero section – use theme utilities (animate-hero-shadow-up etc.) so keyframes are not purged */
+.hero-shadow {
+  will-change: transform;
+}
+.hero-content-visibility {
+  animation-fill-mode: both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-shadow { animation: none !important; }
+  .hero-content { animation: none !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+}
+
+/* Global loading spinner (used by app/loading.tsx) */
+.loading-spinner {
+  animation: loading-spin 0.7s linear infinite;
+}
+@keyframes loading-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner { animation: none; opacity: 0.7; }
 }
