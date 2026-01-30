@@ -115,22 +115,33 @@ function AnimatedGroup({
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
+  type MotionCreateArg = string | React.ComponentType<unknown>;
+  const asSafe: MotionCreateArg =
+    typeof as === 'string' || typeof as === 'function' ? as : 'div';
+  const asChildSafe: MotionCreateArg =
+    typeof asChild === 'string' || typeof asChild === 'function' ? asChild : 'div';
+
   const MotionComponent = React.useMemo(
-    () => motion.create(as as string | React.ComponentType<unknown>),
-    [as]
+    () => motion.create(asSafe),
+    [asSafe]
   );
   const MotionChild = React.useMemo(
-    () => motion.create(asChild as string | React.ComponentType<unknown>),
-    [asChild]
+    () => motion.create(asChildSafe),
+    [asChildSafe]
   );
 
+  type MotionProps = React.ComponentProps<typeof MotionComponent> & {
+    className?: string;
+  };
+  const containerProps: MotionProps = {
+    initial: 'hidden',
+    animate: 'visible',
+    variants: containerVariants,
+    className,
+  };
+
   return (
-    <MotionComponent
-      initial='hidden'
-      animate='visible'
-      variants={containerVariants}
-      className={className}
-    >
+    <MotionComponent {...containerProps}>
       {React.Children.map(children, (child, index) => (
         <MotionChild key={index} variants={itemVariants}>
           {child}
