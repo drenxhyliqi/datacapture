@@ -71,7 +71,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* STATIC RIGHT SHADOW */}
-            <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
                 <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
                     <Image
                         src={ellipseShadow}
@@ -83,7 +83,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* CONTENT */}
-            <section className="relative overflow-hidden">
+            <section className="relative overflow-hidden z-20">
                 {/* LEFT MOVING SHADOW */}
                 <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
                     <div

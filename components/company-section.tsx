@@ -17,6 +17,8 @@ import press2 from '@/assets/Press logo-1.png'
 import press3 from '@/assets/Press logo-2.png'
 import pressGiz from '@/assets/Press logo (1).png'
 import press5 from '@/assets/Press logo-4.png'
+import { GradientCard } from './ui/GradientCard'
+import solutionsHero from '@/assets/herosolutuion.png'
 
 const SUBTEXT =
   'DCS provides centralized detection, visualization, and recording of drone activity within a defined operational area.'
@@ -94,44 +96,77 @@ const PRESS_LOGOS = [
 
 export default function CompanySection() {
   return (
-    <div className="relative w-full bg-[#101210]">
-      {/* Re‑use main navbar */}
-      <HeroHeader />
+    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+      {/* HERO */}
+      <div className="relative">
+        {/* HEADER */}
+        <div className="relative z-30">
+          <HeroHeader />
+        </div>
 
-      {/* Centered hero content for Company */}
-      <section className="mx-auto flex max-w-4xl flex-col items-center px-6 pt-28 text-center text-white sm:pt-32 lg:pt-40">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-white/60">
-          From Johannes
-        </p>
+        {/* HERO IMAGE */}
+        <div className="pointer-events-none absolute inset-0 flex z-10 justify-center object-contain">
+          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[155vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
+            <Image
+              src={solutionsHero}
+              priority
+              alt="Company Hero"
+              className="object-contain"
+            />
+          </div>
+        </div>
 
-        <h1 className="mb-6 text-4xl font-[400] leading-tight sm:text-6xl lg:text-5xl">
-          A command-and-control platform for drone detection and monitoring
-        </h1>
+        {/* HERO TEXT */}
+        <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-32 pb-24 text-center">
+          <p className="text-white/70 tracking-widest text-sm md:text-base">
+            FROM JOHANNES
+          </p>
+          <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
+            A command-and-control platform for <br className="hidden md:block" />
+            drone detection and monitoring
+          </h1>
+          <p className="mt-6 text-white/60 max-w-2xl mx-auto">
+            {SUBTEXT}
+          </p>
+        </div>
+      </div>
 
-        <p className="max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-          {SUBTEXT}
-        </p>
-      </section>
-
-      {/* LEFT MOVING SHADOW */}
-      <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
-        <div
-          className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
-        >
+      {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
+      <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
+        <div className="absolute right-5 top-100 w-[60vw] max-w-[700px] h-[200vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
           <Image
             src={ellipseShadow}
             alt="Shadow effect"
             fill
             sizes="(max-width: 520px) 100vw, 520px"
             className="object-contain"
-            style={{ filter: 'blur(10px)' }}
           />
         </div>
       </div>
 
-      {/* Metrics strip */}
-      <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24">
+      {/* FEATURES (starts immediately after hero, no extra gap) */}
+      <section className="relative overflow-hidden z-10">
+        {/* LEFT MOVING SHADOW */}
+        <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
+          <div
+            className="absolute left-0 top-0 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
+            style={{ animation: 'slideVertical 5s linear infinite' }}
+          >
+            <Image
+              src={ellipseShadow}
+              alt="Shadow effect"
+              fill
+              className="object-contain"
+              style={{ filter: 'blur(10px)' }}
+            />
+          </div>
+        </div>
+
+        <div className="relative z-10">
+          {/* Metrics strip */}
+          <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+          <GradientCard>
           <div className="relative overflow-hidden rounded-[16px]">
             {/* Background image */}
             <div className="absolute inset-0 z-0">
@@ -166,7 +201,8 @@ export default function CompanySection() {
                 ))}
               </div>
             </div>
-          </div>
+            </div>
+          </GradientCard>
         </div>
       </section>
 
@@ -191,47 +227,46 @@ export default function CompanySection() {
           {/* Cards grid */}
           <div className="grid w-full gap-5 sm:gap-6 lg:gap-7 md:grid-cols-2 lg:grid-cols-3">
             {VALUES.map((value) => (
-              <div
-                key={value.title}
-                className="flex h-full flex-col rounded-2xl bg-[#151515] px-6 py-7 text-white shadow-[0_18px_45px_rgba(0,0,0,0.6)] border border-white/8"
-              >
-                <div className="mb-5 flex justify-center">
-                  {/* Multi-ring circular background */}
-                  <div className="relative h-16 w-16">
-                    {/* Outer glow ring */}
-                    <div
-                      className="absolute inset-0 rounded-full"
-                      style={{
-                        background:
-                          'radial-gradient(circle at 50% 10%, rgba(255,255,255,0.38), rgba(61,61,71,0.65) 45%, rgba(9,9,11,1) 80%)',
-                      }}
-                    />
-
-                    {/* Inner dark circle */}
-                    <div className="absolute inset-[4px] rounded-full bg-gradient-to-b from-[#2B2B2F] to-[#111111]" />
-
-                    {/* Subtle bottom shadow */}
-                    <div className="absolute -bottom-2 left-1/2 h-4 w-12 -translate-x-1/2 rounded-full bg-black/70 blur-[6px]" />
-
-                    {/* Icon */}
-                    <div className="relative z-10 flex h-full w-full items-center justify-center">
-                      <Image
-                        src={value.icon}
-                        alt={value.title}
-                        width={24}
-                        height={24}
-                        className="h-6 w-6 object-contain"
+              <GradientCard key={value.title}>
+                <div className="flex h-full flex-col px-6 py-7 text-white shadow-[0_18px_45px_rgba(0,0,0,0.6)]">
+                  <div className="mb-5 flex justify-center">
+                    {/* Multi-ring circular background */}
+                    <div className="relative h-16 w-16">
+                      {/* Outer glow ring */}
+                      <div
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          background:
+                            'radial-gradient(circle at 50% 10%, rgba(255,255,255,0.38), rgba(61,61,71,0.65) 45%, rgba(9,9,11,1) 80%)',
+                        }}
                       />
+
+                      {/* Inner dark circle */}
+                      <div className="absolute inset-[4px] rounded-full bg-gradient-to-b from-[#2B2B2F] to-[#111111]" />
+
+                      {/* Subtle bottom shadow */}
+                      <div className="absolute -bottom-2 left-1/2 h-4 w-12 -translate-x-1/2 rounded-full bg-black/70 blur-[6px]" />
+
+                      {/* Icon */}
+                      <div className="relative z-10 flex h-full w-full items-center justify-center">
+                        <Image
+                          src={value.icon}
+                          alt={value.title}
+                          width={24}
+                          height={24}
+                          className="h-6 w-6 object-contain"
+                        />
+                      </div>
                     </div>
                   </div>
+                  <h3 className="mb-3 text-base font-semibold text-center sm:text-lg">
+                    {value.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-white/75 text-center sm:text-sm">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="mb-3 text-base font-[400] text-center sm:text-lg">
-                  {value.title}
-                </h3>
-                <p className="text-xs leading-relaxed text-white/75 text-center sm:text-sm">
-                  {value.description}
-                </p>
-              </div>
+              </GradientCard>
             ))}
           </div>
         </div>
@@ -284,11 +319,20 @@ export default function CompanySection() {
         </div>
       </section>
 
-      {/* Discuss your operational requirements (reused) */}
-      <DiscussSection />
+          {/* Discuss your operational requirements (reused) */}
+          <DiscussSection />
+        </div>
+      </section>
 
       {/* Page footer */}
       <Footer />
+
+      <style jsx global>{`
+        @keyframes slideVertical {
+          0% { transform: translateY(0%); }
+          50% { transform: translateY(60%); }
+        }
+      `}</style>
     </div>
   )
 }

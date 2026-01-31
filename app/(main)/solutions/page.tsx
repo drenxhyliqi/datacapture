@@ -7,6 +7,7 @@ import ellipseShadow from "@/assets/Ellipse 8.svg"
 import solutionsHero from "@/assets/herosolutuion.png"
 import ContentSection from "@/components/content-section"
 import Footer from "@/components/footer"
+import DiscussSection from "@/components/discussSection"
 
 export default function SolutionsPage() {
   return (
@@ -47,7 +48,7 @@ export default function SolutionsPage() {
       </div>
 
        {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
-       <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
+       <div className="pointer-events-none absolute inset-0 0 md:z-[15] overflow-visible">
           <div className="absolute right-5 top-100 w-[60vw] max-w-[700px] h-[200vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
             <Image
               src={ellipseShadow}
@@ -59,7 +60,7 @@ export default function SolutionsPage() {
         </div>
 
       {/* FEATURES (starts immediately after hero, no extra gap) */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden z-20">
        
         {/* LEFT MOVING SHADOW */}
         <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
@@ -79,6 +80,7 @@ export default function SolutionsPage() {
         <div className="relative z-10">
           <SolutionsFeatures />
           <ContentSection />
+          <DiscussSection />
         </div>
       </section>
 

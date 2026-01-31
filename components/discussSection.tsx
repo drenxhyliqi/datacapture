@@ -3,13 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import heroBackground from "@/assets/heroBackground.png";
+import { GradientCard } from "./ui/GradientCard";
 
 export default function DiscussSection() {
   return (
     <section className="relative w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
+        <GradientCard>
         {/* Dark card with rounded corners */}
-        <div className="relative rounded-[20px] overflow-hidden border border-white/10 min-h-[400px] w-full">
+        <div className="relative rounded-[20px] overflow-hidden min-h-[400px] w-full">
+        
           {/* Background image within the card - blurred and desaturated */}
           <Image
             src={heroBackground}
@@ -41,7 +44,8 @@ export default function DiscussSection() {
               <span>Contact Us</span>
             </Link>
           </div>
-        </div>
+          </div>
+        </GradientCard>
       </div>
     </section>
   );

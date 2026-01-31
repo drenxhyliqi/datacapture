@@ -57,7 +57,7 @@ export default function ServicesPage() {
         </div>
 
       {/* FEATURES (starts immediately after hero, no extra gap) */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden z-20">
        
         {/* LEFT MOVING SHADOW */}
         <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
