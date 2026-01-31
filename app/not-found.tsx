@@ -15,6 +15,8 @@ export default function NotFound() {
         <HeroHeader />
       </div>
 
+      
+
       {/* BACKGROUND LAYERS (Hero image + shadows) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* HERO IMAGE */}

@@ -41,7 +41,7 @@ export default function OperationalUseSection() {
             SOLUTIONS
           </p>
 
-          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-[400] text-white sm:text-4xl">
             Operational Use
           </h2>
 
@@ -109,7 +109,7 @@ export default function OperationalUseSection() {
 
                 {/* CONTENT */}
                 <div className="relative z-10">
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-[400] text-white">
                     {it.title}
                   </h3>
 

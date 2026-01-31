@@ -138,6 +138,7 @@ export default function CompanySection() {
             src={ellipseShadow}
             alt="Shadow effect"
             fill
+            sizes="(max-width: 520px) 100vw, 520px"
             className="object-contain"
           />
         </div>
@@ -173,6 +174,7 @@ export default function CompanySection() {
                 src={metricsBackground}
                 alt="Mountain landscape background"
                 fill
+                sizes="100vw"
                 priority
                 className="object-cover object-[65%_center] md:object-center"
               />
@@ -189,7 +191,7 @@ export default function CompanySection() {
                     key={metric.title}
                     className="flex h-full min-h-[220px] max-w-[320px] w-full mx-auto flex-col justify-center gap-3 rounded-2xl bg-white/12 px-6 pt-10 pb-8 text-center text-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl border border-white/25"
                   >
-                    <h3 className="mb-3 text-lg font-semibold sm:text-xl max-w-[14rem] mx-auto">
+                    <h3 className="mb-3 text-lg font-[400] sm:text-xl max-w-[14rem] mx-auto">
                       {metric.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-white/80 sm:text-base max-w-[16rem] mx-auto">
