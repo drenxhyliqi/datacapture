@@ -179,18 +179,18 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* MOBILE HERO ( < lg ) – no right-side blur on small screens */}
+      {/* MOBILE HERO ( < lg ) – no animations on mobile, static content only */}
       <section className="block lg:hidden relative">
-        {/* Left-side mobile blur only; right-side blur removed so it's hidden on md and below */}
+        {/* Left-side mobile blur (static, no animation on mobile) */}
         <div 
-          className="animate-hero-blur-mobile hidden absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
+          className="hidden absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
           style={{
             background: 'radial-gradient(ellipse 150px 120px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
             filter: 'blur(30px)',
             clipPath: 'ellipse(200px 180px at 10% 90%)',
           }}
         />
-        <div className="hero-content animate-fade-out-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6">
+        <div className="hero-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6">
           {/* AIR DEFENCE pill */}
           <div className="mb-6 flex justify-center">
             <span
