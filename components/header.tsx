@@ -31,8 +31,8 @@ export const HeroHeader = () => {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-[100] w-full">
-                <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+            <header className="top-0 left-0 right-0 z-[100] w-full">
+                <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-4">
                     {/* Logo - Left Side */}
                     <Link
                         href="/"

@@ -25,7 +25,7 @@ export default function DiscussSection() {
           {/* Content overlay */}
           <div className="relative z-10 px-8 py-12 lg:px-16 lg:py-20 text-center">
             {/* Main Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[400] text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-8xl font-semibold text-white leading-tight mb-6">
               <span className="block">Discuss Your Operational</span>
               <span className="block">Requirements</span>
             </h2>

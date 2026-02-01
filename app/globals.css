@@ -48,7 +48,7 @@
 
 /* Custom blur animations – in @theme so Tailwind keeps them (inline-style refs get purged) */
 @theme {
-  --animate-footer-blur: footerBlurMove 4s ease-in-out infinite;
+  --animate-footer-blur: footerBlurMove 4s slide infinite;
   @keyframes footerBlurMove {
     0% { transform: translateY(50px); }
     15% { transform: translateY(-130px); }
@@ -62,8 +62,8 @@
   --animate-system-blur: systemBlurMove 2s ease-in-out infinite;
   @keyframes systemBlurMove {
     0%   { transform: translateY(120px); }
-    20%  { transform: translateY(-600px); }
-    45%  { transform: translateY(-600px); }
+    20%  { transform: translateY(-800px); }
+    45%  { transform: translateY(-800px); }
     65%  { transform: translateY(120px); }
     90%  { transform: translateY(120px); }
     100% { transform: translateY(120px); }

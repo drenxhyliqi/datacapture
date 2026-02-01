@@ -10,12 +10,12 @@ export default function AboutSection() {
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
                     {/* Left Section - Text Content */}
-                    <div className="relative z-10 pl-8 md:pl-12">
+                    <div className="relative z-10 pl-8 md:pl-12 py-10">
                         {/* Gradient Effect - Positioned on the right side of text, from white at top to transparent at bottom */}
-                        <GradientLine position="left" />
+                        <GradientLine position="left" className="top-10" />
                         
                         {/* Decorative dot - Positioned on top of gradient */}
-                        <div className="absolute -left-0 top-0 flex items-center justify-center pointer-events-none z-20">
+                        <div className="absolute -left-0 top-10 flex items-center justify-center pointer-events-none z-20">
                             <div className="w-2 h-2 rounded-full bg-white flex-shrink-0"></div>
                         </div>
 
@@ -44,20 +44,23 @@ export default function AboutSection() {
                     </div>
 
                     {/* Right Section - Image with Slider Effect */}
-                    <GradientCard>
+                    
                         <div className="relative w-full">
                             {/* Drone Image */}
-                            <div className="relative rounded-2xl overflow-hidden z-10">
+                            <GradientCard>
+                                <div className="relative h-[60vh] w-full min-h-[280px] rounded-2xl overflow-hidden">
                                 <Image
                                     src={droneImage}
-                                    alt="Drone in operation"
-                                    width={800}
-                                    height={600}
-                                    className="w-full h-auto object-cover"
+                                    alt="Operational use"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover object-center"
+                                    priority
                                 />
-                            </div>
+                                </div>  
+                            </GradientCard>
                         </div>
-                    </GradientCard>
+                   
                 </div>
             </div>
         </section>

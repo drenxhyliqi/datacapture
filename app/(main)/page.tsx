@@ -81,7 +81,7 @@ export default function Home() {
       {/* STATIC RIGHT SHADOW – only in DOM on lg+; low z so navbar stays on top */}
       {isLg && (
         <div className="absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
-          <div className="relative w-[700px] h-[300vh] translate-x-1/2 translate-y-250">
+          <div className="relative w-[700px] h-[100vh] translate-x-1/2 translate-y-250">
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
@@ -106,30 +106,29 @@ export default function Home() {
                 className="
                   animate-system-blur
                   absolute
-                  left-0
+                  -left-20
                   top-[-30%]
-                  w-[35vw]
-                  max-w-[600px]
-                  h-[300vh]
-                  max-
+                  w-[30vw]
+                  h-[450vh]
                   -translate-x-1/2
                   opacity-90
+                  blur-2xl
                 "
               >
                 <Image
                   src={ellipseShadow}
                   alt="Shadow effect"
-                  fill
                   sizes="(max-width: 700px) 80vw, 600px"
+                  fill
                   className="object-contain"
-                  style={{ filter: 'blur(100px)' }}
+                  style={{ filter: 'blur(0px)' }}
                 />
               </div>
             </div>
             <AboutSection />
             <SystemFeatures />
-          </div>
           <OperationalUseSection />
+          </div>
           {/* Testimonial + Discuss with static left blur between them */}
           <div className="relative overflow-hidden">
             <div

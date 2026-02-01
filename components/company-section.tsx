@@ -105,8 +105,8 @@ export default function CompanySection() {
         </div>
 
         {/* HERO IMAGE */}
-        <div className="pointer-events-none absolute inset-0 flex z-10 justify-center object-contain">
-          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[155vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
+        <div className="pointer-events-none absolute -top-35 inset-0 flex z-10 justify-center object-contain">
+          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
             <Image
               src={solutionsHero}
               priority
@@ -117,8 +117,8 @@ export default function CompanySection() {
         </div>
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-32 pb-24 text-center">
-          <p className="text-white/70 tracking-widest text-sm md:text-base">
+        <div className="relative z-20 mx-auto max-w-6xl pt-30 md:pt-5 pb-24 text-center">
+          <p className="text-white tracking-widest text-sm md:text-base">
             FROM JOHANNES
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
@@ -165,7 +165,7 @@ export default function CompanySection() {
         <div className="relative z-10">
           {/* Metrics strip */}
           <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-7xl">
           <GradientCard>
           <div className="relative overflow-hidden rounded-[16px]">
             {/* Background image */}
@@ -184,7 +184,7 @@ export default function CompanySection() {
             <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/10 to-[#101210]/60" />
 
             {/* Content */}
-            <div className="relative z-10 px-6 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
+            <div className="relative z-10 py-14 sm:py-16 lg:py-20">
               <div className="grid w-full gap-4 sm:gap-6 lg:gap-8 md:grid-cols-3">
                 {METRICS.map((metric) => (
                   <div
@@ -208,7 +208,7 @@ export default function CompanySection() {
 
       {/* Values / features grid */}
       <section className="relative w-full bg-[#101210] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center">
           {/* Heading */}
           <div className="mb-12 text-center text-white sm:mb-14 lg:mb-16">
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-white/50">
@@ -274,7 +274,7 @@ export default function CompanySection() {
 
       {/* Press mentions / sponsors */}
       <section className="w-full bg-[#101210] py-20 sm:py-24 lg:py-32">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto flex w-full gap-6 flex-col">
           {/* Heading */}
           <div className="text-center text-white">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/60">

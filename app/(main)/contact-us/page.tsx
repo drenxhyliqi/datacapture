@@ -36,17 +36,17 @@ export default function ContactUsPage() {
     }
 
     return (
-        <div className="relative w-full min-h-screen bg-[#101210] overflow-x-clip">
-            {/* HERO */}
+        <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+            {/* HERO - z-20 që titulli të dalë mbi elementët e tjerë */}
             <div className="relative">
                 {/* HEADER */}
-                <div className="relative z-30">
+                <div className="relative z-50">
                     <HeroHeader />
                 </div>
 
-                {/* HERO IMAGE */}
-                <div className="pointer-events-none absolute inset-0 flex z-10 justify-center object-contain">
-                    <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[155vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
+                {/* HERO IMAGE - behind text */}
+                <div className="pointer-events-none absolute -top-35 inset-0 flex z-0 justify-center object-contain">
+                    <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
                         <Image
                             src={solutionsHero}
                             priority
@@ -57,8 +57,8 @@ export default function ContactUsPage() {
                 </div>
 
                 {/* HERO TEXT */}
-                <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-32 pb-24 text-center">
-                    <p className="text-white/70 tracking-widest text-sm md:text-base">
+                <div className="relative z-20 mx-auto max-w-4xl pt-30 md:pt-5 pb-24 text-center">
+                    <p className="text-white tracking-widest text-sm md:text-base">
                         CONTACT US
                     </p>
                     <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
@@ -100,7 +100,7 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="relative z-10">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+                    <div className="w-full max-w-7xl mx-auto py-20 lg:py-32">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         {/* LEFT: CONTACT FORM */}
                         <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">

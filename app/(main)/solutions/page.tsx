@@ -21,8 +21,8 @@ export default function SolutionsPage() {
         </div>
 
         {/* HERO IMAGE */}
-        <div className="pointer-events-none absolute  inset-0 flex z-10 justify-center object-contain">
-          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[150vh] md:h-[120vh] lg:w-[155vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
+        <div className="pointer-events-none absolute -top-35 inset-0 flex z-10 justify-center object-contain">
+          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
             <Image
               src={solutionsHero}
               priority
@@ -33,8 +33,8 @@ export default function SolutionsPage() {
         </div>
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-32 pb-24 text-center">
-          <p className="text-white/70 tracking-widest text-sm md:text-base">
+        <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-5 pb-24 text-center">
+          <p className="text-white tracking-widest text-sm md:text-base">
             DATA CAPTURE SYSTEMS
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
