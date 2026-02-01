@@ -59,7 +59,7 @@ export default function HeroSection() {
         )}
 
         {/* HERO CONTENT – disappear/appear in sync with blur shadow movement (2s cycle). */}
-        <div className="hero-content hero-content-visibility animate-hero-content-visibility relative z-10 mx-auto flex min-h-[110vh] max-w-7xl items-start px-12 pt-24">
+        <div className="hero-content relative z-10 mx-auto flex min-h-[110vh] max-w-7xl items-start px-12 pt-24">
           <div className="absolute left-0 top-28">
             <div className="flex flex-col items-start gap-6">
               <div
@@ -109,7 +109,7 @@ export default function HeroSection() {
                   </span>
                 </div>
                 <div className="relative inline-block mx-auto items-center justify-center">
-                  <h1 className="text-[4.5rem] font-[400] leading-[1] text-white text-start">
+                  <h1 className="text-[7rem] font-[400] leading-[1] text-white text-start">
                     <span className="block">{HEADING.line1}</span>
                     <span className="block">
                       {HEADING.line2Prefix}

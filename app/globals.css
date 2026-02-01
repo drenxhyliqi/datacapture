@@ -62,8 +62,8 @@
   --animate-system-blur: systemBlurMove 2s ease-in-out infinite;
   @keyframes systemBlurMove {
     0%   { transform: translateY(120px); }
-    20%  { transform: translateY(-180px); }
-    45%  { transform: translateY(-180px); }
+    20%  { transform: translateY(-600px); }
+    45%  { transform: translateY(-600px); }
     65%  { transform: translateY(120px); }
     90%  { transform: translateY(120px); }
     100% { transform: translateY(120px); }

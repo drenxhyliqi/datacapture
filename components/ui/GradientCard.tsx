@@ -21,7 +21,7 @@ export function GradientCard({
                 border-t-1 
                 backdrop-blur-sm
                 transition-all
-                hover:border-t-0 hover:border-b-1 
+                hover:border-b-1 hover:border-t-0 
             "
             style={{ 
                 backgroundColor: '#1F1F1F',

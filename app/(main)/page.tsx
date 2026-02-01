@@ -103,15 +103,26 @@ export default function Home() {
             {/* LEFT MOVING SHADOW – spans About + System Features only */}
             <div className="absolute -left-[5px] inset-0 pointer-events-none z-[1] md:z-[15] overflow-hidden">
               <div
-                className="animate-system-blur absolute left-0 -top-32 w-[70vw] max-w-[700px] h-full -translate-x-1/2 opacity-90"
+                className="
+                  animate-system-blur
+                  absolute
+                  left-0
+                  top-[-30%]
+                  w-[35vw]
+                  max-w-[600px]
+                  h-[300vh]
+                  max-
+                  -translate-x-1/2
+                  opacity-90
+                "
               >
                 <Image
                   src={ellipseShadow}
                   alt="Shadow effect"
                   fill
-                  sizes="(max-width: 700px) 100vw, 700px"
+                  sizes="(max-width: 700px) 80vw, 600px"
                   className="object-contain"
-                  style={{ filter: 'blur(90px)' }}
+                  style={{ filter: 'blur(100px)' }}
                 />
               </div>
             </div>
