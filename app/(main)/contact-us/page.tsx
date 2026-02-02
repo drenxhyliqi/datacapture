@@ -101,7 +101,6 @@ export default function ContactUsPage() {
 
                 <div className="relative z-10">
                     <div className="w-full max-w-7xl mx-auto py-20 lg:py-32">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         {/* LEFT: CONTACT FORM */}
                         <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
                             <h2 className="text-3xl md:text-4xl font-[400] text-gray-900 mb-6">
@@ -215,72 +214,6 @@ export default function ContactUsPage() {
                                 </button>
                             </form>
                         </div>
-
-                        {/* RIGHT: CONTACT INFORMATION CARDS */}
-                        <div className="h-full flex flex-col gap-6">
-                            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl flex-1">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                                        <Mail className="w-5 h-5 text-gray-600" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-2xl font-bold text-gray-900 mb-1">
-                                            info@ipsum.com
-                                        </p>
-                                        <p className="text-sm font-medium text-gray-700 mb-2">
-                                            General Support & Feedback
-                                        </p>
-                                        <p className="text-sm text-gray-500">
-                                            Whether you need help or want to share your thoughts,
-                                            our team is always here for you.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Email Card 2 */}
-                            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl flex-1">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                                        <Mail className="w-5 h-5 text-gray-600" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-2xl font-bold text-gray-900 mb-1">
-                                            info@ipsum.com
-                                        </p>
-                                        <p className="text-sm font-medium text-gray-700 mb-2">
-                                            General Support & Feedback
-                                        </p>
-                                        <p className="text-sm text-gray-500">
-                                            Whether you need help or want to share your thoughts,
-                                            our team is always here for you.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Phone Card */}
-                            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl flex-1">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                                        <Phone className="w-5 h-5 text-gray-600" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-2xl font-bold text-gray-900 mb-1">
-                                            +383 49 884 555
-                                        </p>
-                                        <p className="text-sm font-medium text-gray-700 mb-2">
-                                            Anything else
-                                        </p>
-                                        <p className="text-sm text-gray-500">
-                                            Whether you need help or want to share your thoughts,
-                                            our team is always here for you.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </section>
