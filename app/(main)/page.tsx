@@ -13,6 +13,7 @@ import DiscussSection from "@/components/discussSection";
 import TestimonialSection from "@/components/testimonial-section";
 import Footer from "@/components/footer";
 import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
+import EllipsesGlowOrbitCanvas from "@/components/ui/hero-banner";
 
 export default function Home() {
   const isLg = useMediaQuery(LG_QUERY)
@@ -23,7 +24,7 @@ export default function Home() {
       {/* HERO – z-[50] so navbar (inside hero) stays above sections below */}
       <div className="relative z-[50] min-h-[110vh] isolate" style={{ position: 'relative' }}>
         {/* HERO BACKGROUND IMAGE – static on all devices, scrolls with the page */}
-        <div
+        {/* <div
           className="absolute inset-0 z-0 w-full min-h-0"
           style={{ height: '100%', minHeight: '100vh' }}
         >
@@ -43,7 +44,16 @@ export default function Home() {
             className="object-cover object-center w-full h-full hidden lg:block"
             unoptimized
           />
+        </div> */}
+
+        
+
+        {/* HEADER – high z-index so navbar stays above other sections */}
+        <div className="relative z-[100]">
+          <HeroHeader />
         </div>
+
+        <EllipsesGlowOrbitCanvas className="absolute inset-0 z-0" />
 
         {/* Static blur shadows (top right + bottom left) – only on lg+, hidden on medium and smaller */}
         {isLg && (
@@ -66,11 +76,6 @@ export default function Home() {
             />
           </div>
         )}
-
-        {/* HEADER – high z-index so navbar stays above other sections */}
-        <div className="relative z-[100]">
-          <HeroHeader />
-        </div>
 
         {/* HERO TEXT */}
         <div className="relative z-10">
