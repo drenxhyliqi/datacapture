@@ -5,6 +5,7 @@ import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
 import droneIcon from '@/assets/selections1.svg'
 import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
+import HeroBanner from '@/components/ui/hero-banner'
 
 
 const HEADING = {
@@ -28,9 +29,14 @@ export default function HeroSection() {
     <>
       {/* DESKTOP HERO (lg+) – section hidden on md and below via Tailwind */}
       <section className="hidden lg:block relative overflow-visible min-h-[110vh]">
+        {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
+        <div className="absolute inset-0 overflow-visible pointer-events-none">
+          <HeroBanner />
+        </div>
+
         {/* Desktop blur shadows: only in DOM on lg+ (conditional render so not present on md and below) */}
         {isLg && (
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute inset-0 pointer-events-noneoverflow-hidden" aria-hidden="true">
             {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
             <div
               key="hero-shadow-left"
@@ -62,27 +68,27 @@ export default function HeroSection() {
         <div className="hero-content relative z-10 mx-auto flex min-h-[110vh] max-w-7xl items-start px-12 pt-24">
           <div className="absolute left-0 top-28">
             <div className="flex flex-col items-start gap-6">
+            <div
+              className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center -ml-1"
+              style={{ backgroundColor: '#313331' }}
+            >
               <div
-                className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center -ml-1"
-                style={{ backgroundColor: '#313331' }}
+                className="h-[100%] w-[100%] rounded-full flex items-center justify-center"
+                style={{
+                  background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                }}
               >
-                <div
-                  className="h-[100%] w-[100%] rounded-full flex items-center justify-center"
-                  style={{
-                    background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
-                  }}
-                >
-                  <div className="flex h-full w-full items-center justify-center rounded-full">
-                    <Image
-                      src={droneIcon}
-                      alt="Drone icon"
-                      width={24}
-                      height={24}
-                      className="h-6 w-6 object-contain"
-                    />
-                  </div>
+                <div className="flex h-full w-full items-center justify-center rounded-full">
+                  <Image
+                    src={droneIcon}
+                    alt="Drone icon"
+                    width={24}
+                    height={24}
+                    className="h-6 w-6 object-contain"
+                  />
                 </div>
               </div>
+            </div>
 
               {/* ADAPTIVE / SECURITY text */}
               <div className="mt-48 space-y-6 text-[11px] font-light uppercase text-white/80 tracking-[2em]">
@@ -181,6 +187,11 @@ export default function HeroSection() {
 
       {/* MOBILE HERO ( < lg ) – no animations on mobile, static content only */}
       <section className="block lg:hidden relative">
+
+        {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
+        <div className="absolute inset-0 overflow-visible pointer-events-none">
+          <HeroBanner />
+        </div>
         {/* Left-side mobile blur (static, no animation on mobile) */}
         <div 
           className="hidden absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
