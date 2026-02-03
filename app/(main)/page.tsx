@@ -13,8 +13,6 @@ import DiscussSection from "@/components/discussSection";
 import TestimonialSection from "@/components/testimonial-section";
 import Footer from "@/components/footer";
 import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
-import EllipsesGlowOrbitCanvas from "@/components/ui/hero-banner";
-
 export default function Home() {
   const isLg = useMediaQuery(LG_QUERY)
 
@@ -53,11 +51,9 @@ export default function Home() {
           <HeroHeader />
         </div>
 
-        <EllipsesGlowOrbitCanvas className="absolute inset-0 z-0" />
-
         {/* Static blur shadows (top right + bottom left) – only on lg+, hidden on medium and smaller */}
         {isLg && (
-          <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
+          <div className="absolute inset-0 pointer-events-none z-[40] overflow-visible" aria-hidden="false">
             {/* Bottom left: white-to-green (#119200) gradient blur */}
             <div
               className="absolute left-45 bottom-50 w-[280px] h-[240px] -translate-x-1/2 translate-y-1/2"
@@ -68,7 +64,7 @@ export default function Home() {
             />
             {/* Top right: single white-to-#004B92 gradient blur */}
             <div
-              className="absolute right-40 top-20 w-[280px] h-[240px] translate-x-1/3 -translate-y-1/2"
+              className="absolute right-40 top-20 w-[280px] h-[240px] translate-x-1/3 -translate-y-1/2 z-[40]"
               style={{
                 background: 'radial-gradient(ellipse 140px 140px at 70% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 75, 146, 0.35) 45%, rgba(0, 75, 146, 0.15) 70%, transparent 85%)',
                 filter: 'blur(80px)',
