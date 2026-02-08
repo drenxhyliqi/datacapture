@@ -48,7 +48,7 @@
 
 /* Custom blur animations – in @theme so Tailwind keeps them (inline-style refs get purged) */
 @theme {
-  --animate-footer-blur: footerBlurMove 4s slide infinite;
+  --animate-footer-blur: footerBlurMove 4s ease-in-out infinite;
   @keyframes footerBlurMove {
     0% { transform: translateY(50px); }
     15% { transform: translateY(-130px); }
@@ -69,39 +69,23 @@
     100% { transform: translateY(120px); }
   }
   /* Hero desktop – shadow and content visibility (in theme so they are not purged) */
-  --animate-hero-shadow-up: heroShadowUp 2s ease-in-out infinite;
-  --animate-hero-shadow-down: heroShadowDown 2s ease-in-out infinite;
-  --animate-hero-content-visibility: heroContentVisibility 2s ease-in-out infinite;
+  --animate-hero-shadow-up: heroShadowUp 3.5s ease-in-out infinite;
+  --animate-hero-shadow-down: heroShadowDown 3.5s ease-in-out infinite;
   @keyframes heroShadowUp {
-    0%    { transform: translateY(50px); }
-    20%   { transform: translateY(-130px); }
-    45%   { transform: translateY(-130px); }
-    65%   { transform: translateY(50px); }
-    90%   { transform: translateY(50px); }
-    100%  { transform: translateY(50px); }
+    0%    { transform: translateY(28px); }
+    20%   { transform: translateY(-72px); }
+    45%   { transform: translateY(-72px); }
+    65%   { transform: translateY(28px); }
+    90%   { transform: translateY(28px); }
+    100%  { transform: translateY(28px); }
   }
   @keyframes heroShadowDown {
-    0%    { transform: translateY(-50px); }
-    20%   { transform: translateY(130px); }
-    45%   { transform: translateY(130px); }
-    65%   { transform: translateY(-50px); }
-    90%   { transform: translateY(-50px); }
-    100%  { transform: translateY(-50px); }
-  }
-  @keyframes heroContentVisibility {
-    0%     { opacity: 1; visibility: visible; }
-    2%     { opacity: 0; visibility: visible; }
-    4%     { opacity: 0; visibility: hidden; }
-    20%    { opacity: 0; visibility: hidden; }
-    22%    { opacity: 0; visibility: visible; }
-    30%    { opacity: 1; visibility: visible; }
-    40%    { opacity: 1; visibility: visible; }
-    45%    { opacity: 0; visibility: visible; }
-    47%    { opacity: 0; visibility: hidden; }
-    65%    { opacity: 0; visibility: hidden; }
-    66%    { opacity: 0; visibility: visible; }
-    74%    { opacity: 1; visibility: visible; }
-    100%   { opacity: 1; visibility: visible; }
+    0%    { transform: translateY(-28px); }
+    20%   { transform: translateY(72px); }
+    45%   { transform: translateY(72px); }
+    65%   { transform: translateY(-28px); }
+    90%   { transform: translateY(-28px); }
+    100%  { transform: translateY(-28px); }
   }
   /* Hero mobile */
   --animate-hero-blur-mobile: heroBlurMove 4s ease-in-out infinite reverse;
@@ -294,6 +278,50 @@
   object-fit: contain;
 }
 
+/* Static green shadow – bottom left, all screens, same position (CSS-only) */
+.hero-green-shadow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 55vw;
+  max-width: 680px;
+  height: 50vh;
+  max-height: 520px;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 70% at 20% 90%,
+    rgba(168, 255, 157, 0.115) 0%,
+    rgba(17, 146, 0, 0.18) 35%,
+    transparent 70%
+  );
+  filter: blur(120px);
+}
+/* Top right: blueish shadow, only from 1440px */
+.hero-blue-shadow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  width: 55vw;
+  max-width: 680px;
+  height: 50vh;
+  max-height: 520px;
+  pointer-events: none;
+  filter: blur(100px);
+  background: radial-gradient(
+    ellipse 80% 70% at 80% 15%,
+    rgba(120, 180, 255, 0.2) 0%,
+    rgba(59, 130, 246, 0.12) 35%,
+    transparent 70%
+  );
+}
+@media (min-width: 1440px) {
+  .hero-blue-shadow {
+    display: block;
+  }
+}
+
 /* Left / Right background graphics – mobile first */
 .hero-bg-left,
 .hero-bg-right {
@@ -371,7 +399,7 @@
 /* Large: 1024px and up */
 @media (min-width: 1024px) {
   .hero-banner-ellipse {
-    width: 102vw;
+    width: 120vw;
     flex-shrink: 0;
     height: 100vh;
     max-width: 108vw;
@@ -405,7 +433,7 @@
 /* Extra large: 1280px and up */
 @media (min-width: 1280px) {
   .hero-banner-ellipse {
-    width: 70vw;
+    width: 80vw;
     flex-shrink: 0;
     height: 100vh;
     max-width: 108vw;
@@ -414,13 +442,13 @@
   }
   .hero-bg-right {
     width: 80vw;
-    transform: rotateX(33deg);
+    transform: rotateX(33.5deg);
     transform-origin: right top;
-    margin-right: 43%;
+    margin-right: 42.5%;
   }
   .hero-bg-right img {
     object-position: right 10%;
-    transform: rotateX(-5deg);
+    transform: rotateX(-10deg);
   }
   .hero-bg-left {
     width: 80vw;
@@ -436,58 +464,36 @@
   }
 }
 
-/* 4K / 2560px and up */
-@media (min-width: 2560px) {
-  .hero-banner-ellipse {
-    width: 85vw;
-    height: 88vh;
-    flex-shrink: 0;
-    max-width: 55vw;
-    max-height: 50vh;
-    transform: translateY(-20vh);
-  }
+/* 1440px to 2560px */
 
-  /* Blur shadows: smaller gap between left and right at 2560px */
-  .hero-blur-shadows .hero-shadow-left {
-    left: 23%;
-    top: 40%;
-  }
-  .hero-blur-shadows .hero-shadow-right {
-    right: 15%;
-  }
 
-  .hero-bg-left { 
-    width: 48vw; 
-    transform: rotate(14deg);
-    margin-top: -28%;
-    margin-left: -4%;
-  }
-  .hero-bg-right { 
-    width: 48vw; 
-    transform: rotate(14deg);
-    transform-origin: right top;
-  }
-  .hero-bg-right img {
-     object-position: right 12%;
-     transform: rotateX(12deg);
-     margin-left: 5%;
-  }
-  .hero-bg-left img {
-    object-position: left 24%;
-    transform: rotateX(12deg);
- }
+
+/* Hero section – apply theme animations explicitly so they run */
+.hero-shadow-left {
+  animation: var(--animate-hero-shadow-up);
+  will-change: transform;
 }
-
-/* Hero section – use theme utilities (animate-hero-shadow-up etc.) so keyframes are not purged */
+.hero-shadow-right {
+  animation: var(--animate-hero-shadow-down);
+  will-change: transform;
+}
 .hero-shadow {
   will-change: transform;
 }
-.hero-content-visibility {
-  animation-fill-mode: both;
+/* Drone icon badge – same up/down speed as hero blur shadows (2s) */
+.hero-drone-badge {
+  animation: var(--animate-hero-shadow-up);
+  will-change: transform;
 }
+/* Footer blur animation – apply theme variable explicitly */
+.animate-footer-blur {
+  animation: var(--animate-footer-blur);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-shadow { animation: none !important; }
-  .hero-content { animation: none !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+  .hero-drone-badge { animation: none !important; }
+  .animate-footer-blur { animation: none !important; }
 }
 
 /* Global loading spinner (used by app/loading.tsx) */

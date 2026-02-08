@@ -9,17 +9,14 @@ import HeroBanner from '@/components/ui/hero-banner'
 
 
 const HEADING = {
-  line1: 'Command &',
-  line2Prefix: 'Control for ',
-  line2Emphasis: 'Drone',
-  line3: 'Detection and',
-  line4: 'Monitoring',
+  line1: 'Engineering',
+  line2: 'the Future',
+  line3: 'of Security',
 }
 
 const SUBTEXT_LINES = [
-  'A centralized system for real-time drone detection,',
-  'visualization, and post-event analysis within defined',
-  'operational areas.',
+  'A Company with selected partners securing airspace, cyber, data, and critical infrastructure through advanced engineering and innovation.',
+  'A centralized system for real-time drone detection, visualization, and post-event analysis within defined operational areas.',
 ]
 
 export default function HeroSection() {
@@ -28,7 +25,7 @@ export default function HeroSection() {
   return (
     <>
       {/* DESKTOP HERO (lg+) – section hidden on md and below via Tailwind */}
-      <section className="hidden lg:block relative min-h-[110vh] overflow-x-hidden">
+      <section className="hidden lg:block relative min-h-[110vh] overflow-visible">
         {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
         <div className="absolute inset-0 overflow-visible pointer-events-none">
           <HeroBanner />
@@ -40,25 +37,25 @@ export default function HeroSection() {
             {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
             <div
               key="hero-shadow-left"
-              className="hero-shadow hero-shadow-left animate-hero-shadow-up absolute left-55 top-[60%] pointer-events-none w-[280px] h-[220px]"
+              className="hero-shadow hero-shadow-left animate-hero-shadow-up absolute left-55 top-[60%] pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
-                  "radial-gradient(ellipse 180px 180px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 80%)",
-                filter: "blur(60px)",
-                clipPath: "ellipse(320px 320px at 20% 50%)",
+                  "radial-gradient(ellipse 110px 110px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 80%)",
+                filter: "blur(38px)",
+                clipPath: "ellipse(185px 185px at 20% 50%)",
               }}
             />
             {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
             <div
               key="hero-shadow-right"
-              className="hero-shadow hero-shadow-right animate-hero-shadow-down absolute right-30 top-[20%] pointer-events-none w-[280px] h-[220px]"
+              className="hero-shadow hero-shadow-right animate-hero-shadow-down absolute right-40 top-[20%] pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
-                  "radial-gradient(ellipse 180px 180px at 25% 2%, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 55%, transparent 80%)",
-                filter: "blur(60px)",
-                clipPath: "ellipse(320px 320px at 20% 50%)",
+                  "radial-gradient(ellipse 110px 110px at 45% 2%, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 55%, transparent 80%)",
+                filter: "blur(38px)",
+                clipPath: "ellipse(245px 245px at 40% 50%)",
               }}
             />
           </div>
@@ -69,7 +66,7 @@ export default function HeroSection() {
           <div className="absolute left-0 top-28">
             <div className="flex flex-col items-start gap-6">
             <div
-              className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center -ml-1"
+              className="hero-drone-badge h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1"
               style={{ backgroundColor: '#313331' }}
             >
               <div
@@ -82,16 +79,16 @@ export default function HeroSection() {
                   <Image
                     src={droneIcon}
                     alt="Drone icon"
-                    width={24}
-                    height={24}
-                    className="h-6 w-6 object-contain"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
                   />
                 </div>
               </div>
             </div>
 
               {/* ADAPTIVE / SECURITY text */}
-              <div className="mt-48 space-y-6 text-[11px] font-light uppercase text-white/80 tracking-[2em]">
+              <div className="mt-54 space-y-6 text-[13px] font-light uppercase text-white/80 tracking-[2em]">
                 <div className="whitespace-nowrap">ADAPTIVE</div>
                 <div className="whitespace-nowrap">SECURITY</div>
               </div>
@@ -115,20 +112,14 @@ export default function HeroSection() {
                   </span>
                 </div>
                 <div className="relative inline-block mx-auto items-center justify-center">
-                  <h1 className="text-[7rem] font-[400] leading-[1] text-white text-start">
+                  <h1 className="text-[7rem] font-[500] leading-[1] text-white text-start">
                     <span className="block">{HEADING.line1}</span>
-                    <span className="block">
-                      {HEADING.line2Prefix}
-                      <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-                        {HEADING.line2Emphasis}
-                      </span>
-                    </span>
+                    <span className="block">{HEADING.line2}</span>
                     <span className="block">{HEADING.line3}</span>
-                    <span className="block">{HEADING.line4}</span>
                   </h1>
 
                   {/* Desktop-only CTA positioned next to "Monitoring" – old single-button design */}
-                  <div className="absolute -right-58 bottom-[-1.5em] hidden lg:block">
+                  <div className="absolute -right-98 bottom-[-6.5em] hidden lg:block">
                     <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1 mb-3">
                       <div className="relative inline-flex items-center w-full gap-2">
                         {/* Fading line + arrow to the left */}
@@ -161,13 +152,14 @@ export default function HeroSection() {
             </div>
 
             {/* Body text */}
-            <p className="mb-4 pl-[2.5em] max-w-[34rem] text-[15px] leading-relaxed text-[#A9A9A9]">
-              {SUBTEXT_LINES.map((line, i) => (
-                <span key={i} className="block">
-                  {line}
-                </span>
-              ))}
-            </p>
+            <div className="mb-4 pl-[2.5em] max-w-[34rem] space-y-3 text-[17px] leading-relaxed">
+              <p className="text-[#C8C8C8]">
+                {SUBTEXT_LINES[0]}
+              </p>
+              <p className="text-[#A9A9A9]">
+                {SUBTEXT_LINES[1]}
+              </p>
+            </div>
 
             {/* Stats – desktop, right-aligned like reference */}
             <div className="flex items-center justify-end gap-8 pr-12 text-[1em] tracking-[0.35em] uppercase text-white/50 mb-10 ">
@@ -186,19 +178,18 @@ export default function HeroSection() {
       </section>
 
       {/* MOBILE HERO ( < lg ) – no animations on mobile, static content only */}
-      <section className="block lg:hidden relative overflow-x-hidden">
+      <section className="block lg:hidden relative overflow-visible">
 
         {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
         <div className="absolute inset-0 overflow-visible pointer-events-none">
           <HeroBanner />
         </div>
-        {/* Left-side mobile blur (static, no animation on mobile) */}
+        {/* Left-side mobile blur – extends so it doesn’t look cut, fades to transparent */}
         <div 
-          className="hidden absolute left-[20px] top-32 w-[150px] h-[120px] z-[5] pointer-events-none"
+          className="hidden absolute -left-[40px] top-24 w-[240px] h-[200px] z-[5] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 150px 120px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
-            filter: 'blur(30px)',
-            clipPath: 'ellipse(200px 180px at 10% 90%)',
+            background: 'radial-gradient(ellipse 65% 60% at 35% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.12) 35%, transparent 60%)',
+            filter: 'blur(36px)',
           }}
         />
         <div className="hero-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6 md:items-center">
@@ -217,23 +208,16 @@ export default function HeroSection() {
 
           {/* Mobile heading + drone badge on the right; tablet: centered text */}
           <div className="relative mb-6 w-full md:text-center">
-            <h1 className="text-[2.75rem] leading-[1.05] font-[400] text-white md:text-center md:text-[3.5rem]">
+            <h1 className="text-[2.75rem] leading-[1.05] font-[500] text-white md:text-center md:text-[3.5rem]">
               <span className="block">{HEADING.line1}</span>
-              <span className="block">
-                {HEADING.line2Prefix}
-                <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-                  {HEADING.line2Emphasis}
-                </span>
-              </span>
-              <span className="block">Detection</span>
-              <span className="block">and</span>
-              <span className="block">Monitoring</span>
+              <span className="block">{HEADING.line2}</span>
+              <span className="block">{HEADING.line3}</span>
             </h1>
 
             {/* Drone badge: right-aligned on mobile and tablet */}
             <div className="absolute right-0 top-[5.5rem]">
               <div
-                className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center"
+                className="h-20 w-20 rounded-full p-[3px] flex items-center justify-center"
                 style={{ backgroundColor: '#313331' }}
               >
                 <div
@@ -246,9 +230,9 @@ export default function HeroSection() {
                     <Image
                       src={droneIcon}
                       alt="Drone icon"
-                      width={24}
-                      height={24}
-                      className="h-6 w-6 object-contain"
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 object-contain"
                     />
                   </div>
                 </div>
@@ -287,13 +271,14 @@ export default function HeroSection() {
           </div>
 
           {/* Body text – left on mobile, centered on tablet; larger on tablet */}
-          <p className="mb-8 text-base leading-relaxed text-[#A9A9A9] md:text-center md:mx-auto md:text-lg max-w-[34rem]">
-            {SUBTEXT_LINES.map((line, i) => (
-              <span key={i} className="block">
-                {line}
-              </span>
-            ))}
-          </p>
+          <div className="mb-8 space-y-3 text-[17px] leading-relaxed md:text-center md:mx-auto md:text-[18px] max-w-[34rem]">
+            <p className="text-[#C8C8C8]">
+              {SUBTEXT_LINES[0]}
+            </p>
+            <p className="text-[#A9A9A9]">
+              {SUBTEXT_LINES[1]}
+            </p>
+          </div>
 
           {/* Stats – mobile stacked; tablet centered */}
           <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60 md:items-center md:text-center">
