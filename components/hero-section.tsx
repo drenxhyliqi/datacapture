@@ -28,7 +28,7 @@ export default function HeroSection() {
   return (
     <>
       {/* DESKTOP HERO (lg+) – section hidden on md and below via Tailwind */}
-      <section className="hidden lg:block relative overflow-visible min-h-[110vh]">
+      <section className="hidden lg:block relative min-h-[110vh] overflow-x-hidden">
         {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
         <div className="absolute inset-0 overflow-visible pointer-events-none">
           <HeroBanner />
@@ -36,11 +36,11 @@ export default function HeroSection() {
 
         {/* Desktop blur shadows: only in DOM on lg+ (conditional render so not present on md and below) */}
         {isLg && (
-          <div className="absolute inset-0 pointer-events-noneoverflow-hidden" aria-hidden="true">
+          <div className="hero-blur-shadows absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
             {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
             <div
               key="hero-shadow-left"
-              className="hero-shadow animate-hero-shadow-up absolute left-55 top-[60%] pointer-events-none w-[280px] h-[220px]"
+              className="hero-shadow hero-shadow-left animate-hero-shadow-up absolute left-55 top-[60%] pointer-events-none w-[280px] h-[220px]"
               role="presentation"
               style={{
                 background:
@@ -52,7 +52,7 @@ export default function HeroSection() {
             {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
             <div
               key="hero-shadow-right"
-              className="hero-shadow animate-hero-shadow-down absolute right-30 top-[20%] pointer-events-none w-[280px] h-[220px]"
+              className="hero-shadow hero-shadow-right animate-hero-shadow-down absolute right-30 top-[20%] pointer-events-none w-[280px] h-[220px]"
               role="presentation"
               style={{
                 background:
@@ -186,7 +186,7 @@ export default function HeroSection() {
       </section>
 
       {/* MOBILE HERO ( < lg ) – no animations on mobile, static content only */}
-      <section className="block lg:hidden relative">
+      <section className="block lg:hidden relative overflow-x-hidden">
 
         {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
         <div className="absolute inset-0 overflow-visible pointer-events-none">
@@ -201,7 +201,7 @@ export default function HeroSection() {
             clipPath: 'ellipse(200px 180px at 10% 90%)',
           }}
         />
-        <div className="hero-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6">
+        <div className="hero-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6 md:items-center">
           {/* AIR DEFENCE pill */}
           <div className="mb-6 flex justify-center">
             <span
@@ -215,9 +215,9 @@ export default function HeroSection() {
             </span>
           </div>
 
-          {/* Mobile heading + drone badge on the right */}
-          <div className="relative mb-6">
-            <h1 className="text-[2.5rem] leading-[1.05] font-[400] text-white">
+          {/* Mobile heading + drone badge on the right; tablet: centered text */}
+          <div className="relative mb-6 w-full md:text-center">
+            <h1 className="text-[2.75rem] leading-[1.05] font-[400] text-white md:text-center md:text-[3.5rem]">
               <span className="block">{HEADING.line1}</span>
               <span className="block">
                 {HEADING.line2Prefix}
@@ -230,7 +230,7 @@ export default function HeroSection() {
               <span className="block">Monitoring</span>
             </h1>
 
-            {/* Mobile drone badge - same size as desktop, positioned just below "for" text */}
+            {/* Drone badge: right-aligned on mobile and tablet */}
             <div className="absolute right-0 top-[5.5rem]">
               <div
                 className="h-16 w-16 rounded-full p-[3px] flex items-center justify-center"
@@ -256,8 +256,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* CTA button - mobile, below heading, same design as desktop but smaller */}
-          <div className="mb-8 w-full">
+          {/* CTA button - mobile only; hidden on tablet (md) */}
+          <div className="mb-8 w-full md:hidden">
             <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-3 py-1">
               <div className="relative inline-flex items-center w-full gap-2">
                 {/* Fading line + arrow to the left */}
@@ -286,8 +286,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Body text */}
-          <p className="mb-8 text-[15px] leading-relaxed text-[#A9A9A9]">
+          {/* Body text – left on mobile, centered on tablet; larger on tablet */}
+          <p className="mb-8 text-base leading-relaxed text-[#A9A9A9] md:text-center md:mx-auto md:text-lg max-w-[34rem]">
             {SUBTEXT_LINES.map((line, i) => (
               <span key={i} className="block">
                 {line}
@@ -295,8 +295,8 @@ export default function HeroSection() {
             ))}
           </p>
 
-          {/* Stats – mobile, stacked but same visual style */}
-          <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60">
+          {/* Stats – mobile stacked; tablet centered */}
+          <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60 md:items-center md:text-center">
             <span>
               <span className="font-semibold text-white mr-1">1.600+</span>
               USER ACTIVE

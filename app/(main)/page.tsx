@@ -51,27 +51,6 @@ export default function Home() {
           <HeroHeader />
         </div>
 
-        {/* Static blur shadows (top right + bottom left) – only on lg+, hidden on medium and smaller */}
-        {isLg && (
-          <div className="absolute inset-0 pointer-events-none z-[40] overflow-visible" aria-hidden="false">
-            {/* Bottom left: white-to-green (#119200) gradient blur */}
-            <div
-              className="absolute left-45 bottom-50 w-[280px] h-[240px] -translate-x-1/2 translate-y-1/2"
-              style={{
-                background: 'radial-gradient(ellipse 140px 140px at 30% 70%, rgba(255, 255, 255, 0.4) 0%, rgba(17, 146, 0, 0.35) 45%, rgba(17, 146, 0, 0.15) 70%, transparent 85%)',
-                filter: 'blur(100px)',
-              }}
-            />
-            {/* Top right: single white-to-#004B92 gradient blur */}
-            <div
-              className="absolute right-40 top-20 w-[280px] h-[240px] translate-x-1/3 -translate-y-1/2 z-[40]"
-              style={{
-                background: 'radial-gradient(ellipse 140px 140px at 70% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 75, 146, 0.35) 45%, rgba(0, 75, 146, 0.15) 70%, transparent 85%)',
-                filter: 'blur(80px)',
-              }}
-            />
-          </div>
-        )}
 
         {/* HERO TEXT */}
         <div className="relative z-10">
@@ -82,7 +61,7 @@ export default function Home() {
       {/* STATIC RIGHT SHADOW – only in DOM on lg+; low z so navbar stays on top */}
       {isLg && (
         <div className="absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
-          <div className="relative w-[700px] h-[100vh] translate-x-1/2 translate-y-250">
+          <div className="relative w-[400px] h-[100vh] translate-x-1/2 translate-y-250">
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
