@@ -270,6 +270,214 @@
   animation: press-marquee 22s linear infinite;
 }
 
+/* Hero banner ellipse – responsive with pure CSS (no Tailwind breakpoints) */
+/* Hero banner ellipse – mobile first, then tablet (md), large, extra large */
+
+/* Mobile (default) */
+.hero-banner-ellipse {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* prevent flex parent from shrinking the ellipse */
+  min-width: 480px;
+  min-height: 1200px;
+  width: 155vw;
+  height: 195vh;
+  max-width: 220vw;
+  max-height: 200vh;
+  transform: translateY(-2vh) translateX(-30vw) rotate(-16deg);
+}
+
+.hero-banner-ellipse img {
+  object-fit: contain;
+}
+
+/* Left / Right background graphics – mobile first */
+.hero-bg-left,
+.hero-bg-right {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Left: same size as right – full height, same width */
+.hero-bg-left {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 142vw;
+  max-width: none;
+  min-height: 100%;
+  transform: rotate(-8deg);
+  transform-origin: left bottom;
+}
+.hero-bg-left img {
+  object-fit: contain;
+  object-position: left bottom;
+  transform: rotate(8deg);
+
+}
+/* Right: softer glow center-right – change width/height to scale */
+.hero-bg-right {
+  top: 0;
+  bottom: 0;
+  width: 142vw;
+  max-width: none; /* no pixel cap – size is controlled by width/height only */
+  min-height: 100%;
+  transform: rotate(-25deg);
+}
+.hero-bg-right img {
+  object-fit: contain;
+  object-position: right 25%;
+  transform-origin: right top;
+  transform-box: fill-box;
+  margin-left: 8%;
+}
+
+/* Tablet (md): 768px and up */
+@media (min-width: 768px) {
+  .hero-banner-ellipse {
+    width: 90vw;
+    height: 120vh;
+    margin-top: 0%;
+    flex-shrink: 0;
+    max-width: 120vw;
+    max-height: 188vh;
+    transform:  translateY(-0%) rotate(-5deg);
+  }
+  .hero-bg-left {
+    width: 80vw;
+  }
+  .hero-bg-right {
+    width: 80vw;
+    transform: rotate(5deg);
+    transform-origin: right top;
+    margin-left: 10%;
+   }
+  .hero-bg-right img {
+     object-position: right -5%; 
+     margin-left: 15%;
+     transform: rotate(-10deg);
+
+    }
+  .hero-bg-left img {
+    transform: rotate(-4deg);
+    transform-origin: bottom 20%;
+    margin-top: 15%;
+  }
+}
+
+/* Large: 1024px and up */
+@media (min-width: 1024px) {
+  .hero-banner-ellipse {
+    width: 102vw;
+    flex-shrink: 0;
+    height: 100vh;
+    max-width: 108vw;
+    max-height: 108vh;
+    transform: translateY(-0vh);
+  }
+  .hero-bg-right {
+    width: 80vw;
+    transform: rotate(2deg);
+    transform-origin: right top;
+    margin-left: 20%;
+  }
+  .hero-bg-right img {
+    object-position: right 5%;
+    transform: rotateX(-5deg);
+  }
+  .hero-bg-left {
+    width: 80vw;
+    transform: rotate(-5deg);
+    transform-origin: left bottom;
+    margin-right: 25%;
+  }
+  .hero-bg-left img {
+    object-position: left 20%;
+    transform: rotateX(-5deg);
+    transform-origin: left bottom;
+    margin-left: -10%;
+  }
+}
+
+/* Extra large: 1280px and up */
+@media (min-width: 1280px) {
+  .hero-banner-ellipse {
+    width: 70vw;
+    flex-shrink: 0;
+    height: 100vh;
+    max-width: 108vw;
+    max-height: 108vh;
+    transform: translateY(-0vh);
+  }
+  .hero-bg-right {
+    width: 80vw;
+    transform: rotateX(33deg);
+    transform-origin: right top;
+    margin-right: 43%;
+  }
+  .hero-bg-right img {
+    object-position: right 10%;
+    transform: rotateX(-5deg);
+  }
+  .hero-bg-left {
+    width: 80vw;
+    transform: rotate(-8deg);
+    transform-origin: left bottom;
+    margin-right: 30%;
+  }
+  .hero-bg-left img {
+    object-position: left 20%;
+    transform: rotateX(-5deg);
+    transform-origin: left bottom;
+    margin-left: 15%;
+  }
+}
+
+/* 4K / 2560px and up */
+@media (min-width: 2560px) {
+  .hero-banner-ellipse {
+    width: 85vw;
+    height: 88vh;
+    flex-shrink: 0;
+    max-width: 55vw;
+    max-height: 50vh;
+    transform: translateY(-20vh);
+  }
+
+  /* Blur shadows: smaller gap between left and right at 2560px */
+  .hero-blur-shadows .hero-shadow-left {
+    left: 23%;
+    top: 40%;
+  }
+  .hero-blur-shadows .hero-shadow-right {
+    right: 15%;
+  }
+
+  .hero-bg-left { 
+    width: 48vw; 
+    transform: rotate(14deg);
+    margin-top: -28%;
+    margin-left: -4%;
+  }
+  .hero-bg-right { 
+    width: 48vw; 
+    transform: rotate(14deg);
+    transform-origin: right top;
+  }
+  .hero-bg-right img {
+     object-position: right 12%;
+     transform: rotateX(12deg);
+     margin-left: 5%;
+  }
+  .hero-bg-left img {
+    object-position: left 24%;
+    transform: rotateX(12deg);
+ }
+}
+
 /* Hero section – use theme utilities (animate-hero-shadow-up etc.) so keyframes are not purged */
 .hero-shadow {
   will-change: transform;

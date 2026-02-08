@@ -6,7 +6,7 @@ import { GradientCard } from './ui/GradientCard'
 
 export default function AboutSection() {
     return (
-        <section className="relative w-full py-20 lg:pt-70 px-6 lg:px-8 -mt-30">
+        <section className="relative w-full py-20 lg:pt-32 px-6 lg:px-8 mt-20 lg:mt-32">
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
                     {/* Left Section - Text Content */}
