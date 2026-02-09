@@ -28,11 +28,11 @@ const menuItems: MenuItem[] = [
     name: 'Products',
     href: '/products',
     children: [
-        { name: 'GNNS', href: '/products/gnns' },
-        { name: 'Hard-kill', href: '/products/hard-kill' },
-        { name: 'Radar', href: '/products/radar' },
-        { name: 'UAV', href: '/products/uav' },
-        { name: 'Mobile CUAS', href: '/products/mobile-cuas' },
+      { name: 'GNNS', href: '/products/gnns' },
+      { name: 'Hard-kill', href: '/products/hard-kill' },
+      { name: 'Radar', href: '/products/radar' },
+      { name: 'UAV', href: '/products/uav' },
+      { name: 'Mobile CUAS', href: '/products/mobile-cuas' },
     ],
   },
   { name: 'Company', href: '/company-section' },
@@ -85,7 +85,7 @@ export const HeroHeader = () => {
 
   return (
     <>
-      <header className="top-0 left-0 right-0 z-[100] w-full">
+      <header className="top-0 left-0 right-0 w-full">
         <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-4">
           {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-3" aria-label="Data Capture Systems Home">
@@ -152,12 +152,12 @@ export const HeroHeader = () => {
                         <span>{item.name}</span>
                         <ChevronDown className={cn('h-3.5 w-3.5 transition-transform', isOpen && 'rotate-180')} />
                       </button>
-              
+
                       {isOpen && (
                         <>
                           {/* click outside */}
                           <div className="fixed inset-0 z-[90]" onClick={() => setOpenDropdown(null)} />
-              
+
                           <div
                             className="absolute left-0 top-full mt-3 z-[100] min-w-[220px] rounded-xl border border-white/15 overflow-hidden backdrop-blur-md shadow-xl"
                             style={{ backgroundColor: 'rgba(57, 76, 107, 0.3) 100%' }}
@@ -186,7 +186,7 @@ export const HeroHeader = () => {
                         </>
                       )}
                     </li>
-                  ) 
+                  )
                 })}
               </ul>
             </div>
