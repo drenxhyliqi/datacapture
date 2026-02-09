@@ -267,6 +267,12 @@ body[unresolved] {
   animation: press-marquee 22s linear infinite;
 }
 
+/* Partners section: infinite right-to-left logo scroll (used via inline style in partners-section) */
+@keyframes partners-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Hero banner ellipse – responsive with pure CSS (no Tailwind breakpoints) */
 /* Hero banner ellipse – mobile first, then tablet (md), large, extra large */
 

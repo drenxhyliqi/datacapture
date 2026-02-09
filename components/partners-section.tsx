@@ -5,6 +5,14 @@ import acsLogo from "@/assets/partners/Untitled 5.svg";
 import rayzoneLogo from "@/assets/partners/Untitled 7.svg";
 import drsRadaLogo from "@/assets/partners/dropped-image.svg";
 
+const PARTNER_LOGOS = [
+  { src: regulusLogo, alt: "Regulus" },
+  { src: protechtLogo, alt: "Protecht" },
+  { src: acsLogo, alt: "ACS" },
+  { src: drsRadaLogo, alt: "DRS RADA Technologies" },
+  { src: rayzoneLogo, alt: "Rayzone Group" },
+];
+
 export default function PartnersSection() {
   return (
     <section className="relative w-full py-16 lg:py-24">
@@ -19,48 +27,49 @@ export default function PartnersSection() {
           </p>
         </div>
 
-        {/* Logo rows */}
-        <div className="flex flex-col items-center gap-12 lg:gap-14">
-          {/* Row 1 */}
+        {/* Mobile: infinite right-to-left logo marquee */}
+        <div className="w-full overflow-hidden md:hidden">
+          <div
+            className="flex w-max items-center gap-14"
+            style={{
+              animation: 'partners-marquee 35s linear infinite',
+              willChange: 'transform',
+            }}
+          >
+            {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((partner, idx) => (
+              <div
+                key={`${partner.alt}-${idx}`}
+                className="h-16 flex shrink-0 items-center justify-center"
+              >
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  className="h-full w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: static two rows */}
+        <div className="hidden md:flex flex-col items-center gap-12 lg:gap-14">
           <div className="flex flex-wrap justify-center gap-14 lg:gap-20 items-center">
             <div className="h-16 md:h-20 flex items-center">
-              <Image
-                src={regulusLogo}
-                alt="Regulus logo"
-                className="h-full w-auto object-contain"
-              />
+              <Image src={regulusLogo} alt="Regulus" className="h-full w-auto object-contain" />
             </div>
             <div className="h-16 md:h-20 flex items-center">
-              <Image
-                src={protechtLogo}
-                alt="Protecht logo"
-                className="h-full w-auto object-contain"
-              />
+              <Image src={protechtLogo} alt="Protecht" className="h-full w-auto object-contain" />
             </div>
             <div className="h-16 md:h-20 flex items-center">
-              <Image
-                src={acsLogo}
-                alt="ACS logo"
-                className="h-full w-auto object-contain"
-              />
+              <Image src={acsLogo} alt="ACS" className="h-full w-auto object-contain" />
             </div>
           </div>
-
-          {/* Row 2 */}
           <div className="flex flex-wrap justify-center gap-14 lg:gap-20 items-center">
             <div className="h-16 md:h-20 flex items-center">
-              <Image
-                src={drsRadaLogo}
-                alt="DRS RADA Technologies logo"
-                className="h-full w-auto object-contain"
-              />
+              <Image src={drsRadaLogo} alt="DRS RADA Technologies" className="h-full w-auto object-contain" />
             </div>
             <div className="h-16 md:h-20 flex items-center">
-              <Image
-                src={rayzoneLogo}
-                alt="Rayzone Group logo"
-                className="h-full w-auto object-contain"
-              />
+              <Image src={rayzoneLogo} alt="Rayzone Group" className="h-full w-auto object-contain" />
             </div>
           </div>
         </div>
