@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import droneImage from '@/assets/drone.png'
 import { GradientLine } from '@/components/ui/GradientLine'
 import { GradientCard } from './ui/GradientCard'
 
@@ -26,31 +25,34 @@ export default function AboutSection() {
 
                         {/* Main Headline */}
                         <h3 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-8 leading-tight">
-                            An integrated platform for operational drone awareness.
+                            An Integrated Platform for Drone Awareness and Security Operations
                         </h3>
 
                         {/* Paragraphs */}
-                        <div className="space-y-6 text-base md:text-lg text-white/90 leading-relaxed">
+                        <div className="space-y-6 text-base md:text-lg text-[#D9D9D9] leading-relaxed">
                             <p>
-                                The DCS system collects data from sensors, processes it centrally, and presents drone activity through a unified graphical interface.
+                                Data Capture Systems GmbH is a German technology company specializing in state-of-the-art counter-drone and cybersecurity solutions. We address the rapidly growing security requirements of government authorities, armed forces, critical infrastructure operators, and commercial organizations worldwide.
                             </p>
                             <p>
-                                It supports real-time monitoring, operational configuration, and recorded data review for operators before, during, and after missions.
+                                The company provides future-proof, highly reliable protection solutions that integrate seamlessly into existing command, sensor, and security architectures. Our systems are designed for deployment in military, governmental, maritime, and civilian environments.
                             </p>
                             <p>
-                                The system emphasizes situational awareness, controlled access, and structured workflows across monitoring, mission planning, and system configuration.
+                                At the core of our product portfolio is a proprietary multi-sensor system that enables the precise detection, identification, and neutralization of all types of drones.
+                            </p>
+                            <p>
+                                Operations are managed via in-house, user-friendly C2 software, which consolidates all sensor data into a clear, real-time common operating picture, enabling fast, secure, and effective decision-making.
                             </p>
                         </div>
                     </div>
 
                     {/* Right Section - Image with Slider Effect */}
                     
-                        <div className="relative w-full">
+                        <div className="relative w-full mt-10">
                             {/* Drone Image */}
                             <GradientCard>
                                 <div className="relative h-[60vh] w-full min-h-[280px] rounded-2xl overflow-hidden">
                                 <Image
-                                    src={droneImage}
+                                    src="/about-image.png"
                                     alt="Operational use"
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 50vw"

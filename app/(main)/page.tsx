@@ -3,14 +3,12 @@
 import { HeroHeader } from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
-import SystemFeatures from "@/components/system-features";
+import PartnersSection from "@/components/partners-section";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
 import heroBanner3 from "@/assets/heroBanner3.png";
 import bannerMobile1 from "@/assets/bannerMobile (1).png";
-import OperationalUseSection from "@/components/OperationalUseSection";
 import DiscussSection from "@/components/discussSection";
-import TestimonialSection from "@/components/testimonial-section";
 import Footer from "@/components/footer";
 import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
 export default function Home() {
@@ -80,7 +78,7 @@ export default function Home() {
         <div className="relative z-0">
           {/* Blur only from About DCS down to System Features */}
           <div className="relative overflow-hidden">
-            {/* LEFT MOVING SHADOW – spans About + System Features only */}
+            {/* LEFT MOVING SHADOW – spans About + Partners only */}
             <div className="absolute -left-[5px] inset-0 pointer-events-none z-[1] md:z-[15] overflow-hidden">
               <div
                 className="
@@ -106,8 +104,7 @@ export default function Home() {
               </div>
             </div>
             <AboutSection />
-            <SystemFeatures />
-          <OperationalUseSection />
+            <PartnersSection />
           </div>
           {/* Testimonial + Discuss with static left blur between them */}
           <div className="relative overflow-hidden">
@@ -128,7 +125,6 @@ export default function Home() {
                 />
               </div>
             </div>
-            <TestimonialSection />
             <DiscussSection />
           </div>
         </div>
