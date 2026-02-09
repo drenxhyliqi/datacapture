@@ -1,9 +1,11 @@
 import { StaticImageData } from 'next/image'
 
-// IMAGES (content)
-import serviceImage1 from '@/assets/service1.png'
-import serviceImage2 from '@/assets/service2.png'
-import droneImage from '@/assets/drone.png'
+// IMAGES (content) – from assets/services
+import datacenterImage from '@/assets/services/datacenter.png'
+import aiImage from '@/assets/services/ai.png'
+import cybersecurityImage from '@/assets/services/cybersecurity.png'
+import softwareImage from '@/assets/services/software.png'
+import service2Image from '@/assets/services/service2.png'
 
 // ICONS (SVG)
 import datacenterIcon from '@/assets/service1.svg'
@@ -30,7 +32,7 @@ export const services: ServiceItem[] = [
       'Recorded operational data stored locally',
       'Retention period dependent on system storage capacity',
     ],
-    image: serviceImage1,
+    image: datacenterImage,
     imagePosition: 'right',
   },
   {
@@ -43,7 +45,7 @@ export const services: ServiceItem[] = [
       'Automatic system naming of detected drones',
       'No AI or machine learning functionality specified',
     ],
-    image: serviceImage2,
+    image: aiImage,
     imagePosition: 'left',
   },
   {
@@ -56,7 +58,7 @@ export const services: ServiceItem[] = [
       'Secure update via authorized VPN connection',
       'Authorized offline updates via USB',
     ],
-    image: droneImage,
+    image: cybersecurityImage,
     imagePosition: 'right',
   },
   {
@@ -69,21 +71,8 @@ export const services: ServiceItem[] = [
       'Real-Time, Mission, and Settings screens',
       'Map-based visualization of detected drones',
     ],
-    image: serviceImage1,
+    image: softwareImage,
     imagePosition: 'left',
-  },
-  {
-    icon: cybersecurityIcon,
-    title: 'From Protecht',
-    description:
-      'DCS is designed and developed by Protecht as an integrated system for drone detection, monitoring, and data recording.',
-    bullets: [
-      'Integrated command-and-control platform',
-      'System updates provided through authorized procedures',
-      'Developed and maintained by Protecht',
-    ],
-    image: droneImage,
-    imagePosition: 'right',
   },
   {
     icon: aiIcon,
@@ -95,7 +84,7 @@ export const services: ServiceItem[] = [
       'Operational use described through system interface',
       'Additional training details available upon request',
     ],
-    image: serviceImage2,
-    imagePosition: 'left',
+    image: service2Image,
+    imagePosition: 'right',
   },
 ]
