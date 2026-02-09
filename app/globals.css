@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Critical: same as previous inline layout styles to avoid hydration mismatch */
+html,
+body {
+  background-color: #101210 !important;
+  min-height: 100%;
+}
+body {
+  transition: opacity ease-in 0.2s;
+}
+body[unresolved] {
+  opacity: 0;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
