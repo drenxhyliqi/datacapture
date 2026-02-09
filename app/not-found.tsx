@@ -58,8 +58,7 @@ export default function NotFound() {
       {/* MAIN (centered error) */}
       <main className="relative z-20 flex-1 flex items-center justify-center px-6 py-20 sm:py-24 md:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center py-16">
-          <p className="text-white/70 tracking-widest text-sm md:text-base">ERROR</p>
-          <h1 className="mt-6 text-white text-5xl md:text-7xl font-semibold leading-tight">404</h1>
+          <h1 className="mt-6 text-white text-5xl md:text-7xl font-semibold leading-tight">ERROR 404</h1>
           <p className="mt-6 text-white/60 max-w-2xl mx-auto">
             The page you are looking for does not exist or has been moved.
           </p>
