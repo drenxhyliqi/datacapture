@@ -122,20 +122,29 @@ export default function HardkillSection() {
                         "
                         />
                     </div>
-
                     {/* TEXT */}
                     <div className="flex flex-col items-start gap-4">
                         <div className="space-y-6">
-                        {feature2.map((feature) => (
-                            <div key={feature.title}>
-                            <h4 className="text-lg md:text-xl font-[400] text-white">
-                                {feature.title}
-                            </h4>
-                            <p className={`text-base md:text-lg text-white/80 leading-relaxed ${feature.title === "Laser Detection" ? "whitespace-pre-line line-height-1.5" : ""}`}>
-                                {feature.description}
-                            </p>
-                            </div>
-                        ))}
+                            {feature2.map((feature, idx) => {
+                            const isLaser = feature.title === "Laser Detection"
+
+                            return (
+                                <div key={`${feature.title}-${idx}`}>
+                                <h4 className="text-lg md:text-xl font-[400] text-white">
+                                    {feature.title}
+                                </h4>
+
+                                <p
+                                    className={[
+                                    "text-base md:text-lg text-white/80 leading-relaxed",
+                                    isLaser ? "whitespace-pre-line leading-[1.5]" : "",
+                                    ].join(" ")}
+                                >
+                                    {feature.description}
+                                </p>
+                                </div>
+                            )
+                            })}
                         </div>
                     </div>
                 </div>
