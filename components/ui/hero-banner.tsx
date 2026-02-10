@@ -1,7 +1,7 @@
 import Image from "next/image";
-import insideEllipse from "@/assets/background/InsideEllipse2.svg";
-import leftBackground from "@/assets/background/LeftBackground.svg";
-import rightBackground from "@/assets/background/RightBackground.svg";
+import insideEllipse from "@/assets/background/firstBanner/InsideEllipse2.svg";
+import leftBackground from "@/assets/background/firstBanner/LeftBackground.svg";
+import rightBackground from "@/assets/background/firstBanner/RightBackground.svg";
 
 const ellipseSrc = typeof insideEllipse === "string" ? insideEllipse : (insideEllipse as { src: string }).src;
 const leftBgSrc = typeof leftBackground === "string" ? leftBackground : (leftBackground as { src: string }).src;
