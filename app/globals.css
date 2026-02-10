@@ -395,30 +395,28 @@ body[unresolved] {
     width: 60%;
   }
   .second-hero-bg-left {
-    left: -40vw !important;
-    top: -77rem !important;
-    width: 100px !important;
-    height: 100px !important;
-    background-color: blue !important;
+    left: 0 !important;
+    top: -50rem !important;
+    width: 100dvw !important;
+    height: 300dvh !important;
     transform: rotate(5deg);
   }
   .second-hero-bg-right {
-    right: 0 !important;
+    right: -17vw !important;
     top: -47rem !important;
     width: 100dvw !important;
     height: 350dvb !important;
-    background-color: red !important;
   }
   .left-hero-background{
-    left: -20vw !important;
+    left: -40vw !important;
+    top: 10vh !important;
     width: 100dvw !important;
     transform: rotate(5deg);
     height: 300dvh !important;
   }
   .right-hero-background{
-    right: 20vw !important;
     width: 100dvw !important;
-    transform: rotate(15deg);
+    transform: rotate(25deg) !important;
     height: 300dvh !important;
   }
 }
@@ -438,7 +436,7 @@ body[unresolved] {
   }
 
   .second-hero-bg-left {
-    left: -4vw; 
+    left: -3vw; 
     top: -55vh;
     width: 70dvw;
     height: 140vh;
@@ -515,7 +513,7 @@ body[unresolved] {
   }
   /* ✅ Left stays on the LEFT edge (outside) */
   .second-hero-bg-left {
-    left: 2vw; 
+    left: 20vw; 
     top: -40vh;
     width: 60dvw;
     height: 75vh;

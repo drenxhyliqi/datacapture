@@ -10,7 +10,7 @@ import hardkillHero from "@/assets/hardkill-1.svg"
 import HardkillSection from "@/components/hardkill-section"
 import { GradientCard } from "@/components/ui/GradientCard"
 import hardkillProduct from "@/assets/hardkill-5.png"
-
+import SecondHeroBanner from "@/components/ui/second-hero-banner"
 export default function GnnsPage() {
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
@@ -22,17 +22,8 @@ export default function GnnsPage() {
             <HeroHeader />
           </div>
   
-          {/* HERO IMAGE */}
-          <div className="pointer-events-none absolute -top-35 inset-0 flex z-10 justify-center object-contain">
-            <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
-              <Image
-                src={solutionsHero}
-                priority
-                alt="Services Hero"
-                className="object-contain"
-              />
-            </div>
-          </div>
+          <SecondHeroBanner />
+
 
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">

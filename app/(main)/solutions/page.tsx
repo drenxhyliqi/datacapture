@@ -8,6 +8,7 @@ import solutionsHero from "@/assets/herosolutuion.png"
 import ContentSection from "@/components/content-section"
 import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
+import SecondHeroBanner from "@/components/ui/second-hero-banner"
 
 export default function SolutionsPage() {
   return (
@@ -19,18 +20,9 @@ export default function SolutionsPage() {
         <div className="relative z-30">
           <HeroHeader />
         </div>
+        
+        <SecondHeroBanner />
 
-        {/* HERO IMAGE */}
-        <div className="pointer-events-none absolute -top-35 inset-0 flex z-10 justify-center object-contain">
-          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square  md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
-            <Image
-              src={solutionsHero}
-              priority
-              alt="Solutions Hero"
-              className="object-contain"
-            />
-          </div>
-        </div>
 
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-4xl px-6 pt-30 md:pt-5 pb-24 text-center">
