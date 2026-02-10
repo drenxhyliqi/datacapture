@@ -24,7 +24,7 @@ export default function GnnsPage() {
 
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
+        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             Product
           </p>
@@ -70,8 +70,8 @@ export default function GnnsPage() {
           <RadarSection />
         </div>
       </section>
-      <div className="relative w-full h-auto mt-10">
-        <Image src={hardkillProduct} alt="GNNS Content" className="object-cover"/>
+      <div className="relative w-full h-100vh mt-10">
+        <Image src={hardkillProduct} alt="GNNS Content" className="object-contain"/>
       </div>
 
        {/* FEATURES 2*/}
