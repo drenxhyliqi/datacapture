@@ -7,6 +7,7 @@ import ellipseShadow from '@/assets/Ellipse 8.svg'
 import { Mail, Phone } from 'lucide-react'
 import solutionsHero from "@/assets/herosolutuion.png"
 import Footer from '@/components/footer'
+import SecondHeroBanner from '@/components/ui/second-hero-banner'
 
 export default function ContactUsPage() {
     const [formData, setFormData] = useState({
@@ -44,17 +45,7 @@ export default function ContactUsPage() {
                     <HeroHeader />
                 </div>
 
-                {/* HERO IMAGE - behind text */}
-                <div className="pointer-events-none absolute -top-35 inset-0 flex z-0 justify-center object-contain">
-                    <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
-                        <Image
-                            src={solutionsHero}
-                            priority
-                            alt="Contact Hero"
-                            className="object-contain"
-                        />
-                    </div>
-                </div>
+                <SecondHeroBanner />
 
                 {/* HERO TEXT */}
                 <div className="relative z-20 mx-auto max-w-4xl pt-30 md:pt-5 pb-24 text-center">
