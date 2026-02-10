@@ -83,7 +83,7 @@ body[unresolved] {
       top: 100px;
       right: 100px;
     }
-  } // qta
+  } 
   @keyframes footerBlurMove {
     0% { transform: translateY(50px); }
     15% { transform: translateY(-130px); }
