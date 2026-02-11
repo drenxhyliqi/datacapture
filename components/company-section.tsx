@@ -50,7 +50,7 @@ export default function CompanySection() {
 
         <SecondHeroBanner />
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-6xl pt-30 md:pt-5 pb-24 text-center">
+        <div className="relative z-20 mx-auto max-w-6xl pt-5 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             FROM JOHANNES
           </p>

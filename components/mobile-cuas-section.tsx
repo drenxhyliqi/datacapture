@@ -52,11 +52,11 @@ export default function MobileCuasSections() {
         <section className="container mx-auto w-full px-6 lg:px-8 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-10">
             {/* Title: Choose your Vehicle */}
-            <div className="flex w-full h-full p-10 rounded-md items-center justify-center">
+            <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
               <GradientCard>
-                  <h2 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
-                  Choose your Vehicle
-                  </h2>
+                <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
+                Choose your Vehicle
+                </h3>
               </GradientCard>
             </div>
 

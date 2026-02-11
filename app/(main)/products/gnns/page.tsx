@@ -25,14 +25,14 @@ export default function GnnsPage() {
           <SecondHeroBanner />
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
+        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-10 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             Product
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
             GNNS Manipulation
           </h1>
-          <Image src={gnnsHero} alt="GNNS Hero" className="object-contain items-center justify-center w-90 h-50" />
+          <Image src={gnnsHero} alt="GNNS Hero" className="object-contain items-center justify-center -mt-10 lg:w-70 lg:h-70 w-40 h-40" />
         </div>
       </div>
 

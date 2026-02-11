@@ -6,6 +6,7 @@ import { HeroHeader } from '@/components/header'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
 import solutionsHero from '@/assets/herosolutuion.png'
 import Footer from '@/components/footer'
+import SecondHeroBanner from '@/components/ui/second-hero-banner'
 
 export default function NotFound() {
   return (
@@ -20,17 +21,9 @@ export default function NotFound() {
       {/* BACKGROUND LAYERS (Hero image + shadows) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* HERO IMAGE */}
-        <div className="absolute inset-0 flex justify-center">
-          <div className="relative w-[140vw] h-[140vw] lg:top-40 sm:w-[120vw] sm:h-[120vw] md:w-[110vw] md:h-[110vw] lg:w-[155vh] lg:h-[70vh] -translate-y-12 md:-translate-y-20 lg:-translate-y-6 rotate-[55deg] md:rotate-[10deg] lg:rotate-0">
-            <Image
-              src={solutionsHero}
-              priority
-              alt="404 Hero"
-              fill
-              className="object-contain"
-            />
+          <div className="relative mt-30 lg:mt-80 z-20">
+            <SecondHeroBanner />
           </div>
-        </div>
 
         {/* STATIC RIGHT SHADOW */}
         <div className="absolute inset-0 overflow-visible">

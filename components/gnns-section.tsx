@@ -46,7 +46,7 @@ const operationalModes = [
 
 export default function GnnsSection() {
     return (
-        <section className="container mx-auto relative w-full py-10 lg:py-32 px-6 lg:px-8">
+        <section className="container mx-auto relative w-full py-10 lg:py-10 px-6 lg:px-8">
             <div className="w-full max-w-7xl mx-auto">
                 {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
