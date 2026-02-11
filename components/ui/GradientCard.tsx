@@ -11,7 +11,7 @@ type GradientCardProps = {
 export function GradientCard({
     children,
     offset = 12,
-    duration = 1,
+    duration = 50,
 }: GradientCardProps) {
     return (
         <div
@@ -24,7 +24,7 @@ export function GradientCard({
                 hover:border-b-1 hover:border-t-0 
             "
             style={{ 
-                backgroundColor: '#1F1F1F',
+                backgroundColor: 'transparent',
                 transitionDuration: `${duration}ms`
             }}
         >
