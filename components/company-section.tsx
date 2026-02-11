@@ -11,7 +11,7 @@ import solutionsHero from '@/assets/herosolutuion.png'
 import SecondHeroBanner from './ui/second-hero-banner'
 
 const SUBTEXT =
-  'DCS provides centralized detection, visualization, and recording of drone activity within a defined operational area.'
+  'At DCS, our mission is to meet every customer’s unique requirements, ensuring complete safety and protection.'
 
 const METRICS = [
   {
@@ -50,15 +50,14 @@ export default function CompanySection() {
 
         <SecondHeroBanner />
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-6xl pt-5 md:pt-5 pb-24 text-center">
+        <div className="relative z-20 mx-auto max-w-xl pt-5 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             FROM JOHANNES
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-semibold leading-tight">
-            A command-and-control platform for <br className="hidden md:block" />
-            drone detection and monitoring
+          We Protect what matters Most
           </h1>
-          <p className="mt-6 text-white/60 max-w-2xl mx-auto">
+          <p className="mt-6 text-white/60 max-w-md mx-auto">
             {SUBTEXT}
           </p>
         </div>
