@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { HeroHeader } from '@/components/header'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
-import solutionsHero from '@/assets/herosolutuion.png'
+import HeroBanner from '@/components/ui/hero-banner'
 import Footer from '@/components/footer'
 import SecondHeroBanner from '@/components/ui/second-hero-banner'
 
@@ -25,24 +25,24 @@ export default function NotFound() {
             <SecondHeroBanner />
           </div>
 
-        {/* STATIC RIGHT SHADOW */}
+        {/* STATIC RIGHT SHADOW – smaller and higher */}
         <div className="absolute inset-0 overflow-visible">
-          <div className="absolute right-5 top-24 w-[70vw] max-w-[700px] h-[80vh] translate-x-1/2 opacity-80 blur-[80px]">
+          <div className="absolute right-10 top-10 w-[50vw] max-w-[360px] h-[50vh] translate-x-1/2 opacity-70 blur-[70px]">
             <Image src={ellipseShadow} alt="Shadow effect" fill className="object-contain" />
           </div>
         </div>
 
-        {/* LEFT MOVING SHADOW */}
+        {/* LEFT MOVING SHADOW – smaller and shifted up */}
         <div className="absolute inset-0 overflow-hidden">
           <div
-            className="absolute -left-[5px] w-[70vw] max-w-[700px] h-[140vh] -translate-x-1/2 opacity-90"
+            className="absolute -left-[20px] top-0 w-[55vw] max-w-[520px] h-[90vh] -translate-x-1/2 opacity-75"
           >
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
               fill
               className="object-contain"
-              style={{ filter: 'blur(30px)' }}
+              style={{ filter: 'blur(25px)' }}
             />
           </div>
         </div>
