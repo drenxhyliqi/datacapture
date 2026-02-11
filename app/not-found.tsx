@@ -27,7 +27,7 @@ export default function NotFound() {
 
         {/* STATIC RIGHT SHADOW – smaller and higher */}
         <div className="absolute inset-0 overflow-visible">
-          <div className="absolute right-10 top-10 w-[50vw] max-w-[360px] h-[50vh] translate-x-1/2 opacity-70 blur-[70px]">
+          <div className="absolute right-10 top-10 w-[50vw] max-w-[460px] h-[50vh] translate-x-1/2 opacity-70 blur-[70px]">
             <Image src={ellipseShadow} alt="Shadow effect" fill className="object-contain" />
           </div>
         </div>

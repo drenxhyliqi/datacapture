@@ -322,7 +322,7 @@ export const HeroHeader = () => {
 
                       {open && (
                         <div className="px-2 pb-2">
-                          {item.children!.map((c) => {
+                          {visibleChildren.map((c) => {
                             const childActive = isActivePath(pathname, c.href)
                             return (
                               <Link

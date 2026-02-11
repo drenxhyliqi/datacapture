@@ -433,6 +433,16 @@ body[unresolved] {
     }
   }
 /* =========================
+   TABLET AND UP – hide mobile hero backgrounds
+   ========================= */
+@media (min-width: 768px) {
+  .second-hero-mobile-left,
+  .second-hero-mobile-right {
+    display: none;
+  }
+}
+
+/* =========================
    DESKTOP (>=1024px)
    ========================= */
 @media (min-width: 1024px) {
@@ -445,7 +455,7 @@ body[unresolved] {
     pointer-events: none;
   }
 
-  /* Hide mobile */
+  /* Hide mobile (redundant with 768px above, kept for clarity) */
   .second-hero-mobile-left,
   .second-hero-mobile-right {
     display: none;

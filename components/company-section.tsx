@@ -54,7 +54,7 @@ export default function CompanySection() {
           <p className="text-white tracking-widest text-sm md:text-base">
             FROM JOHANNES
           </p>
-          <h1 className="mt-6 text-white text-3xl md:text-6xl font-semibold leading-tight">
+          <h1 className="mt-6 text-white text-xl md:text-5xl font-semibold leading-tight">
             A command-and-control platform for <br className="hidden md:block" />
             drone detection and monitoring
           </h1>
