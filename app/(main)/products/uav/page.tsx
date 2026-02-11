@@ -66,9 +66,9 @@ export default function UAVPage() {
 
         <div className="relative z-10">
           <UAVSections />
+          <DiscussSection />
         </div>
       </section>
-      <DiscussSection />
       <Footer />
     </div>
   )

@@ -37,7 +37,7 @@ export default function ServicesPage() {
 
        {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
        <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
-          <div className="absolute right-5 top-130 lg:top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
+          <div className="absolute right-5 top-120 lg:top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
