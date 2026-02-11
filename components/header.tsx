@@ -86,7 +86,7 @@ export const HeroHeader = () => {
   return (
     <>
       <header className="top-0 left-0 right-0 w-full">
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-4">
+        <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-6">
           {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-3" aria-label="Data Capture Systems Home">
             <div className="h-14 w-1.5 bg-white" />
@@ -305,13 +305,13 @@ export const HeroHeader = () => {
                   const open = !!mobileOpen[item.name]
 
                   return (
-                    <li key={item.name} className="border border-white/10 rounded-2xl overflow-hidden">
+                    <li key={item.name} className="rounded-2xl overflow-hidden">
                       <button
                         type="button"
                         onClick={() => setMobileOpen((s) => ({ ...s, [item.name]: !s[item.name] }))}
                         className={cn(
-                          'w-full flex items-center justify-between px-4 py-3 text-left text-2xl font-bold',
-                          active ? 'text-white bg-white/5' : 'text-gray-200'
+                          'w-full flex items-center justify-between text-left text-2xl font-bold',
+                          active ? 'text-white bg-white/5 p-2' : 'text-gray-200'
                         )}
                       >
                         <span>{item.name}</span>
@@ -320,21 +320,6 @@ export const HeroHeader = () => {
 
                       {open && (
                         <div className="px-2 pb-2">
-                          {/* Optional 'View all' link – skip for Solutions since there is no main page */}
-                          {item.name !== 'Solutions' && (
-                            <>
-                              <Link
-                                href={item.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block px-3 py-2 rounded-xl text-base text-white/90 hover:bg-white/5"
-                              >
-                                View all {item.name}
-                              </Link>
-
-                              <div className="h-px bg-white/10 my-2" />
-                            </>
-                          )}
-
                           {item.children!.map((c) => {
                             const childActive = isActivePath(pathname, c.href)
                             return (

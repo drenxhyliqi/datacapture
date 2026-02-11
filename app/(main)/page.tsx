@@ -19,36 +19,11 @@ export default function Home() {
       
       {/* HERO – z-[50] so navbar (inside hero) stays above sections below */}
       <div className="relative z-[50] min-h-[110vh] isolate" style={{ position: 'relative' }}>
-        {/* HERO BACKGROUND IMAGE – static on all devices, scrolls with the page */}
-        {/* <div
-          className="absolute inset-0 z-0 w-full min-h-0"
-          style={{ height: '100%', minHeight: '100vh' }}
-        >
-          <Image
-            src={bannerMobile1}
-            alt="Homepage Hero"
-            fill
-            sizes="100vw"
-            className="object-cover object-center w-full h-full lg:hidden"
-            unoptimized
-          />
-          <Image
-            src={heroBanner3}
-            alt="Homepage Hero"
-            fill
-            sizes="100vw"
-            className="object-cover object-center w-full h-full hidden lg:block"
-            unoptimized
-          />
-        </div> */}
-
-        
-
+    
         {/* HEADER – high z-index so navbar stays above other sections */}
         <div className="relative z-[100]">
           <HeroHeader />
         </div>
-
 
         {/* HERO TEXT */}
         <div className="relative">
@@ -79,13 +54,13 @@ export default function Home() {
           {/* Blur only from About DCS down to System Features */}
           <div className="relative overflow-hidden">
             {/* LEFT MOVING SHADOW – spans About + Partners only */}
-            <div className="absolute -left-[5px] inset-0 pointer-events-none z-[1] md:z-[15] overflow-hidden">
+            <div className="absolute -left-[5px] inset-0 pointer-events-none z-[3] md:z-[15] overflow-hidden">
               <div
                 className="
                   animate-system-blur
                   absolute
                   -left-20
-                  top-[-30%]
+                  top-[-10%]
                   w-[30vw]
                   h-[450vh]
                   -translate-x-1/2
@@ -105,26 +80,6 @@ export default function Home() {
             </div>
             <AboutSection />
             <PartnersSection />
-          </div>
-          {/* Testimonial + Discuss with static left blur between them */}
-          <div className="relative overflow-hidden">
-            <div
-              className="pointer-events-none absolute -left-16 inset-0 z-[1] overflow-hidden"
-              aria-hidden="true"
-            >
-              <div
-                className="absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
-                style={{ filter: 'blur(90px)' }}
-              >
-                <Image
-                  src={ellipseShadow}
-                  alt=""
-                  fill
-                  sizes="(max-width: 520px) 100vw, 520px"
-                  className="object-contain"
-                />
-              </div>
-            </div>
             <DiscussSection />
           </div>
         </div>

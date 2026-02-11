@@ -20,7 +20,7 @@ export default function SolutionsCuasPage() {
         <SolutionsCuasHeroBanner />
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
+        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-5 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             DATA CAPTURE SYSTEMS
           </p>
