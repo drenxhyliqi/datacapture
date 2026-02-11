@@ -1,39 +1,16 @@
 'use client'
 
-import { useState } from 'react'
 import { HeroHeader } from '@/components/header'
 import Image from 'next/image'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
-import { Mail, Phone } from 'lucide-react'
 import solutionsHero from "@/assets/herosolutuion.png"
 import Footer from '@/components/footer'
+import { useForm, ValidationError } from '@formspree/react'
+
+const FORMSPREE_FORM_ID = 'xqedawjw'
 
 export default function ContactUsPage() {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        company: '',
-        email: '',
-        phone: '',
-        message: '',
-        agreeToPrivacy: false,
-    })
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        // Handle form submission here
-        console.log('Form submitted:', formData)
-    }
-
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        const { name, value, type } = e.target
-        setFormData((prev) => ({
-            ...prev,
-            [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
-        }))
-    }
+    const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID)
 
     return (
         <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
@@ -107,6 +84,11 @@ export default function ContactUsPage() {
                                 Get in touch with us
                             </h2>
 
+                            {state.succeeded ? (
+                                <p className="text-gray-700 text-lg py-4">
+                                    Thanks for your message! We&apos;ll get back to you soon.
+                                </p>
+                            ) : (
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 {/* First Name & Last Name */}
                                 <div className="grid grid-cols-2 gap-4">
@@ -115,8 +97,6 @@ export default function ContactUsPage() {
                                             type="text"
                                             name="firstName"
                                             placeholder="First name"
-                                            value={formData.firstName}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                         />
                                     </div>
@@ -125,8 +105,6 @@ export default function ContactUsPage() {
                                             type="text"
                                             name="lastName"
                                             placeholder="Last name"
-                                            value={formData.lastName}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                         />
                                     </div>
@@ -138,8 +116,6 @@ export default function ContactUsPage() {
                                         type="text"
                                         name="company"
                                         placeholder="Company"
-                                        value={formData.company}
-                                        onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                 </div>
@@ -147,13 +123,13 @@ export default function ContactUsPage() {
                                 {/* Email */}
                                 <div>
                                     <input
+                                        id="email"
                                         type="email"
                                         name="email"
                                         placeholder="Email"
-                                        value={formData.email}
-                                        onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
+                                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm mt-1 block" />
                                 </div>
 
                                 {/* Phone */}
@@ -162,8 +138,6 @@ export default function ContactUsPage() {
                                         type="tel"
                                         name="phone"
                                         placeholder="Phone number"
-                                        value={formData.phone}
-                                        onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                 </div>
@@ -171,13 +145,13 @@ export default function ContactUsPage() {
                                 {/* Message */}
                                 <div>
                                     <textarea
+                                        id="message"
                                         name="message"
                                         placeholder="Leave a message..."
-                                        value={formData.message}
-                                        onChange={handleChange}
                                         rows={5}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent resize-none"
                                     />
+                                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm mt-1 block" />
                                 </div>
 
                                 {/* Privacy Checkbox */}
@@ -186,8 +160,6 @@ export default function ContactUsPage() {
                                         type="checkbox"
                                         name="agreeToPrivacy"
                                         id="privacy"
-                                        checked={formData.agreeToPrivacy}
-                                        onChange={handleChange}
                                         className="mt-1 w-4 h-4 text-gray-600 border-gray-300 rounded focus:ring-gray-400"
                                     />
                                     <label
@@ -208,11 +180,13 @@ export default function ContactUsPage() {
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="w-full bg-gray-800 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200"
+                                    disabled={state.submitting}
+                                    className="w-full bg-gray-800 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    Send message
+                                    {state.submitting ? 'Sending...' : 'Send message'}
                                 </button>
                             </form>
+                            )}
                         </div>
                     </div>
                 </div>
