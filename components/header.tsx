@@ -320,15 +320,20 @@ export const HeroHeader = () => {
 
                       {open && (
                         <div className="px-2 pb-2">
-                          <Link
-                            href={item.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block px-3 py-2 rounded-xl text-base text-white/90 hover:bg-white/5"
-                          >
-                            View all {item.name}
-                          </Link>
+                          {/* Optional 'View all' link – skip for Solutions since there is no main page */}
+                          {item.name !== 'Solutions' && (
+                            <>
+                              <Link
+                                href={item.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block px-3 py-2 rounded-xl text-base text-white/90 hover:bg-white/5"
+                              >
+                                View all {item.name}
+                              </Link>
 
-                          <div className="h-px bg-white/10 my-2" />
+                              <div className="h-px bg-white/10 my-2" />
+                            </>
+                          )}
 
                           {item.children!.map((c) => {
                             const childActive = isActivePath(pathname, c.href)

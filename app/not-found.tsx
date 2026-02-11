@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { HeroHeader } from '@/components/header'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
-import solutionsHero from '@/assets/herosolutuion.png'
+import HeroBanner from '@/components/ui/hero-banner'
 import Footer from '@/components/footer'
 
 export default function NotFound() {
@@ -17,39 +17,31 @@ export default function NotFound() {
 
       
 
-      {/* BACKGROUND LAYERS (Hero image + shadows) */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        {/* HERO IMAGE */}
-        <div className="absolute inset-0 flex justify-center">
-          <div className="relative w-[140vw] h-[140vw] lg:top-40 sm:w-[120vw] sm:h-[120vw] md:w-[110vw] md:h-[110vw] lg:w-[155vh] lg:h-[70vh] -translate-y-12 md:-translate-y-20 lg:-translate-y-6 rotate-[55deg] md:rotate-[10deg] lg:rotate-0">
-            <Image
-              src={solutionsHero}
-              priority
-              alt="404 Hero"
-              fill
-              className="object-contain"
-            />
-          </div>
+      {/* BACKGROUND LAYERS (Hero background + shadows) */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-visible">
+        {/* HERO BACKGROUND – same as main hero section, slightly reduced height */}
+        <div className="relative w-[100%] max-w-7xl mx-auto mt-[8%] h-[60vh] translate-y-[-20px] rotate-[5deg]">
+          <HeroBanner />
         </div>
 
-        {/* STATIC RIGHT SHADOW */}
+        {/* STATIC RIGHT SHADOW – smaller and higher */}
         <div className="absolute inset-0 overflow-visible">
-          <div className="absolute right-5 top-24 w-[70vw] max-w-[700px] h-[80vh] translate-x-1/2 opacity-80 blur-[80px]">
+          <div className="absolute right-10 top-10 w-[50vw] max-w-[360px] h-[50vh] translate-x-1/2 opacity-70 blur-[70px]">
             <Image src={ellipseShadow} alt="Shadow effect" fill className="object-contain" />
           </div>
         </div>
 
-        {/* LEFT MOVING SHADOW */}
+        {/* LEFT MOVING SHADOW – smaller and shifted up */}
         <div className="absolute inset-0 overflow-hidden">
           <div
-            className="absolute -left-[5px] w-[70vw] max-w-[700px] h-[140vh] -translate-x-1/2 opacity-90"
+            className="absolute -left-[20px] top-0 w-[55vw] max-w-[520px] h-[90vh] -translate-x-1/2 opacity-75"
           >
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
               fill
               className="object-contain"
-              style={{ filter: 'blur(30px)' }}
+              style={{ filter: 'blur(25px)' }}
             />
           </div>
         </div>

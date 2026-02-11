@@ -13,21 +13,21 @@ export type SolutionFeature = {
 export const solutionsFeatures: SolutionFeature[] = [
     {
         icon: feature1Icon,
-        title: 'Counter Drone',
+        title: 'Detection',
         description:
-            'DCS supports counter-drone operations by providing centralized detection, monitoring, and visualization of drone activity within a defined operational area.',
+            'Custom-tailored detection systems designed to identify drone and security threats with precision, reliability, and real-time operational awareness.',
     },
     {
         icon: feature2Icon,
-        title: 'Military & Civilian',
+        title: 'Identification',
         description:
-            'DCS is designed to operate within defined operational environments and supports configurable airspace monitoring requirements.',
+            'Advanced AI-powered cameras and multi-sensor technologies enabling fast, accurate identification and classification of all potential threats.',
     },
     {
         icon: feature3Icon,
-        title: 'Johannes Information',
+        title: 'Mitigation',
         description:
-            'DCS collects and presents operational information provided by connected sensors through a unified graphical interface.',
+            'Comprehensive threat mitigation solutions, from soft-kill electronic countermeasures to hard-kill systems, ensuring complete neutralization.',
     },
     {
         icon: feature4Icon,
