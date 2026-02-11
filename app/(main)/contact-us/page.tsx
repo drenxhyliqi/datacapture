@@ -6,7 +6,7 @@ import ellipseShadow from '@/assets/Ellipse 8.svg'
 import solutionsHero from "@/assets/herosolutuion.png"
 import Footer from '@/components/footer'
 import { useForm, ValidationError } from '@formspree/react'
-
+import SecondHeroBanner from '@/components/ui/second-hero-banner'
 const FORMSPREE_FORM_ID = 'xqedawjw'
 
 export default function ContactUsPage() {
