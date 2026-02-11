@@ -1,0 +1,122 @@
+'use client'
+
+import Image from 'next/image'
+import mobileCuasImage1 from '@/assets/mobile-cuas-1.png'
+import mobileCuasImage2 from '@/assets/mobile-cuas-2.svg'
+import mobileCuasImage3 from '@/assets/mobile-cuas-3.svg'
+import mobileCuasImage4 from '@/assets/mobile-cuas-4.svg'
+import mobileCuasImage5 from '@/assets/mobile-cuas-5.svg'
+import mobileCuasImage6 from '@/assets/mobile-cuas-6.png'
+import mobileCuasImage7 from '@/assets/mobile-cuas-7.png'
+import mobileCuasImage8 from '@/assets/mobile-cuas-8.png'
+
+import Slideshow from '@/components/slideshow'
+import { GradientCard } from './ui/GradientCard'
+
+const vehicles = [
+    { label: 'SUV', icon: mobileCuasImage2 },
+    { label: 'Pick-Up', icon: mobileCuasImage3 },
+    { label: 'Van', icon: mobileCuasImage4 },
+    { label: 'Truck', icon: mobileCuasImage5 },
+]
+
+const sensoric = [
+    'Radar',
+    'RF Detector',
+    'Camera',
+    'GNNS Spoofer',
+    'Jammer',
+    'Interceptor Drone',
+    'Weapon station',
+    'Dizzel Laser',
+    'Leaser',
+]
+
+
+export default function MobileCuasSections() {
+  return (
+    <section className="container mx-auto relative w-full px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="relative mx-auto -mt-5 flex h-[40rem] w-full max-w-[50rem] items-center justify-center overflow-visible">
+            <Image
+                src={mobileCuasImage1}
+                alt="Mobile CUAS"
+                fill
+                priority
+                className="object-contain"
+            />
+        </div>
+
+        <section className="container mx-auto w-full px-6 lg:px-8 py-16">
+        <div className="mx-auto w-full max-w-6xl space-y-10">
+            {/* Title: Choose your Vehicle */}
+            <div className="flex w-full h-full p-10 rounded-md items-center justify-center">
+              <GradientCard>
+                  <h2 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
+                  Choose your Vehicle
+                  </h2>
+              </GradientCard>
+            </div>
+
+        {/* Vehicles row */}
+        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 mb-20">
+          {vehicles.map((v) => (
+            <button
+              key={v.label}
+              type="button"
+              className="group flex flex-col items-center gap-4"
+            >
+              <div className="relative h-30 w-30 ">
+                <Image
+                  src={v.icon}
+                  alt={v.label}
+                  fill
+                  className="object-contain opacity-90 transition group-hover:opacity-100"
+                />
+              </div>
+              <p className="text-white text-xl md:text-2xl font-medium">
+                {v.label}
+              </p>
+            </button>
+          ))}
+        </div>
+
+        {/* Title: Select your Sensoric */}
+        <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
+          <GradientCard>
+            <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
+              Select your Sensoric
+            </h3>
+          </GradientCard>
+        </div>
+
+       {/* Sensoric grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {sensoric.map((item) => (
+            <GradientCard key={item}>
+            <div className="flex h-full w-full items-center justify-center ">
+                <span className="text-white text-xl md:text-2xl font-medium text-center p-5">
+                {item}
+                </span>
+            </div>
+            </GradientCard>
+        ))}
+        </div>
+      </div>
+      </section>
+
+        <Slideshow
+            slides={[
+                { src: mobileCuasImage6 },
+                { src: mobileCuasImage7 },
+                { src: mobileCuasImage8 },
+
+            ]}
+            delayMs={2000}
+            />
+
+      </div>
+
+    </section>
+  )
+}
