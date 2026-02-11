@@ -193,10 +193,11 @@ export default function HeroSection() {
           {/* AIR DEFENCE pill */}
           <div className="mb-6 flex justify-center">
             <span
-              className="inline-flex items-center rounded-full border px-4 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
+              className="inline-flex items-center rounded-full border px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
               style={{
                 background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
                 borderColor: '#313331',
+                fontSize: '0.9rem',
               }}
             >
               AIR DEFENCE
@@ -212,7 +213,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Drone badge: right-aligned on mobile and tablet */}
-            <div className="absolute right-0 top-[5.5rem]">
+            <div className="absolute right-0 top-[3.5rem]">
               <div
                 className="h-20 w-20 rounded-full p-[3px] flex items-center justify-center"
                 style={{ backgroundColor: '#313331' }}
@@ -239,7 +240,7 @@ export default function HeroSection() {
 
           {/* CTA button - mobile only; hidden on tablet (md) */}
           <div className="mb-8 w-full md:hidden">
-            <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-3 py-1">
+            <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1">
               <div className="relative inline-flex items-center w-full gap-2">
                 {/* Fading line + arrow to the left */}
                 <Image
@@ -253,12 +254,13 @@ export default function HeroSection() {
 
                 {/* Main CTA button - positioned at the very end */}
                 <Link
-                  href="#"
+                  href="/contact"
                   className="group relative inline-flex items-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs uppercase tracking-wide transition-all ml-auto -mr-[0.625rem] translate-x-1"
                   style={{
                     background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
                     paddingTop: '1rem',
                     paddingBottom: '1rem',
+                    fontSize: '0.6rem',
                   }}
                 >
                   <span className="relative z-10">Get Protected Today</span>
