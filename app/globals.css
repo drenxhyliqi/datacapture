@@ -370,187 +370,123 @@ body[unresolved] {
   z-index: 0;
   pointer-events: none;
 }
-.second-hero-section{
+
+.second-hero-section {
   position: relative;
   overflow: visible;
   z-index: 20;
-  width: 60%;   
+  width: 60%;
 }
 
-/* ✅ Default variables (mobile-first) */
-.second-hero-section {
-  --bg-w: clamp(240px, 75vw, 420px);
-  --bg-h: clamp(260px, 55vh, 520px);
-  --bg-top: clamp(-120px, 10px, -40px);
-  --bg-offset: clamp(-260px, 10px, -140px);
-  --rot-left: 10deg;
-  --rot-right: -12deg;
-}
+/* =========================
+   MOBILE/TABLET (default)
+   ========================= */
 
-/* LEFT – base (telefon) */
-.second-hero-bg-left {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  left: -22vw;
-  top: -15vh;
-  width: 55dvw;
-  height: 75vh;
-  transform: rotate(6deg);
-}
-
-/* RIGHT – base (telefon) */
+/* Hide desktop by default */
+.second-hero-bg-left,
 .second-hero-bg-right {
+  display: none;
+}
+
+/* Mobile wrappers (need position+size for Image fill) */
+.second-hero-mobile-left,
+.second-hero-mobile-right {
   position: absolute;
   z-index: 0;
   pointer-events: none;
-  right: -22vw;
-  top: -10vh;
-  width: 100dvw;
-  height: 100vh;
-  transform: rotate(-8deg);
+  inset: 0; /* e mban brenda section; pozicionimin e bën klasa e Image */
 }
 
-/* ✅ Telefon – rregullime eksplicite për max 767px */
-@media (max-width: 767px) {
-  .second-hero-section {
-    width: 60%;
-  }
-  .second-hero-bg-left {
-    left: 0 !important;
-    top: -50rem !important;
-    width: 100dvw !important;
-    height: 300dvh !important;
-    transform: rotate(5deg);
-  }
-  .second-hero-bg-right {
-    right: -17vw !important;
-    top: -47rem !important;
-    width: 100dvw !important;
-    height: 350dvb !important;
-  }
-  .left-hero-background{
-    left: -40vw !important;
-    top: 10vh !important;
-    width: 100dvw !important;
-    transform: rotate(5deg);
-    height: 300dvh !important;
-  }
-  .right-hero-background{
-    width: 100dvw !important;
-    transform: rotate(25deg) !important;
-    height: 300dvh !important;
-  }
+/* Mobile LEFT image positioning */
+.second-hero-mobile-left {
+  position: absolute;
+  left: -27vw;
+  top: -12vh;
+  width: 100vw;
+  height: 85vh;
+  z-index: 10;
+  transform: rotate(-2deg);
+  overflow: visible;
 }
 
-  /* ✅ Tablet – section can be narrower again */
-@media (min-width: 768px) {
-  .second-hero-section {
-    width: 60%;
-  }
-  .second-hero-section {
-    --bg-w: clamp(320px, 45vw, 560px);
-    --bg-h: clamp(360px, 60vh, 700px);
-    --bg-top: clamp(-160px, -12vh, -60px);
-    --bg-offset: clamp(-380px, -30vw, -180px);
-    --rot-left: 8deg;
-    --rot-right: -10deg;
-  }
-
-  .second-hero-bg-left {
-    left: -3vw; 
-    top: -55vh;
-    width: 70dvw;
-    height: 140vh;
-    transform: rotate(0);
-    transform-origin: left bottom;
-  }
-
-  /* ✅ Right stays on the RIGHT edge (outside) */
-  .second-hero-bg-right {
-    right: 0;
-    top: -40vh;
-    width: 70dvw;
-    height: 90vh;
-    transform: rotate(-10deg);
-    transform-origin: right top;
-  }
+/* Mobile RIGHT image positioning */
+.second-hero-mobile-right {
+  position: absolute;
+  right: -10vw;
+  top: -5vh;
+  width: 100vw;
+  height: 80vh;
+  transform: rotate(3deg);
 }
 
-/* ✅ Laptop/Desktop */
-@media (min-width: 1024px) {
-    /* ✅ Left stays on the LEFT edge (outside) */
-  .second-hero-bg-left {
-    left: -5vw; 
-    top: -30vh;
-    width: 60dvw;
-    height: 85vh;
-    transform: rotate(deg);
-    transform-origin: left bottom;
-  }
-
-  /* ✅ Right stays on the RIGHT edge (outside) */
-  .second-hero-bg-right {
-    right: -37vw;
-    transform: rotate(var(--rot-right));
-    transform-origin: right top;
-  }
-
-}
-
-/* ✅ Short-height laptop fix (p.sh. 1366×768) */
-@media (max-height: 800px) {
-    /* ✅ Left stays on the LEFT edge (outside) */
+/* =========================
+   Short-height laptop fix
+   ========================= */
+   @media (max-height: 800px) {
     .second-hero-bg-left {
-      left: -1vw; 
+      left: -20vw;
       top: -35vh;
-      width: 60dvw;
-      height: 85vh;
-      transform: rotate(8deg);
-      transform-origin: left bottom;
     }
-  
-    /* ✅ Right stays on the RIGHT edge (outside) */
     .second-hero-bg-right {
       right: -35vw;
-      top: -35vh;
-      width: 50dvw;
-      height: 75vh;
-      transform: rotate(-12.5deg);
-      transform-origin: right top;
+      top: -20vh;
     }
-
-}
-
-
-/* ✅ Very large monitors */
-@media (min-width: 1600px) {
-  .second-hero-section {
-    --bg-w: clamp(120px, 60vw, 760px);
-    --bg-h: clamp(480px, 65vh, 900px);
-    --bg-top: clamp(-250rem, -24vh, -190px);
-    --bg-offset: clamp(-600px, -20vw, 320px);
-    --rot-left: 6deg;
-    --rot-right: -8deg;
   }
-  /* ✅ Left stays on the LEFT edge (outside) */
+/* =========================
+   DESKTOP (>=1024px)
+   ========================= */
+@media (min-width: 1024px) {
+  /* Show desktop */
+  .second-hero-bg-left,
+  .second-hero-bg-right {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Hide mobile */
+  .second-hero-mobile-left,
+  .second-hero-mobile-right {
+    display: none;
+  }
+
   .second-hero-bg-left {
-    left: 20vw; 
-    top: -40vh;
+    left: -10vw;
+    top: -35vh;
     width: 60dvw;
-    height: 75vh;
+    height: 85vh;
     transform: rotate(10deg);
     transform-origin: left bottom;
   }
 
-  /* ✅ Right stays on the RIGHT edge (outside) */
   .second-hero-bg-right {
-    right: -25vw;
+    right: -40vw;
+    top: -35vh;
+    width: 60dvw;
+    height: 75vh;
+    transform: rotate(-12deg);
+    transform-origin: right top;
+  }
+}
+
+
+/* =========================
+   Very large monitors
+   ========================= */
+@media (min-width: 1600px) {
+  .second-hero-bg-left {
+    left: 0;
+    top: -37vh;
+    width: 60dvw;
+    height: 75vh;
+  }
+  .second-hero-bg-right {
+    right: -30vw;
     top: -40vh;
     width: 50dvw;
     height: 75vh;
     transform: rotate(-12.5deg);
-    transform-origin: right top;
   }
 }
 /* Left: same size as right – full height, same width */

@@ -24,7 +24,7 @@ export default function GnnsPage() {
 
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 text-center flex flex-col items-center justify-center">
+        <div className="relative z-20 mx-auto max-w-5xl px-5 mt-5 mb-10 lg:-mb-20 md:pt-5 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             Product
           </p>
@@ -32,7 +32,7 @@ export default function GnnsPage() {
             Radar
           </h1>
           <h3 className="text-white/80 max-w-2xl items-center justify-center">DCS supports a range of operational and configuration services through its integrated command-and-control system.</h3>
-          <Image src={radarHero} alt="GNNS Hero" className="object-contain items-center justify-center w-100 h-50" />
+          <Image src={radarHero} alt="GNNS Hero" className="object-contain items-center justify-center -mt-10 lg:w-70 lg:h-70 w-40 h-40" />
         </div>
       </div>
 

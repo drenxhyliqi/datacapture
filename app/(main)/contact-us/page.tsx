@@ -24,7 +24,7 @@ export default function ContactUsPage() {
                 <SecondHeroBanner />
 
                 {/* HERO TEXT */}
-                <div className="relative z-20 mx-auto max-w-4xl pt-30 md:pt-5 pb-24 text-center">
+                <div className="relative z-20 mx-auto max-w-4xl pt-10 md:pt-5 pb-24 text-center">
                     <p className="text-white tracking-widest text-sm md:text-base">
                         CONTACT US
                     </p>

@@ -11,7 +11,7 @@ import solutionsHero from '@/assets/herosolutuion.png'
 import SecondHeroBanner from './ui/second-hero-banner'
 
 const SUBTEXT =
-  'DCS provides centralized detection, visualization, and recording of drone activity within a defined operational area.'
+  'At DCS, our mission is to meet every customer’s unique requirements, ensuring complete safety and protection.'
 
 const METRICS = [
   {
@@ -50,7 +50,7 @@ export default function CompanySection() {
 
         <SecondHeroBanner />
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-6xl pt-30 md:pt-5 pb-24 text-center">
+        <div className="relative z-20 mx-auto max-w-xl pt-5 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             FROM JOHANNES
           </p>
@@ -58,7 +58,7 @@ export default function CompanySection() {
             A command-and-control platform for <br className="hidden md:block" />
             drone detection and monitoring
           </h1>
-          <p className="mt-6 text-white/60 max-w-2xl mx-auto">
+          <p className="mt-6 text-white/60 max-w-md mx-auto">
             {SUBTEXT}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function CompanySection() {
 
       {/* STATIC RIGHT SHADOW (responsive + no overflow) */}
       <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
-        <div className="absolute right-5 top-100 w-[60vw] max-w-[700px] h-[200vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
+        <div className="absolute right-5 top-120 lg:top-100 w-[60vw] max-w-[700px] h-[200vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
           <Image
             src={ellipseShadow}
             alt="Shadow effect"
