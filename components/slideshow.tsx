@@ -54,7 +54,8 @@ export default function GallerySlideshow({
                 src={s.src}
                 alt={s.alt ?? `Slide ${i + 1}`}
                 fill
-                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover "
                 priority={i === 0}
               />
             </div>

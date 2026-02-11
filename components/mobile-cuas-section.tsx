@@ -37,15 +37,17 @@ export default function MobileCuasSections() {
   return (
     <section className="container mx-auto relative w-full px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
-        <div className="relative mx-auto -mt-5 flex h-[40rem] w-full max-w-[50rem] items-center justify-center overflow-visible">
-            <Image
-                src={mobileCuasImage1}
-                alt="Mobile CUAS"
-                fill
-                priority
-                className="object-contain"
-            />
-        </div>
+      <div className="relative mx-auto -mt-5 flex w-full items-center justify-center overflow-visible
+                h-[22rem] sm:h-[28rem] md:h-[40rem]
+                max-w-[22rem] sm:max-w-[32rem] md:max-w-[50rem]">
+        <Image
+          src={mobileCuasImage1}
+          alt="Mobile CUAS"
+          fill
+          sizes="(max-width: 640px) 352px, (max-width: 768px) 512px, 800px"
+          className="object-contain"
+        />
+      </div>
 
         <section className="container mx-auto w-full px-6 lg:px-8 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-10">
@@ -64,7 +66,7 @@ export default function MobileCuasSections() {
             <button
               key={v.label}
               type="button"
-              className="group flex flex-col items-center gap-4"
+              className="group flex flex-col  items-center gap-4"
             >
               <div className="relative h-30 w-30 ">
                 <Image
