@@ -2,8 +2,9 @@ import Image from "next/image";
 import regulusLogo from "@/assets/partners/Untitled 2.svg";
 import protechtLogo from "@/assets/partners/Untitled 3.svg";
 import acsLogo from "@/assets/partners/Untitled 5.svg";
-import rayzoneLogo from "@/assets/partners/Untitled 7.svg";
 import drsRadaLogo from "@/assets/partners/dropped-image.svg";
+import rayzoneLogo from "@/assets/partners/Untitled 7.svg";
+import mbdaLogo from "@/assets/partners/mbdapartner.svg";
 
 const PARTNER_LOGOS = [
   { src: regulusLogo, alt: "Regulus" },
@@ -11,6 +12,7 @@ const PARTNER_LOGOS = [
   { src: acsLogo, alt: "ACS" },
   { src: drsRadaLogo, alt: "DRS RADA Technologies" },
   { src: rayzoneLogo, alt: "Rayzone Group" },
+  { src: mbdaLogo, alt: "MBDA Missile Systems" },
 ];
 
 export default function PartnersSection() {
@@ -39,37 +41,40 @@ export default function PartnersSection() {
             {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((partner, idx) => (
               <div
                 key={`${partner.alt}-${idx}`}
-                className="h-16 flex shrink-0 items-center justify-center"
+                className="h-10 w-24 flex shrink-0 items-center justify-center"
               >
                 <Image
                   src={partner.src}
                   alt={partner.alt}
-                  className="h-full w-auto object-contain"
+                  className="h-full w-full object-contain"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Desktop: static two rows */}
-        <div className="hidden md:flex flex-col items-center gap-12 lg:gap-14">
-          <div className="flex flex-wrap justify-center gap-14 lg:gap-20 items-center">
-            <div className="h-16 md:h-20 flex items-center">
-              <Image src={regulusLogo} alt="Regulus" className="h-full w-auto object-contain" />
+        {/* Desktop: static two rows - uniform size */}
+        <div className="hidden md:flex flex-col items-center gap-10 lg:gap-12">
+          <div className="flex flex-wrap justify-center gap-10 lg:gap-14 items-center">
+            <div className="h-14 w-54 flex items-center justify-center">
+              <Image src={regulusLogo} alt="Regulus" className="h-full w-full object-contain" />
             </div>
-            <div className="h-16 md:h-20 flex items-center">
-              <Image src={protechtLogo} alt="Protecht" className="h-full w-auto object-contain" />
+            <div className="h-14 w-54 flex items-center justify-center">
+              <Image src={protechtLogo} alt="Protecht" className="h-full w-full object-contain" />
             </div>
-            <div className="h-16 md:h-20 flex items-center">
-              <Image src={acsLogo} alt="ACS" className="h-full w-auto object-contain" />
+            <div className="h-14 w-54 flex items-center justify-center">
+              <Image src={acsLogo} alt="ACS" className="h-full w-full object-contain" />
             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-14 lg:gap-20 items-center">
-            <div className="h-16 md:h-20 flex items-center">
-              <Image src={drsRadaLogo} alt="DRS RADA Technologies" className="h-full w-auto object-contain" />
+          <div className="flex flex-wrap justify-center gap-10 lg:gap-14 items-center">
+            <div className="h-14 w-54 flex items-center justify-center">
+              <Image src={drsRadaLogo} alt="DRS RADA Technologies" className="h-full w-full object-contain" />
             </div>
-            <div className="h-16 md:h-20 flex items-center">
-              <Image src={rayzoneLogo} alt="Rayzone Group" className="h-full w-auto object-contain" />
+            <div className="h-14 w-54 flex items-center justify-center">
+              <Image src={rayzoneLogo} alt="Rayzone Group" className="h-full w-full object-contain" />
+            </div>
+            <div className="h-14 w-54 flex items-center justify-center">
+              <Image src={mbdaLogo} alt="MBDA Missile Systems" className="h-full w-full object-contain" />
             </div>
           </div>
         </div>

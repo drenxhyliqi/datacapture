@@ -37,7 +37,7 @@ export default function DiscussSection() {
 
             {/* Contact Us Button */}
             <Link
-              href="#"
+              href="/contact-us"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-semibold text-sm tracking-wide rounded-full hover:bg-gray-100 transition-all border border-gray-200/50"
             >
               <MessageCircle className="w-5 h-5" />

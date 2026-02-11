@@ -94,22 +94,22 @@ export default function Footer() {
               <h3 className="text-white font-[400] text-base mb-4">About</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     About us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Download
                   </Link>
                 </li>
@@ -121,22 +121,22 @@ export default function Footer() {
               <h3 className="text-white font-semibold text-base mb-4">Company</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     How we work
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Press Room
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Jobs
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Community
                   </Link>
                 </li>
@@ -148,22 +148,22 @@ export default function Footer() {
               <h3 className="text-white font-[400] text-base mb-4">Legal</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Terms of use
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Security Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Cookie Settings
                   </Link>
                 </li>
@@ -175,7 +175,15 @@ export default function Footer() {
         {/* Bottom Section - Copyright */}
         <div className="border-t pt-8" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <p className="text-white text-sm text-center">
-            © Copyright 2025 DCS. Design & Developed by Protecht
+            © Copyright 2026 DCS. Design & Developed by{' '}
+            <Link
+              href="https://protecht.ch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline hover:no-underline"
+            >
+              Protecht
+            </Link>
           </p>
         </div>
       </div>

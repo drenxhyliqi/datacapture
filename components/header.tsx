@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { ChevronDown, Sparkles, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-type MenuChild = { name: string; href: string }
+type MenuChild = { name: string; href: string; hidden?: boolean }
 type MenuItem = {
   name: string
   href: string
@@ -29,7 +29,7 @@ const menuItems: MenuItem[] = [
     href: '/products',
     children: [
       { name: 'GNNS', href: '/products/gnns' },
-      { name: 'Hard-kill', href: '/products/hard-kill' },
+      { name: 'Hard-kill', href: '/products/hard-kill', hidden: true }, // set hidden: false to show again
       { name: 'Radar', href: '/products/radar' },
       { name: 'UAV', href: '/products/uav' },
       { name: 'Mobile CUAS', href: '/products/mobile-cuas' },
@@ -112,7 +112,8 @@ export const HeroHeader = () => {
               <ul className="flex items-center gap-10">
                 {menuItems.map((item) => {
                   const active = itemIsActive(pathname, item)
-                  const hasChildren = !!item.children?.length
+                  const visibleChildren = item.children?.filter((c) => !c.hidden) ?? []
+                  const hasChildren = visibleChildren.length > 0
                   const isOpen = openDropdown === item.name
 
                   if (!hasChildren) {
@@ -163,7 +164,7 @@ export const HeroHeader = () => {
                             style={{ backgroundColor: 'rgba(57, 76, 107, 0.3) 100%' }}
                             role="menu"
                           >
-                            {item.children!.map((c) => {
+                            {visibleChildren.map((c) => {
                               const childActive = isActivePath(pathname, c.href)
                               return (
                                 <Link
@@ -238,7 +239,7 @@ export const HeroHeader = () => {
 
             {/* Get Started Button */}
             <Link
-              href="#"
+              href="/contact-us"
               className="flex items-center gap-2 rounded-full border border-white/20 bg-gradient-to-b from-black/60 to-gray-900/60 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-black/80"
             >
               <Sparkles className="h-4 w-4" />
@@ -283,7 +284,8 @@ export const HeroHeader = () => {
               <ul className="space-y-5">
                 {menuItems.map((item) => {
                   const active = itemIsActive(pathname, item)
-                  const hasChildren = !!item.children?.length
+                  const visibleChildren = item.children?.filter((c) => !c.hidden) ?? []
+                  const hasChildren = visibleChildren.length > 0
 
                   if (!hasChildren) {
                     return (
@@ -335,7 +337,7 @@ export const HeroHeader = () => {
                             </>
                           )}
 
-                          {item.children!.map((c) => {
+                          {visibleChildren.map((c) => {
                             const childActive = isActivePath(pathname, c.href)
                             return (
                               <Link

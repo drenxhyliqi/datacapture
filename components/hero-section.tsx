@@ -144,7 +144,7 @@ export default function HeroSection() {
 
                         {/* Main CTA button - positioned at the very end */}
                         <Link
-                          href="#"
+                          href="/contact-us"
                           className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all -mr-[0.625rem] translate-x-1"
                           style={{
                             background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
@@ -254,7 +254,7 @@ export default function HeroSection() {
 
                 {/* Main CTA button - positioned at the very end */}
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="group relative inline-flex items-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs uppercase tracking-wide transition-all ml-auto -mr-[0.625rem] translate-x-1"
                   style={{
                     background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
