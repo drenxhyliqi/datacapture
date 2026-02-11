@@ -24,14 +24,14 @@ export default function GnnsPage() {
 
 
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
+        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-2 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             Product
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
           Hard-Kill Solutions
           </h1>
-          <Image src={hardkillHero} alt="GNNS Hero" className="object-contain items-center justify-center w-50 h-50" />
+          <Image src={hardkillHero} alt="GNNS Hero" className="object-contain items-center justify-center lg:w-50 lg:h-50 w-40 h-40" />
         </div>
       </div>
 
