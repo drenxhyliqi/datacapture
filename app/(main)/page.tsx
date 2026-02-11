@@ -51,7 +51,7 @@ export default function Home() {
 
 
         {/* HERO TEXT */}
-        <div className="relative z-10">
+        <div className="relative">
           <HeroSection />
         </div>
       </div>

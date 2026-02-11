@@ -3,12 +3,13 @@
 import { HeroHeader } from "@/components/header"
 import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
-import solutionsHero from "@/assets/herosolutuion.png"
-import ServicesSection from "@/components/ServicesSection"
 import Footer from "@/components/footer"
+import DiscussSection from "@/components/discussSection"
+import hardkillHero from "@/assets/hardkill-1.svg"
+import HardkillSection from "@/components/hardkill-section"
+import hardkillProduct from "@/assets/hardkill-5.png"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
-
-export default function ServicesPage() {
+export default function GnnsPage() {
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
         
@@ -18,20 +19,19 @@ export default function ServicesPage() {
           <div className="relative z-30">
             <HeroHeader />
           </div>
-
+  
           <SecondHeroBanner />
 
+
         {/* HERO TEXT */}
-        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-2 md:pt-5 pb-24 text-center">
+        <div className="relative z-20 mx-auto max-w-5xl px-5 pt-30 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
-            SERVICES
+            Product
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-            Operational services within the DCS platform
+          Hard-Kill Solutions
           </h1>
-          <p className="mt-6 text-white/60 max-w-2xl mx-auto">
-            DCS supports a range of operational and configuration services through its integrated command-and-control system.
-          </p>
+          <Image src={hardkillHero} alt="GNNS Hero" className="object-contain items-center justify-center w-50 h-50" />
         </div>
       </div>
 
@@ -66,10 +66,13 @@ export default function ServicesPage() {
         </div>
 
         <div className="relative z-10">
-          <ServicesSection />
+          <HardkillSection />
         </div>
       </section>
-
+      <div className="relative w-full h-auto mt-10">
+        <Image src={hardkillProduct} alt="GNNS Content" className="object-cover"/>
+      </div>
+      <DiscussSection />
       <Footer />
     </div>
   )

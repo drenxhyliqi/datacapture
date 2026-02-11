@@ -8,6 +8,7 @@ import metricsBackground from '@/assets/Metrics.png'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
 import { GradientCard } from './ui/GradientCard'
 import solutionsHero from '@/assets/herosolutuion.png'
+import SecondHeroBanner from './ui/second-hero-banner'
 
 const SUBTEXT =
   'DCS provides centralized detection, visualization, and recording of drone activity within a defined operational area.'
@@ -47,18 +48,7 @@ export default function CompanySection() {
           <HeroHeader />
         </div>
 
-        {/* HERO IMAGE */}
-        <div className="pointer-events-none absolute -top-35 inset-0 flex z-10 justify-center object-contain">
-          <div className="relative w-[200vh] h-[80vh] py-30 aspect-square md:w-[150vh] md:h-[120vh] lg:w-[190vh] lg:h-[60vh] transform rotate-60 md:rotate-10 md:-top-20 lg:rotate-0 lg:py-0">
-            <Image
-              src={solutionsHero}
-              priority
-              alt="Company Hero"
-              className="object-contain"
-            />
-          </div>
-        </div>
-
+        <SecondHeroBanner />
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-6xl pt-30 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base">

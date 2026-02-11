@@ -27,35 +27,54 @@ export default function HeroSection() {
       {/* DESKTOP HERO (lg+) – section hidden on md and below via Tailwind */}
       <section className="hidden lg:block relative min-h-[110vh] overflow-visible">
         {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
-        <div className="absolute inset-0 overflow-visible pointer-events-none">
+        <div className="overflow-visible">
           <HeroBanner />
         </div>
 
         {/* Desktop blur shadows: only in DOM on lg+ (conditional render so not present on md and below) */}
         {isLg && (
-          <div className="hero-blur-shadows absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <div className="hero-blur-shadows absolute inset-0 pointer-events-none" aria-hidden="true">
             {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
             <div
-              key="hero-shadow-left"
-              className="hero-shadow hero-shadow-left animate-hero-shadow-up absolute left-55 top-[60%] pointer-events-none w-[200px] h-[165px]"
+              className="absolute left-10 top-110 pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
-                  "radial-gradient(ellipse 110px 110px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 80%)",
-                filter: "blur(38px)",
-                clipPath: "ellipse(185px 185px at 20% 50%)",
+                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 30%)",
+                filter: "blur(50px)",
+                transform: "rotate(120deg)",
               }}
             />
-            {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
             <div
-              key="hero-shadow-right"
-              className="hero-shadow hero-shadow-right animate-hero-shadow-down absolute right-40 top-[20%] pointer-events-none w-[200px] h-[165px]"
+              className="absolute left-35 top-155 pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
-                  "radial-gradient(ellipse 110px 110px at 45% 2%, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 55%, transparent 80%)",
-                filter: "blur(38px)",
-                clipPath: "ellipse(245px 245px at 40% 50%)",
+                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 100%)",
+                filter: "blur(50px)",
+                transform: "rotate(50deg)",
+              }}
+            />
+
+            {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
+            <div
+              className="absolute right-40 top-20 pointer-events-none w-[200px] h-[165px]"
+              role="presentation"
+              style={{
+                background:
+                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 30%)",
+                filter: "blur(50px)",
+                transform: "rotate(10deg)",
+              }}
+            />
+            <div
+              className="absolute right-40 top-40 pointer-events-none w-[200px] h-[165px]"
+              role="presentation"
+              style={{
+                background:
+                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 100%)",
+                filter: "blur(50px)",
+                transform: "rotate(100deg)",
               }}
             />
           </div>
@@ -63,32 +82,34 @@ export default function HeroSection() {
 
         {/* HERO CONTENT – disappear/appear in sync with blur shadow movement (2s cycle). */}
         <div className="hero-content relative z-10 mx-auto flex min-h-[110vh] max-w-7xl items-start px-12 pt-24">
-          <div className="absolute left-0 top-28">
+          <div className="absolute left-30 top-40">
             <div className="flex flex-col items-start gap-6">
-            <div
-              className="hero-drone-badge h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1"
-              style={{ backgroundColor: '#313331' }}
-            >
               <div
-                className="h-[100%] w-[100%] rounded-full flex items-center justify-center"
-                style={{
-                  background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
-                }}
+                className="h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1"
+                style={{ backgroundColor: '#313331' }}
               >
-                <div className="flex h-full w-full items-center justify-center rounded-full">
-                  <Image
-                    src={droneIcon}
-                    alt="Drone icon"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 object-contain"
-                  />
+                <div
+                  className="h-[80%] w-[80%] rounded-full flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                  }}
+                >
+                  <div className="flex h-full w-full items-center justify-center rounded-full">
+                    <Image
+                      src={droneIcon}
+                      alt="Drone icon"
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 object-contain p-1.5"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
+            <div className="absolute left-0 top-58">
               {/* ADAPTIVE / SECURITY text */}
-              <div className="mt-54 space-y-6 text-[13px] font-light uppercase text-white/80 tracking-[2em]">
+              <div className="space-y-5 text-[13px] font-light uppercase text-white tracking-[1.5em]">
                 <div className="whitespace-nowrap">ADAPTIVE</div>
                 <div className="whitespace-nowrap">SECURITY</div>
               </div>
@@ -98,48 +119,37 @@ export default function HeroSection() {
           {/* Main content block – centered as a whole, left‑biased inside */}
           <div className="relative ml-[12rem] w-full">
             {/* AIR DEFENCE pill + Headline + Desktop CTA */}
-            <div className="relative mb-8 mt-4 flex">
-              <div className="pl-[2em]">
-                <div className="mb-4">
-                  <span
-                    className="inline-flex items-center rounded-full border px-5 py-1.5 text-[11px] uppercase font-medium tracking-[0.2em] text-white"
-                    style={{
-                      background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
-                      borderColor: '#313331',
-                    }}
-                  >
-                    Air Defence
-                  </span>
-                </div>
-                <div className="relative inline-block mx-auto items-center justify-center">
-                  <h1 className="text-[7rem] font-[500] leading-[1] text-white text-start">
+            <div className="relative mb-8 flex" style={{ marginTop: '120px' }}>
+              <div className="pl-[5em]">
+                <div className="relative">
+                  <h1 className="text-[5rem] font-[600] leading-[1] text-white">
                     <span className="block">{HEADING.line1}</span>
                     <span className="block">{HEADING.line2}</span>
                     <span className="block">{HEADING.line3}</span>
                   </h1>
 
                   {/* Desktop-only CTA positioned next to "Monitoring" – old single-button design */}
-                  <div className="absolute -right-98 bottom-[-6.5em] hidden lg:block">
+                  <div className="absolute -right-110 bottom-[-6.5em] hidden lg:block">
                     <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1 mb-3">
-                      <div className="relative inline-flex items-center w-full gap-2">
+                      <div className="relative inline-flex items-center w-full">
                         {/* Fading line + arrow to the left */}
                         <Image
                           src={arrowLeft}
                           alt="Arrow left"
-                          width={150}
+                          width={100}
                           height={40}
                           className="object-contain"
-                          style={{ width: 'auto', height: 'auto' }}
+                          style={{ width: 'auto', height: 'auto', marginLeft: '10px', marginRight: '50px' }}
                         />
 
                         {/* Main CTA button - positioned at the very end */}
                         <Link
                           href="#"
-                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all ml-auto -mr-[0.625rem] translate-x-1"
+                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all -mr-[0.625rem] translate-x-1"
                           style={{
                             background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
-                            paddingTop: '1rem',
-                            paddingBottom: '1rem',
+                            paddingTop: '0.7rem',
+                            paddingBottom: '0.7rem',
                           }}
                         >
                           <span className="relative z-10">Get Protected Today</span>
@@ -152,26 +162,13 @@ export default function HeroSection() {
             </div>
 
             {/* Body text */}
-            <div className="mb-4 pl-[2.5em] max-w-[34rem] space-y-3 text-[17px] leading-relaxed">
-              <p className="text-[#C8C8C8]">
+            <div className="mb-4 pl-[5.5em] max-w-[31rem] space-y-3 text-[15px] leading-relaxed">
+              <p className="text-white">
                 {SUBTEXT_LINES[0]}
               </p>
               <p className="text-[#A9A9A9]">
                 {SUBTEXT_LINES[1]}
               </p>
-            </div>
-
-            {/* Stats – desktop, right-aligned like reference */}
-            <div className="flex items-center justify-end gap-8 pr-12 text-[1em] tracking-[0.35em] uppercase text-white/50 mb-10 ">
-              <span>
-                <span className="font-semibold text-white mr-1">1.600+</span>
-                USER ACTIVE
-              </span>
-              <span className="text-white/40">+</span>
-              <span>
-                <span className="font-semibold text-white mr-1">300+</span>
-                TECHNOLOGIES
-              </span>
             </div>
           </div>
         </div>
@@ -185,7 +182,7 @@ export default function HeroSection() {
           <HeroBanner />
         </div>
         {/* Left-side mobile blur – extends so it doesn’t look cut, fades to transparent */}
-        <div 
+        <div
           className="hidden absolute -left-[40px] top-24 w-[240px] h-[200px] z-[5] pointer-events-none"
           style={{
             background: 'radial-gradient(ellipse 65% 60% at 35% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.12) 35%, transparent 60%)',
