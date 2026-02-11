@@ -1,0 +1,275 @@
+import SecondHeroBanner from "@/components/ui/second-hero-banner";
+import Image from "next/image";
+
+// Icons imported as SVGs (from your assets)
+import detectionIcon from "@/assets/selections1.svg";
+import identificationIcon from "@/assets/identification.svg";
+import mitigationIcon from "@/assets/mitigation.svg";
+import macbookImage from "@/assets/macbook.png";
+import directionDesktop from "@/assets/direction.svg";
+import directionMobile from "@/assets/directionMobile.svg";
+import fixedIcon from "@/assets/installation.svg";
+import mobileIcon from "@/assets/mobileinstallation.svg";
+import manPortableIcon from "@/assets/backpack.svg";
+
+export default function SolutionsCuasHeroBanner() {
+  return <SecondHeroBanner />;
+}
+
+export function SolutionsCuasFeaturesSection() {
+  return (
+    <>
+      <section className="relative w-full py-10 lg:py-32 px-6 lg:px-8">
+        <div className="w-full max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="mb-12 lg:mb-16">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
+              <div className="lg:w-1/2">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white">
+                  Tailor made air security.
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          {/* 3 feature cards – custom layout, not using FeatureCard */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Detection */}
+            <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src={detectionIcon}
+                    alt="Detection icon"
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+                <h3 className="text-xl md:text-2xl font-[500] text-white">
+                  Detection
+                </h3>
+              </div>
+              <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
+                Custom-tailored detection systems designed to identify drone and security threats with precision,
+                reliability, and real-time operational awareness.
+              </p>
+            </div>
+
+            {/* Identification */}
+            <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="w-[84px] h-[84px] flex items-center justify-center">
+                  <Image
+                    src={identificationIcon}
+                    alt="Identification icon"
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+                <h3 className="text-xl md:text-2xl font-[500] text-white">
+                  Identification
+                </h3>
+              </div>
+              <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
+                Advanced AI-powered cameras and multi-sensor technologies enabling fast, accurate identification and
+                classification of all potential threats.
+              </p>
+            </div>
+
+            {/* Mitigation */}
+            <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src={mitigationIcon}
+                    alt="Mitigation icon"
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+                <h3 className="text-xl md:text-2xl font-[500] text-white">
+                  Mitigation
+                </h3>
+              </div>
+              <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
+                Comprehensive threat mitigation solutions, from soft-kill electronic countermeasures to hard-kill
+                systems, ensuring complete neutralization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ensure faded border style is available even when CompanySection is not rendered */}
+      <style jsx global>{`
+        .about-dcs-fade-border {
+          position: relative;
+        }
+        .about-dcs-fade-border::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          pointer-events: none;
+          z-index: 1;
+          mask-image: linear-gradient(
+            to bottom,
+            black 0%,
+            rgba(0, 0, 0, 0.9) 20%,
+            rgba(0, 0, 0, 0.5) 50%,
+            transparent 100%
+          );
+          -webkit-mask-image: linear-gradient(
+            to bottom,
+            black 0%,
+            rgba(0, 0, 0, 0.9) 20%,
+            rgba(0, 0, 0, 0.5) 50%,
+            transparent 100%
+          );
+          mask-size: 100% 100%;
+          -webkit-mask-size: 100% 100%;
+          mask-repeat: no-repeat;
+          -webkit-mask-repeat: no-repeat;
+        }
+      `}</style>
+    </>
+  );
+}
+
+export function SolutionsCuasDescriptionSection() {
+  return (
+    <section className="relative w-full py-10 lg:py-20 px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
+          Customized Counter-Drone Systems for Mission-Critical Protection
+        </h2>
+        <div className="space-y-4 text-base md:text-lg text-white/90">
+          <p>
+            DCS provides fully tailored counter-drone solutions for stationary, vehicle-mounted, or portable deployments.
+          </p>
+          <p>
+            Detection combines our proprietary Meridian system, radar and HF technologies for complete situational awareness.
+            Identification uses customizable cameras supported by AI, ensuring fast, accurate threat recognition with intuitive
+            operation.
+          </p>
+          <p>
+            Mitigation options range from soft-kill GNSS spoofers and jammers to hard-kill systems, all integrated into our
+            in-house C2 Command &amp; Control software. Operators can manage the system easily or run it fully autonomously,
+            maximizing efficiency and protection.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function SolutionsCuasC2Section() {
+  return (
+    <section className="relative w-full py-16 lg:py-24 px-6 lg:px-8">
+      <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center gap-10">
+        {/* Macbook + C2 label */}
+        <div className="flex flex-col items-center gap-6">
+          <h2 className="text-2xl md:text-3xl font-[400] text-white">C2</h2>
+          <div className="relative w-full max-w-3xl">
+            <Image
+              src={macbookImage}
+              alt="C2 laptop interface"
+              className="w-full h-auto object-contain"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Detection / Identification / Mitigation flow */}
+        <div className="w-full max-w-6xl mt-6">
+          {/* Desktop / tablet direction graphic */}
+          <div className="hidden md:block">
+            <Image
+              src={directionDesktop}
+              alt="C2 detection, identification and mitigation flow"
+              className="w-full h-auto object-contain"
+            />
+            {/* Labels aligned with arrow ends */}
+            <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
+              <div style={{ marginLeft: '-95px' }}>Detection</div>
+              <div style={{ marginLeft: '-30px' }}>Identification</div>
+              <div style={{ marginLeft: '55px' }}>Mitigation</div>
+            </div>
+
+          </div>
+
+          {/* Mobile direction graphic */}
+          <div className="block md:hidden">
+            <div className="mx-auto w-3/4 max-w-xs">
+              <Image
+                src={directionMobile}
+                alt="C2 detection, identification and mitigation flow (mobile)"
+                className="width: 50%; height: 50%; object-contain mx-auto"
+              />
+              <div className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium" style={{ fontSize: "22px" }}>
+                <span>Detection</span>
+                <span>Identification</span>
+                <span>Mitigation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Deployment modes section */}
+        <div className="mt-16 w-full max-w-8xl mx-auto space-y-10 text-left">
+          {/* Fixed Installation */}
+          <div className="flex flex-col md:flex-row items-center gap-y-10">
+            <div className="flex-shrink-1">
+              <Image
+                src={fixedIcon}
+                alt="Fixed installation icon"
+                className="w-[90%] h-[full]  object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">Fixed Installation</h3>
+              <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
+                Custom-designed permanent systems, built to provide continuous monitoring and protection, perfectly adapted
+                to the specific needs of your facilities.
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile Installation */}
+          <div className="flex flex-col md:flex-row items-center gap-11">
+            <div className="flex-shrink-1">
+              <Image
+                src={mobileIcon}
+                alt="Mobile installation icon"
+                className="w-[full] h-[full]  object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">Mobile Installation</h3>
+              <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
+                Flexible, vehicle-mounted solutions tailored to your mission, offering rapid deployment and complete
+                operational coverage whenever required.
+              </p>
+            </div>
+          </div>
+
+          {/* Man-Portable */}
+          <div className="flex flex-col md:flex-row items-center gap-20">
+            <div className="flex-shrink-0">
+              <Image
+                src={manPortableIcon}
+                alt="Man-portable system icon"
+                className="w-[full] h-[full] object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">Man-Portable</h3>
+              <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
+                Lightweight, fully configurable systems that can be carried and deployed quickly, delivering reliable
+                protection for diverse operational scenarios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
