@@ -1,7 +1,7 @@
 import SecondHeroBanner from "@/components/ui/second-hero-banner";
 import Image from "next/image";
 
-// Icons imported as SVGs (SRAD-specific – adjust as needed)
+// Icons imported as SVGs (SRAD-specific)
 import detectionIcon from "@/assets/selections1.svg";
 import identificationIcon from "@/assets/identification.svg";
 import mitigationIcon from "@/assets/mitigation.svg";
@@ -188,11 +188,10 @@ export function SolutionsSradC2Section() {
             />
             {/* Labels aligned with arrow ends */}
             <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
-              <div style={{ marginLeft: '-95px' }}>Detection</div>
-              <div style={{ marginLeft: '-30px' }}>Identification & Tracking</div>
-              <div style={{ marginLeft: '55px' }}>Neutralization</div>
+              <div style={{ marginLeft: "-95px" }}>Detection</div>
+              <div style={{ marginLeft: "-30px" }}>Identification & Tracking</div>
+              <div style={{ marginLeft: "55px" }}>Neutralization</div>
             </div>
-
           </div>
 
           {/* Mobile direction graphic */}
@@ -203,7 +202,10 @@ export function SolutionsSradC2Section() {
                 alt="C2 detection, identification and mitigation flow (mobile)"
                 className="width: 50%; height: 50%; object-contain mx-auto"
               />
-              <div className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium" style={{ fontSize: "22px" }}>
+              <div
+                className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium"
+                style={{ fontSize: "22px" }}
+              >
                 <span>Detection</span>
                 <span>Identification & Tracking</span>
                 <span>Neutralization</span>
