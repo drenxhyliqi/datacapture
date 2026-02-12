@@ -14,7 +14,7 @@ import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
 export default function Home() {
   const isLg = useMediaQuery(LG_QUERY)
 
-  return (
+  return (  
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       
       {/* HERO – z-[50] so navbar (inside hero) stays above sections below */}

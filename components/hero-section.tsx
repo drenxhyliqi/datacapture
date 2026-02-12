@@ -36,7 +36,7 @@ export default function HeroSection() {
           <div className="hero-blur-shadows absolute inset-0 pointer-events-none" aria-hidden="true">
             {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
             <div
-              className="absolute left-10 top-110 pointer-events-none w-[200px] h-[165px]"
+              className="hero-blur-shadow-left absolute left-10 top-110 pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
@@ -46,7 +46,7 @@ export default function HeroSection() {
               }}
             />
             <div
-              className="absolute left-35 top-155 pointer-events-none w-[200px] h-[165px]"
+              className="hero-blur-shadow-left absolute left-35 top-155 pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
@@ -58,7 +58,7 @@ export default function HeroSection() {
 
             {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
             <div
-              className="absolute right-40 top-20 pointer-events-none w-[200px] h-[165px]"
+              className="hero-blur-shadow-right absolute right-40 top-20 pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
@@ -68,7 +68,7 @@ export default function HeroSection() {
               }}
             />
             <div
-              className="absolute right-40 top-40 pointer-events-none w-[200px] h-[165px]"
+              className="hero-blur-shadow-right absolute right-40 top-40 pointer-events-none w-[200px] h-[165px]"
               role="presentation"
               style={{
                 background:
