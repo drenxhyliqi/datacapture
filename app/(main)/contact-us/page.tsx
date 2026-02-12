@@ -67,7 +67,7 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="relative z-10">
-                    <div className="w-full max-w-7xl mx-auto py-20 lg:py-32">
+                    <div className="w-full max-w-6xl mx-auto py-20 px-5 lg:py-32">
                         {/* LEFT: CONTACT FORM */}
                         <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
                             <h2 className="text-3xl md:text-4xl font-[400] text-gray-900 mb-6">
