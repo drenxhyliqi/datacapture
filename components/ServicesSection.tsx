@@ -12,7 +12,7 @@ export default function ServicesSection() {
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                         Designed for operational missions
                     </h2>
-                    <div className="max-w-3xl mx-auto space-y-4 text-base md:text-lg text-white/80">
+                    <div className="max-w-5xl mx-auto space-y-4 text-base md:text-lg text-white/80">
                         <p>
                             DCS is designed to support mission-driven operations by providing
                             real-time situational awareness, controlled configuration, and recorded

@@ -51,12 +51,12 @@ export default function CompanySection() {
         <SecondHeroBanner />
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-xl pt-5 md:pt-5 pb-24 text-center">
-          <p className="text-white tracking-widest text-sm md:text-base">
-            FROM JOHANNES
+          <p className="text-white tracking-widest text-sm md:text-base font-[400]">
+            Company
           </p>
-          <h1 className="mt-6 text-white text-xl md:text-5xl font-semibold leading-tight">
-            A command-and-control platform for <br className="hidden md:block" />
-            drone detection and monitoring
+          <h1 className="mt-6 text-white text-xl md:text-6xl font-[400] leading-tight">
+            We Protect what <br className="hidden md:block" />
+            matters Most
           </h1>
           <p className="mt-6 text-white/60 max-w-md mx-auto">
             {SUBTEXT}
@@ -97,7 +97,7 @@ export default function CompanySection() {
 
         <div className="relative z-10">
           {/* Metrics strip */}
-          <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24">
+          <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24 px-5">
         <div className="mx-auto w-full max-w-7xl">
           <GradientCard>
           <div className="relative overflow-hidden rounded-[16px]">
@@ -117,12 +117,12 @@ export default function CompanySection() {
             <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/10 to-[#101210]/60" />
 
             {/* Content */}
-            <div className="relative z-10 py-14 sm:py-16 lg:py-20">
-              <div className="grid w-full gap-4 sm:gap-6 lg:gap-8 md:grid-cols-3">
+            <div className="relative z-10 py-14 sm:py-16 lg:py-20 ">
+              <div className="grid w-[90%] mx-auto gap-4 sm:gap-6 lg:gap-8 md:grid-cols-3">
                 {METRICS.map((metric) => (
                   <div
                     key={metric.title}
-                    className="flex h-full min-h-[220px] max-w-[320px] w-full mx-auto flex-col justify-center gap-3 rounded-2xl bg-white/12 px-6 pt-10 pb-8 text-center text-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl border border-white/25"
+                    className="flex h-full min-h-[200px] max-w-[420px] w-full mx-auto flex-col justify-center gap-1 rounded-2xl bg-white/12 px-6 pt-10 pb-8 text-center text-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl border border-white/25"
                   >
                     <h3 className="mb-3 text-lg font-[400] sm:text-xl max-w-[14rem] mx-auto">
                       {metric.title}

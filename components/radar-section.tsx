@@ -1,11 +1,12 @@
 'use client'
 
 import Image from "next/image"
-import radarFeature2 from "@/assets/radar-2.png"
+import radarFeature2 from "@/assets/mhr.svg"
 import radarFeature3 from "@/assets/radar-3.png"
-import radarFeature4 from "@/assets/radar-4.png"
+import radarFeature4 from "@/assets/gan.svg"
 import radarFeature5 from "@/assets/radar-5.png"
-import radarFeature6 from "@/assets/radar-6.png"
+import radarFeature6 from "@/assets/scanner.svg"
+
 
 export default function RadarSection() {
   return (
@@ -175,51 +176,7 @@ export default function RadarSection() {
         </div>
 
         {/* FEATURES 5*/}
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
-          <div className="mt-10 space-y-2">
-            <h2 className="text-3xl text-white font-semibold">
-              {"KEY FEATURES"}
-            </h2>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"Active Electronically Scanned Array (AESA) antenna, GaN amplifiers"}
-            </p>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"Software-defined, digital, with adaptive beam forming"}
-            </p>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"Hemispheric search and track with four radars"}
-            </p>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"Extremely fast volume coverage"}
-            </p>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"Wide range of threat velocities"}
-            </p>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"Interoperable via Standard interfaces"}
-            </p>{" "}
-            <br />
-            <p className="text-base text-white">
-              {"High immunity through Electronic Counter Countermeasures (ECCM)"}
-            </p>{" "}
-            <br />
-          </div>
 
-          {/* IMAGE */}
-          <div className="w-full flex justify-center lg:justify-start">
-              <Image
-                src={radarFeature6}
-                alt="GNNS Product"
-                className="object-contain w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px] h-auto"
-              />
-          </div>
-        </div>
       </div>
     </section>
   )

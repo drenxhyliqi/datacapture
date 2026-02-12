@@ -150,15 +150,17 @@ export default function UAVSections() {
           })}
         </div>
 
+        {/* Slideshow temporarily disabled; keep for future use */}
+        {/*
         <Slideshow
-            slides={[
-                { src: droneImage4 },
-                { src: droneImage5 },
-                { src: droneImage6 }
-
-            ]}
-            delayMs={2000}
-            />
+          slides={[
+            { src: droneImage4 },
+            { src: droneImage5 },
+            { src: droneImage6 },
+          ]}
+          delayMs={2000}
+        />
+        */}
 
       </div>
     </section>

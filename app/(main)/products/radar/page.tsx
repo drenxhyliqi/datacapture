@@ -6,7 +6,7 @@ import ellipseShadow from "@/assets/Ellipse 8.svg"
 import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
 import radarHero from "@/assets/radar-1.svg"
-import hardkillProduct from "@/assets/hardkill-5.png"
+import radarProduct from "@/assets/radarscanner.svg"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
 import RadarSection from "@/components/radar-section"
 export default function GnnsPage() {
@@ -70,12 +70,12 @@ export default function GnnsPage() {
           <RadarSection />
         </div>
       </section>
-      <div className="relative w-full h-100vh mt-10">
-        <Image src={hardkillProduct} alt="GNNS Content" className="object-contain"/>
+      <div className="relative w-full px-10 h-100vh mt-10">
+        <Image src={radarProduct} alt="GNNS Content" className="object-contain"/>
       </div>
 
        {/* FEATURES 2*/}
-       <div className="container mx-auto items-center mb-10 mt-20">
+       <div className="container mx-auto items-center px-10 mb-10 mt-20">
             <div className="mt-10 space-y-2">
                 <h2 className="text-3xl text-white font-semibold">MAIN ADVANTAGES</h2> <br />
                 <p className="text-base text-white">Deployed on operational APS / VPS and VSHORAD systems</p><br />

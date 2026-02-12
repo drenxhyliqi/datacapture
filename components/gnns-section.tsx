@@ -16,15 +16,15 @@ const keyRequirements = [
         description: "Comprehensive coverage across GPS, GLONASS, Galileo, and BeiDou constellations on both L1 and L2/L5 frequency bands."
     },
     {
-        title: "GNSS Signal Versatile Interception Modes",
+        title: "Versatile Interception Modes",
         description: "Push-back, hold pattern, and static location modes provide tactical flexibility for any operational scenario."
     },
     {
-        title: "GNSS Signal Extended Operational Range",
+        title: "Extended Operational Range",
         description: "Effective range up to 1.5km with omnidirectional antennas, extending to 4km with directional configuration."
     },
     {
-        title: "GNSS Signal Extended All-Weather Performance",
+        title: "All-Weather Performance",
         description: "IP67-rated construction ensures reliable operation from -40°C to +50°C, including direct sun exposure."
     },
 ]
@@ -47,7 +47,7 @@ const operationalModes = [
 export default function GnnsSection() {
     return (
         <section className="container mx-auto relative w-full py-10 lg:py-10 px-6 lg:px-8">
-            <div className="w-full max-w-7xl mx-auto">
+            <div className="w-full max-w-6xl mx-auto">
                 {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
