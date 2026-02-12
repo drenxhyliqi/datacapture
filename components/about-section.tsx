@@ -47,7 +47,7 @@ export default function AboutSection() {
 
                     {/* Right Section - Image with Slider Effect */}
                     
-                        <div className="relative w-full mt-10">
+                        <div className="relative w-full lg:mt-[40%]">
                             {/* Drone Image */}
                             <GradientCard>
                                 <div className="relative h-[60vh] w-full min-h-[280px] rounded-2xl overflow-hidden">

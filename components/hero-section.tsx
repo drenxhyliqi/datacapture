@@ -190,19 +190,8 @@ export default function HeroSection() {
           }}
         />
         <div className="hero-content relative mx-auto flex min-h-[95vh] max-w-7xl flex-col px-6 pt-24 md:pb-6 md:items-center">
-          {/* AIR DEFENCE pill */}
-          <div className="mb-6 flex justify-center">
-            <span
-              className="inline-flex items-center rounded-full border px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white"
-              style={{
-                background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
-                borderColor: '#313331',
-                fontSize: '0.9rem',
-              }}
-            >
-              AIR DEFENCE
-            </span>
-          </div>
+          {/* AIR DEFENCE pill – hidden on small and medium (desktop-only above) */}
+          <div className="hidden" />
 
           {/* Mobile heading + drone badge on the right; tablet: centered text */}
           <div className="relative mb-6 w-full md:text-center">
