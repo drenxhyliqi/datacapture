@@ -5,9 +5,9 @@ import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
 import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
-import SolutionsCuasHeroBanner, { SolutionsCuasFeaturesSection, SolutionsCuasDescriptionSection, SolutionsCuasC2Section } from "@/components/ui/solutions-cuas"
+import SolutionsSradHeroBanner, { SolutionsSradFeaturesSection, SolutionsSradDescriptionSection, SolutionsSradC2Section } from "@/components/ui/solutions-srad"
 
-export default function SolutionsCuasPage() {
+export default function SolutionsSradPage() {
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       {/* HERO */}
@@ -17,7 +17,7 @@ export default function SolutionsCuasPage() {
           <HeroHeader />
         </div>
 
-        <SolutionsCuasHeroBanner />
+        <SolutionsSradHeroBanner />
 
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-5 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
@@ -63,13 +63,13 @@ export default function SolutionsCuasPage() {
 
         <div className="relative z-10">
           {/* SECTION 1 – Tailor made air security (cards) - CUAS-specific (3 cards only) */}
-          <SolutionsCuasFeaturesSection />
+          <SolutionsSradFeaturesSection />
 
           {/* SECTION 2 – Customized Counter-Drone Systems text block */}
-          <SolutionsCuasDescriptionSection />
+          <SolutionsSradDescriptionSection />
 
           {/* SECTION 3 – C2 flow diagram */}
-          <SolutionsCuasC2Section />
+          <SolutionsSradC2Section />
         </div>
       </section>
 

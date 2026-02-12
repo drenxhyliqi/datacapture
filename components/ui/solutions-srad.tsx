@@ -228,8 +228,8 @@ export function SolutionsSradC2Section() {
             <div>
               <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">Fixed Installation</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Custom-designed radar installations providing continuous coverage over critical infrastructure and
-                protected areas, optimized for long-term, always-on operation.
+                Custom-designed permanent systems, built to provide continuous monitoring and protection, perfectly
+                adapted to the specific needs of your facilities.
               </p>
             </div>
           </div>
@@ -246,8 +246,8 @@ export function SolutionsSradC2Section() {
             <div>
               <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">Mobile Installation</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Vehicle-mounted radar platforms that can be rapidly deployed to new locations, extending the radar
-                coverage footprint wherever operational needs arise.
+                Flexible, vehicle-mounted solutions tailored to your mission, affering rapid deployment and complete
+                operational coverage whenever required.
               </p>
             </div>
           </div>
