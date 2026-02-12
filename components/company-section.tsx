@@ -78,7 +78,7 @@ export default function CompanySection() {
       </div>
 
       {/* FEATURES (starts immediately after hero, no extra gap) */}
-      <section className="relative overflow-hidden z-10">
+      <section className="relative overflow-hidden z-100">
         {/* LEFT MOVING SHADOW */}
         <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
           <div
