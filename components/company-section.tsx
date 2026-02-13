@@ -29,12 +29,12 @@ const METRICS = [
   {
     title: 'Centralized Control',
     description:
-      'Unified command-and-control interface for monitoring, configuration, and review.',
+      'A unified command-and-control interface for monitoring, configuration, and review.',
   },
   {
     title: 'Recorded Operations',
     description:
-      'Automatic recording of detected drone activity for post-operation analysis.',
+      'Rapid and precise neutralization of detected threats through integrated countermeasures and automated response systems.',
   },
 ]
 

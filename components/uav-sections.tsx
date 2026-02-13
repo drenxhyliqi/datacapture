@@ -39,6 +39,10 @@ export default function UAVSections() {
           </div>
         </div>
 
+        <div className="flex flex-col items-center gap-4">
+          <h2 className="text-3xl text-white font-semibold">MADE IN EUROPE</h2>
+        </div>
+
         {/* ALL UAVS */}
         <div className="space-y-20 lg:space-y-28 mb-30">
           {uavItemKeys.map((item) => {

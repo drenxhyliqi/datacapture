@@ -109,6 +109,13 @@ export default function MobileCuasSections() {
       </div>
       </section>
 
+
+      <div className="flex items-center justify-center px-2">
+        <h2 className="text-center text-2xl md:text-3xl text-white font-semibold leading-snug max-w-5xl">
+          Custom mobile C-UAS solutions, aligned with your requirements, optimized for top performance and advanced technology
+        </h2>
+      </div>
+
         <Slideshow
             slides={[
                 { src: mobileCuasImage6 },
@@ -118,9 +125,7 @@ export default function MobileCuasSections() {
             ]}
             delayMs={2000}
             />
-
       </div>
-
     </section>
   )
 }

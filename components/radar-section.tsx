@@ -167,7 +167,7 @@ export default function RadarSection() {
           <p className="text-base text-white">{t('products.radarSummary6')}</p>
           <p className="text-base text-white">{t('products.radarSummary7')}</p>
         </div>
-
+      
       </div>
     </section>
   )
