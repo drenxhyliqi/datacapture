@@ -186,7 +186,7 @@ export default function RadarSection() {
           <p className="text-base text-white">Interoperable via Standard interfaces</p><br />
           <p className="text-base text-white">High immunity through Electronic Counter Countermeasures (ECCM)</p>
         </div>
-
+      
       </div>
     </section>
   )

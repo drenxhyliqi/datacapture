@@ -70,8 +70,13 @@ export default function GnnsPage() {
           <RadarSection />
         </div>
       </section>
-      <div className="container mx-auto items-center h-100vh mt-10">
-        <Image src={radarProduct} alt="GNNS Content" className="object-contain"/>
+      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-10">
+        <Image
+          src={radarProduct}
+          alt="GNNS Content"
+          className="w-full h-200 object-cover"
+          priority
+        />
       </div>
 
        {/* FEATURES 2*/}
