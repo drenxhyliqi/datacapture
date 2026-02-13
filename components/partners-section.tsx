@@ -33,6 +33,25 @@ function getMobileLogoScale(alt: string): number {
   }
 }
 
+function getDesktopLogoScale(alt: string): string {
+  switch (alt) {
+    case "Regulus":
+      return "scale(2.25)";
+    case "Protecht":
+      return "scale(1.95)";
+    case "ACS":
+      return "scale(1.15)";
+    case "DRS RADA Technologies":
+      return "scale(2.65)";
+    case "Rayzone Group":
+      return "scale(1.85)";
+    case "MBDA Missile Systems":
+      return "scale(2.15)";
+    default:
+      return "scale(1)";
+  }
+}
+
 export default function PartnersSection() {
   return (
     <section className="relative w-full py-16 lg:py-24">
@@ -76,39 +95,22 @@ export default function PartnersSection() {
           </div>
         </div>
 
-        {/* Desktop: static two rows - uniform size */}
-        <div className="hidden md:flex flex-col items-center gap-10 lg:gap-12 ">
-          <div className="flex flex-wrap justify-center gap-10 lg:gap-34 items-center mb-15">
-            <div className="h-14 w-84 flex items-center justify-center">
-              <Image src={regulusLogo} alt="Regulus" className="h-full w-full object-contain"
-                style={{ transform: "scale(1.65)" }}
+        {/* Tablet & small laptop: 2 cols; desktop & large laptop: 3 cols.
+            Add extra padding around logos on medium–large laptops and desktop */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 lg:gap-12 items-center justify-items-center max-w-7xl mx-auto px-4 lg:px-8 xl:px-12 py-4 lg:py-6">
+          {PARTNER_LOGOS.map((partner) => (
+            <div
+              key={partner.alt}
+              className="h-24 w-64 flex items-center justify-center px-4 lg:px-15"
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                className="h-full w-full object-contain"
+                style={{ transform: getDesktopLogoScale(partner.alt) }}
               />
             </div>
-            <div className="h-14 w-84 flex items-center justify-center">
-              <Image src={protechtLogo} alt="Protecht" className="h-full w-full object-contain" 
-              style={{ transform: "scale(1.25)" }} />
-
-            </div>
-            <div className="h-14 w-84 flex items-center justify-center">
-              <Image src={acsLogo} alt="ACS" className="h-full w-full object-contain"
-              style={{ transform: "scale(1.15)",marginLeft: "40px" }} />
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center gap-10 lg:gap-34 items-center">
-            <div className="h-14 w-84 flex items-center justify-center">
-              <Image src={drsRadaLogo} alt="DRS RADA Technologies" className="h-full w-full object-contain" 
-              style={{ transform: "scale(1.45)", marginLeft: "100px"
-               }} />
-            </div>
-            <div className="h-14 w-84 flex items-center justify-center">
-              <Image src={rayzoneLogo} alt="Rayzone Group" className="h-full w-full object-contain" 
-              style={{ transform: "scale(1.85)" }} />
-            </div>
-            <div className="h-14 w-84 flex items-center justify-center">
-              <Image src={mbdaLogo} alt="MBDA Missile Systems" className="h-full w-full object-contain" 
-              style={{ transform: "scale(1)", marginRight: "0" }} />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

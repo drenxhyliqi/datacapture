@@ -5,7 +5,7 @@ import { GradientCard } from './ui/GradientCard'
 
 export default function AboutSection() {
     return (
-        <section className="relative w-full py-20 lg:pt-32 px-6 lg:px-8 mt-20 lg:mt-32">
+        <section className="about-section relative w-full py-20 lg:pt-32 2xl:pt-20 px-6 lg:px-8 mt-20 lg:mt-32 2xl:mt-12">
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
                     {/* Left Section - Text Content */}
@@ -47,8 +47,7 @@ export default function AboutSection() {
 
                     {/* Right Section - Image with Slider Effect */}
                     
-                        <div className="relative w-full lg:mt-[40%]">
-                            {/* Drone Image */}
+                        <div className="about-section-image-wrap relative w-full lg:mt-[40%]">
                             <GradientCard>
                                 <div className="relative h-[60vh] w-full min-h-[280px] rounded-2xl overflow-hidden">
                                 <Image

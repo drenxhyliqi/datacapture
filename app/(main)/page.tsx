@@ -18,7 +18,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       
       {/* HERO – z-[50] so navbar (inside hero) stays above sections below */}
-      <div className="relative z-[50] min-h-[110vh] isolate" style={{ position: 'relative' }}>
+      <div className="hero-viewport-wrapper relative z-[50] min-h-[110vh] 2xl:min-h-[100vh] isolate" style={{ position: 'relative' }}>
     
         {/* HEADER – high z-index so navbar stays above other sections */}
         <div className="relative z-[100]">
@@ -33,7 +33,7 @@ export default function Home() {
 
       {/* STATIC RIGHT SHADOW – only in DOM on lg+; low z so navbar stays on top */}
       {isLg && (
-        <div className="absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
+        <div className="hero-static-shadow-wrapper absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
           <div className="relative w-[400px] h-[100vh] translate-x-1/2 translate-y-250">
             <Image
               src={ellipseShadow}

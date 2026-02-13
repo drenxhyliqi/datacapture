@@ -8,7 +8,7 @@ import { GradientCard } from "./ui/GradientCard";
 export default function DiscussSection() {
   return (
     <section className="relative w-full mx-auto py-16 lg:py-24 ">
-      <div className="container mx-auto max-w-7xl px-[5%] sm:px-[0%]">
+      <div className="container mx-auto max-w-7xl px-[5%] sm:px-[0%] lg:px-5">
         <GradientCard>
         {/* Dark card with rounded corners */}
         <div className="relative rounded-[20px] overflow-hidden min-h-[400px] w-full">

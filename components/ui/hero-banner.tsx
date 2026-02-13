@@ -14,7 +14,7 @@ export default function HeroBanner() {
       className="absolute inset-0 flex min-h-[100dvh] w-full items-center justify-center"
       style={{ marginTop: '-50px' }}
     >
-      <div className="hero-bg-left" aria-hidden style={{ marginRight: '300px' }}>
+      <div className="hero-bg-left" aria-hidden>
         <Image src={leftBgSrc} alt="" fill className="object-contain object-left" sizes="80vw" priority />
       </div>
       <div className="hero-bg-right" aria-hidden>

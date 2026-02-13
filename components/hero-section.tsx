@@ -25,7 +25,7 @@ export default function HeroSection() {
   return (
     <>
       {/* DESKTOP HERO (lg+) – section hidden on md and below via Tailwind */}
-      <section className="hidden lg:block relative min-h-[110vh] overflow-visible">
+      <section className="hero-desktop-section hidden lg:block relative min-h-[110vh] 2xl:min-h-[100vh] overflow-visible">
         {/* BACKGROUND: HeroBanner – absolute, z-0, behind all content */}
         <div className="overflow-visible">
           <HeroBanner />
@@ -33,59 +33,63 @@ export default function HeroSection() {
 
         {/* Desktop blur shadows: only in DOM on lg+ (conditional render so not present on md and below) */}
         {isLg && (
-          <div className="hero-blur-shadows absolute inset-0 pointer-events-none" aria-hidden="true">
-            {/* LEFT blur shadow: fixed left edge, move up → hold 0.5s → fast down → hold 0.5s */}
-            <div
-              className="absolute left-10 top-110 pointer-events-none w-[200px] h-[165px]"
-              role="presentation"
-              style={{
-                background:
-                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 30%)",
-                filter: "blur(50px)",
-                transform: "rotate(120deg)",
-              }}
-            />
-            <div
-              className="absolute left-35 top-155 pointer-events-none w-[200px] h-[165px]"
-              role="presentation"
-              style={{
-                background:
-                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 100%)",
-                filter: "blur(50px)",
-                transform: "rotate(50deg)",
-              }}
-            />
+          <div className="hero-blur-shadows absolute inset-0 pointer-events-none lg:hidden 2xl:block" aria-hidden="true">
+            {/* LEFT blur shadow: move up → hold → down (uses --animate-hero-shadow-up) */}
+            <div className="hero-shadow-left absolute left-10 top-110 pointer-events-none" role="presentation">
+              <div
+                className="pointer-events-none w-[200px] h-[165px]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(249, 249, 249, 0.95) 0%, rgba(249, 249, 249, 0.94) 30%, rgba(249, 249, 249, 0.96) 55%, transparent 30%)",
+                  filter: "blur(50px)",
+                  transform: "rotate(120deg)",
+                }}
+              />
+            </div>
+            <div className="hero-shadow-left absolute left-35 top-155 pointer-events-none" role="presentation">
+              <div
+                className="pointer-events-none w-[200px] h-[165px]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(249, 249, 249, 0.95) 0%, rgba(249, 249, 249, 0.94) 30%, rgba(249, 249, 249, 0.96) 55%, transparent 100%)",
+                  filter: "blur(50px)",
+                  transform: "rotate(50deg)",
+                }}
+              />
+            </div>
 
-            {/* RIGHT blur shadow: same animation reversed – moves down when left moves up */}
-            <div
-              className="absolute right-40 top-20 pointer-events-none w-[200px] h-[165px]"
-              role="presentation"
-              style={{
-                background:
-                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 30%)",
-                filter: "blur(50px)",
-                transform: "rotate(10deg)",
-              }}
-            />
-            <div
-              className="absolute right-40 top-40 pointer-events-none w-[200px] h-[165px]"
-              role="presentation"
-              style={{
-                background:
-                  "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.94) 30%, rgba(255, 255, 255, 0.96) 55%, transparent 100%)",
-                filter: "blur(50px)",
-                transform: "rotate(100deg)",
-              }}
-            />
+            {/* RIGHT blur shadow: moves down when left moves up (uses --animate-hero-shadow-down) */}
+            <div className="hero-shadow-right absolute right-40 top-20 pointer-events-none" role="presentation">
+              <div
+                className="pointer-events-none w-[200px] h-[165px]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(249, 249, 249, 0.95) 0%, rgba(249, 249, 249, 0.94) 30%, rgba(249, 249, 249, 0.96) 55%, transparent 30%)",
+                  filter: "blur(50px)",
+                  transform: "rotate(10deg)",
+                }}
+              />
+            </div>
+            <div className="hero-shadow-right absolute right-40 top-40 pointer-events-none" role="presentation">
+              <div
+                className="pointer-events-none w-[200px] h-[165px]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 160px 100px at 25% 2%, rgba(249, 249, 249, 0.95) 0%, rgba(249, 249, 249, 0.94) 30%, rgba(249, 249, 249, 0.96) 55%, transparent 100%)",
+                  filter: "blur(50px)",
+                  transform: "rotate(100deg)",
+                }}
+              />
+            </div>
           </div>
         )}
 
         {/* HERO CONTENT – disappear/appear in sync with blur shadow movement (2s cycle). */}
-        <div className="hero-content relative z-10 mx-auto flex min-h-[110vh] max-w-7xl items-start px-12 pt-24">
-          <div className="absolute left-30 top-40">
+        <div className="hero-content relative z-10 mx-auto flex min-h-[110vh] 2xl:min-h-[100vh] max-w-7xl items-start px-12 pt-24">
+          <div className="hero-left-column absolute left-30 top-40">
             <div className="flex flex-col items-start gap-6">
               <div
-                className="h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1"
+                className="hero-drone-badge h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1"
                 style={{ backgroundColor: '#313331' }}
               >
                 <div
@@ -107,9 +111,9 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="absolute left-0 top-58">
+            <div className="absolute left-[-2.6em] top-45">
               {/* ADAPTIVE / SECURITY text */}
-              <div className="space-y-5 text-[13px] font-light uppercase text-white tracking-[1.5em]">
+              <div className="space-y-6 text-[13px] font-light uppercase text-white tracking-[1.9em]">
                 <div className="whitespace-nowrap">ADAPTIVE</div>
                 <div className="whitespace-nowrap">SECURITY</div>
               </div>
@@ -119,7 +123,7 @@ export default function HeroSection() {
           {/* Main content block – centered as a whole, left‑biased inside */}
           <div className="relative ml-[12rem] w-full">
             {/* AIR DEFENCE pill + Headline + Desktop CTA */}
-            <div className="relative mb-8 flex" style={{ marginTop: '120px' }}>
+            <div className="hero-headline-block relative mb-8 flex mt-[120px] 2xl:mt-16">
               <div className="pl-[5em]">
                 <div className="relative">
                   <h1 className="text-[5rem] font-[600] leading-[1] text-white">
