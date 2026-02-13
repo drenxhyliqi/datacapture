@@ -1,5 +1,7 @@
+'use client'
 import SecondHeroBanner from "@/components/ui/second-hero-banner";
 import Image from "next/image";
+import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 // Icons imported as SVGs (SRAD-specific)
 import detectionIcon from "@/assets/selections1.svg";
@@ -16,6 +18,7 @@ export default function SolutionsSradHeroBanner() {
 }
 
 export function SolutionsSradFeaturesSection() {
+  const t = useTranslations()
   return (
     <>
       <section className="relative w-full py-10 lg:py-32 px-6 lg:px-8">
@@ -25,7 +28,7 @@ export function SolutionsSradFeaturesSection() {
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
               <div className="lg:w-1/2">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white">
-                  Tailor made air security.
+                  {t('solutions.airSecurity')}
                 </h2>
               </div>
             </div>
@@ -33,7 +36,6 @@ export function SolutionsSradFeaturesSection() {
 
           {/* 3 feature cards – same structure as CUAS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Detection */}
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-[72px] h-[72px] flex items-center justify-center">
@@ -44,16 +46,14 @@ export function SolutionsSradFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Detection
+                  {t('solutions.detection')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Custom-tailored detection systems designed to identify radar and aerial threats with precision,
-                reliability, and real-time operational awareness.
+                {t('solutions.sradDetectionDesc')}
               </p>
             </div>
 
-            {/* Identification */}
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-[84px] h-[84px] flex items-center justify-center">
@@ -64,16 +64,14 @@ export function SolutionsSradFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Identification & Tracking
+                  {t('solutions.sradIdentificationTracking')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Advanced radar processing and sensor fusion enabling fast, accurate identification and continuous
-                tracking of all potential targets in the monitored airspace.
+                {t('solutions.sradIdentificationTrackingDesc')}
               </p>
             </div>
 
-            {/* Mitigation */}
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-[72px] h-[72px] flex items-center justify-center">
@@ -84,12 +82,11 @@ export function SolutionsSradFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Neutralization
+                  {t('solutions.sradNeutralization')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Integrated neutralization options that support electronic, kinetic, or procedural responses coordinated
-                directly through the SRAD command-and-control interface.
+                {t('solutions.sradNeutralizationDesc')}
               </p>
             </div>
           </div>
@@ -134,26 +131,17 @@ export function SolutionsSradFeaturesSection() {
 }
 
 export function SolutionsSradDescriptionSection() {
+  const t = useTranslations()
   return (
     <section className="relative w-full py-10 lg:py-20 px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-          Customized Radar Systems for Mission-Critical Protection
+          {t('solutions.sradCustomizedTitle')}
         </h2>
         <div className="space-y-4 text-base md:text-lg text-white/90">
-          <p>
-            DCS provides fully tailored radar-based surveillance solutions for fixed, mobile, and man-portable
-            deployments.
-          </p>
-          <p>
-            Detection combines long-range radar, sensor fusion, and advanced processing for complete situational
-            awareness. Identification and tracking leverage AI-supported analytics to maintain a continuous radar
-            picture of the operational environment.
-          </p>
-          <p>
-            Neutralization options integrate seamlessly with existing effectors and command networks, enabling fast,
-            coordinated responses while preserving operator control and safety.
-          </p>
+          <p>{t('solutions.sradCustomizedP1')}</p>
+          <p>{t('solutions.sradCustomizedP2')}</p>
+          <p>{t('solutions.sradCustomizedP3')}</p>
         </div>
       </div>
     </section>
@@ -161,12 +149,12 @@ export function SolutionsSradDescriptionSection() {
 }
 
 export function SolutionsSradC2Section() {
+  const t = useTranslations()
   return (
     <section className="relative w-full py-16 lg:py-24 px-6 lg:px-8">
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center gap-10">
-        {/* Macbook + C2 label */}
         <div className="flex flex-col items-center gap-6">
-          <h2 className="text-2xl md:text-3xl font-[400] text-white">C2</h2>
+          <h2 className="text-2xl md:text-3xl font-[400] text-white">{t('solutions.c2')}</h2>
           <div className="relative w-full max-w-3xl">
             <Image
               src={macbookImage}
@@ -188,9 +176,9 @@ export function SolutionsSradC2Section() {
             />
             {/* Labels aligned with arrow ends */}
             <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
-              <div style={{ marginLeft: "-95px" }}>Detection</div>
-              <div style={{ marginLeft: "-30px" }}>Identification & Tracking</div>
-              <div style={{ marginLeft: "55px" }}>Neutralization</div>
+              <div style={{ marginLeft: "-95px" }}>{t('solutions.detection')}</div>
+              <div style={{ marginLeft: "-30px" }}>{t('solutions.sradIdentificationTracking')}</div>
+              <div style={{ marginLeft: "55px" }}>{t('solutions.sradNeutralization')}</div>
             </div>
           </div>
 
@@ -206,9 +194,9 @@ export function SolutionsSradC2Section() {
                 className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium"
                 style={{ fontSize: "22px" }}
               >
-                <span>Detection</span>
-                <span>Identification & Tracking</span>
-                <span>Neutralization</span>
+                <span>{t('solutions.detection')}</span>
+                <span>{t('solutions.sradIdentificationTracking')}</span>
+                <span>{t('solutions.sradNeutralization')}</span>
               </div>
             </div>
           </div>
@@ -226,10 +214,9 @@ export function SolutionsSradC2Section() {
               />
             </div>
             <div>
-              <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">Fixed Installation</h3>
+              <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">{t('solutions.fixedInstallation')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Custom-designed permanent systems, built to provide continuous monitoring and protection, perfectly
-                adapted to the specific needs of your facilities.
+                {t('solutions.fixedInstallationDesc')}
               </p>
             </div>
           </div>
@@ -244,10 +231,9 @@ export function SolutionsSradC2Section() {
               />
             </div>
             <div>
-              <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">Mobile Installation</h3>
+              <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">{t('solutions.mobileInstallation')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Flexible, vehicle-mounted solutions tailored to your mission, affering rapid deployment and complete
-                operational coverage whenever required.
+                {t('solutions.mobileInstallationDesc')}
               </p>
             </div>
           </div>

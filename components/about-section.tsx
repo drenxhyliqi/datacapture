@@ -2,10 +2,12 @@
 import Image from 'next/image'
 import { GradientLine } from '@/components/ui/GradientLine'
 import { GradientCard } from './ui/GradientCard'
+import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 export default function AboutSection() {
+    const t = useTranslations()
     return (
-        <section className="about-section relative w-full py-20 lg:pt-32 2xl:pt-20 px-6 lg:px-8 mt-20 lg:mt-32 2xl:mt-12">
+        <section className="about-section relative w-full pt-8 pb-20 lg:pt-32 2xl:pt-20 px-6 lg:px-8 mt-[-46px] lg:mt-32 2xl:mt-12">
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
                     {/* Left Section - Text Content */}
@@ -19,29 +21,21 @@ export default function AboutSection() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="text-1xl md:text-1xl lg:text-1xl font-[400] text-white mb-6 uppercase tracking-wide">
-                            ABOUT DCS
+                        <h2 className="text-lg md:text-base font-[500] text-white mb-6 uppercase tracking-wide">
+                            {t('about.title')}
                         </h2>
 
-                        {/* Main Headline */}
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-8 leading-tight">
-                            An Integrated Platform for Drone Awareness and Security Operations
+                        {/* Main Headline – larger on mobile to match design */}
+                        <h3 className="text-5xl md:text-4xl lg:text-5xl font-[600] text-white mb-8 leading-tight">
+                            {t('about.headline')}
                         </h3>
 
-                        {/* Paragraphs */}
-                        <div className="space-y-6 text-base md:text-lg text-[#D9D9D9] leading-relaxed">
-                            <p>
-                                Data Capture Systems GmbH is a German technology company specializing in state-of-the-art counter-drone and cybersecurity solutions. We address the rapidly growing security requirements of government authorities, armed forces, critical infrastructure operators, and commercial organizations worldwide.
-                            </p>
-                            <p>
-                                The company provides future-proof, highly reliable protection solutions that integrate seamlessly into existing command, sensor, and security architectures. Our systems are designed for deployment in military, governmental, maritime, and civilian environments.
-                            </p>
-                            <p>
-                                At the core of our product portfolio is a proprietary multi-sensor system that enables the precise detection, identification, and neutralization of all types of drones.
-                            </p>
-                            <p>
-                                Operations are managed via in-house, user-friendly C2 software, which consolidates all sensor data into a clear, real-time common operating picture, enabling fast, secure, and effective decision-making.
-                            </p>
+                        {/* Paragraphs – larger on mobile */}
+                        <div className="space-y-6 text-lg md:text-lg text-[#D9D9D9] leading-relaxed">
+                            <p>{t('about.p1')}</p>
+                            <p>{t('about.p2')}</p>
+                            <p>{t('about.p3')}</p>
+                            <p>{t('about.p4')}</p>
                         </div>
                     </div>
 

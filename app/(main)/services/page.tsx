@@ -7,8 +7,10 @@ import solutionsHero from "@/assets/herosolutuion.png"
 import ServicesSection from "@/components/ServicesSection"
 import Footer from "@/components/footer"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
+import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function ServicesPage() {
+    const t = useTranslations()
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
         
@@ -24,13 +26,13 @@ export default function ServicesPage() {
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-2 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base">
-            SERVICES
+            {t('services.label')}
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-            Operational services within the DCS platform
+            {t('services.heroTitle')}
           </h1>
           <p className="mt-6 text-white/60 max-w-2xl mx-auto">
-            DCS supports a range of operational and configuration services through its integrated command-and-control system.
+            {t('services.heroSub')}
           </p>
         </div>
       </div>

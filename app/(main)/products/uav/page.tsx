@@ -8,8 +8,10 @@ import DiscussSection from "@/components/discussSection"
 import hardkillProduct from "@/assets/hardkill-5.png"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
 import UAVSections from "@/components/uav-sections"
+import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function UAVPage() {
+    const t = useTranslations()
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
         
@@ -26,10 +28,10 @@ export default function UAVPage() {
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-20 mb-30 md:pt-5 pb-20 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
-            Product
+            {t('products.productLabel')}
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-             Surveillance UAV
+            {t('products.uavTitle')}
           </h1>
         </div>
       </div>

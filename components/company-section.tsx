@@ -9,8 +9,15 @@ import ellipseShadow from '@/assets/Ellipse 8.svg'
 import { GradientCard } from './ui/GradientCard'
 import solutionsHero from '@/assets/herosolutuion.png'
 import SecondHeroBanner from './ui/second-hero-banner'
+import { useTranslations } from '@/lib/i18n/LocaleContext'
 
-const SUBTEXT =
+const METRICS_KEYS = [
+  { title: 'company.metric1Title', desc: 'company.metric1Desc' },
+  { title: 'company.metric2Title', desc: 'company.metric2Desc' },
+  { title: 'company.metric3Title', desc: 'company.metric3Desc' },
+] as const
+
+const _SUBTEXT_PLACEHOLDER =
   'At DCS, our mission is to meet every customer’s unique requirements, ensuring complete safety and protection.'
 
 const METRICS = [
@@ -39,6 +46,7 @@ const ABOUT_DCS_PARAGRAPHS = [
 ]
 
 export default function CompanySection() {
+  const t = useTranslations()
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       {/* HERO */}
@@ -52,14 +60,14 @@ export default function CompanySection() {
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-xl pt-5 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base font-[400]">
-            Company
+            {t('company.label')}
           </p>
           <h1 className="mt-6 text-white text-xl md:text-6xl font-[400] leading-tight">
-            We Protect what <br className="hidden md:block" />
-            matters Most
+            {t('company.headline')} <br className="hidden md:block" />
+            {t('company.headline2')}
           </h1>
           <p className="mt-6 text-white/60 max-w-md mx-auto">
-            {SUBTEXT}
+            {t('company.subtext')}
           </p>
         </div>
       </div>
@@ -119,16 +127,16 @@ export default function CompanySection() {
             {/* Content */}
             <div className="relative z-10 py-14 sm:py-16 lg:py-20 ">
               <div className="grid w-[90%] mx-auto gap-4 sm:gap-6 lg:gap-8 md:grid-cols-3">
-                {METRICS.map((metric) => (
+                {METRICS_KEYS.map((metric) => (
                   <div
                     key={metric.title}
                     className="flex h-full min-h-[200px] max-w-[420px] w-full mx-auto flex-col justify-center gap-1 rounded-2xl bg-white/12 px-6 pt-10 pb-8 text-center text-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl border border-white/25"
                   >
-                    <h3 className="mb-3 text-lg font-[400] sm:text-xl max-w-[14rem] mx-auto">
-                      {metric.title}
+                    <h3 className="mb-3 text-lg font-[400] sm:text-xl text-content-width mx-auto text-wrap-natural">
+                      {t(metric.title)}
                     </h3>
-                    <p className="text-sm leading-relaxed text-white/80 sm:text-base max-w-[16rem] mx-auto">
-                      {metric.description}
+                    <p className="text-sm leading-relaxed text-white/80 sm:text-base text-content-width mx-auto text-wrap-natural">
+                      {t(metric.desc)}
                     </p>
                   </div>
                 ))}
@@ -146,14 +154,13 @@ export default function CompanySection() {
             className="about-dcs-fade-border rounded-2xl bg-[#121212] px-[30px] py-8 sm:py-10"
           >
             <h2 className="mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
-              About Data Capture Systems GmbH
+              {t('company.aboutSectionTitle')}
             </h2>
             <div className="space-y-6 text-left text-white/95 text-[18px]">
-              {ABOUT_DCS_PARAGRAPHS.map((paragraph, idx) => (
-                <p key={idx} className="leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+              <p className="leading-relaxed">{t('company.aboutP1')}</p>
+              <p className="leading-relaxed">{t('company.aboutP2')}</p>
+              <p className="leading-relaxed">{t('company.aboutP3')}</p>
+              <p className="leading-relaxed">{t('company.aboutP4')}</p>
             </div>
           </div>
         </div>

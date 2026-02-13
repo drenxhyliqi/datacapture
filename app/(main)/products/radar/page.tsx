@@ -9,7 +9,10 @@ import radarHero from "@/assets/radar-1.svg"
 import radarProduct from "@/assets/radarscanner.svg"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
 import RadarSection from "@/components/radar-section"
-export default function GnnsPage() {
+import { useTranslations } from "@/lib/i18n/LocaleContext"
+
+export default function RadarPage() {
+    const t = useTranslations()
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
         
@@ -26,12 +29,12 @@ export default function GnnsPage() {
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 mt-5 mb-10 lg:-mb-20 md:pt-5 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
-            Product
+            {t('products.productLabel')}
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-            Radar
+            {t('products.radarTitle')}
           </h1>
-          <h3 className="text-white/80 max-w-2xl items-center justify-center">DCS supports a range of operational and configuration services through its integrated command-and-control system.</h3>
+          <h3 className="text-white/80 max-w-2xl items-center justify-center">{t('products.radarSub')}</h3>
           <Image src={radarHero} alt="GNNS Hero" className="object-contain items-center justify-center -mt-10 lg:w-70 lg:h-70 w-40 h-40" />
         </div>
       </div>
@@ -76,20 +79,20 @@ export default function GnnsPage() {
 
        {/* FEATURES 2*/}
        <div className="container mx-auto items-center px-10 mb-10 mt-20">
-            <div className="mt-10 space-y-2">
-                <h2 className="text-3xl text-white font-semibold">MAIN ADVANTAGES</h2> <br />
-                <p className="text-base text-white">Deployed on operational APS / VPS and VSHORAD systems</p><br />
-                <p className="text-base text-white">Superior performance against low signature targets (RCS, Velocity, Altitude)</p><br />
-                <p className="text-base text-white">Multipath and clutter handling through advanced antenna topology</p><br />
-                <p className="text-base text-white">Multi-Mission ‘one radar does it all’</p><br />
-                <p className="text-base text-white">Automated operation through advanced signal processing and algorithms</p><br />
-                <p className="text-base text-white">Complete dynamic Air Situational Picture (ASP) mounted on tactical vehicle or vessel</p><br />
-                <p className="text-base text-white">Unique low-probability-of-detection features (aCHR)</p><br />
-                <p className="text-base text-white">Ballistic survivability by antenna & radome construction (aCHR)</p><br />
-                <p className="text-base text-white">Advanced antenna topology (MIMO) provides extended accuracies, multipath and clutter handling</p><br />
-                <p className="text-base text-white">Handles hundreds of targets through Track While Search (TWS) and Revisit modes</p><br />
-                <p className="text-base text-white">In-depth 4D analysis of Doppler and other target features</p><br />
-                <p className="text-base text-white">Highly cost-effective SWaP-C superiority</p><br />
+            <div className="mt-10 space-y-3 text-content-width text-wrap-natural">
+                <h2 className="text-3xl text-white font-semibold">{t('products.mainAdvantages')}</h2>
+                <p className="text-base text-white">{t('products.radarAdvantage1')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage2')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage3')}</p>
+                <p className="text-base text-white">Multi-Mission ‘one radar does it all’</p>
+                <p className="text-base text-white">{t('products.radarAdvantage5')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage6')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage7')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage8')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage9')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage10')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage11')}</p>
+                <p className="text-base text-white">{t('products.radarAdvantage12')}</p>
             </div>
         </div>
       <DiscussSection />

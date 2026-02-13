@@ -6,21 +6,11 @@ import Image from 'next/image'
 import droneIcon from '@/assets/selections1.svg'
 import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
 import HeroBanner from '@/components/ui/hero-banner'
-
-
-const HEADING = {
-  line1: 'Engineering',
-  line2: 'the Future',
-  line3: 'of Security',
-}
-
-const SUBTEXT_LINES = [
-  'A Company with selected partners securing airspace, cyber, data, and critical infrastructure through advanced engineering and innovation.',
-  'A centralized system for real-time drone detection, visualization, and post-event analysis within defined operational areas.',
-]
+import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 export default function HeroSection() {
   const isLg = useMediaQuery(LG_QUERY)
+  const t = useTranslations()
 
   return (
     <>
@@ -114,64 +104,60 @@ export default function HeroSection() {
             <div className="absolute left-[-2.6em] top-45">
               {/* ADAPTIVE / SECURITY text */}
               <div className="space-y-6 text-[13px] font-light uppercase text-white tracking-[1.9em]">
-                <div className="whitespace-nowrap">ADAPTIVE</div>
-                <div className="whitespace-nowrap">SECURITY</div>
+                <div className="whitespace-nowrap">{t('hero.adaptive')}</div>
+                <div className="whitespace-nowrap">{t('hero.security')}</div>
               </div>
             </div>
           </div>
 
-          {/* Main content block – centered as a whole, left‑biased inside */}
+          {/* Main content block – 2-column layout on lg+ so CTA position is independent of headline width */}
           <div className="relative ml-[12rem] w-full">
-            {/* AIR DEFENCE pill + Headline + Desktop CTA */}
-            <div className="hero-headline-block relative mb-8 flex mt-[120px] 2xl:mt-16">
-              <div className="pl-[5em]">
-                <div className="relative">
-                  <h1 className="text-[5rem] font-[600] leading-[1] text-white">
-                    <span className="block">{HEADING.line1}</span>
-                    <span className="block">{HEADING.line2}</span>
-                    <span className="block">{HEADING.line3}</span>
-                  </h1>
+            {/* Desktop (lg+): grid – col1 = headline (max 65ch), col2 = CTA (fixed horizontal position) */}
+            <div className="hero-headline-block mt-[120px] 2xl:mt-16 mb-2 lg:grid lg:grid-cols-[minmax(0,65ch)_auto] lg:gap-8 lg:items-end">
+              {/* Column 1: Headline only – wraps naturally by container, no fixed line breaks */}
+              <div className="pl-[5em] min-w-0 text-content-width">
+                <h1 className="text-[5rem] font-[600] leading-[1] text-white text-wrap-natural">
+                  <span className="block">{t('hero.line1')}</span>
+                  <span className="block">{t('hero.line2')}</span>
+                  <span className="block">{t('hero.line3')}</span>
+                </h1>
+              </div>
 
-                  {/* Desktop-only CTA positioned next to "Monitoring" – old single-button design */}
-                  <div className="absolute -right-110 bottom-[-6.5em] hidden lg:block">
-                    <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1 mb-3">
-                      <div className="relative inline-flex items-center w-full">
-                        {/* Fading line + arrow to the left */}
-                        <Image
-                          src={arrowLeft}
-                          alt="Arrow left"
-                          width={100}
-                          height={40}
-                          className="object-contain"
-                          style={{ width: 'auto', height: 'auto', marginLeft: '10px', marginRight: '50px' }}
-                        />
-
-                        {/* Main CTA button - positioned at the very end */}
-                        <Link
-                          href="/contact-us"
-                          className="group relative inline-flex items-end px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all -mr-[0.625rem] translate-x-1"
-                          style={{
-                            background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
-                            paddingTop: '0.7rem',
-                            paddingBottom: '0.7rem',
-                          }}
-                        >
-                          <span className="relative z-10">Get Protected Today</span>
-                        </Link>
-                      </div>
-                    </div>
+              {/* Column 2: CTA – positioned by grid column only, no dependency on headline or text width */}
+              <div className="hidden lg:flex flex-shrink-0 items-center pt-[0.5rem]">
+                <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full px-4 py-1">
+                  <div className="inline-flex items-center gap-8">
+                    <Image
+                      src={arrowLeft}
+                      alt="Arrow left"
+                      width={100}
+                      height={40}
+                      className="object-contain flex-shrink-0"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
+                    <Link
+                      href="/contact-us"
+                      className="group relative inline-flex items-center justify-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wide transition-all whitespace-nowrap flex-shrink-0"
+                      style={{
+                        background: 'linear-gradient(to top, rgb(35,35,35), #000000)',
+                        paddingTop: '0.7rem',
+                        paddingBottom: '0.7rem',
+                      }}
+                    >
+                      <span className="relative z-10">{t('hero.cta')}</span>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Body text */}
-            <div className="mb-4 pl-[5.5em] max-w-[31rem] space-y-3 text-[15px] leading-relaxed">
+            {/* Body text – max-width in ch for natural wrap in EN/DE */}
+            <div className="mb-4 pl-[5.5em] text-content-width space-y-3 text-[15px] leading-relaxed text-wrap-natural">
               <p className="text-white">
-                {SUBTEXT_LINES[0]}
+                {t('hero.subtext1')}
               </p>
               <p className="text-[#A9A9A9]">
-                {SUBTEXT_LINES[1]}
+                {t('hero.subtext2')}
               </p>
             </div>
           </div>
@@ -197,12 +183,12 @@ export default function HeroSection() {
           {/* AIR DEFENCE pill – hidden on small and medium (desktop-only above) */}
           <div className="hidden" />
 
-          {/* Mobile heading + drone badge on the right; tablet: centered text */}
-          <div className="relative mb-6 w-full md:text-center">
-            <h1 className="text-[2.75rem] leading-[1.05] font-[500] text-white md:text-center md:text-[3.5rem]">
-              <span className="block">{HEADING.line1}</span>
-              <span className="block">{HEADING.line2}</span>
-              <span className="block">{HEADING.line3}</span>
+          {/* Mobile heading – max-width in ch for natural wrap in EN/DE */}
+          <div className="relative mb-6 w-full text-content-width md:text-center md:mx-auto">
+            <h1 className="text-[2.75rem] leading-[1.05] font-[500] text-white md:text-center md:text-[3.5rem] text-wrap-natural">
+              <span className="block">{t('hero.line1')}</span>
+              <span className="block">{t('hero.line2')}</span>
+              <span className="block">{t('hero.line3')}</span>
             </h1>
 
             {/* Drone badge: right-aligned on mobile and tablet */}
@@ -231,11 +217,20 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* CTA button - mobile only; hidden on tablet (md) */}
+          {/* Body text – max-width in ch for natural wrap in EN/DE */}
+          <div className="mb-8 space-y-3 text-[17px] leading-relaxed md:text-center md:mx-auto md:text-[18px] text-content-width text-wrap-natural">
+            <p className="text-[#C8C8C8]">
+              {t('hero.subtext1')}
+            </p>
+            <p className="text-[#A9A9A9]">
+              {t('hero.subtext2')}
+            </p>
+          </div>
+
+          {/* CTA button – mobile only, last in section (after header and paragraph) */}
           <div className="mb-8 w-full md:hidden">
             <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1">
               <div className="relative inline-flex items-center w-full gap-2">
-                {/* Fading line + arrow to the left */}
                 <Image
                   src={arrowLeft}
                   alt="Arrow left"
@@ -244,8 +239,6 @@ export default function HeroSection() {
                   className="object-contain"
                   style={{ width: 'auto', height: 'auto' }}
                 />
-
-                {/* Main CTA button - positioned at the very end */}
                 <Link
                   href="/contact-us"
                   className="group relative inline-flex items-center px-6 rounded-full border border-white/20 text-white font-semibold text-xs uppercase tracking-wide transition-all ml-auto -mr-[0.625rem] translate-x-1"
@@ -256,32 +249,10 @@ export default function HeroSection() {
                     fontSize: '0.6rem',
                   }}
                 >
-                  <span className="relative z-10">Get Protected Today</span>
+                  <span className="relative z-10">{t('hero.cta')}</span>
                 </Link>
               </div>
             </div>
-          </div>
-
-          {/* Body text – left on mobile, centered on tablet; larger on tablet */}
-          <div className="mb-8 space-y-3 text-[17px] leading-relaxed md:text-center md:mx-auto md:text-[18px] max-w-[34rem]">
-            <p className="text-[#C8C8C8]">
-              {SUBTEXT_LINES[0]}
-            </p>
-            <p className="text-[#A9A9A9]">
-              {SUBTEXT_LINES[1]}
-            </p>
-          </div>
-
-          {/* Stats – mobile stacked; tablet centered */}
-          <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60 md:items-center md:text-center">
-            <span>
-              <span className="font-semibold text-white mr-1">1.600+</span>
-              USER ACTIVE
-            </span>
-            <span>
-              <span className="font-semibold text-white mr-1">300+</span>
-              TECHNOLOGIES
-            </span>
           </div>
         </div>
       </section>

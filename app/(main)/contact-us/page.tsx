@@ -7,10 +7,13 @@ import solutionsHero from "@/assets/herosolutuion.png"
 import Footer from '@/components/footer'
 import { useForm, ValidationError } from '@formspree/react'
 import SecondHeroBanner from '@/components/ui/second-hero-banner'
+import { useTranslations } from '@/lib/i18n/LocaleContext'
+
 const FORMSPREE_FORM_ID = 'xqedawjw'
 
 export default function ContactUsPage() {
     const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID)
+    const t = useTranslations()
 
     return (
         <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
@@ -26,13 +29,13 @@ export default function ContactUsPage() {
                 {/* HERO TEXT */}
                 <div className="relative z-20 mx-auto max-w-4xl pt-10 md:pt-5 pb-24 text-center">
                     <p className="text-white tracking-widest text-sm md:text-base">
-                        CONTACT US
+                        {t('contact.label')}
                     </p>
                     <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-                        We are there for you
+                        {t('contact.headline')}
                     </h1>
                     <p className="mt-6 text-white/60 max-w-2xl mx-auto">
-                        Get in touch with our team for support, questions, or feedback.
+                        {t('contact.subtext')}
                     </p>
                 </div>
             </div>
@@ -71,12 +74,12 @@ export default function ContactUsPage() {
                         {/* LEFT: CONTACT FORM */}
                         <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
                             <h2 className="text-3xl md:text-4xl font-[400] text-gray-900 mb-6">
-                                Get in touch with us
+                                {t('contact.formTitle')}
                             </h2>
 
                             {state.succeeded ? (
                                 <p className="text-gray-700 text-lg py-4">
-                                    Thanks for your message! We&apos;ll get back to you soon.
+                                    {t('contact.thanks')}
                                 </p>
                             ) : (
                             <form onSubmit={handleSubmit} className="space-y-4">
@@ -86,7 +89,7 @@ export default function ContactUsPage() {
                                         <input
                                             type="text"
                                             name="firstName"
-                                            placeholder="First name"
+                                            placeholder={t('contact.firstName')}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                         />
                                     </div>
@@ -94,7 +97,7 @@ export default function ContactUsPage() {
                                         <input
                                             type="text"
                                             name="lastName"
-                                            placeholder="Last name"
+                                            placeholder={t('contact.lastName')}
                                             className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                         />
                                     </div>
@@ -105,7 +108,7 @@ export default function ContactUsPage() {
                                     <input
                                         type="text"
                                         name="company"
-                                        placeholder="Company"
+                                        placeholder={t('contact.company')}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                 </div>
@@ -116,7 +119,7 @@ export default function ContactUsPage() {
                                         id="email"
                                         type="email"
                                         name="email"
-                                        placeholder="Email"
+                                        placeholder={t('contact.email')}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm mt-1 block" />
@@ -127,7 +130,7 @@ export default function ContactUsPage() {
                                     <input
                                         type="tel"
                                         name="phone"
-                                        placeholder="Phone number"
+                                        placeholder={t('contact.phone')}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                 </div>
@@ -137,7 +140,7 @@ export default function ContactUsPage() {
                                     <textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Leave a message..."
+                                        placeholder={t('contact.message')}
                                         rows={5}
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent resize-none"
                                     />
@@ -156,12 +159,12 @@ export default function ContactUsPage() {
                                         htmlFor="privacy"
                                         className="text-sm text-gray-600"
                                     >
-                                        You agree to our friendly{' '}
+                                        {t('contact.privacyLabel')}{' '}
                                         <a
                                             href="#"
                                             className="underline hover:text-gray-900"
                                         >
-                                            privacy policy
+                                            {t('contact.privacyLink')}
                                         </a>
                                         .
                                     </label>
@@ -173,7 +176,7 @@ export default function ContactUsPage() {
                                     disabled={state.submitting}
                                     className="w-full bg-gray-800 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    {state.submitting ? 'Sending...' : 'Send message'}
+                                    {state.submitting ? t('contact.sending') : t('contact.submit')}
                                 </button>
                             </form>
                             )}

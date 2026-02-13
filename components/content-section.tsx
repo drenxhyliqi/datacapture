@@ -18,13 +18,13 @@ export default function ContentSection() {
               DCS SYSTEM
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-[400] text-white leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-[400] text-white leading-tight text-content-width text-wrap-natural">
               Centralized Control<br />
               of Drone Monitoring<br />
               Operations
             </h2>
 
-            <p className="mt-6 text-base text-white/70 max-w-lg">
+            <p className="mt-6 text-base text-white/70 text-content-width text-wrap-natural">
               DCS provides a single interface to manage live monitoring,
               mission configuration, and system settings. Operators can
               switch between real-time observation, mission setup, and
@@ -64,12 +64,12 @@ export default function ContentSection() {
                 Support
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-[400] text-white leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-[400] text-white leading-tight text-content-width text-wrap-natural">
                 System Updates and<br />
                 Maintenance
             </h2>
 
-            <p className="mt-6 text-base text-white/70 max-w-lg">
+            <p className="mt-6 text-base text-white/70 text-content-width text-wrap-natural">
                 The DCS system supports secure software updates through
                 authorized channels, including VPN-based updates and
                 offline updates via approved USB media. System status

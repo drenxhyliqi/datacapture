@@ -5,6 +5,7 @@ import "./globals.css";
 import Loading from "./loading";
 import LoadingGate from "./LoadingGate";
 import BackToTop from "@/components/BackToTop";
+import { LocaleProvider } from "@/lib/i18n/LocaleContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +33,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ backgroundColor: "#101210" }}
       >
-        <Suspense fallback={<Loading />}>
-          <LoadingGate>{children}</LoadingGate>
-        </Suspense>
+        <LocaleProvider>
+          <Suspense fallback={<Loading />}>
+            <LoadingGate>{children}</LoadingGate>
+          </Suspense>
+        </LocaleProvider>
         <BackToTop />
       </body>
     </html>

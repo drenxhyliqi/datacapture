@@ -9,6 +9,7 @@ import DiscussSection from "./discussSection"
 import Slideshow from "./slideshow"
 import { HardKillCard } from "./hardkillCard"
 import { hardkillFeatures } from "./ui/hardkill-features-data"
+import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 const feature2 = [
     {
@@ -49,28 +50,27 @@ const specs = [
   ];
 
 export default function HardkillSection() {
+    const t = useTranslations()
     return (
         <section className="container mx-auto relative w-full py-10 lg:py-32 px-6 lg:px-8">
             <div className="w-full max-w-7xl mx-auto">
                 {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-                        Designed for operational missions
+                        {t('products.designedForMissions')}
                     </h2>
                     <div className="max-w-6xl mx-auto space-y-3 text-base md:text-lg text-white/80">
-                        <p>
-                        Designed for mission-critical operations, this GNSS Spoofer neutralizes unauthorized systems, enhances operational control, protects critical assets, supports flexible countermeasure strategies, and integrates seamlessly into existing security architectures.
-                        </p>
+                        <p>{t('products.hardkillIntro')}</p>
                     </div>
                 </div>
 
                 {/* FEATURES 1*/}
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
-                    <div className="mt-10 space-y-2">
+                    <div className="mt-10 space-y-3 text-content-width text-wrap-natural">
                         <h2 className="text-3xl text-white font-semibold">
-                            BULLFROG M240
-                        </h2> <br />
-                        <p className="text-base text-white">ENGINEERED FOR AUTONOMOUS PROTECTION AGAINST UAVS</p><br />
+                            {t('products.bullfrogTitle')}
+                        </h2>
+                        <p className="text-base text-white">{t('products.bullfrogSub')}</p>
                         <p className="text-base text-white">BULLFROG™ IS A LIGHTWEIGHT, LOW-POWER AUTONOMOUS WEAPON STATION DESIGNED TO DETECT, IDENTIFY, AND NEUTRALIZE ENEMY UXS. ENGINEERED FOR MOBILITY AND VERSATILITY, BULLFROG™ EXCELS IN BOTH ON-THE-MOVE OPERATIONS AND THE PROTECTION OF HIGH-VALUE TARGETS LIKE POWER SUBSTATIONS. CAPABLE OF ENGAGING GROUP 1-3 UAS, IT OFFERS BOTH AUTONOMOUS AND SEMI-AUTONOMOUS MODES, DELIVERING FLEXIBLE, RELIABLE DEFENSE AT EVERY TURN.</p>
                     </div>
 
@@ -89,8 +89,8 @@ export default function HardkillSection() {
                     </div>
                 </div>
 
-                <div className="w-full flex flex-col items-center justify-center lg:justify-start mb-30">
-                    <h1 className="text-5xl text-orange-300 font-semibold">Defeats</h1><br />
+                <div className="w-full flex flex-col items-center justify-center lg:justify-start mb-30 space-y-2 text-wrap-natural">
+                    <h1 className="text-5xl text-orange-300 font-semibold">Defeats</h1>
                     <p className="text-base text-3xl text-white">Groups 1–3</p>
                     <p className="text-base text-3xl text-white">Maximum Effective Range: 800m</p>
                 </div>

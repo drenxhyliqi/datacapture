@@ -10,8 +10,10 @@ import gnnsHero from "@/assets/gnns-1.png"
 import GnnsSection from "@/components/gnns-section"
 import DiscussSection from "@/components/discussSection"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
+import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function GnnsPage() {
+    const t = useTranslations()
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
         
@@ -27,10 +29,10 @@ export default function GnnsPage() {
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-10 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
-            Product
+            {t('products.productLabel')}
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-            GNNS Manipulation
+            {t('products.gnnsTitle')}
           </h1>
           <Image src={gnnsHero} alt="GNNS Hero" className="object-contain items-center justify-center -mt-10 lg:w-70 lg:h-70 w-40 h-40" />
         </div>

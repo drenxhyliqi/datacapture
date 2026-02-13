@@ -1,27 +1,32 @@
 'use client'
 
 import { ServiceCard } from './ServiceCard'
-import { services } from './ui/services-data'
+import { serviceConfigs } from './ui/services-data'
+import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 export default function ServicesSection() {
+    const t = useTranslations()
+    const services = serviceConfigs.map((config) => ({
+        ...config,
+        title: t(`services.${config.key}Title`),
+        description: t(`services.${config.key}Desc`),
+        bullets: [
+            t(`services.${config.key}Bullet1`),
+            t(`services.${config.key}Bullet2`),
+            t(`services.${config.key}Bullet3`),
+        ],
+    }))
     return (
         <section className="relative w-full py-10 lg:py-32 px-6 lg:px-8">
             <div className="w-full max-w-7xl mx-auto">
                 {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-                        Designed for operational missions
+                        {t('services.sectionTitle')}
                     </h2>
                     <div className="max-w-5xl mx-auto space-y-4 text-base md:text-lg text-white/80">
-                        <p>
-                            DCS is designed to support mission-driven operations by providing
-                            real-time situational awareness, controlled configuration, and recorded
-                            operational data.
-                        </p>
-                        <p>
-                            All system functions are accessed through a unified graphical interface
-                            to support consistent operational workflows.
-                        </p>
+                        <p>{t('services.sectionP1')}</p>
+                        <p>{t('services.sectionP2')}</p>
                     </div>
                 </div>
 

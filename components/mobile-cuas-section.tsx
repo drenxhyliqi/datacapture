@@ -12,28 +12,30 @@ import mobileCuasImage8 from '@/assets/mobile-cuas-8.png'
 
 import Slideshow from '@/components/slideshow'
 import { GradientCard } from './ui/GradientCard'
+import { useTranslations } from '@/lib/i18n/LocaleContext'
 
-const vehicles = [
-    { label: 'SUV', icon: mobileCuasImage2 },
-    { label: 'Pick-Up', icon: mobileCuasImage3 },
-    { label: 'Van', icon: mobileCuasImage4 },
-    { label: 'Truck', icon: mobileCuasImage5 },
+const vehicleKeys = [
+    { key: 'products.vehicleSuv', icon: mobileCuasImage2 },
+    { key: 'products.vehiclePickUp', icon: mobileCuasImage3 },
+    { key: 'products.vehicleVan', icon: mobileCuasImage4 },
+    { key: 'products.vehicleTruck', icon: mobileCuasImage5 },
 ]
 
-const sensoric = [
-    'Radar',
-    'RF Detector',
-    'Camera',
-    'GNNS Spoofer',
-    'Jammer',
-    'Interceptor Drone',
-    'Weapon station',
-    'Dizzel Laser',
-    'Leaser',
+const sensoricKeys = [
+    'products.sensorRadar',
+    'products.sensorRFDetector',
+    'products.sensorCamera',
+    'products.sensorGnnssSpoofer',
+    'products.sensorJammer',
+    'products.sensorInterceptorDrone',
+    'products.sensorWeaponStation',
+    'products.sensorDazzleLaser',
+    'products.sensorLaser',
 ]
 
 
 export default function MobileCuasSections() {
+  const t = useTranslations()
   return (
     <section className="container mx-auto relative w-full px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
@@ -55,29 +57,29 @@ export default function MobileCuasSections() {
             <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
               <GradientCard>
                 <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
-                Choose your Vehicle
+                {t('products.chooseVehicle')}
                 </h3>
               </GradientCard>
             </div>
 
         {/* Vehicles row */}
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 mb-20">
-          {vehicles.map((v) => (
+          {vehicleKeys.map((v) => (
             <button
-              key={v.label}
+              key={v.key}
               type="button"
               className="group flex flex-col  items-center gap-4"
             >
               <div className="relative h-30 w-30 ">
                 <Image
                   src={v.icon}
-                  alt={v.label}
+                  alt={t(v.key)}
                   fill
                   className="object-contain opacity-90 transition group-hover:opacity-100"
                 />
               </div>
               <p className="text-white text-xl md:text-2xl font-medium">
-                {v.label}
+                {t(v.key)}
               </p>
             </button>
           ))}
@@ -87,18 +89,18 @@ export default function MobileCuasSections() {
         <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
           <GradientCard>
             <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
-              Select your Sensoric
+              {t('products.selectSensoric')}
             </h3>
           </GradientCard>
         </div>
 
        {/* Sensoric grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {sensoric.map((item) => (
-            <GradientCard key={item}>
+        {sensoricKeys.map((key) => (
+            <GradientCard key={key}>
             <div className="flex h-full w-full items-center justify-center ">
                 <span className="text-white text-xl md:text-2xl font-medium text-center p-5">
-                {item}
+                {t(key)}
                 </span>
             </div>
             </GradientCard>

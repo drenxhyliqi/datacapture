@@ -4,8 +4,10 @@ import Link from 'next/link'
 import footerBackground from '@/assets/Footer (1).png'
 import footerBackgroundMobile from '@/assets/footerBackgroundMobile.png'
 import footerBackgroundTablet from '@/assets/Footer (5).png'
+import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 export default function Footer() {
+  const t = useTranslations()
   return (
     <>
       <footer className="relative w-full bg-[#101210] overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
@@ -75,7 +77,7 @@ export default function Footer() {
 
             {/* Description */}
             <p className="text-gray-400 text-sm lg:text-base mb-8 max-w-[70%] lg:max-w-md leading-relaxed">
-              A command-and-control platform for drone detection, monitoring, and data recording.
+              {t('footer.tagline')}
             </p>
 
             {/* Contact Us Button */}
@@ -83,7 +85,7 @@ export default function Footer() {
               href="/contact-us"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white text-white font-medium text-sm w-fit hover:bg-white/10 transition-all"
             >
-              Contact Us
+              {t('footer.contactUs')}
             </Link>
           </div>
 
@@ -91,26 +93,26 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
             {/* Column 1: About */}
             <div>
-              <h3 className="text-white font-[400] text-base mb-4">About</h3>
+              <h3 className="text-white font-[400] text-base mb-4">{t('footer.about')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    About us
+                    {t('footer.aboutUs')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Features
+                    {t('footer.features')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Blog
+                    {t('footer.blog')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Download
+                    {t('footer.download')}
                   </Link>
                 </li>
               </ul>
@@ -118,26 +120,26 @@ export default function Footer() {
 
             {/* Column 2: Company */}
             <div>
-              <h3 className="text-white font-semibold text-base mb-4">Company</h3>
+              <h3 className="text-white font-semibold text-base mb-4">{t('footer.company')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    How we work
+                    {t('footer.howWeWork')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Press Room
+                    {t('footer.pressRoom')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Jobs
+                    {t('footer.jobs')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Community
+                    {t('footer.community')}
                   </Link>
                 </li>
               </ul>
@@ -145,26 +147,26 @@ export default function Footer() {
 
             {/* Column 3: Legal */}
             <div>
-              <h3 className="text-white font-[400] text-base mb-4">Legal</h3>
+              <h3 className="text-white font-[400] text-base mb-4">{t('footer.legal')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Terms of use
+                    {t('footer.termsOfUse')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Privacy Policy
+                    {t('footer.privacyPolicy')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Security Policy
+                    {t('footer.securityPolicy')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    Cookie Settings
+                    {t('footer.cookieSettings')}
                   </Link>
                 </li>
               </ul>
@@ -175,14 +177,14 @@ export default function Footer() {
         {/* Bottom Section - Copyright */}
         <div className="border-t pt-8" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <p className="text-white text-sm text-center">
-            © Copyright 2026 DCS. Design & Developed by{' '}
+            {t('footer.copyright')}{' '}
             <Link
               href="https://protecht.ch/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline hover:no-underline"
             >
-              Protecht
+              {t('footer.protecht')}
             </Link>
           </p>
         </div>

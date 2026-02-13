@@ -1,5 +1,7 @@
+'use client'
 import SecondHeroBanner from "@/components/ui/second-hero-banner";
 import Image from "next/image";
+import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 // Icons imported as SVGs (from your assets)
 import detectionIcon from "@/assets/selections1.svg";
@@ -17,6 +19,7 @@ export default function SolutionsCuasHeroBanner() {
 }
 
 export function SolutionsCuasFeaturesSection() {
+  const t = useTranslations()
   return (
     <>
       <section className="relative w-full py-10 lg:py-32 px-6 lg:px-8">
@@ -26,7 +29,7 @@ export function SolutionsCuasFeaturesSection() {
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
               <div className="lg:w-1/2">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white">
-                  Tailor made air security.
+                  {t('solutions.airSecurity')}
                 </h2>
               </div>
             </div>
@@ -45,12 +48,11 @@ export function SolutionsCuasFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Detection
+                  {t('solutions.detection')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Custom-tailored detection systems designed to identify drone and security threats with precision,
-                reliability, and real-time operational awareness.
+                {t('solutions.detectionDesc')}
               </p>
             </div>
 
@@ -65,12 +67,11 @@ export function SolutionsCuasFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Identification
+                  {t('solutions.identification')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Advanced AI-powered cameras and multi-sensor technologies enabling fast, accurate identification and
-                classification of all potential threats.
+                {t('solutions.identificationDesc')}
               </p>
             </div>
 
@@ -85,12 +86,11 @@ export function SolutionsCuasFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Mitigation
+                  {t('solutions.mitigation')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Comprehensive threat mitigation solutions, from soft-kill electronic countermeasures to hard-kill
-                systems, ensuring complete neutralization.
+                {t('solutions.mitigationDesc')}
               </p>
             </div>
           </div>
@@ -135,26 +135,17 @@ export function SolutionsCuasFeaturesSection() {
 }
 
 export function SolutionsCuasDescriptionSection() {
+  const t = useTranslations()
   return (
     <section className="relative w-full py-10 lg:py-20 px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-          Customized Counter-Drone Systems for Mission-Critical Protection
+          {t('solutions.customizedTitle')}
         </h2>
         <div className="space-y-4 text-base md:text-lg text-white/90">
-          <p>
-            DCS provides fully tailored counter-drone solutions for stationary, vehicle-mounted, or portable deployments.
-          </p>
-          <p>
-            Detection combines our proprietary Meridian system, radar and HF technologies for complete situational awareness.
-            Identification uses customizable cameras supported by AI, ensuring fast, accurate threat recognition with intuitive
-            operation.
-          </p>
-          <p>
-            Mitigation options range from soft-kill GNSS spoofers and jammers to hard-kill systems, all integrated into our
-            in-house C2 Command &amp; Control software. Operators can manage the system easily or run it fully autonomously,
-            maximizing efficiency and protection.
-          </p>
+          <p>{t('solutions.customizedP1')}</p>
+          <p>{t('solutions.customizedP2')}</p>
+          <p>{t('solutions.customizedP3')}</p>
         </div>
       </div>
     </section>
@@ -162,12 +153,13 @@ export function SolutionsCuasDescriptionSection() {
 }
 
 export function SolutionsCuasC2Section() {
+  const t = useTranslations()
   return (
     <section className="relative w-full py-16 lg:py-24 px-6 lg:px-8">
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center gap-10">
         {/* Macbook + C2 label */}
         <div className="flex flex-col items-center gap-6">
-          <h2 className="text-2xl md:text-3xl font-[400] text-white">C2</h2>
+          <h2 className="text-2xl md:text-3xl font-[400] text-white">{t('solutions.c2')}</h2>
           <div className="relative w-full max-w-3xl">
             <Image
               src={macbookImage}
@@ -189,9 +181,9 @@ export function SolutionsCuasC2Section() {
             />
             {/* Labels aligned with arrow ends */}
             <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
-              <div style={{ marginLeft: '-95px' }}>Detection</div>
-              <div style={{ marginLeft: '-30px' }}>Identification</div>
-              <div style={{ marginLeft: '55px' }}>Mitigation</div>
+              <div style={{ marginLeft: '-95px' }}>{t('solutions.detection')}</div>
+              <div style={{ marginLeft: '-30px' }}>{t('solutions.identification')}</div>
+              <div style={{ marginLeft: '55px' }}>{t('solutions.mitigation')}</div>
             </div>
 
           </div>
@@ -205,9 +197,9 @@ export function SolutionsCuasC2Section() {
                 className="width: 50%; height: 50%; object-contain mx-auto"
               />
               <div className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium" style={{ fontSize: "22px" }}>
-                <span>Detection</span>
-                <span>Identification</span>
-                <span>Mitigation</span>
+                <span>{t('solutions.detection')}</span>
+                <span>{t('solutions.identification')}</span>
+                <span>{t('solutions.mitigation')}</span>
               </div>
             </div>
           </div>
@@ -225,10 +217,9 @@ export function SolutionsCuasC2Section() {
               />
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">Fixed Installation</h3>
+              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">{t('solutions.fixedInstallation')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Custom-designed permanent systems, built to provide continuous monitoring and protection, perfectly adapted
-                to the specific needs of your facilities.
+                {t('solutions.fixedInstallationDesc')}
               </p>
             </div>
           </div>
@@ -243,10 +234,9 @@ export function SolutionsCuasC2Section() {
               />
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">Mobile Installation</h3>
+              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">{t('solutions.mobileInstallation')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Flexible, vehicle-mounted solutions tailored to your mission, offering rapid deployment and complete
-                operational coverage whenever required.
+                {t('solutions.mobileInstallationDesc')}
               </p>
             </div>
           </div>
@@ -261,10 +251,9 @@ export function SolutionsCuasC2Section() {
               />
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">Man-Portable</h3>
+              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">{t('solutions.manPortable')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                Lightweight, fully configurable systems that can be carried and deployed quickly, delivering reliable
-                protection for diverse operational scenarios.
+                {t('solutions.manPortableDesc')}
               </p>
             </div>
           </div>

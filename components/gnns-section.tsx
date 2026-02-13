@@ -9,66 +9,43 @@ import img3 from "@/assets/gnns-slide-3.png"
 import { GradientCard } from "./ui/GradientCard"
 import DiscussSection from "./discussSection"
 import Slideshow from "./slideshow"
+import { useTranslations } from "@/lib/i18n/LocaleContext"
 
-const keyRequirements = [
-    {
-        title: "Multi-Constellation Support",
-        description: "Comprehensive coverage across GPS, GLONASS, Galileo, and BeiDou constellations on both L1 and L2/L5 frequency bands."
-    },
-    {
-        title: "Versatile Interception Modes",
-        description: "Push-back, hold pattern, and static location modes provide tactical flexibility for any operational scenario."
-    },
-    {
-        title: "Extended Operational Range",
-        description: "Effective range up to 1.5km with omnidirectional antennas, extending to 4km with directional configuration."
-    },
-    {
-        title: "All-Weather Performance",
-        description: "IP67-rated construction ensures reliable operation from -40°C to +50°C, including direct sun exposure."
-    },
-]
+const keyRequirementKeys = [
+    { titleKey: 'products.gnnsReq1Title', descKey: 'products.gnnsReq1Desc' },
+    { titleKey: 'products.gnnsReq2Title', descKey: 'products.gnnsReq2Desc' },
+    { titleKey: 'products.gnnsReq3Title', descKey: 'products.gnnsReq3Desc' },
+    { titleKey: 'products.gnnsReq4Title', descKey: 'products.gnnsReq4Desc' },
+] as const
 
-const operationalModes = [
-    {
-        title: "Push-back Mode",
-        description: "Forces drones to retreat from protected areas by creating navigation signals that make the drone believe it's moving in the wrong direction, causing automatic course correction away from the target."
-    },
-    {
-        title: "Hold pattern Mode",
-        description: "Traps drones in a circular holding pattern with configurable radius, effectively neutralizing the threat while maintaining visual tracking capability."
-    },
-    {
-        title: "Static location Mode",
-        description: "Creates fixed location signals that can trigger No-Fly Zone responses in commercial drones, forcing automatic landing or return-to-home protocols"
-    }
-]
+const operationalModeKeys = [
+    { titleKey: 'products.gnnsMode1Title', descKey: 'products.gnnsMode1Desc' },
+    { titleKey: 'products.gnnsMode2Title', descKey: 'products.gnnsMode2Desc' },
+    { titleKey: 'products.gnnsMode3Title', descKey: 'products.gnnsMode3Desc' },
+] as const
 
 export default function GnnsSection() {
+    const t = useTranslations()
     return (
         <section className="container mx-auto relative w-full py-10 lg:py-10 px-6 lg:px-8">
             <div className="w-full max-w-6xl mx-auto">
                 {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-                        Designed for operational missions
+                        {t('products.designedForMissions')}
                     </h2>
                     <div className="max-w-6xl mx-auto space-y-3 text-base md:text-lg text-white/80">
-                        <p>
-                        Designed for mission-critical operations, this GNSS Spoofer neutralizes unauthorized systems, enhances operational control, protects critical assets, supports flexible countermeasure strategies, and integrates seamlessly into existing security architectures.
-                        </p>
+                        <p>{t('products.gnnsIntro')}</p>
                     </div>
                 </div>
 
                 {/* FEATURES */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-                        GNNS Manipulation
+                        {t('products.gnnsTitle')}
                     </h2>
                     <div className="max-w-6xl mx-auto space-y-3 text-base md:text-lg text-white/80">
-                        <p>
-                        The Regulus GNSS Spoofer represents the pinnacle of counter-drone technology, utilizing proprietary GNSS manipulation techniques to create an impenetrable defensive shield. Thiscombat-proven system generates sophisticated falsified GNSS signals that seamlessly override legitimate satellite navigation, providing operators with unprecedented control over unmanned threats.
-                        </p>
+                        <p>{t('products.gnnsManipulationDesc')}</p>
                     </div>
                     <div className="relative w-full h-full mt-10">
                         <GradientCard>
@@ -80,11 +57,10 @@ export default function GnnsSection() {
                 {/* FEATURES */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-                    TRL-9 Combat-Proven Technology
+                        {t('products.trl9Title')}
                     </h2>
                     <div className="max-w-6xl mx-auto space-y-3 text-base md:text-lg text-white/80">
-                        <p>
-                        TRL-9 Combat-Proven Technology Deployed by leading western militaries • Verified against dozens of real threats • Selected by US DoD</p>
+                        <p>{t('products.trl9Desc')}</p>
                     </div>
                 </div>
 
@@ -106,17 +82,17 @@ export default function GnnsSection() {
                     {/* TEXT */}
                     <div className="flex flex-col items-start gap-4">
                         <h3 className="text-2xl md:text-3xl font-[400] text-white">
-                        Key Requirements
+                            {t('products.keyRequirementsTitle')}
                         </h3>
 
                         <div className="space-y-6">
-                        {keyRequirements.map((requirement) => (
-                            <div key={requirement.title}>
+                        {keyRequirementKeys.map((req) => (
+                            <div key={req.titleKey}>
                             <h4 className="text-lg md:text-xl font-[400] text-white">
-                                {requirement.title}
+                                {t(req.titleKey)}
                             </h4>
                             <p className="text-base md:text-lg text-white/80 leading-relaxed">
-                                {requirement.description}
+                                {t(req.descKey)}
                             </p>
                             </div>
                         ))}
@@ -128,19 +104,19 @@ export default function GnnsSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-1 items-center gap-8 lg:gap-12 mb-20 mt-20">
                 <div className="flex flex-col items-start gap-4">
                         <h3 className="text-2xl md:text-3xl font-[400] text-white">
-                            Advanced Operational Modes
+                            {t('products.operationalModesTitle')}
                         </h3>
                         <h2 className="text-xl md:text-2xl font-[400] text-white mb-2">
-                            Interception Capabilities
+                            {t('products.interceptionCapabilities')}
                         </h2>
                         <div className="space-y-6">
-                        {operationalModes.map((mode) => (
-                            <div key={mode.title}>
+                        {operationalModeKeys.map((mode) => (
+                            <div key={mode.titleKey}>
                             <h4 className="text-lg md:text-xl font-[400] text-white">
-                                {mode.title}
+                                {t(mode.titleKey)}
                             </h4>
                             <p className="text-base md:text-md text-white/80 leading-relaxed">
-                                {mode.description}
+                                {t(mode.descKey)}
                             </p>
                             </div>
                         ))}

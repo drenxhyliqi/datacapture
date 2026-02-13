@@ -9,7 +9,10 @@ import hardkillHero from "@/assets/hardkill-1.svg"
 import HardkillSection from "@/components/hardkill-section"
 import hardkillProduct from "@/assets/hardkill-5.png"
 import SecondHeroBanner from "@/components/ui/second-hero-banner"
-export default function GnnsPage() {
+import { useTranslations } from "@/lib/i18n/LocaleContext"
+
+export default function HardkillPage() {
+    const t = useTranslations()
     return (
       <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
         
@@ -26,10 +29,10 @@ export default function GnnsPage() {
         {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-2 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
-            Product
+            {t('products.productLabel')}
           </p>
           <h1 className="mt-6 text-white text-4xl md:text-6xl font-[400] leading-tight">
-          Hard-Kill Solutions
+            {t('products.hardkillTitle')}
           </h1>
           <Image src={hardkillHero} alt="GNNS Hero" className="object-contain items-center justify-center lg:w-50 lg:h-50 w-40 h-40" />
         </div>

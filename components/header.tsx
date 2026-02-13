@@ -5,43 +5,47 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Sparkles, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useLocale } from '@/lib/i18n/LocaleContext'
 
-type MenuChild = { name: string; href: string; hidden?: boolean }
+type MenuChild = { name: string; href: string; hidden?: boolean; tKey: string }
 type MenuItem = {
   name: string
   href: string
+  tKey: string
   children?: MenuChild[]
 }
 
 const menuItems: MenuItem[] = [
-  { name: 'Home Page', href: '/' },
+  { name: 'Home Page', href: '/', tKey: 'nav.homePage' },
   {
     name: 'Solutions',
     href: '/solutions',
+    tKey: 'nav.solutions',
     children: [
-      { name: 'Solutions CUAS', href: '/solutions/use-cases' },
-      { name: 'Solutions SRAD', href: '/solutions/srad' },
+      { name: 'Solutions CUAS', href: '/solutions/use-cases', tKey: 'nav.solutionsCuas' },
+      { name: 'Solutions SRAD', href: '/solutions/srad', tKey: 'nav.solutionsSrad' },
     ],
   },
-  { name: 'Services', href: '/services' },
+  { name: 'Services', href: '/services', tKey: 'nav.services' },
   {
     name: 'Products',
     href: '/products',
+    tKey: 'nav.products',
     children: [
-      { name: 'GNNS', href: '/products/gnns' },
-      { name: 'Hard-kill', href: '/products/hard-kill', hidden: true }, // set hidden: false to show again
-      { name: 'Radar', href: '/products/radar' },
-      { name: 'UAV', href: '/products/uav' },
-      { name: 'Mobile CUAS', href: '/products/mobile-cuas' },
+      { name: 'GNNS', href: '/products/gnns', tKey: 'nav.gnns' },
+      { name: 'Hard-kill', href: '/products/hard-kill', hidden: true, tKey: 'nav.hardKill' },
+      { name: 'Radar', href: '/products/radar', tKey: 'nav.radar' },
+      { name: 'UAV', href: '/products/uav', tKey: 'nav.uav' },
+      { name: 'Mobile CUAS', href: '/products/mobile-cuas', tKey: 'nav.mobileCuas' },
     ],
   },
-  { name: 'Company', href: '/company-section' },
-  { name: 'Contact Us', href: '/contact-us' },
+  { name: 'Company', href: '/company-section', tKey: 'nav.company' },
+  { name: 'Contact Us', href: '/contact-us', tKey: 'nav.contactUs' },
 ]
 
 const languages = [
-  { code: 'EN', name: 'English', active: true },
-  { code: 'DE', name: 'German', active: false },
+  { code: 'EN' as const, name: 'English', locale: 'en' as const },
+  { code: 'DE' as const, name: 'German', locale: 'de' as const },
 ]
 
 function isActivePath(pathname: string, href: string) {
@@ -57,24 +61,20 @@ function itemIsActive(pathname: string, item: MenuItem) {
 
 export const HeroHeader = () => {
   const pathname = usePathname()
+  const { locale, setLocale, t } = useLocale()
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-
-  // language dropdown (desktop)
   const [isLanguageOpen, setIsLanguageOpen] = React.useState(false)
-  const [selectedLanguage, setSelectedLanguage] = React.useState(languages[0])
+  const selectedLanguage = languages.find((l) => l.locale === locale) ?? languages[0]
 
-  // desktop dropdowns
   const [openDropdown, setOpenDropdown] = React.useState<string | null>(null)
-
-  // mobile accordions
   const [mobileOpen, setMobileOpen] = React.useState<Record<string, boolean>>({
     Solutions: false,
     Products: false,
   })
 
-  const handleLanguageSelect = (lang: typeof languages[0]) => {
-    setSelectedLanguage(lang)
+  const handleLanguageSelect = (lang: (typeof languages)[0]) => {
+    setLocale(lang.locale)
     setIsLanguageOpen(false)
   }
 
@@ -88,12 +88,12 @@ export const HeroHeader = () => {
       <header className="top-0 left-0 right-0 w-full">
         <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-6">
           {/* Logo - Left Side */}
-          <Link href="/" className="flex items-center gap-3" aria-label="Data Capture Systems Home">
-            <div className="h-14 w-1.5 bg-white" />
+          <Link href="/" className="flex items-center gap-1" aria-label="Data Capture Systems Home">
+            <div className="h-11 w-[14px] bg-white " />
             <div className="flex flex-col text-white font-sans">
-              <span className="text-xs font-semibold leading-tight tracking-wide">DATA</span>
-              <span className="text-xs font-semibold leading-tight tracking-wide">CAPTURE</span>
-              <span className="text-xs font-semibold leading-tight tracking-wide">SYSTEMS</span>
+              <span className="text-xs font-[500] leading-tight tracking-wide">DATA</span>
+              <span className="text-xs font-[500] leading-tight tracking-wide">CAPTURE</span>
+              <span className="text-xs font-[500]  leading-tight tracking-wide">SYSTEMS</span>
             </div>
           </Link>
 
@@ -127,7 +127,7 @@ export const HeroHeader = () => {
                             active ? 'text-white' : 'text-gray-500 hover:text-white'
                           )}
                         >
-                          {item.name === 'Home Page' ? 'Home' : item.name}
+                          {item.tKey === 'nav.homePage' ? (locale === 'de' ? 'Start' : 'Home') : t(item.tKey)}
                         </Link>
                       </li>
                     )
@@ -150,7 +150,7 @@ export const HeroHeader = () => {
                         aria-haspopup="menu"
                         aria-expanded={isOpen}
                       >
-                        <span>{item.name}</span>
+                        <span>{t(item.tKey)}</span>
                         <ChevronDown className={cn('h-3.5 w-3.5 transition-transform', isOpen && 'rotate-180')} />
                       </button>
 
@@ -179,7 +179,7 @@ export const HeroHeader = () => {
                                   )}
                                   role="menuitem"
                                 >
-                                  {c.name}
+                                  {t(c.tKey)}
                                 </Link>
                               )
                             })}
@@ -243,7 +243,7 @@ export const HeroHeader = () => {
               className="flex items-center gap-2 rounded-full border border-white/20 bg-gradient-to-b from-black/60 to-gray-900/60 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-black/80"
             >
               <Sparkles className="h-4 w-4" />
-              <span>Get Started!</span>
+              <span>{t('nav.getInTouch')}</span>
             </Link>
           </div>
 
@@ -265,12 +265,12 @@ export const HeroHeader = () => {
           <div className="flex h-full flex-col">
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between px-6 py-4">
-              <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
-                <div className="h-14 w-1.5 bg-white" />
+              <Link href="/" className="flex items-center gap-1" onClick={() => setIsMobileMenuOpen(false)}>
+                <div className="h-11 w-[14px] bg-white" />
                 <div className="flex flex-col text-white font-sans">
-                  <span className="text-xs font-semibold leading-tight tracking-wide">DATA</span>
-                  <span className="text-xs font-semibold leading-tight tracking-wide">CAPTURE</span>
-                  <span className="text-xs font-semibold leading-tight tracking-wide">SYSTEMS</span>
+                  <span className="text-xs font-[500] leading-tight tracking-wide">DATA</span>
+                  <span className="text-xs font-[500] leading-tight tracking-wide">CAPTURE</span>
+                  <span className="text-xs font-[500] leading-tight tracking-wide">SYSTEMS</span>
                 </div>
               </Link>
 
@@ -298,7 +298,7 @@ export const HeroHeader = () => {
                             active ? 'text-white' : 'text-gray-300'
                           )}
                         >
-                          {item.name === 'Home Page' ? 'Home' : item.name}
+                          {item.tKey === 'nav.homePage' ? (locale === 'de' ? 'Start' : 'Home') : t(item.tKey)}
                         </Link>
                       </li>
                     )
@@ -316,8 +316,8 @@ export const HeroHeader = () => {
                           active ? 'text-white bg-white/5 p-2' : 'text-gray-200'
                         )}
                       >
-                        <span>{item.name}</span>
-                        <ChevronDown className={cn('h-5 w-5 transition-transform', open && 'rotate-180')} />
+<span>{t(item.tKey)}</span>
+                                        <ChevronDown className={cn('h-5 w-5 transition-transform', open && 'rotate-180')} />
                       </button>
 
                       {open && (
@@ -334,7 +334,7 @@ export const HeroHeader = () => {
                                   childActive ? 'bg-white/10 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'
                                 )}
                               >
-                                {c.name}
+                                {t(c.tKey)}
                               </Link>
                             )
                           })}

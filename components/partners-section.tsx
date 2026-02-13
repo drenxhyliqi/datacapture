@@ -1,5 +1,7 @@
+'use client'
 import Image from "next/image";
 import drsRadaLogo from "@/assets/partners/Untitled 2.svg";
+import { useTranslations } from "@/lib/i18n/LocaleContext";
 import regulusLogo from "@/assets/partners/Untitled 3.svg";
 import rayzoneLogo from "@/assets/partners/Untitled 5.svg";
 import protechtLogo from "@/assets/partners/dropped-image.svg";
@@ -53,16 +55,17 @@ function getDesktopLogoScale(alt: string): string {
 }
 
 export default function PartnersSection() {
+  const t = useTranslations()
   return (
     <section className="relative w-full py-16 lg:py-24">
       <div className="w-full max-w-full">
         {/* Heading */}
         <div className="text-center mb-10 lg:mb-14">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-[400] text-[#d9d9d9] mb-4">
-            Partners
+            {t('partners.title')}
           </h2>
           <p className="text-lg md:text-xl text-[#d9d9d9] max-w-4xl mx-auto px-4">
-            Selected partners providing advanced technologies for comprehensive and reliable protection.
+            {t('partners.subtitle')}
           </p>
         </div>
 
