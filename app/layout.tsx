@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Loading from "./loading";
 import LoadingGate from "./LoadingGate";
+import BackToTop from "@/components/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Suspense fallback={<Loading />}>
           <LoadingGate>{children}</LoadingGate>
         </Suspense>
+        <BackToTop />
       </body>
     </html>
   );
