@@ -64,12 +64,11 @@ export function SolutionsSradFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Identification & Tracking
+                  Identification
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Advanced radar processing and sensor fusion enabling fast, accurate identification and continuous
-                tracking of all potential targets in the monitored airspace.
+              Advanced AI-powered cameras and multi-sensor technologies enabling fast, accurate identification and classification of all potential threats.
               </p>
             </div>
 
@@ -84,12 +83,11 @@ export function SolutionsSradFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  Neutralization
+                Mitigation
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                Integrated neutralization options that support electronic, kinetic, or procedural responses coordinated
-                directly through the SRAD command-and-control interface.
+              Comprehensive threat mitigation solutions, from soft-kill electronic countermeasures to hard-kill systems, ensuring complete neutralization.
               </p>
             </div>
           </div>

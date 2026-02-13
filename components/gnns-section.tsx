@@ -127,16 +127,16 @@ export default function GnnsSection() {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-1 items-center gap-8 lg:gap-12 mb-20 mt-20">
                 <div className="flex flex-col items-start gap-4">
-                        <h3 className="text-2xl md:text-3xl font-[400] text-white">
+                        <h3 className="text-2xl font-semibold md:text-3xl font-[400] text-white">
                             Advanced Operational Modes
                         </h3>
-                        <h2 className="text-xl md:text-2xl font-[400] text-white mb-2">
+                        <h2 className="text-xl font-semibold md:text-2xl font-[400] text-white mb-2">
                             Interception Capabilities
                         </h2>
                         <div className="space-y-6">
                         {operationalModes.map((mode) => (
                             <div key={mode.title}>
-                            <h4 className="text-lg md:text-xl font-[400] text-white">
+                            <h4 className="text-2xl md:text-2xl font-[400] text-white">
                                 {mode.title}
                             </h4>
                             <p className="text-base md:text-md text-white/80 leading-relaxed">

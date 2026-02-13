@@ -17,7 +17,7 @@ const uavItems = [
     icon: uavIcon,
     image: droneImage1,
     range: '10 km',
-    endurance: 'up to 15 hours',
+    endurance: 'Up to 15 hours',
     maxSpeed: '70 km/h',
     windResistance: '30 knots',
     desc1:
@@ -33,7 +33,7 @@ const uavItems = [
     icon: uavIcon,
     image: droneImage2,
     range: '10 km',
-    endurance: 'up to 15 hours',
+    endurance: 'Up to 15 hours',
     maxSpeed: '70 km/h',
     windResistance: '30 knots',
     desc1:
@@ -49,7 +49,7 @@ const uavItems = [
     icon: uavIcon,
     image: droneImage3,
     range: '10 km',
-    endurance: 'up to 15 hours',
+    endurance: 'Up to 15 hours',
     maxSpeed: '70 km/h',
     windResistance: '30 knots',
     desc1:
@@ -77,6 +77,10 @@ export default function UAVSections() {
               }
             </p>
           </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-4">
+          <h2 className="text-3xl text-white font-semibold">MADE IN EUROPE</h2>
         </div>
 
         {/* ALL UAVS */}
