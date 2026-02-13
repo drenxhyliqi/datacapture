@@ -122,7 +122,7 @@ export default function UAVSections() {
                         fill
                         priority
                         sizes="(max-width: 100%) 100vw, 100%"
-                        className="object-contain scale-110 lg:scale-170 -translate-y-6"
+                        className="object-contain lg:object-cover -translate-y-6"
                         />
                     </div>
                 </div>

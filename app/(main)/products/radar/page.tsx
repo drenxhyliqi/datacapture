@@ -70,7 +70,7 @@ export default function GnnsPage() {
           <RadarSection />
         </div>
       </section>
-      <div className="relative w-full px-10 h-100vh mt-10">
+      <div className="container mx-auto items-center h-100vh mt-10">
         <Image src={radarProduct} alt="GNNS Content" className="object-contain"/>
       </div>
 

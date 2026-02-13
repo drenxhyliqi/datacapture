@@ -176,6 +176,16 @@ export default function RadarSection() {
         </div>
 
         {/* FEATURES 5*/}
+        <div className="text-center mt-20 items-center justify-center">
+          <h2 className="text-2xl text-white font-semibold">Key Features</h2><br />
+          <p className="text-base text-white">Active Electronically Scanned Array (AESA) antenna, GaN amplifiers</p><br />
+          <p className="text-base text-white">Software-defined, digital, with adaptive beam forming</p><br />
+          <p className="text-base text-white">Hemispheric search and track with four radars</p><br />
+          <p className="text-base text-white">Extremely fast volume coverage</p><br />
+          <p className="text-base text-white">Wide range of threat velocities</p><br />
+          <p className="text-base text-white">Interoperable via Standard interfaces</p><br />
+          <p className="text-base text-white">High immunity through Electronic Counter Countermeasures (ECCM)</p>
+        </div>
 
       </div>
     </section>

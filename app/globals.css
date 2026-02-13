@@ -446,6 +446,10 @@ body[unresolved] {
    DESKTOP (>=1024px)
    ========================= */
 @media (min-width: 1024px) {
+  .second-hero-bg-left,
+  .second-hero-bg-right {
+    display: none;
+  }
   /* Show desktop */
   .second-hero-bg-left,
   .second-hero-bg-right {
@@ -497,6 +501,14 @@ body[unresolved] {
     width: 50dvw;
     height: 75vh;
     transform: rotate(-12.5deg);
+  }
+}
+
+
+@media (min-width: 2000px) {
+  .second-hero-bg-left ,
+  .second-hero-bg-right {
+    display: none;
   }
 }
 /* Left: same size as right – full height, same width */
