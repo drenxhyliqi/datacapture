@@ -351,7 +351,7 @@ export const translations = {
         'Ein zentrales System zur Echtzeit-Drohnenerkennung, Visualisierung und Auswertung nach Ereignissen in definierten Einsatzgebieten.',
       adaptive: 'ADAPTIV',
       security: 'SICHERHEIT',
-      cta: 'Jetzt schützen',
+      cta: 'Jetzt Schutz aktivieren',
     },
     about: {
       title: 'ÜBER DCS',
