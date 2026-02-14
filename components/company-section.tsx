@@ -51,8 +51,8 @@ export default function CompanySection() {
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       {/* HERO */}
       <div className="relative">
-        {/* HEADER */}
-        <div className="relative z-30">
+        {/* HEADER – high z-index so navbar stays above feature cards on mobile and desktop */}
+        <div className="relative z-[9998]">
           <HeroHeader />
         </div>
 
@@ -86,7 +86,7 @@ export default function CompanySection() {
       </div>
 
       {/* FEATURES (starts immediately after hero, no extra gap) */}
-      <section className="relative overflow-hidden z-100">
+      <section className="relative overflow-hidden z-99">
         {/* LEFT MOVING SHADOW */}
         <div className="absolute -left-[5px] inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
           <div

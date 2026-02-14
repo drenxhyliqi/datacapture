@@ -85,7 +85,7 @@ export const HeroHeader = () => {
 
   return (
     <>
-      <header className="top-0 left-0 right-0 w-full">
+      <header className={cn('relative top-0 left-0 right-0 z-[9998] w-full', isMobileMenuOpen && 'max-lg:hidden')}>
         <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-6">
           {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-1" aria-label="Data Capture Systems Home">
