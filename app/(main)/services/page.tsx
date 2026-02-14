@@ -55,7 +55,7 @@ export default function ServicesPage() {
         {/* LEFT MOVING SHADOW */}
         <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
           <div
-            className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
+            className="animate-system-blur absolute left-0 -top-80 md:-top-96 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
           >
             <Image
               src={ellipseShadow}

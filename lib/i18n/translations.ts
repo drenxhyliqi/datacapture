@@ -22,6 +22,7 @@ export const translations = {
       line1: 'Engineering',
       line2: 'the Future',
       line3: 'of Security',
+      line4: '',
       subtext1:
         'A Company with selected partners securing airspace, cyber, data, and critical infrastructure through advanced engineering and innovation.',
       subtext2:
@@ -342,7 +343,8 @@ export const translations = {
     hero: {
       line1: 'Die Zukunft',
       line2: 'der Sicherheit',
-      line3: 'ingenieurtechnisch gestalten',
+      line3: 'ingenieurtechnisch',
+      line4: 'gestalten',
       subtext1:
         'Ein Unternehmen mit ausgewählten Partnern, das Luftraum, Cyber, Daten und kritische Infrastruktur durch fortschrittliche Technik und Innovation absichert.',
       subtext2:
