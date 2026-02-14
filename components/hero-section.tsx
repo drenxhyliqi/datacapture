@@ -178,7 +178,7 @@ export default function HeroSection() {
               {t('hero.line4') ? <span className="block">{t('hero.line4')}</span> : null}
             </h1>
 
-            <div className="absolute right-0 top-[0] mt-17">
+            <div className="absolute right-0 top-[0] mt-0">
               <div
                 className="h-20 w-20 rounded-full p-[3px] flex items-center justify-center"
                 style={{ backgroundColor: '#313331' }}

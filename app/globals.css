@@ -15,13 +15,14 @@ body[unresolved] {
 
 /* Smaller h1 when language is German */
 html[lang="de"] h1 {
-  font-size: 3.8em;
+  font-size: 2.5em;
 }
 
 /* More compact ADAPTIVE / SECURITY vertical text when German */
 html[lang="de"] .hero-adaptive-security > * + * {
   margin-left: -5.5rem;
 }
+
 
 @custom-variant dark (&:is(.dark *));
 
