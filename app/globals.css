@@ -5,7 +5,6 @@ html,
 body {
   background-color: #101210 !important;
   min-height: 100%;
-  overflow-x: hidden;
 }
 body {
   transition: opacity ease-in 0.2s;
