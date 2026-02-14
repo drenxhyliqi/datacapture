@@ -3,15 +3,9 @@
 import { useState, useEffect, useRef } from 'react'
 import Loading from './loading'
 
-/** Minimum time to show the loader (avoids flash). */
 const MIN_DISPLAY_MS = 500
-/** Max wait for load event; after this we show content anyway. */
 const MAX_WAIT_MS = 8000
 
-/**
- * Shows the loading screen until the page and its resources (images, etc.)
- * are loaded, with a minimum display time so the loader is visible.
- */
 export default function LoadingGate({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false)
   const minElapsed = useRef(false)

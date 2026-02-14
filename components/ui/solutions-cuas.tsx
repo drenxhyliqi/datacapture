@@ -3,7 +3,6 @@ import SecondHeroBanner from "@/components/ui/second-hero-banner";
 import Image from "next/image";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
-// Icons imported as SVGs (from your assets)
 import detectionIcon from "@/assets/selections1.svg";
 import identificationIcon from "@/assets/identification.svg";
 import mitigationIcon from "@/assets/mitigation.svg";
@@ -24,7 +23,6 @@ export function SolutionsCuasFeaturesSection() {
     <>
       <section className="relative w-full py-10 lg:py-32 px-6 lg:px-8">
         <div className="w-full max-w-7xl mx-auto">
-          {/* Header */}
           <div className="mb-12 lg:mb-16">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
               <div className="lg:w-1/2">
@@ -35,9 +33,7 @@ export function SolutionsCuasFeaturesSection() {
             </div>
           </div>
 
-          {/* 3 feature cards – custom layout, not using FeatureCard */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Detection */}
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-[72px] h-[72px] flex items-center justify-center">
@@ -56,7 +52,6 @@ export function SolutionsCuasFeaturesSection() {
               </p>
             </div>
 
-            {/* Identification */}
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-[84px] h-[84px] flex items-center justify-center">
@@ -75,7 +70,6 @@ export function SolutionsCuasFeaturesSection() {
               </p>
             </div>
 
-            {/* Mitigation */}
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-[72px] h-[72px] flex items-center justify-center">
@@ -97,7 +91,6 @@ export function SolutionsCuasFeaturesSection() {
         </div>
       </section>
 
-      {/* Ensure faded border style is available even when CompanySection is not rendered */}
       <style jsx global>{`
         .about-dcs-fade-border {
           position: relative;
@@ -157,7 +150,6 @@ export function SolutionsCuasC2Section() {
   return (
     <section className="relative w-full py-16 lg:py-24 px-6 lg:px-8">
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center gap-10">
-        {/* Macbook + C2 label */}
         <div className="flex flex-col items-center gap-6">
           <h2 className="text-2xl md:text-3xl font-[400] text-white">{t('solutions.c2')}</h2>
           <div className="relative w-full max-w-3xl">
@@ -170,16 +162,13 @@ export function SolutionsCuasC2Section() {
           </div>
         </div>
 
-        {/* Detection / Identification / Mitigation flow */}
         <div className="w-full max-w-6xl mt-6">
-          {/* Desktop / tablet direction graphic */}
           <div className="hidden md:block">
             <Image
               src={directionDesktop}
               alt="C2 detection, identification and mitigation flow"
               className="w-full h-auto object-contain"
             />
-            {/* Labels aligned with arrow ends */}
             <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
               <div style={{ marginLeft: '-95px' }}>{t('solutions.detection')}</div>
               <div style={{ marginLeft: '-30px' }}>{t('solutions.identification')}</div>
@@ -188,7 +177,6 @@ export function SolutionsCuasC2Section() {
 
           </div>
 
-          {/* Mobile direction graphic */}
           <div className="block md:hidden">
             <div className="mx-auto w-3/4 max-w-xs">
               <Image
@@ -205,9 +193,7 @@ export function SolutionsCuasC2Section() {
           </div>
         </div>
 
-        {/* Deployment modes section */}
         <div className="mt-16 w-full max-w-8xl mx-auto space-y-10 text-left">
-          {/* Fixed Installation */}
           <div className="flex flex-col md:flex-row items-center gap-y-10">
             <div className="flex-shrink-1">
               <Image
@@ -224,7 +210,6 @@ export function SolutionsCuasC2Section() {
             </div>
           </div>
 
-          {/* Mobile Installation */}
           <div className="flex flex-col md:flex-row items-center gap-11">
             <div className="flex-shrink-1">
               <Image
@@ -241,7 +226,6 @@ export function SolutionsCuasC2Section() {
             </div>
           </div>
 
-          {/* Man-Portable */}
           <div className="flex flex-col md:flex-row items-center gap-20">
             <div className="flex-shrink-0">
               <Image

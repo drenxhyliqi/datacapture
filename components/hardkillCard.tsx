@@ -23,13 +23,11 @@ export function HardKillCard({ service }: HardKillCardProps) {
                         />
                     </div>
 
-                    {/* Title */}
                     <h3 className="text-white items-start font-bold lg:text-xl mt-1">
                         {service.title}
                     </h3>
                 </div>
 
-                {/* Description */}
                 <p className="text-xs leading-relaxed text-white/75 sm:text-sm">
                     {service.description}
                 </p>

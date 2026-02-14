@@ -10,7 +10,6 @@ const toSrc = (img: unknown) =>
 export default function SecondHeroBanner() {
   return (
     <section className="second-hero-bg-container">
-      {/* DESKTOP */}
         <div className="second-hero-section">
             <div className="second-hero-bg-left" aria-hidden="true">
                 <Image
@@ -35,7 +34,6 @@ export default function SecondHeroBanner() {
             </div>
         </div>
 
-            {/* MOBILE / TABLET */}
         <div className="second-hero-mobile-section">
             <div className="second-hero-mobile-left" aria-hidden="true">
                 <Image
@@ -57,7 +55,6 @@ export default function SecondHeroBanner() {
                 />
             </div>
         </div>
-      {/* content */}
     </section>
   );
 }

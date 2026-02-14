@@ -87,7 +87,6 @@ export const HeroHeader = () => {
     <>
       <header className={cn('relative top-0 left-0 right-0 z-[9998] w-full', isMobileMenuOpen && 'max-lg:hidden')}>
         <nav className="relative mx-auto flex max-w-7xl items-center justify-between py-6">
-          {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-1" aria-label="Data Capture Systems Home">
             <div className="h-11 w-[14px] bg-white " />
             <div className="flex flex-col text-white font-sans">
@@ -97,7 +96,6 @@ export const HeroHeader = () => {
             </div>
           </Link>
 
-          {/* Center Navigation Menu - Desktop Only */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
             <div
               className="relative rounded-full border border-white/30 px-8 py-3"
@@ -156,7 +154,6 @@ export const HeroHeader = () => {
 
                       {isOpen && (
                         <>
-                          {/* click outside */}
                           <div className="fixed inset-0 z-[90]" onClick={() => setOpenDropdown(null)} />
 
                           <div
@@ -193,9 +190,7 @@ export const HeroHeader = () => {
             </div>
           </div>
 
-          {/* Right Side - Desktop: Language Selector & CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Language Selector with Dropdown */}
             <div className="relative">
               <button
                 type="button"
@@ -237,7 +232,6 @@ export const HeroHeader = () => {
               )}
             </div>
 
-            {/* Get Started Button */}
             <Link
               href="/contact-us"
               className="flex items-center gap-2 rounded-full border border-white/20 bg-gradient-to-b from-black/60 to-gray-900/60 px-5 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-black/80"
@@ -247,7 +241,6 @@ export const HeroHeader = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((v) => !v)}
@@ -259,11 +252,9 @@ export const HeroHeader = () => {
         </nav>
       </header>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[99] lg:hidden" style={{ backgroundColor: '#101210' }}>
           <div className="flex h-full flex-col">
-            {/* Mobile Menu Header */}
             <div className="flex items-center justify-between px-6 py-4">
               <Link href="/" className="flex items-center gap-1" onClick={() => setIsMobileMenuOpen(false)}>
                 <div className="h-11 w-[14px] bg-white" />
@@ -279,7 +270,6 @@ export const HeroHeader = () => {
               </button>
             </div>
 
-            {/* Navigation Links */}
             <nav className="flex-1 px-6 py-8">
               <ul className="space-y-5">
                 {menuItems.map((item) => {
@@ -346,7 +336,6 @@ export const HeroHeader = () => {
               </ul>
             </nav>
 
-            {/* Bottom Section - Language Selector */}
             <div className="border-t border-white/10 px-6 py-6">
               <div className="flex items-center gap-3">
                 {languages.map((lang) => (

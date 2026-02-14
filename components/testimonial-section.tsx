@@ -57,7 +57,6 @@ export default function TestimonialSection() {
 
   return (
     <section className="relative w-full py-16 sm:py-20 lg:py-24 mb-28 sm:pb-28 lg:pb-32 overflow-hidden">
-      {/* Background image via CSS so it always renders */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
@@ -70,7 +69,6 @@ export default function TestimonialSection() {
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 sm:px-8 lg:px-12 xl:px-0 lg:flex-row lg:items-center">
-        {/* Left column: heading + copy + controls */}
         <div className="flex-1 space-y-6 text-white">
           <div className="space-y-3">
             <p className="text-xs font-medium tracking-[0.28em] text-white/60">
@@ -86,7 +84,6 @@ export default function TestimonialSection() {
             say about their experience.
           </p>
 
-          {/* Controls */}
           <div className="mt-6 flex items-center gap-4">
             <button
               type="button"
@@ -107,7 +104,6 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        {/* Right column: testimonial card – exact same hover as system feature cards (GradientCard) */}
         <div className="flex-1">
           <GradientCard>
             <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">

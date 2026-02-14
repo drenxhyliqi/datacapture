@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Critical: same as previous inline layout styles to avoid hydration mismatch */
 html,
 body {
   background-color: #101210 !important;
@@ -60,7 +59,6 @@ body[unresolved] {
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* Custom blur animations – in @theme so Tailwind keeps them (inline-style refs get purged) */
 @theme {
   --animate-footer-blur: footerBlurMove 4s ease-in-out infinite;
   @keyframes heroShadowDown {
@@ -94,7 +92,6 @@ body[unresolved] {
     85% { transform: translateY(50px); }
     100% { transform: translateY(50px); }
   }
-  /* System feature / left moving shadow – same motion, bigger travel (up → hold → down → hold, 2s) */
   --animate-system-blur: systemBlurMove 2s ease-in-out infinite;
   @keyframes systemBlurMove {
     0%   { transform: translateY(120px); }
@@ -104,7 +101,6 @@ body[unresolved] {
     90%  { transform: translateY(120px); }
     100% { transform: translateY(120px); }
   }
-  /* Hero desktop – shadow and content visibility (in theme so they are not purged) */
   --animate-hero-shadow-up: heroShadowUp 3.5s ease-in-out infinite;
   --animate-hero-shadow-down: heroShadowDown 3.5s ease-in-out infinite;
   @keyframes heroShadowUp {
@@ -123,7 +119,6 @@ body[unresolved] {
     90%   { transform: translateY(-28px); }
     100%  { transform: translateY(-28px); }
   }
-  /* Hero mobile */
   --animate-hero-blur-mobile: heroBlurMove 4s ease-in-out infinite reverse;
   --animate-fade-out-content: fadeOutContent 0.5s ease-out 4s forwards;
   @keyframes heroBlurMove {
@@ -136,7 +131,6 @@ body[unresolved] {
   }
 }
 
-/* System blur motion – theme-driven utility (company left shadow, etc.) */
 .animate-system-blur {
   animation: var(--animate-system-blur);
   will-change: transform;
@@ -301,23 +295,18 @@ body[unresolved] {
   animation: press-marquee 22s linear infinite;
 }
 
-/* Partners section: infinite right-to-left logo scroll (used via inline style in partners-section) */
 @keyframes partners-marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Hero banner ellipse – responsive with pure CSS (no Tailwind breakpoints) */
-/* Hero banner ellipse – mobile first, then tablet (md), large, extra large */
-
-/* Mobile (default) */
 .hero-banner-ellipse {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* prevent flex parent from shrinking the ellipse */
+  flex-shrink: 0;
   min-width: 480px;
   min-height: 1200px;
   width: 155vw;
@@ -331,7 +320,6 @@ body[unresolved] {
   object-fit: contain;
 }
 
-/* Static green shadow – bottom left, all screens, same position (CSS-only) */
 .hero-green-shadow {
   position: absolute;
   left: 0;
@@ -350,7 +338,6 @@ body[unresolved] {
   );
   filter: blur(120px);
 }
-/* Top right: blueish shadow, only from 1440px */
 .hero-blue-shadow {
   position: absolute;
   right: 0;
@@ -375,7 +362,6 @@ body[unresolved] {
   }
 }
 
-/* Left / Right background graphics – mobile first */
 .hero-bg-left,
 .hero-bg-right {
   position: absolute;
@@ -390,26 +376,19 @@ body[unresolved] {
   width: 60%;
 }
 
-/* =========================
-   MOBILE/TABLET (default)
-   ========================= */
-
-/* Hide desktop by default */
 .second-hero-bg-left,
 .second-hero-bg-right {
   display: none;
 }
 
-/* Mobile wrappers (need position+size for Image fill) */
 .second-hero-mobile-left,
 .second-hero-mobile-right {
   position: absolute;
   z-index: 0;
   pointer-events: none;
-  inset: 0; /* e mban brenda section; pozicionimin e bën klasa e Image */
+  inset: 0;
 }
 
-/* Mobile LEFT image positioning */
 .second-hero-mobile-left {
   position: absolute;
   left: -27vw;
@@ -421,7 +400,6 @@ body[unresolved] {
   overflow: visible;
 }
 
-/* Mobile RIGHT image positioning */
 .second-hero-mobile-right {
   position: absolute;
   right: -10vw;
@@ -431,9 +409,6 @@ body[unresolved] {
   transform: rotate(3deg);
 }
 
-/* =========================
-   Short-height laptop fix
-   ========================= */
    @media (max-height: 800px) {
     .second-hero-bg-left {
       left: -20vw;
@@ -444,9 +419,6 @@ body[unresolved] {
       top: -20vh;
     }
   }
-/* =========================
-   TABLET AND UP – hide mobile hero backgrounds
-   ========================= */
 @media (min-width: 768px) {
   .second-hero-mobile-left,
   .second-hero-mobile-right {
@@ -454,11 +426,7 @@ body[unresolved] {
   }
 }
 
-/* =========================
-   DESKTOP (>=1024px)
-   ========================= */
 @media (min-width: 1024px) {
-  /* Show desktop */
   .second-hero-bg-left,
   .second-hero-bg-right {
     display: block;
@@ -467,7 +435,6 @@ body[unresolved] {
     pointer-events: none;
   }
 
-  /* Hide mobile (redundant with 768px above, kept for clarity) */
   .second-hero-mobile-left,
   .second-hero-mobile-right {
     display: none;
@@ -493,9 +460,6 @@ body[unresolved] {
 }
 
 
-/* =========================
-   Very large monitors
-   ========================= */
 @media (min-width: 1600px) {
   .second-hero-bg-left {
     left: 0;
@@ -511,7 +475,6 @@ body[unresolved] {
     transform: rotate(-12.5deg);
   }
 }
-/* Left: same size as right – full height, same width */
 .hero-bg-left {
   left: 0;
   top: 0;
@@ -528,12 +491,11 @@ body[unresolved] {
   transform: rotate(8deg);
 
 }
-/* Right: softer glow center-right – change width/height to scale */
 .hero-bg-right {
   top: 0;
   bottom: 0;
   width: 142vw;
-  max-width: none; /* no pixel cap – size is controlled by width/height only */
+  max-width: none;
   min-height: 100%;
   transform: rotate(-25deg);
 }
@@ -545,7 +507,6 @@ body[unresolved] {
   margin-left: 8%;
 }
 
-/* Tablet (md): 768px and up */
 @media (min-width: 768px) {
   .hero-banner-ellipse {
     width: 90vw;
@@ -578,7 +539,6 @@ body[unresolved] {
   }
 }
 
-/* Large: 1024px and up */
 @media (min-width: 1024px) {
   .hero-banner-ellipse {
     width: 120vw;
@@ -612,7 +572,6 @@ body[unresolved] {
   }
 }
 
-/* Extra large: 1280px and up */
 @media (min-width: 1280px) {
   .hero-banner-ellipse {
     width: 80vw;
@@ -684,7 +643,6 @@ body[unresolved] {
 
 
 
-/* Hero section – apply theme animations explicitly so they run */
 .hero-shadow-left {
   animation: var(--animate-hero-shadow-up);
   will-change: transform;
@@ -696,12 +654,10 @@ body[unresolved] {
 .hero-shadow {
   will-change: transform;
 }
-/* Drone icon badge – same up/down speed as hero blur shadows (2s) */
 .hero-drone-badge {
   animation: var(--animate-hero-shadow-up);
   will-change: transform;
 }
-/* Footer blur animation – apply theme variable explicitly */
 .animate-footer-blur {
   animation: var(--animate-footer-blur);
 }
@@ -712,7 +668,6 @@ body[unresolved] {
   .animate-footer-blur { animation: none !important; }
 }
 
-/* Global loading spinner (used by app/loading.tsx) */
 .loading-spinner {
   animation: loading-spin 0.7s linear infinite;
 }

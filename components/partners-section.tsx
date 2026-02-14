@@ -59,7 +59,6 @@ export default function PartnersSection() {
   return (
     <section className="relative w-full py-16 lg:py-24">
       <div className="w-full max-w-full">
-        {/* Heading */}
         <div className="text-center mb-10 lg:mb-14">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-[400] text-[#d9d9d9] mb-4">
             {t('partners.title')}
@@ -69,7 +68,6 @@ export default function PartnersSection() {
           </p>
         </div>
 
-        {/* Mobile: infinite right-to-left logo marquee */}
         <div className="w-full overflow-hidden md:hidden">
           <div
             className="flex w-max items-center gap-20"
@@ -98,8 +96,6 @@ export default function PartnersSection() {
           </div>
         </div>
 
-        {/* Tablet & small laptop: 2 cols; desktop & large laptop: 3 cols.
-            Add extra padding around logos on medium–large laptops and desktop */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 lg:gap-12 items-center justify-items-center max-w-7xl mx-auto px-4 lg:px-8 xl:px-12 py-4 lg:py-6">
           {PARTNER_LOGOS.map((partner) => (
             <div

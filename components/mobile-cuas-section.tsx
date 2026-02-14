@@ -53,7 +53,6 @@ export default function MobileCuasSections() {
 
         <section className="container mx-auto w-full px-6 lg:px-8 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-10">
-            {/* Title: Choose your Vehicle */}
             <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
               <GradientCard>
                 <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
@@ -62,7 +61,6 @@ export default function MobileCuasSections() {
               </GradientCard>
             </div>
 
-        {/* Vehicles row */}
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 mb-20">
           {vehicleKeys.map((v) => (
             <button
@@ -85,7 +83,6 @@ export default function MobileCuasSections() {
           ))}
         </div>
 
-        {/* Title: Select your Sensoric */}
         <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
           <GradientCard>
             <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
@@ -94,7 +91,6 @@ export default function MobileCuasSections() {
           </GradientCard>
         </div>
 
-       {/* Sensoric grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {sensoricKeys.map((key) => (
             <GradientCard key={key}>
@@ -110,12 +106,11 @@ export default function MobileCuasSections() {
       </section>
 
 
-      <div className="flex items-center justify-center px-2">
-        <h2 className="text-center text-2xl md:text-3xl text-white font-semibold leading-snug max-w-5xl">
+      <div className="flex flex-col items-center justify-center px-8">
+        <h2 className="text-center text-2xl max-w-10xl md:text-3xl text-white font-semibold leading-snug mt-5 mb-20">
           Custom mobile C-UAS solutions, aligned with your requirements, optimized for top performance and advanced technology
         </h2>
-      </div>
-
+        
         <Slideshow
             slides={[
                 { src: mobileCuasImage6 },
@@ -125,6 +120,7 @@ export default function MobileCuasSections() {
             ]}
             delayMs={2000}
             />
+      </div>
       </div>
     </section>
   )

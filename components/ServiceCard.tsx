@@ -15,7 +15,6 @@ export function ServiceCard({ service }: ServiceCardProps) {
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24">
-            {/* TEXT CONTENT */}
             <div className={`order-1 ${textOrder}`}>
                 <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white">
@@ -37,7 +36,6 @@ export function ServiceCard({ service }: ServiceCardProps) {
                 <ServiceBulletList bullets={service.bullets} />
             </div>
 
-            {/* IMAGE */}
             <div className={`order-2 ${imageOrder}`}>
                 <GradientCard>
                     <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">

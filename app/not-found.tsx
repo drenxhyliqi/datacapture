@@ -11,28 +11,18 @@ import SecondHeroBanner from '@/components/ui/second-hero-banner'
 export default function NotFound() {
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip flex flex-col">
-      {/* HEADER */}
       <div className="relative z-30">
         <HeroHeader />
       </div>
-
-      
-
-      {/* BACKGROUND LAYERS (Hero image + shadows) */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        {/* HERO IMAGE */}
           <div className="relative mt-30 lg:mt-80 z-20">
             <SecondHeroBanner />
           </div>
-
-        {/* STATIC RIGHT SHADOW – smaller and higher */}
         <div className="absolute inset-0 overflow-visible">
           <div className="absolute right-10 top-10 w-[50vw] max-w-[460px] h-[50vh] translate-x-1/2 opacity-70 blur-[70px]">
             <Image src={ellipseShadow} alt="Shadow effect" fill className="object-contain" />
           </div>
         </div>
-
-        {/* LEFT MOVING SHADOW – smaller and shifted up */}
         <div className="absolute inset-0 overflow-hidden">
           <div
             className="absolute -left-[20px] top-0 w-[55vw] max-w-[520px] h-[90vh] -translate-x-1/2 opacity-75"
@@ -47,8 +37,6 @@ export default function NotFound() {
           </div>
         </div>
       </div>
-
-      {/* MAIN (centered error) */}
       <main className="relative z-20 flex-1 flex items-center justify-center px-6 py-20 sm:py-24 md:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center py-16">
           <h1 className="mt-6 text-white text-5xl md:text-7xl font-semibold leading-tight">ERROR 404</h1>

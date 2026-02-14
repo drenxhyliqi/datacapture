@@ -17,16 +17,12 @@ export default function ContactUsPage() {
 
     return (
         <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
-            {/* HERO - z-20 që titulli të dalë mbi elementët e tjerë */}
             <div className="relative">
-                {/* HEADER */}
                 <div className="relative z-50">
                     <HeroHeader />
                 </div>
 
                 <SecondHeroBanner />
-
-                {/* HERO TEXT */}
                 <div className="relative z-20 mx-auto max-w-4xl pt-10 md:pt-5 pb-24 text-center">
                     <p className="text-white tracking-widest text-sm md:text-base">
                         {t('contact.label')}
@@ -39,8 +35,6 @@ export default function ContactUsPage() {
                     </p>
                 </div>
             </div>
-
-            {/* STATIC RIGHT SHADOW */}
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
                 <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
                     <Image
@@ -51,10 +45,7 @@ export default function ContactUsPage() {
                     />
                 </div>
             </div>
-
-            {/* CONTENT */}
             <section className="relative overflow-hidden z-20">
-                {/* LEFT MOVING SHADOW */}
                 <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
                     <div
                         className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90"
@@ -71,7 +62,6 @@ export default function ContactUsPage() {
 
                 <div className="relative z-10">
                     <div className="w-full max-w-6xl mx-auto py-20 px-5 lg:py-32">
-                        {/* LEFT: CONTACT FORM */}
                         <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
                             <h2 className="text-3xl md:text-4xl font-[400] text-gray-900 mb-6">
                                 {t('contact.formTitle')}
@@ -83,7 +73,6 @@ export default function ContactUsPage() {
                                 </p>
                             ) : (
                             <form onSubmit={handleSubmit} className="space-y-4">
-                                {/* First Name & Last Name */}
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <input
@@ -102,8 +91,6 @@ export default function ContactUsPage() {
                                         />
                                     </div>
                                 </div>
-
-                                {/* Company */}
                                 <div>
                                     <input
                                         type="text"
@@ -112,8 +99,6 @@ export default function ContactUsPage() {
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                 </div>
-
-                                {/* Email */}
                                 <div>
                                     <input
                                         id="email"
@@ -124,8 +109,6 @@ export default function ContactUsPage() {
                                     />
                                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm mt-1 block" />
                                 </div>
-
-                                {/* Phone */}
                                 <div>
                                     <input
                                         type="tel"
@@ -134,8 +117,6 @@ export default function ContactUsPage() {
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                                     />
                                 </div>
-
-                                {/* Message */}
                                 <div>
                                     <textarea
                                         id="message"
@@ -146,8 +127,6 @@ export default function ContactUsPage() {
                                     />
                                     <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm mt-1 block" />
                                 </div>
-
-                                {/* Privacy Checkbox */}
                                 <div className="flex items-start gap-2">
                                     <input
                                         type="checkbox"
@@ -169,8 +148,6 @@ export default function ContactUsPage() {
                                         .
                                     </label>
                                 </div>
-
-                                {/* Submit Button */}
                                 <button
                                     type="submit"
                                     disabled={state.submitting}

@@ -13,7 +13,6 @@ export default function RadarSection() {
   return (
     <section className="container mx-auto relative w-full py-10 lg:py-32 px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
-        {/* HEADER */}
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
             {t('products.designedForMissions')}
@@ -23,7 +22,6 @@ export default function RadarSection() {
           </div>
         </div>
 
-        {/* FEATURES 1*/}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
           <div className="mt-10 space-y-3 text-content-width text-wrap-natural">
             <h2 className="text-3xl text-white font-semibold">
@@ -46,7 +44,6 @@ export default function RadarSection() {
             </p>
           </div>
 
-          {/* IMAGE */}
           <div className="w-full flex justify-center lg:justify-start">
               <Image
                 src={radarFeature2}
@@ -62,9 +59,7 @@ export default function RadarSection() {
           </h2>
         </div>
 
-        {/* FEATURES 2*/}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
-          {/* IMAGE */}
           <div className="w-full flex justify-center lg:justify-start">
               <Image
                 src={radarFeature3}
@@ -103,7 +98,6 @@ export default function RadarSection() {
           </div>
         </div>
 
-        {/* FEATURES 3*/}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
           <div className="mt-10 space-y-3 text-content-width text-wrap-natural">
             <h2 className="text-3xl text-white font-semibold">
@@ -126,7 +120,6 @@ export default function RadarSection() {
             </p>
           </div>
 
-          {/* IMAGE */}
           <div className="w-full flex justify-center lg:justify-start">
               <Image
                 src={radarFeature4}
@@ -136,9 +129,7 @@ export default function RadarSection() {
           </div>
         </div>
 
-        {/* FEATURES 4*/}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
-          {/* IMAGE */}
           <div className="w-full flex justify-center lg:justify-start">
               <Image
                 src={radarFeature5}
@@ -156,7 +147,6 @@ export default function RadarSection() {
           </div>
         </div>
 
-        {/* FEATURES 5*/}
         <div className="text-center mt-20 items-center justify-center space-y-3 text-content-width mx-auto text-wrap-natural">
           <h2 className="text-2xl text-white font-semibold">{t('products.keyFeatures')}</h2>
           <p className="text-base text-white">{t('products.radarSummary1')}</p>

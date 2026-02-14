@@ -29,7 +29,6 @@ export default function GnnsSection() {
     return (
         <section className="container mx-auto relative w-full py-10 lg:py-10 px-6 lg:px-8">
             <div className="w-full max-w-6xl mx-auto">
-                {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                         {t('products.designedForMissions')}
@@ -39,7 +38,6 @@ export default function GnnsSection() {
                     </div>
                 </div>
 
-                {/* FEATURES */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                         {t('products.gnnsTitle')}
@@ -54,7 +52,6 @@ export default function GnnsSection() {
                     </div>
                 </div>
 
-                {/* FEATURES */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                         {t('products.trl9Title')}
@@ -65,7 +62,6 @@ export default function GnnsSection() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-6">
-                    {/* IMAGE */}
                     <div className="w-full flex justify-center lg:justify-start">
                         <Image
                         src={gnnsProduct}
@@ -79,7 +75,6 @@ export default function GnnsSection() {
                         />
                     </div>
 
-                    {/* TEXT */}
                     <div className="flex flex-col items-start gap-4">
                         <h3 className="text-2xl md:text-3xl font-[400] text-white">
                             {t('products.keyRequirementsTitle')}

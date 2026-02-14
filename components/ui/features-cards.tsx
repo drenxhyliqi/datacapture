@@ -8,7 +8,6 @@ import { SolutionFeature } from './solutions-features-data'
 export function FeatureCard({ feature }: { feature: Feature | SolutionFeature }) {
     return (
         <GradientCard>
-            {/* Icon */}
             <div className="mb-6 flex p-6 justify-center">
                 <div className="w-[120px] h-[120px] flex items-center justify-center">
                     <Image
@@ -19,7 +18,6 @@ export function FeatureCard({ feature }: { feature: Feature | SolutionFeature })
                 </div>
             </div>
 
-            {/* Content */}
             <div className="flex flex-col flex-1 p-6 text-center">
                 <h3 className="text-xl font-[400] mb-4 text-white">
                     {feature.title}

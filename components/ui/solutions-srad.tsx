@@ -3,7 +3,6 @@ import SecondHeroBanner from "@/components/ui/second-hero-banner";
 import Image from "next/image";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
-// Icons imported as SVGs (SRAD-specific)
 import detectionIcon from "@/assets/selections1.svg";
 import identificationIcon from "@/assets/identification.svg";
 import mitigationIcon from "@/assets/mitigation.svg";
@@ -23,7 +22,6 @@ export function SolutionsSradFeaturesSection() {
     <>
       <section className="relative w-full py-10 lg:py-32 px-6 lg:px-8">
         <div className="w-full max-w-7xl mx-auto">
-          {/* Header */}
           <div className="mb-12 lg:mb-16">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
               <div className="lg:w-1/2">
@@ -34,7 +32,6 @@ export function SolutionsSradFeaturesSection() {
             </div>
           </div>
 
-          {/* 3 feature cards – same structure as CUAS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             <div className="about-dcs-fade-border flex flex-col justify-between rounded-3xl bg-[#131417] px-8 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
               <div className="mb-6 flex items-center gap-4">
@@ -93,7 +90,6 @@ export function SolutionsSradFeaturesSection() {
         </div>
       </section>
 
-      {/* Faded border style for SRAD cards */}
       <style jsx global>{`
         .about-dcs-fade-border {
           position: relative;
@@ -165,16 +161,13 @@ export function SolutionsSradC2Section() {
           </div>
         </div>
 
-        {/* Detection / Identification / Mitigation flow */}
         <div className="w-full max-w-6xl mt-6">
-          {/* Desktop / tablet direction graphic */}
           <div className="hidden md:block">
             <Image
               src={directionDesktop}
               alt="C2 detection, identification and mitigation flow"
               className="w-full h-auto object-contain"
             />
-            {/* Labels aligned with arrow ends */}
             <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
               <div style={{ marginLeft: "-95px" }}>{t('solutions.detection')}</div>
               <div style={{ marginLeft: "-30px" }}>{t('solutions.sradIdentificationTracking')}</div>
@@ -182,7 +175,6 @@ export function SolutionsSradC2Section() {
             </div>
           </div>
 
-          {/* Mobile direction graphic */}
           <div className="block md:hidden">
             <div className="mx-auto w-3/4 max-w-xs">
               <Image
@@ -202,9 +194,7 @@ export function SolutionsSradC2Section() {
           </div>
         </div>
 
-        {/* Deployment modes – two SRAD-specific configurations */}
         <div className="mt-16 w-full max-w-8xl mx-auto space-y-10 text-left">
-          {/* Fixed Installation */}
           <div className="flex flex-col md:flex-row items-center gap-y-10">
             <div className="flex-shrink-1">
               <Image
@@ -221,7 +211,6 @@ export function SolutionsSradC2Section() {
             </div>
           </div>
 
-          {/* Mobile Installation */}
           <div className="flex flex-col md:flex-row items-center md:ml-10 md:gap-18 gap-y-10">
             <div className="flex-shrink-1 md:ml-10 ">
               <Image
