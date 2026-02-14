@@ -12,16 +12,12 @@ export default function SolutionsSradPage() {
   const t = useTranslations()
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
-      {/* HERO */}
       <div className="relative">
-        {/* HEADER */}
         <div className="relative z-30">
           <HeroHeader />
         </div>
 
         <SolutionsSradHeroBanner />
-
-        {/* HERO TEXT */}
         <div className="relative z-20 mx-auto max-w-5xl px-5 pt-5 md:pt-5 pb-24 text-center flex flex-col items-center justify-center">
           <p className="text-white tracking-widest text-sm md:text-base">
             {t('solutions.label')}
@@ -34,8 +30,6 @@ export default function SolutionsSradPage() {
           </p>
         </div>
       </div>
-
-      {/* STATIC RIGHT SHADOW */}
       <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
         <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
           <Image
@@ -46,10 +40,7 @@ export default function SolutionsSradPage() {
           />
         </div>
       </div>
-
-      {/* CONTENT */}
       <section className="relative overflow-hidden z-20">
-        {/* LEFT MOVING SHADOW */}
         <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
           <div className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90">
             <Image
@@ -63,13 +54,8 @@ export default function SolutionsSradPage() {
         </div>
 
         <div className="relative z-10">
-          {/* SECTION 1 – Tailor made air security (cards) - CUAS-specific (3 cards only) */}
           <SolutionsSradFeaturesSection />
-
-          {/* SECTION 2 – Customized Counter-Drone Systems text block */}
           <SolutionsSradDescriptionSection />
-
-          {/* SECTION 3 – C2 flow diagram */}
           <SolutionsSradC2Section />
         </div>
       </section>

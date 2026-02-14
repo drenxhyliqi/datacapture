@@ -8,11 +8,8 @@ export default function ContentSection() {
   return (
     <section className="relative w-full mb-2 px-6 justify-center items-center z-10">
       
-        {/* ===== SECTION 4 ===== */}
       <div className="py-5 justify-center items-center">
         <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 justify-between items-center mb-5">
-          
-          {/* TEXT */}
           <div>
             <span className="inline-block mb-4 px-3 py-1 text-xs tracking-widest text-white/60 border border-white/10 rounded-full">
               DCS SYSTEM
@@ -32,7 +29,6 @@ export default function ContentSection() {
             </p>
           </div>
 
-          {/* SVG */}
           <div className="relative block justify-center">
             <Image
               src={solutions4}
@@ -44,11 +40,8 @@ export default function ContentSection() {
         </div>
       </div>
 
-      {/* ===== SECTION 5 ===== */}
       <div className="py-5">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 justify-between items-center">
-
-            {/* SVG — LEFT */}
             <div className="relative block justify-center ">
             <Image
                 src={solutions5}
@@ -58,7 +51,6 @@ export default function ContentSection() {
             />
             </div>
 
-            {/* TEXT — RIGHT */}
             <div>
             <span className="inline-block mb-4 px-3 py-1 text-xs tracking-widest text-white/60 border border-white/10 rounded-full">
                 Support

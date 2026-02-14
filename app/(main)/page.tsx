@@ -16,22 +16,14 @@ export default function Home() {
 
   return (  
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
-      
-      {/* HERO – z-[50] so navbar (inside hero) stays above sections below */}
       <div className="hero-viewport-wrapper relative z-[50] min-h-[110vh] 2xl:min-h-[100vh] isolate" style={{ position: 'relative' }}>
-    
-        {/* HEADER – high z-index so navbar stays above other sections */}
         <div className="relative z-[100]">
           <HeroHeader />
         </div>
-
-        {/* HERO TEXT */}
         <div className="relative">
           <HeroSection />
         </div>
       </div>
-
-      {/* STATIC RIGHT SHADOW – only in DOM on lg+; low z so navbar stays on top */}
       {isLg && (
         <div className="hero-static-shadow-wrapper absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
           <div className="relative w-[400px] h-[100vh] translate-x-1/2 translate-y-250">
@@ -46,14 +38,9 @@ export default function Home() {
           </div>
         </div>
       )}
-
-      {/* ABOUT + FEATURES WRAPPER */}
       <section className="relative overflow-hidden">
-        {/* Content */}
         <div className="relative z-0">
-          {/* Blur only from About DCS down to System Features */}
           <div className="relative overflow-hidden">
-            {/* LEFT MOVING SHADOW – spans About + Partners only */}
             <div className="absolute -left-[5px] inset-0 pointer-events-none z-[3] md:z-[15] overflow-hidden">
               <div
                 className="

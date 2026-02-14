@@ -24,12 +24,11 @@ export default function GallerySlideshow({
 }) {
   const loopSlides = React.useMemo(() => buildLoopSlides(slides), [slides])
 
-  // ⬇️ KRIJO plugin-in me useMemo që të mos “reset” në re-render
   const autoplay = React.useMemo(
     () =>
       Autoplay({
         delay: delayMs,
-        stopOnInteraction: false, // vazhdon edhe pas drag
+        stopOnInteraction: false,
       }),
     [delayMs]
   )
@@ -39,7 +38,6 @@ export default function GallerySlideshow({
       className={className ?? "w-full"}
       plugins={[autoplay]}
       opts={{ loop: true, align: "start" }}
-      // ⬇️ nëse do ndalet vetëm kur e hover, përdori këto:
       onMouseEnter={autoplay.stop}
       onMouseLeave={autoplay.reset}
     >

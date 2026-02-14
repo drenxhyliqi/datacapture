@@ -29,7 +29,6 @@ export default function UAVSections() {
   return (
     <section className="container mx-auto relative w-full py-10 lg:py-32 px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
-        {/* HEADER */}
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
             {t('products.designedForMissions')}
@@ -43,7 +42,6 @@ export default function UAVSections() {
           <h2 className="text-3xl text-white font-semibold">MADE IN EUROPE</h2>
         </div>
 
-        {/* ALL UAVS */}
         <div className="space-y-20 lg:space-y-28 mb-30">
           {uavItemKeys.map((item) => {
             const name = t(`products.${item.key}Name`)
@@ -108,8 +106,6 @@ export default function UAVSections() {
           })}
         </div>
 
-        {/* Slideshow temporarily disabled; keep for future use */}
-        {/*
         <Slideshow
           slides={[
             { src: droneImage4 },
@@ -118,7 +114,6 @@ export default function UAVSections() {
           ]}
           delayMs={2000}
         />
-        */}
 
       </div>
     </section>

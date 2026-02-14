@@ -2,10 +2,6 @@
 
 import { useState, useEffect } from 'react'
 
-/**
- * Returns true when viewport matches the query (e.g. min-width: 1024px for lg).
- * Returns false on SSR and initial mount to avoid hydration mismatch; updates after mount.
- */
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false)
 
@@ -20,5 +16,4 @@ export function useMediaQuery(query: string): boolean {
   return matches
 }
 
-/** Tailwind lg breakpoint: 1024px */
 export const LG_QUERY = '(min-width: 1024px)'

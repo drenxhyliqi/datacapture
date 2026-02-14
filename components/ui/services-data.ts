@@ -1,13 +1,11 @@
 import { StaticImageData } from 'next/image'
 
-// IMAGES (content) – from assets/services
 import datacenterImage from '@/assets/services/datacenter.png'
 import aiImage from '@/assets/services/ai.png'
 import cybersecurityImage from '@/assets/services/cybersecurity.png'
 import softwareImage from '@/assets/services/software.png'
 import service2Image from '@/assets/services/service2.png'
 
-// ICONS (SVG)
 import datacenterIcon from '@/assets/service1.svg'
 import aiIcon from '@/assets/service2.svg'
 import cybersecurityIcon from '@/assets/service3.svg'
@@ -21,7 +19,6 @@ export type ServiceItem = {
   imagePosition: 'left' | 'right'
 }
 
-/** Translation key prefix for each service (e.g. 'datacenter' -> services.datacenterTitle, etc.) */
 export type ServiceKey = 'datacenter' | 'ai' | 'cybersecurity' | 'software' | 'training'
 
 export const serviceConfigs: {

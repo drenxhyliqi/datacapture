@@ -33,9 +33,7 @@ const items: UseItem[] = [
 export default function OperationalUseSection() {
   return (
     <section className="w-full">
-      {/* CONTAINER */}
       <div className="mx-auto max-w-7xl sm:px-6 py-14 sm:py-20">
-        {/* HEADER */}
         <div className="text-center">
           <p className="text-xs font-medium tracking-[0.28em] text-white/70">
             SOLUTIONS
@@ -52,9 +50,7 @@ export default function OperationalUseSection() {
           </p>
         </div>
 
-        {/* CONTENT */}
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2 items-stretch">
-          {/* IMAGE - 60vh */}
           <GradientCard>
             <div className="relative h-[60vh] w-full min-h-[280px] rounded-2xl overflow-hidden">
               <Image
@@ -69,7 +65,6 @@ export default function OperationalUseSection() {
           </GradientCard>
 
 
-          {/* LIST */}
           <div className="h-full flex flex-col ">
             {items.map((it) => (
               <div
@@ -80,7 +75,6 @@ export default function OperationalUseSection() {
                   transition-all duration-300 ease-out
                 "
               >
-                {/* GRADIENT GLOW */}
                 <span
                   className="
                     pointer-events-none absolute inset-0 
@@ -93,7 +87,6 @@ export default function OperationalUseSection() {
                   }}
                 />
 
-                {/* GRADIENT LINE */}
                 <GradientLine
                   position="left"
                   width="w-1"
@@ -106,7 +99,6 @@ export default function OperationalUseSection() {
                   "
                 />
 
-                {/* CONTENT */}
                 <div className="relative z-10">
                   <h3 className="text-base font-[400] text-white">
                     {it.title}
@@ -117,7 +109,6 @@ export default function OperationalUseSection() {
                   </p>
                 </div>
 
-                {/* LINK */}
                 <a
                   href={it.href ?? "#"}
                   className="

@@ -11,7 +11,6 @@ export default function Footer() {
   return (
     <>
       <footer className="relative w-full bg-[#101210] overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]">
-      {/* Background Image - mobile (< md) */}
       <div className="absolute inset-0 z-0 w-full h-full md:hidden">
         <Image
           src={footerBackgroundMobile}
@@ -24,7 +23,6 @@ export default function Footer() {
         />
       </div>
       
-      {/* Background Image - tablet (md to < lg) */}
       <div className="absolute inset-0 z-0 w-full h-full hidden md:block lg:hidden">
         <Image
           src={footerBackgroundTablet}
@@ -36,7 +34,6 @@ export default function Footer() {
         />
       </div>
 
-      {/* Background Image - desktop (lg+) */}
       <div className="absolute inset-0 z-0 w-full h-full hidden lg:block">
         <Image
           src={footerBackground}
@@ -48,8 +45,7 @@ export default function Footer() {
         />
       </div>
 
-      {/* Animated blur on left side - show only on large screens */}
-      <div 
+      <div
         className="animate-footer-blur hidden lg:block absolute left-[50px] top-40 w-[200px] h-[150px] z-[5] pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse 200px 150px at 50% 50%, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 70%)',
@@ -58,13 +54,9 @@ export default function Footer() {
         }}
       />
 
-      {/* Main Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-16 xl:px-24 py-10 lg:py-12">
-        {/* Top Section - Main Content Area */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
-          {/* Left Block - Company Identity and Action */}
           <div className="flex flex-col">
-            {/* Logo/Company Name */}
             <div className="flex items-start gap-3 mb-6">
               <div className="w-5 h-17 bg-white mt-1" />
               <div>
@@ -75,12 +67,10 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Description */}
             <p className="text-gray-400 text-sm lg:text-base mb-8 max-w-[70%] lg:max-w-md leading-relaxed">
               {t('footer.tagline')}
             </p>
 
-            {/* Contact Us Button */}
             <Link
               href="/contact-us"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white text-white font-medium text-sm w-fit hover:bg-white/10 transition-all"
@@ -89,9 +79,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Right Block - Navigation Links */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
-            {/* Column 1: About */}
             <div>
               <h3 className="text-white font-[400] text-base mb-4">{t('footer.about')}</h3>
               <ul className="space-y-3">
@@ -118,7 +106,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 2: Company */}
             <div>
               <h3 className="text-white font-semibold text-base mb-4">{t('footer.company')}</h3>
               <ul className="space-y-3">
@@ -145,7 +132,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Legal */}
             <div>
               <h3 className="text-white font-[400] text-base mb-4">{t('footer.legal')}</h3>
               <ul className="space-y-3">
@@ -174,7 +160,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section - Copyright */}
         <div className="border-t pt-8" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <p className="text-white text-sm text-center">
             {t('footer.copyright')}{' '}

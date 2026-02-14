@@ -49,7 +49,6 @@ export default function CompanySection() {
   const t = useTranslations()
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
-      {/* GLOBAL LEFT ANIMATED SHADOW – absolute so it scrolls with the page, under 3 cards */}
       <div className="pointer-events-none absolute inset-0 left-0 z-[30] overflow-visible">
         <div className="absolute left-0 top-[30%] h-[140vh] w-[70vw] max-w-[700px] -translate-x-1/2 animate-system-blur will-change-transform opacity-90">
           <Image
@@ -61,14 +60,11 @@ export default function CompanySection() {
         </div>
       </div>
 
-      {/* HERO */}
       <div className="relative">
-        {/* HEADER – high z-index so navbar stays above feature cards on mobile and desktop */}
         <div className="relative z-[9998]">
           <HeroHeader />
         </div>
         <SecondHeroBanner />
-        {/* HERO TEXT */}
         <div className="relative z-180 mx-auto max-w-xl pt-5 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base font-[400]">
             {t('company.label')}
@@ -83,7 +79,6 @@ export default function CompanySection() {
         </div>
       </div>
 
-      {/* 3 CARDS – gradient card container above global shadow (z-[30]) */}
       <section className="relative w-full bg-[#101210] py-16 sm:py-20 lg:py-24 px-5 overflow-hidden">
         <div className="relative z-[150] mx-auto w-full max-w-7xl">
           <GradientCard>
@@ -123,9 +118,7 @@ export default function CompanySection() {
         </div>
       </section>
 
-      {/* About + Discuss – below the shadow (lower z-index) */}
       <section className="relative z-10 overflow-hidden">
-        {/* About Data Capture Systems GmbH */}
         <section className="relative w-full bg-[#101210] py-20 sm:py-24 lg:py-28">
           <div className="mx-auto max-w-7xl px-4">
             <div
@@ -144,11 +137,9 @@ export default function CompanySection() {
           </div>
         </section>
 
-        {/* Discuss your operational requirements (reused) */}
         <DiscussSection />
       </section>
 
-      {/* Page footer */}
       <Footer />
 
       <style jsx global>{`

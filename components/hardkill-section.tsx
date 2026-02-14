@@ -54,7 +54,6 @@ export default function HardkillSection() {
     return (
         <section className="container mx-auto relative w-full py-10 lg:py-32 px-6 lg:px-8">
             <div className="w-full max-w-7xl mx-auto">
-                {/* HEADER */}
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                         {t('products.designedForMissions')}
@@ -64,7 +63,6 @@ export default function HardkillSection() {
                     </div>
                 </div>
 
-                {/* FEATURES 1*/}
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-10 mt-20">
                     <div className="mt-10 space-y-3 text-content-width text-wrap-natural">
                         <h2 className="text-3xl text-white font-semibold">
@@ -74,7 +72,6 @@ export default function HardkillSection() {
                         <p className="text-base text-white">BULLFROG™ IS A LIGHTWEIGHT, LOW-POWER AUTONOMOUS WEAPON STATION DESIGNED TO DETECT, IDENTIFY, AND NEUTRALIZE ENEMY UXS. ENGINEERED FOR MOBILITY AND VERSATILITY, BULLFROG™ EXCELS IN BOTH ON-THE-MOVE OPERATIONS AND THE PROTECTION OF HIGH-VALUE TARGETS LIKE POWER SUBSTATIONS. CAPABLE OF ENGAGING GROUP 1-3 UAS, IT OFFERS BOTH AUTONOMOUS AND SEMI-AUTONOMOUS MODES, DELIVERING FLEXIBLE, RELIABLE DEFENSE AT EVERY TURN.</p>
                     </div>
 
-                    {/* IMAGE */}
                     <div className="w-full flex justify-center lg:justify-start">
                         <Image
                         src={hardkillfeature2}
@@ -97,7 +94,6 @@ export default function HardkillSection() {
               
                 
 
-                {/* FEATURES 2 */}
                 <div className="text-center mb-16 mt-10 mb-24">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
                     TRL-9 Combat-Proven Technology
@@ -109,7 +105,6 @@ export default function HardkillSection() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-6">
-                    {/* IMAGE */}
                     <div className="w-full flex justify-center lg:justify-start">
                         <Image
                         src={hardkillfeature3}
@@ -122,7 +117,6 @@ export default function HardkillSection() {
                         "
                         />
                     </div>
-                    {/* TEXT */}
                     <div className="flex flex-col items-start gap-4">
                         <div className="space-y-6">
                             {feature2.map((feature, idx) => {
@@ -155,7 +149,6 @@ export default function HardkillSection() {
                     ))}
                 </div>
 
-                {/* Feature 3 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 mb-6 mt-30">
                     <div className="mt-10 space-y-2">
                         <h2 className="text-3xl text-white font-semibold">
@@ -177,7 +170,6 @@ export default function HardkillSection() {
                         ))}
                     </div>
 
-                    {/* IMAGE */}
                     <div className="w-full flex justify-center lg:justify-start">
                         <Image
                         src={hardkillfeature4}

@@ -28,7 +28,6 @@ export function GradientCard({
                 transitionDuration: `${duration}ms`
             }}
         >
-            {/* LEFT BORDER GRADIENT - Normal (top to bottom) */}
             <span
                 className="pointer-events-none absolute left-0 transition-opacity opacity-100 group-hover:opacity-0 rounded"
                 style={{
@@ -40,7 +39,6 @@ export function GradientCard({
                     transitionDuration: `${duration}ms`
                 }}
             />
-            {/* LEFT BORDER GRADIENT - Hover (bottom to top) */}
             <span
                 className="pointer-events-none absolute left-0 transition-opacity opacity-0 group-hover:opacity-100 rounded"
                 style={{
@@ -53,7 +51,6 @@ export function GradientCard({
                 }}
             />
 
-            {/* RIGHT BORDER GRADIENT - Normal (top to bottom) */}
             <span
                 className="pointer-events-none absolute right-0 transition-opacity opacity-100 group-hover:opacity-0 rounded"
                 style={{
@@ -65,7 +62,6 @@ export function GradientCard({
                     transitionDuration: `${duration}ms`
                 }}
             />
-            {/* RIGHT BORDER GRADIENT - Hover (bottom to top) */}
             <span
                 className="pointer-events-none absolute right-0 transition-opacity opacity-0 group-hover:opacity-100 rounded"
                 style={{
@@ -78,7 +74,6 @@ export function GradientCard({
                 }}
             />
 
-            {/* CONTENT */}
             <div className="relative z-10">{children}</div>
         </div>
     )
