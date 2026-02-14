@@ -231,7 +231,17 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* CTA button - mobile only; hidden on tablet (md) */}
+          {/* Body text – left on mobile, centered on tablet; larger on tablet */}
+          <div className="mb-8 space-y-3 text-[17px] leading-relaxed md:text-center md:mx-auto md:text-[18px] max-w-[34rem]">
+            <p className="text-[#C8C8C8]">
+              {SUBTEXT_LINES[0]}
+            </p>
+            <p className="text-[#A9A9A9]">
+              {SUBTEXT_LINES[1]}
+            </p>
+          </div>
+
+          {/* CTA button – mobile only; below header and paragraph */}
           <div className="mb-8 w-full md:hidden">
             <div className="flex justify-center border-r border-l border-t border-white/20 rounded-full w-full px-4 py-1">
               <div className="relative inline-flex items-center w-full gap-2">
@@ -260,16 +270,6 @@ export default function HeroSection() {
                 </Link>
               </div>
             </div>
-          </div>
-
-          {/* Body text – left on mobile, centered on tablet; larger on tablet */}
-          <div className="mb-8 space-y-3 text-[17px] leading-relaxed md:text-center md:mx-auto md:text-[18px] max-w-[34rem]">
-            <p className="text-[#C8C8C8]">
-              {SUBTEXT_LINES[0]}
-            </p>
-            <p className="text-[#A9A9A9]">
-              {SUBTEXT_LINES[1]}
-            </p>
           </div>
 
           {/* Stats – mobile stacked; tablet centered */}
