@@ -83,7 +83,7 @@ export default function RadarPage() {
       </div>
 
        {/* FEATURES 2*/}
-       <div className="container mx-auto items-center px-10 mb-10 mt-20">
+       <div className="container mx-auto items-center lg:px-25 px-5 mb-10 mt-20">
             <div className="mt-10 space-y-3 text-content-width text-wrap-natural">
                 <h2 className="text-3xl text-white font-semibold">{t('products.mainAdvantages')}</h2>
                 <p className="text-base text-white">{t('products.radarAdvantage1')}</p>
