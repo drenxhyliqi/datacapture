@@ -1,25 +1,14 @@
 'use client'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import arrowLeft from '@/assets/array.png'
 import Image from 'next/image'
+import arrowLeft from '@/assets/array.png'
 import droneIcon from '@/assets/selections1.svg'
-import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
 import HeroBanner from '@/components/ui/hero-banner'
-
-
-const HEADING = {
-  line1: 'Engineering',
-  line2: 'the Future',
-  line3: 'of Security',
-}
-
-const SUBTEXT_LINES = [
-  'A Company with selected partners securing airspace, cyber, data, and critical infrastructure through advanced engineering and innovation.',
-  'A centralized system for real-time drone detection, visualization, and post-event analysis within defined operational areas.',
-]
+import { useTranslations } from '@/lib/i18n/LocaleContext'
+import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
 
 export default function HeroSection() {
+  const t = useTranslations()
   const isLg = useMediaQuery(LG_QUERY)
 
   return (
@@ -114,8 +103,8 @@ export default function HeroSection() {
             <div className="absolute left-[-2.6em] top-45">
               {/* ADAPTIVE / SECURITY text */}
               <div className="space-y-6 text-[13px] font-light uppercase text-white tracking-[1.9em]">
-                <div className="whitespace-nowrap">ADAPTIVE</div>
-                <div className="whitespace-nowrap">SECURITY</div>
+                <div className="whitespace-nowrap">{t('hero.adaptive')}</div>
+                <div className="whitespace-nowrap">{t('hero.security')}</div>
               </div>
             </div>
           </div>
@@ -127,9 +116,9 @@ export default function HeroSection() {
               <div className="pl-[5em]">
                 <div className="relative">
                   <h1 className="text-[5rem] font-[600] leading-[1] text-white">
-                    <span className="block">{HEADING.line1}</span>
-                    <span className="block">{HEADING.line2}</span>
-                    <span className="block">{HEADING.line3}</span>
+                    <span className="block">{t('hero.line1')}</span>
+                    <span className="block">{t('hero.line2')}</span>
+                    <span className="block">{t('hero.line3')}</span>
                   </h1>
 
                   {/* Desktop-only CTA positioned next to "Monitoring" – old single-button design */}
@@ -156,7 +145,7 @@ export default function HeroSection() {
                             paddingBottom: '0.7rem',
                           }}
                         >
-                          <span className="relative z-10">Get Protected Today</span>
+                          <span className="relative z-10">{t('hero.cta')}</span>
                         </Link>
                       </div>
                     </div>
@@ -168,10 +157,10 @@ export default function HeroSection() {
             {/* Body text */}
             <div className="mb-4 pl-[5.5em] max-w-[31rem] space-y-3 text-[15px] leading-relaxed">
               <p className="text-white">
-                {SUBTEXT_LINES[0]}
+                {t('hero.subtext1')}
               </p>
               <p className="text-[#A9A9A9]">
-                {SUBTEXT_LINES[1]}
+                {t('hero.subtext2')}
               </p>
             </div>
           </div>
@@ -200,13 +189,13 @@ export default function HeroSection() {
           {/* Mobile heading + drone badge on the right; tablet: centered text */}
           <div className="relative mb-6 w-full md:text-center">
             <h1 className="text-[2.75rem] leading-[1.05] font-[500] text-white md:text-center md:text-[3.5rem]">
-              <span className="block">{HEADING.line1}</span>
-              <span className="block">{HEADING.line2}</span>
-              <span className="block">{HEADING.line3}</span>
+              <span className="block">{t('hero.line1')}</span>
+              <span className="block">{t('hero.line2')}</span>
+              <span className="block">{t('hero.line3')}</span>
             </h1>
 
             {/* Drone badge: right-aligned on mobile and tablet */}
-            <div className="absolute right-0 top-[3.5rem]">
+            <div className="absolute right-0 top-[0]">
               <div
                 className="h-20 w-20 rounded-full p-[3px] flex items-center justify-center"
                 style={{ backgroundColor: '#313331' }}
@@ -234,10 +223,10 @@ export default function HeroSection() {
           {/* Body text – left on mobile, centered on tablet; larger on tablet */}
           <div className="mb-8 space-y-3 text-[17px] leading-relaxed md:text-center md:mx-auto md:text-[18px] max-w-[34rem]">
             <p className="text-[#C8C8C8]">
-              {SUBTEXT_LINES[0]}
+              {t('hero.subtext1')}
             </p>
             <p className="text-[#A9A9A9]">
-              {SUBTEXT_LINES[1]}
+              {t('hero.subtext2')}
             </p>
           </div>
 
@@ -266,7 +255,7 @@ export default function HeroSection() {
                     fontSize: '0.6rem',
                   }}
                 >
-                  <span className="relative z-10">Get Protected Today</span>
+                  <span className="relative z-10">{t('hero.cta')}</span>
                 </Link>
               </div>
             </div>
