@@ -26,9 +26,9 @@ export default function AboutSection() {
                         </h2>
 
                         {/* Main Headline – larger on mobile to match design */}
-                        <h3 className="text-5xl md:text-4xl lg:text-5xl font-[600] text-white mb-8 leading-tight">
+                        <h4 className="text-4xl md:text-4xl lg:text-5xl font-[600] text-white mb-8 leading-tight">
                             {t('about.headline')}
-                        </h3>
+                        </h4>
 
                         {/* Paragraphs – larger on mobile */}
                         <div className="space-y-6 text-lg md:text-lg text-[#D9D9D9] leading-relaxed">

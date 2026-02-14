@@ -273,7 +273,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats – mobile stacked; tablet centered */}
-          <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60 md:items-center md:text-center">
+          {/* <div className="flex flex-col gap-2 text-[1em] tracking-[0.3em] uppercase text-white/60 md:items-center md:text-center">
             <span>
               <span className="font-semibold text-white mr-1">1.600+</span>
               USER ACTIVE
@@ -282,7 +282,7 @@ export default function HeroSection() {
               <span className="font-semibold text-white mr-1">300+</span>
               TECHNOLOGIES
             </span>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
