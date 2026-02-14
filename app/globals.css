@@ -14,8 +14,10 @@ body[unresolved] {
 }
 
 /* Smaller h1 when language is German */
-html[lang="de"] h1 {
-  font-size: 2.5em;
+@media (min-width: 1024px) {
+  html[lang="de"] h1 {
+    font-size: 3em;
+  }
 }
 
 /* More compact ADAPTIVE / SECURITY vertical text when German */
