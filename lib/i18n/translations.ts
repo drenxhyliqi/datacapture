@@ -47,6 +47,8 @@ export const translations = {
       about: 'About',
       aboutUs: 'About us',
       features: 'Features',
+      services: 'Services',
+      products: 'Products',
       blog: 'Blog',
       download: 'Download',
       company: 'Company',
@@ -59,7 +61,7 @@ export const translations = {
       privacyPolicy: 'Privacy Policy',
       securityPolicy: 'Security Policy',
       cookieSettings: 'Cookie Settings',
-      copyright: '© Copyright 2026 DCS. Design & Developed by',
+      copyright: `© Copyright ${new Date().getFullYear()} DCS. Design & Developed by`,
       protecht: 'Protecht',
     },
     partners: {
@@ -83,13 +85,13 @@ export const translations = {
         "At DCS, our mission is to meet every customer's unique requirements, ensuring complete safety and protection.",
       metric1Title: 'Real-time Monitoring',
       metric1Desc:
-        'Live detection and visualization of drone activity within defined operational areas.',
+        'Live detection and visualization of potential threats and security-relevant activities within defined operational areas.',
       metric2Title: 'Centralized Control',
       metric2Desc:
-        'Unified command-and-control interface for monitoring, configuration, and review.',
-      metric3Title: 'Recorded Operations',
+        'A unified command-and-control interface for seamless monitoring, system configuration, and operational review.',
+      metric3Title: 'Threat Mitigation',
       metric3Desc:
-        'Automatic recording of detected drone activity for post-operation analysis.',
+        'Rapid and precise neutralization of detected threats through integrated countermeasures and automated response systems.',
       aboutSectionTitle: 'About Data Capture Systems GmbH',
       aboutP1:
         'Data Capture Systems GmbH is a German technology company based in Munich, providing advanced security and technology solutions across airspace, digital, and operational domains. We specialize in drone systems, counter-UAS solutions, cybersecurity, AI-driven platforms, data center infrastructure, and proprietary command-and-control software, offering fully integrated and mission-ready solutions for governmental, military, maritime, and commercial clients worldwide.',
@@ -99,7 +101,38 @@ export const translations = {
         "At DCS, innovation is at the core of everything we do. We continuously research and develop new solutions to stay ahead of evolving threats, providing our customers with future-proof, scalable, and fully integrated technologies. Our mission is to enable organizations to operate safely, efficiently, and resiliently in increasingly complex security environments.",
       aboutP4:
         'Looking forward, our goal is to establish Data Capture Systems GmbH as a global leader in integrated security solutions by combining technology, expertise, and international partnerships, making a lasting contribution to the safety and resilience of critical operations worldwide.',
-    },
+    
+      termsSectionTitle: 'Terms & Conditions',
+      termsP1:
+        'Welcome to Data Capture. By visiting our page, you agree to the following: ',
+      strongP1: 'Use of Content',
+      termsP2:
+        'All content on this website—including company, products, and services—is for informational purposes only. You may view and share content for personal, non- commercial use.',
+      strongP2: 'Intellectual Property',
+      termsP3:
+        'All text, images, logos, and designs are owned by Data Capture. You may not copy, distribute, or modify any content without written permission.',
+        strongP3: 'Limitation of Liability',
+      termsP4:
+        'Data Capture provides the website “as is.” We are not liable for any direct or indirect damages arising from your use of this website.',
+        strongP4: 'External Links',
+      termsP5:
+        'The website may contain links to third-party sites. Data Capture is not responsible for their content or practices.',
+      
+      privacySectionTitle: 'Privacy Policy',
+      privacyP1:
+        'Data Capture respects your privacy. This website is a landing page for information purposes only and does not collect personal information from visitors.',
+      strongPC1: 'Information Collected',
+      privacyP2:
+        'Only non-personal data such as IP address or browser type may be automatically collected for performance and analytics purposes.',
+      privacyP3:
+        'Cookies are used only to enhance browsing experience.',
+        strongC3: 'Use of Information',
+      privacyP4:
+        'Non-personal data is used solely to monitor website performance and improve user experience.',
+        strongC4: 'Third-Party Links',
+      privacyP5:
+        'The website may contain links to external websites. DataCaptture is not responsible for their content or practices.',
+      },
     contact: {
       label: 'CONTACT US',
       headline: 'We are there for you',
@@ -366,23 +399,28 @@ export const translations = {
     footer: {
       tagline:
         'Eine Führungs- und Kontrollplattform für Drohnenerkennung, Überwachung und Datenerfassung.',
-      contactUs: 'Kontakt',
       about: 'Über uns',
-      aboutUs: 'Über uns',
       features: 'Funktionen',
-      blog: 'Blog',
       download: 'Download',
+
       company: 'Unternehmen',
+      aboutUs: 'Über uns',
+      contactUs: 'Kontakt',
+      services: 'Dienstleistungen',
+      blog: 'Blog',
+
+      legal: 'Rechtliches',
+      products : 'Produkte',
+
       howWeWork: 'Wie wir arbeiten',
       pressRoom: 'Presse',
       jobs: 'Stellenangebote',
       community: 'Community',
-      legal: 'Rechtliches',
       termsOfUse: 'Nutzungsbedingungen',
       privacyPolicy: 'Datenschutz',
       securityPolicy: 'Sicherheitsrichtlinie',
       cookieSettings: 'Cookie-Einstellungen',
-      copyright: '© Copyright 2026 DCS. Design & Entwicklung von',
+      copyright: `© Copyright ${new Date().getFullYear()} DCS. Design & Entwicklung von`,
       protecht: 'Protecht',
     },
     partners: {
@@ -422,7 +460,36 @@ export const translations = {
         'Bei DCS steht Innovation im Mittelpunkt. Wir erforschen und entwickeln kontinuierlich neue Lösungen, um Bedrohungen voraus zu sein und unseren Kunden zukunftssichere, skalierbare und voll integrierte Technologien zu bieten. Unsere Mission ist es, Organisationen zu ermöglichen, in zunehmend komplexen Sicherheitsumgebungen sicher, effizient und widerstandsfähig zu agieren.',
       aboutP4:
         'Unser Ziel für die Zukunft ist es, Data Capture Systems GmbH durch die Verbindung von Technologie, Expertise und internationalen Partnerschaften als globalen Anbieter integrierter Sicherheitslösungen zu etablieren und einen nachhaltigen Beitrag zur Sicherheit und Widerstandsfähigkeit kritischer Operationen weltweit zu leisten.',
-    },
+      termsSectionTitle: 'Allgemeine Geschäftsbedingungen',
+      termsP1:
+        'Willkommen bei Data Capture. Durch den Besuch unserer Website erklären Sie sich mit den folgenden Bedingungen einverstanden:',
+      strongP1: 'Nutzung der Inhalte',
+      termsP2:
+        'Alle Inhalte dieser Website – einschließlich Informationen über das Unternehmen, Produkte und Dienstleistungen – dienen ausschließlich Informationszwecken. Sie dürfen die Inhalte für den persönlichen, nicht-kommerziellen Gebrauch ansehen und teilen.',
+      strongP2: 'Geistiges Eigentum',
+      termsP3:
+        'Alle Texte, Bilder, Logos und Designs sind Eigentum von Data Capture. Ohne schriftliche Genehmigung dürfen Inhalte weder kopiert, verbreitet noch verändert werden.',
+      strongP3: 'Haftungsbeschränkung',
+      termsP4:
+        'Data Capture stellt diese Website „wie besehen“ zur Verfügung. Wir haften nicht für direkte oder indirekte Schäden, die aus der Nutzung dieser Website entstehen.',
+      strongP4: 'Externe Links',
+      termsP5:
+        'Diese Website kann Links zu Websites Dritter enthalten. Data Capture übernimmt keine Verantwortung für deren Inhalte oder Geschäftspraktiken.',
+      privacySectionTitle: 'Datenschutzerklärung',
+      privacyP1:
+        'Data Capture respektiert Ihre Privatsphäre. Diese Website dient ausschließlich Informationszwecken und erhebt keine personenbezogenen Daten von Besuchern.',
+      strongPC1: 'Erhobene Informationen',
+      privacyP2:
+        'Es können ausschließlich nicht-personenbezogene Daten wie IP-Adresse oder Browsertyp automatisch zu Analyse- und Leistungszwecken erfasst werden.',
+      privacyP3:
+        'Cookies werden ausschließlich verwendet, um das Nutzererlebnis zu verbessern.',
+      strongC3: 'Verwendung der Informationen',
+      privacyP4:
+        'Nicht-personenbezogene Daten werden ausschließlich zur Überwachung der Website-Leistung und zur Verbesserung der Benutzererfahrung verwendet.',
+      strongC4: 'Links zu Drittanbietern',
+      privacyP5:
+        'Diese Website kann Links zu externen Websites enthalten. Data Capture übernimmt keine Verantwortung für deren Inhalte oder Datenschutzpraktiken.',
+      },
     contact: {
       label: 'KONTAKT',
       headline: 'Wir sind für Sie da',
