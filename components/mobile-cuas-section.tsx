@@ -51,8 +51,8 @@ export default function MobileCuasSections() {
         />
       </div>
 
-        <section className="container mx-auto w-full px-6 lg:px-8 py-16">
-        <div className="mx-auto w-full max-w-6xl space-y-10">
+      <section className="container w-full mx-auto w-full py-16">
+        <div className="mx-auto w-full max-w-7xl space-y-10">
             <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
               <GradientCard>
                 <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
@@ -83,7 +83,7 @@ export default function MobileCuasSections() {
           ))}
         </div>
 
-        <div className="flex w-full h-full rounded-md items-center justify-center mb-10">
+        <div className="flex w-full h-full rounded-md items-center justify-center gap-10 mb-10">
           <GradientCard>
             <h3 className="text-center text-3xl md:text-4xl font-semibold text-white p-5">
               {t('products.selectSensoric')}
@@ -106,12 +106,13 @@ export default function MobileCuasSections() {
       </section>
 
 
-      <div className="flex flex-col items-center justify-center px-8">
-        <h2 className="text-center text-2xl max-w-10xl md:text-3xl text-white font-semibold leading-snug mt-5 mb-20">
+      <div className="container mx-auto max-w-7xl w-full px-6 lg:px-1">
+        <h2 className="w-full text-center text-2xl md:text-4xl text-white leading-snug mt-5 px-2 mb-10">
           Custom mobile C-UAS solutions, aligned with your requirements, optimized for top performance and advanced technology
         </h2>
-        
-        <Slideshow
+      </div>
+
+      <Slideshow
             slides={[
                 { src: mobileCuasImage6 },
                 { src: mobileCuasImage7 },
@@ -120,7 +121,6 @@ export default function MobileCuasSections() {
             ]}
             delayMs={2000}
             />
-      </div>
       </div>
     </section>
   )

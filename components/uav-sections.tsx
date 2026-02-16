@@ -105,16 +105,6 @@ export default function UAVSections() {
             )
           })}
         </div>
-
-        <Slideshow
-          slides={[
-            { src: droneImage4 },
-            { src: droneImage5 },
-            { src: droneImage6 },
-          ]}
-          delayMs={2000}
-        />
-
       </div>
     </section>
   )
