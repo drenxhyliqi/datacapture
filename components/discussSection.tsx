@@ -23,9 +23,8 @@ export default function DiscussSection() {
           />
 
           <div className="relative z-10 py-12 lg:py-20 text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-8xl font-semibold text-white leading-tight mb-6">
+            <h2 className="text-5xl sm:text-5xl lg:text-7xl font-semibold text-white leading-tight mb-6">
               <span className="block">{t('discuss.line1')}</span>
-              <span className="block">{t('discuss.line2')}</span>
               <span className="block">{t('discuss.line3')}</span>
             </h2>
 
