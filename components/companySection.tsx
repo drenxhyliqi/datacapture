@@ -24,15 +24,15 @@ const METRICS = [
   {
     title: 'Real-time Monitoring',
     description:
-      'Live detection and visualization of drone activity within defined operational areas.',
+      'Live detection and visualization of potential threats and security-relevant activities within defined operational areas.',
   },
   {
     title: 'Centralized Control',
     description:
-      'A unified command-and-control interface for monitoring, configuration, and review.',
+      'A unified command-and-control interface for seamless monitoring, system configuration, and operational review.',
   },
   {
-    title: 'Recorded Operations',
+    title: 'Threat Mitigation',
     description:
       'Rapid and precise neutralization of detected threats through integrated countermeasures and automated response systems.',
   },
