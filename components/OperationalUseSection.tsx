@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { GradientCard } from "@/components/ui/GradientCard";
-import { GradientLine } from "@/components/ui/GradientLine";
+import { GradientCard } from "@/components/ui/gradientCard";
+import { GradientLine } from "@/components/ui/gradientLine";
 import droneSection from "@/assets/droneSection.png";
 
 type UseItem = {

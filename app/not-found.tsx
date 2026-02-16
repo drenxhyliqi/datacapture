@@ -4,9 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { HeroHeader } from '@/components/header'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
-import HeroBanner from '@/components/ui/hero-banner'
+import HeroBanner from '@/components/ui/heroBanner'
 import Footer from '@/components/footer'
-import SecondHeroBanner from '@/components/ui/second-hero-banner'
+import SecondHeroBanner from '@/components/ui/secondHeroBanner'
 
 export default function NotFound() {
   return (

@@ -47,7 +47,7 @@ export default function GallerySlideshow({
             key={i}
             className="pl-4 basis-[85%] sm:basis-[55%] lg:basis-[40%]"
           >
-            <div className="relative overflow-hidden lg:rounded-lg rounded-none w-89 lg:w-full h-50 lg:h-110 aspect-video">
+            <div className="relative overflow-hidden lg:rounded-lg rounded-md w-90 lg:w-full h-50 lg:h-110 aspect-video">
               <Image
                 src={s.src}
                 alt={s.alt ?? `Slide ${i + 1}`}

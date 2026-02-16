@@ -5,7 +5,7 @@ import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
 import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
-import SolutionsSradHeroBanner, { SolutionsSradFeaturesSection, SolutionsSradDescriptionSection, SolutionsSradC2Section } from "@/components/ui/solutions-srad"
+import SolutionsSradHeroBanner, { SolutionsSradFeaturesSection, SolutionsSradDescriptionSection, SolutionsSradC2Section } from "@/components/ui/solutionsSrad"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function SolutionsSradPage() {

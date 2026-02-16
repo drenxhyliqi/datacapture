@@ -1,9 +1,9 @@
 'use client'
 
 import { HeroHeader } from "@/components/header";
-import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-section";
-import PartnersSection from "@/components/partners-section";
+import HeroSection from "@/components/heroSection";
+import AboutSection from "@/components/aboutSection";
+import PartnersSection from "@/components/partnersSection";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
 import heroBanner3 from "@/assets/heroBanner3.png";

@@ -1,6 +1,6 @@
 'use client'
 
-import CompanySection from '@/components/company-section'
+import CompanySection from '@/components/companySection'
 
 export default function CompanyPage() {
   return <CompanySection />

@@ -6,8 +6,8 @@ import ellipseShadow from "@/assets/Ellipse 8.svg"
 import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
 import hardkillProduct from "@/assets/hardkill-5.png"
-import SecondHeroBanner from "@/components/ui/second-hero-banner"
-import UAVSections from "@/components/uav-sections"
+import SecondHeroBanner from "@/components/ui/secondHeroBanner"
+import UAVSections from "@/components/uavSections"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function UAVPage() {

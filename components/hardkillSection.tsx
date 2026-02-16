@@ -4,11 +4,11 @@ import Image from "next/image"
 import hardkillfeature2 from "@/assets/hardkill-2.png"
 import hardkillfeature3 from "@/assets/hardkill-3.png"
 import hardkillfeature4 from "@/assets/hardkill-4.png"
-import { GradientCard } from "./ui/GradientCard"
+import { GradientCard } from "./ui/gradientCard"
 import DiscussSection from "./discussSection"
 import Slideshow from "./slideshow"
 import { HardKillCard } from "./hardkillCard"
-import { hardkillFeatures } from "./ui/hardkill-features-data"
+import { hardkillFeatures } from "./ui/hardkillFeaturesData"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 const feature2 = [

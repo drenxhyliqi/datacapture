@@ -1,9 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { GradientCard } from './ui/GradientCard'
-import { ServiceBulletList } from './ui/ServiceBulletList'
-import { ServiceItem } from './ui/services-data'
+import { GradientCard } from './ui/gradientCard'
+import { ServiceBulletList } from './ui/serviceBulletList'
+import { ServiceItem } from './ui/servicesData'
 
 type ServiceCardProps = {
     service: ServiceItem

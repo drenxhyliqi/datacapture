@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import heroBackground from "@/assets/heroBackground.png";
-import { GradientCard } from "./ui/GradientCard";
+import { GradientCard } from "./ui/gradientCard";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 export default function DiscussSection() {
   const t = useTranslations()
   return (
-    <section className="relative w-full mx-auto py-16 lg:py-24 ">
-      <div className="container mx-auto max-w-8xl px-[5%] sm lg:px-25">
+    <section className="relative w-full pt-8 pb-20 lg:pt-32 2xl:pt-20  mt-[-46px] lg:mt-32 2xl:mt-12">
+      <div className="container mx-auto max-w-7xl px-6 md:px-6 lg:px-0 ">
         <GradientCard>
         <div className="relative rounded-[20px] overflow-hidden min-h-[400px] w-full">
         
@@ -22,7 +22,7 @@ export default function DiscussSection() {
             className="object-cover"
           />
 
-          <div className="relative z-10 px-8 py-12 lg:px-16 lg:py-20 text-center">
+          <div className="relative z-10 py-12 lg:py-20 text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-8xl font-semibold text-white leading-tight mb-6">
               <span className="block">{t('discuss.line1')}</span>
               <span className="block">{t('discuss.line2')}</span>

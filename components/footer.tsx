@@ -54,7 +54,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-16 xl:px-24 py-10 lg:py-12">
+      <div className="relative z-10 container mx-auto px-6 lg:px-30 py-10 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
           <div className="flex flex-col">
             <div className="flex items-start gap-3 mb-6">

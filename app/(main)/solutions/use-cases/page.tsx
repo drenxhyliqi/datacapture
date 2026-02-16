@@ -5,7 +5,7 @@ import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
 import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
-import SolutionsCuasHeroBanner, { SolutionsCuasFeaturesSection, SolutionsCuasDescriptionSection, SolutionsCuasC2Section } from "@/components/ui/solutions-cuas"
+import SolutionsCuasHeroBanner, { SolutionsCuasFeaturesSection, SolutionsCuasDescriptionSection, SolutionsCuasC2Section } from "@/components/ui/solutionsCuas"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function SolutionsCuasPage() {

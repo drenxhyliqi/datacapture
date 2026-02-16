@@ -1,9 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { GradientCard } from './GradientCard'
-import { Feature } from './features-data'
-import { SolutionFeature } from './solutions-features-data'
+import { GradientCard } from './gradientCard'
+import { Feature } from './featuresData'
+import { SolutionFeature } from './solutionsFeaturesData'
 
 export function FeatureCard({ feature }: { feature: Feature | SolutionFeature }) {
     return (

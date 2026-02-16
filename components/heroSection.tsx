@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import arrowLeft from '@/assets/array.png'
 import droneIcon from '@/assets/selections1.svg'
-import HeroBanner from '@/components/ui/hero-banner'
+import HeroBanner from '@/components/ui/heroBanner'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
 
