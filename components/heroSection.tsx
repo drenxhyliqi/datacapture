@@ -6,21 +6,32 @@ import droneIcon from '@/assets/selections1.svg'
 import HeroBanner from '@/components/ui/heroBanner'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 import { useMediaQuery, LG_QUERY } from '@/lib/useMediaQuery'
+import { useState } from 'react'
 
 export default function HeroSection() {
+  const [isHovered, setIsHovered] = useState(false)
   const t = useTranslations()
   const isLg = useMediaQuery(LG_QUERY)
 
   return (
     <>
-      <section className="hero-desktop-section hidden lg:block relative min-h-[110vh] 2xl:min-h-[100vh] overflow-visible">
+      <section
+        className="hero-desktop-section hidden lg:block relative min-h-[110vh] 2xl:min-h-[100vh] overflow-visible"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div className="overflow-visible">
           <HeroBanner />
         </div>
 
         {isLg && (
           <div className="hero-blur-shadows absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div className="hero-shadow-left absolute left-10 top-110 pointer-events-none" role="presentation">
+            <div
+              className={`absolute left-10 top-110 pointer-events-none ${
+                isHovered ? 'hero-shadow-left' : ''
+              }`}
+              role="presentation"
+            >
               <div
                 className="pointer-events-none w-[200px] h-[165px]"
                 style={{
@@ -31,7 +42,12 @@ export default function HeroSection() {
                 }}
               />
             </div>
-            <div className="hero-shadow-left absolute left-35 top-155 pointer-events-none" role="presentation">
+            <div
+              className={`absolute left-35 top-155 pointer-events-none ${
+                isHovered ? 'hero-shadow-left' : ''
+              }`}
+              role="presentation"
+            >
               <div
                 className="pointer-events-none w-[200px] h-[165px]"
                 style={{
@@ -43,7 +59,12 @@ export default function HeroSection() {
               />
             </div>
 
-            <div className="hero-shadow-right absolute right-40 top-20 pointer-events-none" role="presentation">
+            <div
+              className={`absolute right-40 top-20 pointer-events-none ${
+                isHovered ? 'hero-shadow-right' : ''
+              }`}
+              role="presentation"
+            >
               <div
                 className="pointer-events-none w-[200px] h-[165px]"
                 style={{
@@ -54,7 +75,12 @@ export default function HeroSection() {
                 }}
               />
             </div>
-            <div className="hero-shadow-right absolute right-40 top-40 pointer-events-none" role="presentation">
+            <div
+              className={`absolute right-40 top-40 pointer-events-none ${
+                isHovered ? 'hero-shadow-right' : ''
+              }`}
+              role="presentation"
+            >
               <div
                 className="pointer-events-none w-[200px] h-[165px]"
                 style={{
@@ -72,7 +98,9 @@ export default function HeroSection() {
           <div className="absolute left-30 top-40">
             <div className="flex flex-col items-start gap-6">
               <div
-                className="hero-drone-badge h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1 mt-10"
+                className={`h-20 w-20 rounded-full p-[3px] flex items-center justify-center -ml-1 mt-10 ${
+                  isHovered ? 'hero-drone-badge' : ''
+                }`}
                 style={{ backgroundColor: '#313331' }}
               >
                 <div
