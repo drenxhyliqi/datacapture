@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { GradientCard } from './ui/gradientCard'
+import { GradientCard } from './ui/GradientCard'
 import type { HardkillFeature } from './ui/hardkillFeaturesData'
 
 type HardKillCardProps = {

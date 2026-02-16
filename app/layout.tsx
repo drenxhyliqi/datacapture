@@ -3,8 +3,8 @@ import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Loading from "./loading";
-import LoadingGate from "./loadingGate";
-import BackToTop from "@/components/backToTop";
+import LoadingGate from "./LoadingGate";
+import BackToTop from "@/components/BackToTop";
 import { LocaleProvider } from "@/lib/i18n/LocaleContext";
 
 const geistSans = Geist({

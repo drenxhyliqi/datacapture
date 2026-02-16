@@ -11,7 +11,7 @@ import mobileCuasImage7 from '@/assets/mobile-cuas-7.png'
 import mobileCuasImage8 from '@/assets/mobile-cuas-8.png'
 
 import Slideshow from '@/components/slideshow'
-import { GradientCard } from './ui/gradientCard'
+import { GradientCard } from './ui/GradientCard'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 const vehicleKeys = [

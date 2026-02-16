@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { GradientCard } from './gradientCard'
+import { GradientCard } from './GradientCard'
 import { Feature } from './featuresData'
 import { SolutionFeature } from './solutionsFeaturesData'
 

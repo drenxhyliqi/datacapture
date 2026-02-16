@@ -1,6 +1,6 @@
 'use client'
 
-import { ServiceCard } from './serviceCard'
+import { ServiceCard } from './ServiceCard'
 import { serviceConfigs } from './ui/servicesData'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 

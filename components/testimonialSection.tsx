@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import testimonialBackground from '@/assets/testimonialBackground.png'
 import testimonialPerson from '@/assets/testimonialPerson.png'
-import { GradientCard } from './ui/gradientCard'
+import { GradientCard } from './ui/GradientCard'
 
 type Testimonial = {
   quote: string

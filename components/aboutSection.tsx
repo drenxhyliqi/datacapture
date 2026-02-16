@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
-import { GradientLine } from '@/components/ui/gradientLine'
-import { GradientCard } from './ui/gradientCard'
+import { GradientLine } from '@/components/ui/GradientLine'
+import { GradientCard } from './ui/GradientCard'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 export default function AboutSection() {
