@@ -81,52 +81,52 @@ export default function Footer() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
             <div>
-              <h3 className="text-white font-[400] text-base mb-4">{t('footer.about')}</h3>
+              <h3 className="text-white font-[400] text-base mb-4">{t('footer.company')}</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/company-section" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {t('footer.aboutUs')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.features')}
+                  <Link href="/contact-us" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {t('footer.contactUs')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {t('footer.services')}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.linkedin.com/company/data-capture-systems-gmbh/posts/?feedView=all" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {t('footer.blog')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.download')}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-white font-semibold text-base mb-4">{t('footer.company')}</h3>
+              <h3 className="text-white font-semibold text-base mb-4">{t('footer.products')}</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.howWeWork')}
+                  <Link href="/products/gnns" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    GNNS
                   </Link>
                 </li>
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.pressRoom')}
+                  <Link href="/products/radar" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    Radar
                   </Link>
                 </li>
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.jobs')}
+                  <Link href="/products/uav" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    UAV
                   </Link>
                 </li>
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.community')}
+                  <Link href="/products/mobile-cuas" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    Mobile CUAS
                   </Link>
                 </li>
               </ul>
@@ -136,23 +136,13 @@ export default function Footer() {
               <h3 className="text-white font-[400] text-base mb-4">{t('footer.legal')}</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {t('footer.termsOfUse')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {t('footer.privacyPolicy')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.securityPolicy')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/not-found" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    {t('footer.cookieSettings')}
                   </Link>
                 </li>
               </ul>
