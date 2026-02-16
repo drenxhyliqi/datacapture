@@ -926,7 +926,7 @@ html[lang="de"] .hero-adaptive-security > * + * {
 }
 
 .loading-spinner {
-  animation: loading-spin 0.7s linear infinite;
+  animation: loading-spin 10s linear infinite;
 }
 @keyframes loading-spin {
   to { transform: rotate(360deg); }
