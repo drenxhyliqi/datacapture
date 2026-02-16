@@ -68,8 +68,9 @@ export const translations = {
         'Selected partners providing advanced technologies for comprehensive and reliable protection.',
     },
     discuss: {
-      line1: 'Discuss Your Operational',
-      line2: 'Requirements',
+      line1: 'Discuss Your',
+      line2: 'Operational',
+      line3: 'Requirements',
       description:
         'Contact us to review system capabilities and configuration options.',
       contactUs: 'Contact Us',
@@ -391,7 +392,8 @@ export const translations = {
     },
     discuss: {
       line1: 'Besprechen Sie Ihre',
-      line2: 'Einsatzanforderungen',
+      line2: 'Einsatz',
+      line3: 'Anforderungen',
       description:
         'Kontaktieren Sie uns für eine Überprüfung der Systemfähigkeiten und Konfigurationsoptionen.',
       contactUs: 'Kontakt',

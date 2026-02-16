@@ -26,6 +26,7 @@ export default function DiscussSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-8xl font-semibold text-white leading-tight mb-6">
               <span className="block">{t('discuss.line1')}</span>
               <span className="block">{t('discuss.line2')}</span>
+              <span className="block">{t('discuss.line3')}</span>
             </h2>
 
             <p className="text-base sm:text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
