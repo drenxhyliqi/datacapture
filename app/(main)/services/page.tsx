@@ -4,9 +4,9 @@ import { HeroHeader } from "@/components/header"
 import Image from "next/image"
 import ellipseShadow from "@/assets/Ellipse 8.svg"
 import solutionsHero from "@/assets/herosolutuion.png"
-import ServicesSection from "@/components/ServicesSection"
+import ServicesSection from "@/components/servicesSection"
 import Footer from "@/components/footer"
-import SecondHeroBanner from "@/components/ui/second-hero-banner"
+import SecondHeroBanner from "@/components/ui/secondHeroBanner"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function ServicesPage() {

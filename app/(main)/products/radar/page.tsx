@@ -7,8 +7,8 @@ import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
 import radarHero from "@/assets/radar-1.svg"
 import radarProduct from "@/assets/radarscanner.svg"
-import SecondHeroBanner from "@/components/ui/second-hero-banner"
-import RadarSection from "@/components/radar-section"
+import SecondHeroBanner from "@/components/ui/secondHeroBanner"
+import RadarSection from "@/components/radarSection"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
 
 export default function RadarPage() {

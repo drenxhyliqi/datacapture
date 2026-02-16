@@ -1,5 +1,5 @@
-import { FeatureCard } from "./ui/features-cards";
-import { solutionsFeatures } from "./ui/solutions-features-data";
+import { FeatureCard } from "./ui/featuresCards";
+import { solutionsFeatures } from "./ui/solutionsFeaturesData";
 
 type SolutionsFeaturesProps = {
   showUavCard?: boolean;

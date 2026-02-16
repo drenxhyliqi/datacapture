@@ -6,9 +6,9 @@ import Footer from '@/components/footer'
 import DiscussSection from '@/components/discussSection'
 import metricsBackground from '@/assets/Metrics.png'
 import ellipseShadow from '@/assets/Ellipse 8.svg'
-import { GradientCard } from './ui/GradientCard'
+import { GradientCard } from './ui/gradientCard'
 import solutionsHero from '@/assets/herosolutuion.png'
-import SecondHeroBanner from './ui/second-hero-banner'
+import SecondHeroBanner from './ui/secondHeroBanner'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 const METRICS_KEYS = [

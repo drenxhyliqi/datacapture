@@ -1,5 +1,5 @@
 'use client'
-import SecondHeroBanner from "@/components/ui/second-hero-banner";
+import SecondHeroBanner from "@/components/ui/secondHeroBanner";
 import Image from "next/image";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
@@ -9,15 +9,14 @@ import mitigationIcon from "@/assets/mitigation.svg";
 import macbookImage from "@/assets/macbook.png";
 import directionDesktop from "@/assets/direction.svg";
 import directionMobile from "@/assets/directionMobile.svg";
-import fixedIcon from "@/assets/installation.svg";
-import mobileIcon from "@/assets/mobileinstallation.svg";
-import manPortableIcon from "@/assets/backpack.svg";
+import fixedIcon from "@/assets/house.svg";
+import mobileIcon from "@/assets/tank.svg";
 
-export default function SolutionsCuasHeroBanner() {
+export default function SolutionsSradHeroBanner() {
   return <SecondHeroBanner />;
 }
 
-export function SolutionsCuasFeaturesSection() {
+export function SolutionsSradFeaturesSection() {
   const t = useTranslations()
   return (
     <>
@@ -48,7 +47,7 @@ export function SolutionsCuasFeaturesSection() {
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                {t('solutions.detectionDesc')}
+                {t('solutions.sradDetectionDesc')}
               </p>
             </div>
 
@@ -62,11 +61,11 @@ export function SolutionsCuasFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  {t('solutions.identification')}
+                  {t('solutions.sradIdentificationTracking')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                {t('solutions.identificationDesc')}
+                {t('solutions.sradIdentificationTrackingDesc')}
               </p>
             </div>
 
@@ -80,11 +79,11 @@ export function SolutionsCuasFeaturesSection() {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-[500] text-white">
-                  {t('solutions.mitigation')}
+                  {t('solutions.sradNeutralization')}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                {t('solutions.mitigationDesc')}
+                {t('solutions.sradNeutralizationDesc')}
               </p>
             </div>
           </div>
@@ -127,25 +126,25 @@ export function SolutionsCuasFeaturesSection() {
   );
 }
 
-export function SolutionsCuasDescriptionSection() {
+export function SolutionsSradDescriptionSection() {
   const t = useTranslations()
   return (
     <section className="relative w-full py-10 lg:py-20 px-6 lg:px-8">
       <div className="w-full max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[400] text-white mb-6">
-          {t('solutions.customizedTitle')}
+          {t('solutions.sradCustomizedTitle')}
         </h2>
         <div className="space-y-4 text-base md:text-lg text-white/90">
-          <p>{t('solutions.customizedP1')}</p>
-          <p>{t('solutions.customizedP2')}</p>
-          <p>{t('solutions.customizedP3')}</p>
+          <p>{t('solutions.sradCustomizedP1')}</p>
+          <p>{t('solutions.sradCustomizedP2')}</p>
+          <p>{t('solutions.sradCustomizedP3')}</p>
         </div>
       </div>
     </section>
   );
 }
 
-export function SolutionsCuasC2Section() {
+export function SolutionsSradC2Section() {
   const t = useTranslations()
   return (
     <section className="relative w-full py-16 lg:py-24 px-6 lg:px-8">
@@ -155,7 +154,7 @@ export function SolutionsCuasC2Section() {
           <div className="relative w-full max-w-3xl">
             <Image
               src={macbookImage}
-              alt="C2 laptop interface"
+              alt="C2 radar interface"
               className="w-full h-auto object-contain"
               priority
             />
@@ -170,11 +169,10 @@ export function SolutionsCuasC2Section() {
               className="w-full h-auto object-contain"
             />
             <div className="mt-4 grid grid-cols-3 gap-90 text-white text-center text-[28px] font-medium">
-              <div style={{ marginLeft: '-95px' }}>{t('solutions.detection')}</div>
-              <div style={{ marginLeft: '-30px' }}>{t('solutions.identification')}</div>
-              <div style={{ marginLeft: '55px' }}>{t('solutions.mitigation')}</div>
+              <div style={{ marginLeft: "-95px" }}>{t('solutions.detection')}</div>
+              <div style={{ marginLeft: "-30px" }}>{t('solutions.sradIdentificationTracking')}</div>
+              <div style={{ marginLeft: "55px" }}>{t('solutions.sradNeutralization')}</div>
             </div>
-
           </div>
 
           <div className="block md:hidden">
@@ -184,10 +182,13 @@ export function SolutionsCuasC2Section() {
                 alt="C2 detection, identification and mitigation flow (mobile)"
                 className="width: 50%; height: 50%; object-contain mx-auto"
               />
-              <div className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium" style={{ fontSize: "22px" }}>
+              <div
+                className="mt-4 flex flex-col items-center gap-1 text-white text-base font-medium"
+                style={{ fontSize: "22px" }}
+              >
                 <span>{t('solutions.detection')}</span>
-                <span>{t('solutions.identification')}</span>
-                <span>{t('solutions.mitigation')}</span>
+                <span>{t('solutions.sradIdentificationTracking')}</span>
+                <span>{t('solutions.sradNeutralization')}</span>
               </div>
             </div>
           </div>
@@ -199,45 +200,29 @@ export function SolutionsCuasC2Section() {
               <Image
                 src={fixedIcon}
                 alt="Fixed installation icon"
-                className="w-[90%] h-[full]  object-contain"
+                className="w-[90%] h-full object-contain"
               />
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">{t('solutions.fixedInstallation')}</h3>
+              <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">{t('solutions.fixedInstallation')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
                 {t('solutions.fixedInstallationDesc')}
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-11">
-            <div className="flex-shrink-1">
+          <div className="flex flex-col md:flex-row items-center md:ml-10 md:gap-18 gap-y-10">
+            <div className="flex-shrink-1 md:ml-10 ">
               <Image
                 src={mobileIcon}
                 alt="Mobile installation icon"
-                className="w-[full] h-[full]  object-contain"
+                className="w-[90%] h-full object-contain"
               />
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">{t('solutions.mobileInstallation')}</h3>
+              <h3 className="text-3xl md:text-3xl font-[400] text-white mb-2">{t('solutions.mobileInstallation')}</h3>
               <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
                 {t('solutions.mobileInstallationDesc')}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center gap-20">
-            <div className="flex-shrink-0">
-              <Image
-                src={manPortableIcon}
-                alt="Man-portable system icon"
-                className="w-[full] h-[full] object-contain"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-[400] text-white mb-2">{t('solutions.manPortable')}</h3>
-              <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl">
-                {t('solutions.manPortableDesc')}
               </p>
             </div>
           </div>
@@ -246,3 +231,4 @@ export function SolutionsCuasC2Section() {
     </section>
   );
 }
+

@@ -123,7 +123,7 @@ export default function PartnersSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Open ${partner.alt} website`}
-                className="h-24 w-40 md:w-35 flex items-center justify-center px-4"
+                className="h-24 sm:w-30 md:w-35 lg:w-45 flex items-center justify-center px-4"
               >
                 <div className="relative h-full w-full">
                   <Image
@@ -148,7 +148,7 @@ export default function PartnersSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Open ${partner.alt} website`}
-                className="h-24 w-40 md:w-35 flex items-center justify-center px-4"
+                className="h-24 sm:w-30 md:w-35 lg:w-45 flex items-center justify-center px-4"
               >
                 <div className="relative h-full w-full">
                   <Image

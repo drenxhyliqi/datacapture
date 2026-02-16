@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import heroBackground from "@/assets/heroBackground.png";
-import { GradientCard } from "./ui/GradientCard";
+import { GradientCard } from "./ui/gradientCard";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 export default function DiscussSection() {

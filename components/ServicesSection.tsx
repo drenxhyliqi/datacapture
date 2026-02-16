@@ -1,7 +1,7 @@
 'use client'
 
-import { ServiceCard } from './ServiceCard'
-import { serviceConfigs } from './ui/services-data'
+import { ServiceCard } from './serviceCard'
+import { serviceConfigs } from './ui/servicesData'
 import { useTranslations } from '@/lib/i18n/LocaleContext'
 
 export default function ServicesSection() {
