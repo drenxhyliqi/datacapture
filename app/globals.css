@@ -104,7 +104,7 @@ html[lang="de"] .hero-adaptive-security > * + * {
     85% { transform: translateY(50px); }
     100% { transform: translateY(50px); }
   }
-  --animate-system-blur: systemBlurMove 2s ease-in-out infinite;
+  --animate-system-blur: systemBlurMove 5s ease-in-out infinite;
   @keyframes systemBlurMove {
     0%   { transform: translateY(120px); }
     20%  { transform: translateY(-800px); }
@@ -113,8 +113,8 @@ html[lang="de"] .hero-adaptive-security > * + * {
     90%  { transform: translateY(120px); }
     100% { transform: translateY(120px); }
   }
-  --animate-hero-shadow-up: heroShadowUp 3.5s ease-in-out infinite;
-  --animate-hero-shadow-down: heroShadowDown 3.5s ease-in-out infinite;
+  --animate-hero-shadow-up: heroShadowUp 10s ease-in-out infinite;
+  --animate-hero-shadow-down: heroShadowDown 10s ease-in-out infinite;
   @keyframes heroShadowUp {
     0%    { transform: translateY(28px); }
     20%   { transform: translateY(-72px); }
@@ -289,7 +289,7 @@ html[lang="de"] .hero-adaptive-security > * + * {
 }
 
 .animate-move-up-down {
-  animation: solutionsBlurMove 4s ease-in-out infinite;
+  animation: solutionsBlurMove 20s ease-in-out infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
@@ -893,9 +893,6 @@ html[lang="de"] .hero-adaptive-security > * + * {
     height: 80% !important;
   }
 }
-
-
-
 
 /* Hero section – apply theme animations explicitly so they run */
 .hero-shadow-left {
