@@ -6,17 +6,53 @@ import AboutSection from "@/components/aboutSection";
 import PartnersSection from "@/components/partnersSection";
 import Image from "next/image";
 import ellipseShadow from "@/assets/Ellipse 8.svg";
-import heroBanner3 from "@/assets/heroBanner3.png";
-import bannerMobile1 from "@/assets/bannerMobile (1).png";
 import DiscussSection from "@/components/discussSection";
 import Footer from "@/components/footer";
 import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
-export default function Home() {
-  const isLg = useMediaQuery(LG_QUERY)
+import { useEffect, useRef } from "react";
 
-  return (  
+export default function Home() {
+  const isLg = useMediaQuery(LG_QUERY);
+  const shadowRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!aboutRef.current || !shadowRef.current) return;
+      const aboutTop = aboutRef.current.offsetTop;
+      const aboutHeight = aboutRef.current.offsetHeight;
+      const scrollY = window.scrollY;
+      const shadowHeight = shadowRef.current.offsetHeight;
+      const fixedTopOffset = -150;
+      const startFix = aboutTop - fixedTopOffset;
+      const endFix = aboutTop + aboutHeight - shadowHeight - fixedTopOffset;
+      if (scrollY >= startFix && scrollY <= endFix) {
+        shadowRef.current.style.position = "fixed";
+        shadowRef.current.style.top = `${fixedTopOffset}px`;
+      } else if (scrollY < startFix) {
+        shadowRef.current.style.position = "absolute";
+        shadowRef.current.style.top = "0px";
+      } else {
+        shadowRef.current.style.position = "absolute";
+        shadowRef.current.style.top = `${aboutHeight - shadowHeight}px`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
-      <div className="hero-viewport-wrapper relative z-[50] min-h-[110vh] 2xl:min-h-[100vh] isolate" style={{ position: 'relative' }}>
+
+      {/* HERO */}
+      <div className="hero-viewport-wrapper relative z-[50] min-h-[110vh] 2xl:min-h-[100vh] isolate">
         <div className="relative z-[100]">
           <HeroHeader />
         </div>
@@ -24,52 +60,58 @@ export default function Home() {
           <HeroSection />
         </div>
       </div>
+
+      {/* HERO STATIC SHADOW */}
       {isLg && (
-        <div className="hero-static-shadow-wrapper absolute top-0 right-0 pointer-events-none z-0 overflow-visible" style={{ marginTop: '100vh' }} aria-hidden="true">
-          <div className="relative w-[400px] h-[100vh] translate-x-1/2 translate-y-250">
+        <div
+          className="hero-static-shadow-wrapper absolute top-0 right-0 pointer-events-none z-0 overflow-visible"
+          style={{ marginTop: "100vh" }}
+          aria-hidden="true"
+        >
+          <div className="relative w-[400px] h-[200vh] translate-x-1/2 translate-y-250">
             <Image
               src={ellipseShadow}
               alt="Shadow effect"
               fill
-              sizes="(max-width: 700px) 100vw, 700px"
-              className="opacity-90"
+              className="opacity-100"
               style={{ filter: "blur(90px)" }}
             />
           </div>
         </div>
       )}
-      <section className="relative overflow-hidden">
-        <div className="relative z-0">
-          <div className="relative overflow-hidden">
-            <div className="absolute -left-[5px] inset-0 pointer-events-none z-[3] md:z-[15] overflow-hidden">
-              <div
-                className="
-                  animate-system-blur
-                  absolute
-                  -left-20
-                  top-[-10%]
-                  w-[30vw]
-                  h-[450vh]
-                  -translate-x-1/2
-                  opacity-90
-                  blur-2xl
-                "
-              >
-                <Image
-                  src={ellipseShadow}
-                  alt="Shadow effect"
-                  sizes="(max-width: 700px) 80vw, 600px"
-                  fill
-                  className="object-contain"
-                  style={{ filter: 'blur(0px)' }}
-                />
-              </div>
-            </div>
-            <AboutSection />
-            <PartnersSection />
-            <DiscussSection />
-          </div>
+
+      {/* ABOUT SECTION */}
+      <section ref={aboutRef} className="relative">
+        <div
+          ref={shadowRef}
+          className="pointer-events-none z-0"
+          style={{
+            position: "absolute",
+            left: "0",
+            transform: "translateX(-50%)",
+            width: "40vw",
+            height: "150vh",
+          }}
+        >
+          <Image
+            src={ellipseShadow}
+            alt="Shadow effect"
+            fill
+            className="object-contain opacity-70"
+            style={{ filter: "blur(60px)" }}
+            sizes="40vw"
+          />
         </div>
+
+        <div className="relative z-10">
+          <AboutSection />
+          <PartnersSection />
+        </div>
+      </section>
+
+      {/* OTHER SECTIONS */}
+      <section>
+        <DiscussSection />
       </section>
       <Footer />
     </div>
