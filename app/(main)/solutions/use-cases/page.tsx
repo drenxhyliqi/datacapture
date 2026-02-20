@@ -7,9 +7,49 @@ import Footer from "@/components/footer"
 import DiscussSection from "@/components/discussSection"
 import SolutionsCuasHeroBanner, { SolutionsCuasFeaturesSection, SolutionsCuasDescriptionSection, SolutionsCuasC2Section } from "@/components/ui/solutionsCuas"
 import { useTranslations } from "@/lib/i18n/LocaleContext"
+import { useEffect, useRef } from "react"
+import { useMediaQuery, LG_QUERY } from "@/lib/useMediaQuery";
 
 export default function SolutionsCuasPage() {
   const t = useTranslations()
+  const shadowRef = useRef<HTMLDivElement | null>(null)
+  const aboutRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!aboutRef.current || !shadowRef.current) return
+
+      const aboutTop = aboutRef.current.offsetTop
+      const aboutHeight = aboutRef.current.offsetHeight
+      const scrollY = window.scrollY
+      const shadowHeight = shadowRef.current.offsetHeight
+      const fixedTopOffset = -150
+
+      const startFix = aboutTop - fixedTopOffset
+      const endFix = aboutTop + aboutHeight - shadowHeight - fixedTopOffset
+
+      if (scrollY >= startFix && scrollY <= endFix) {
+        shadowRef.current.style.position = "fixed"
+        shadowRef.current.style.top = `${fixedTopOffset}px`
+      } else if (scrollY < startFix) {
+        shadowRef.current.style.position = "absolute"
+        shadowRef.current.style.top = "0px"
+      } else {
+        shadowRef.current.style.position = "absolute"
+        shadowRef.current.style.top = `${aboutHeight - shadowHeight}px`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("resize", handleScroll)
+    handleScroll()
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleScroll)
+    }
+  }, [])
+
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
       <div className="relative">
@@ -30,27 +70,44 @@ export default function SolutionsCuasPage() {
           </p>
         </div>
       </div>
-      <div className="pointer-events-none absolute inset-0 z-0 md:z-[15] overflow-visible">
-        <div className="absolute right-5 top-100 w-[70vw] max-w-[700px] h-[300vh] aspect-square translate-x-1/2 -translate-y-1/20 opacity-80 blur-[80px]">
+      <div
+        className="hero-static-shadow-wrapper absolute top-0 right-0 pointer-events-none z-0 overflow-visible"
+        style={{ marginTop: "100vh" }}
+        aria-hidden="true"
+      >
+        <div className="relative w-[400px] h-[200vh] translate-x-1/2 translate-y-250">
           <Image
             src={ellipseShadow}
             alt="Shadow effect"
-            priority
-            className="object-contain"
+            fill
+            className="opacity-100"
+            style={{ filter: "blur(90px)" }}
           />
         </div>
       </div>
-      <section className="relative overflow-hidden z-20">
-        <div className="absolute -left-16 inset-0 pointer-events-none z-0 md:z-[15] overflow-hidden">
-          <div className="animate-system-blur absolute left-0 -top-32 w-[55vw] max-w-[520px] h-full -translate-x-1/2 opacity-90">
-            <Image
-              src={ellipseShadow}
-              alt="Shadow effect"
-              fill
-              className="object-contain"
-              style={{ filter: "blur(10px)" }}
-            />
-          </div>
+
+      {/* Shadow + Features + Description */}
+      <section ref={aboutRef} className="relative overflow-hidden z-20">
+        {/* Shadow */}
+        <div
+          ref={shadowRef}
+          className="pointer-events-none z-0"
+          style={{
+            position: "absolute",
+            left: "0",
+            transform: "translateX(-50%)",
+            width: "40vw",
+            height: "150vh",
+          }}
+        >
+          <Image
+            src={ellipseShadow}
+            alt="Shadow effect"
+            fill
+            className="object-contain opacity-70"
+            style={{ filter: "blur(60px)" }}
+            sizes="40vw"
+          />
         </div>
 
         <div className="relative z-10">
@@ -59,7 +116,6 @@ export default function SolutionsCuasPage() {
           <SolutionsCuasC2Section />
         </div>
       </section>
-
       <Footer />
     </div>
   )
