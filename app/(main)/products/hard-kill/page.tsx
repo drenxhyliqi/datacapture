@@ -118,7 +118,7 @@ export default function HardkillPage() {
           <HardkillSection />
         </div>
       </section>
-      <div className="relative w-full h-auto mt-10">
+      <div className="relative w-full h-auto mt-10 mb-20">
         <Image src={hardkillProduct} alt="GNNS Content" className="object-cover" />
       </div>
       <DiscussSection />
