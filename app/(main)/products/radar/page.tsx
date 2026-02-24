@@ -115,11 +115,11 @@ export default function RadarPage() {
           <RadarSection />
         </div>
       </section>
-      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-10">
+      <div className="relative w-full h-auto mt-10 mb-20">
         <Image
           src={radarProduct}
           alt="GNNS Content"
-          className="w-full h-200 object-cover"
+          className="w-full h-auto object-contain"
           priority
         />
       </div>
