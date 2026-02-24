@@ -68,7 +68,7 @@ export default function CompanySection() {
           <p className="text-white tracking-widest text-sm md:text-base font-[400]">
             {t('company.label')}
           </p>
-          <h1 className="mt-6 text-white text-xl md:text-6xl font-[400] leading-tight">
+          <h1 className="mt-6 text-white text-3xl md:text-6xl font-[400] leading-tight">
             {t('company.headline')} <br className="hidden md:block" />
             {t('company.headline2')}
           </h1>
