@@ -51,7 +51,7 @@ export default function SolutionsSradPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+    <div className="relative min-h-screen bg-[#101210] overflow-x-clip overflow-hidden">
 
       {/* Header */}
       <HeroHeader />

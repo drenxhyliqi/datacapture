@@ -253,7 +253,7 @@ export const HeroHeader = () => {
       </header>
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[99] lg:hidden" style={{ backgroundColor: '#101210' }}>
+        <div className="fixed inset-0 z-[1000] lg:hidden" style={{ backgroundColor: '#101210' }}>
           <div className="flex h-full flex-col">
             <div className="flex items-center justify-between px-6 py-4">
               <Link href="/" className="flex items-center gap-1" onClick={() => setIsMobileMenuOpen(false)}>

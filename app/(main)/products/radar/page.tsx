@@ -53,7 +53,7 @@ export default function RadarPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+    <div className="relative min-h-screen bg-[#101210] overflow-x-clip overflow-hidden">
       <div className="relative ">
         <div className="relative z-30">
           <HeroHeader />

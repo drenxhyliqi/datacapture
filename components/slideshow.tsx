@@ -41,11 +41,11 @@ export default function GallerySlideshow({
       onMouseEnter={autoplay.stop}
       onMouseLeave={autoplay.reset}
     >
-      <CarouselContent className="-ml-4">
+      <CarouselContent className="-ml-5 sm:-ml-6">
         {loopSlides.map((s, i) => (
           <CarouselItem
             key={i}
-            className="pl-4 basis-[85%] sm:basis-[55%] lg:basis-[40%]"
+            className="pl-5 sm:pl-6 basis-[85%] sm:basis-[55%] lg:basis-[40%]"
           >
             <div className="relative overflow-hidden lg:rounded-lg rounded-md w-90 lg:w-full h-50 lg:h-110 aspect-video">
               <Image

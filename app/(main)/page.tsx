@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+    <div className="relative min-h-screen bg-[#101210] overflow-x-clip overflow-hidden">
 
       {/* HERO */}
       <div className="hero-viewport-wrapper relative z-[50] min-h-[110vh] 2xl:min-h-[100vh] isolate">

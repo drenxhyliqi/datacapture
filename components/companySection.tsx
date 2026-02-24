@@ -59,11 +59,11 @@ export default function CompanySection() {
 
   return (
     <div className="relative min-h-screen bg-[#101210] overflow-x-clip">
+              <HeroHeader />
+              <SecondHeroBanner />
 
       {/* HEADER */}
-      <div className="relative z-[9998]">
-        <HeroHeader />
-        <SecondHeroBanner />
+      <div className="relative z-[100]">
         <div className="relative z-180 mx-auto max-w-xl pt-5 md:pt-5 pb-24 text-center">
           <p className="text-white tracking-widest text-sm md:text-base font-[400]">
             {t('company.label')}

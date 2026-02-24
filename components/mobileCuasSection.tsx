@@ -112,6 +112,7 @@ export default function MobileCuasSections() {
         </h2>
       </div>
 
+      <div className="mb-16">
       <Slideshow
             slides={[
                 { src: mobileCuasImage6 },
@@ -121,6 +122,7 @@ export default function MobileCuasSections() {
             ]}
             delayMs={2000}
             />
+      </div>
       </div>
     </section>
   )
