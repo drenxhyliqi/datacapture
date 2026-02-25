@@ -199,7 +199,7 @@ export default function HeroSection() {
           <div className="hidden" />
 
           <div className="relative mb-6 w-full md:text-center">
-            <h1 className="text-[2.75rem] leading-[1.05] font-[500] text-white md:text-center md:text-[3.5rem]">
+            <h1 className="text-[2.75rem] leading-[1.05] font-[500] text-white md:text-center md:mt-50 md:text-[3.5rem]">
               <span className="block">{t('hero.line1')}</span>
               <span className="block">{t('hero.line2')}</span>
               <span className="block">{t('hero.line3')}</span>
