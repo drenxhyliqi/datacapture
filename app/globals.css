@@ -72,7 +72,7 @@ html[lang="de"] .hero-adaptive-security > * + * {
 }
 
 @theme {
-  --animate-footer-blur: footerBlurMove 4s ease-in-out infinite;
+  /* --animate-footer-blur: footerBlurMove 4s ease-in-out infinite; */
   @keyframes heroShadowDown {
     0% {
       top: 100px;
